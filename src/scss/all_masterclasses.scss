@@ -1,0 +1,423 @@
+@import "./variables.scss";
+
+.firstBox {
+  .lentaBlock {
+    .intensives {
+      position: relative;
+      display: flex;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-size: 5.5vw;
+      z-index: 1;
+      font-family: "TTHovesBold";
+      background-color: $yellow;
+      border-top: $border_length solid #000;
+      border-bottom: $border_length solid #000;
+      padding: 20px 0;
+      width: 300%;
+      margin-top: 28vw;
+      // left: -50rem;
+      transform: rotateZ(8deg) translateX(-160vw);
+      transition: 1s ease-in-out;
+
+      span:not(.main) {
+        color: rgba(#000000, 0.1);
+      }
+    }
+    .intensives.initialX {
+      transform: rotateZ(8deg) translateX(-96vw);
+    }
+    .intensives.animateX {
+      transform: rotateZ(8deg) translateX(-160vw);
+    }
+    .masterclasses {
+      position: relative;
+      display: flex;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-size: 5.5vw;
+      font-family: "TTHovesBold";
+      background-color: $yellow;
+      border-top: $border_length solid #000;
+      border-bottom: $border_length solid #000;
+      padding: 20px 0;
+      width: 400%;
+      margin-top: -10vw;
+      // left: -50rem;
+      transform: rotateZ(-1deg) translateX(-200vw);
+      transition: 1s ease-in-out;
+
+      span:not(.main) {
+        color: rgba(#000000, 0.1);
+      }
+    }
+    .masterclasses.initialX {
+      transform: rotateZ(-1deg) translateX(-108.5vw);
+    }
+    .masterclasses.animateX {
+      transform: rotateZ(-1deg) translateX(-200vw);
+    }
+    @media only screen and (max-width: 700px) {
+      .intensives {
+        margin-top: 32vw;
+      }
+    }
+  }
+}
+
+.intensivesBox {
+  margin-top: 10vw;
+  padding: 0 $border_space_desktop;
+  height: 100%;
+  overflow-y: visible;
+
+  .intensiveMonthBox {
+    height: 100%;
+    overflow-y: hidden;
+    &:not(:first-child) {
+      margin-top: 5rem;
+    }
+    .title {
+      font-family: "TTHovesBold";
+      font-size: 1.8vw;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+    }
+    .intensiveBoxScroll {
+      height: 100%;
+      max-height: 100%;
+      overflow-y: visible;
+    }
+    .intensiveBox {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+
+      padding: 4rem 0;
+      border-top: 2px solid #000;
+      background-color: white;
+      position: relative;
+
+      .rolledUp {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10% !important;
+        min-height: 10% !important;
+        max-height: 10% !important;
+        background-color: white;
+        width: 100%;
+        opacity: 0;
+        font-family: "Suisse Intl";
+        align-items: center;
+        transition: opacity 0.1s;
+        padding: 0 1rem;
+        div {
+          display: flex;
+
+          p:last-child {
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .indicateLine {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: -5%;
+      }
+
+      &:last-child {
+        border-bottom: 2px solid #000;
+      }
+      .dateBox {
+        display: flex;
+        padding-right: 15px;
+
+        h2 {
+          font-size: 7vw;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          line-height: 4.6vw;
+          font-family: "TTHovesDemiBold";
+        }
+        p {
+          font-family: "Suisse Intl";
+          text-transform: capitalize;
+          margin-left: 10px;
+        }
+      }
+      .imgBox {
+        img {
+          max-width: 200px;
+          border: 3px solid #000;
+        }
+      }
+      .infoBox {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        padding: 0 2rem;
+        h2 {
+          text-transform: uppercase;
+          font-family: "TTHovesBold";
+        }
+        p {
+          font-family: "Suisse Intl";
+          padding: 1rem 0;
+          padding-bottom: 1.3rem;
+        }
+      }
+
+      .authorsBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .info {
+          display: flex;
+          align-items: center;
+          height: 50px;
+          margin-top: 10px;
+
+          &:not(:first-child) {
+            margin-top: 20px;
+          }
+          .name,
+          .surname {
+            font-family: "Suisse Intl";
+
+            font-size: 17px;
+            margin-left: 10px;
+          }
+        }
+      }
+      .yellowBtn {
+        font-size: 0.9rem;
+        height: 45px;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        a {
+          margin-top: -1px;
+        }
+
+        svg {
+          width: 30px;
+        }
+      }
+      &.inactive {
+        .authorsBox,
+        .authorsBoxInside,
+        .imgBox,
+        .dateBox,
+        .infoBox {
+          transition: 0.1s;
+          opacity: 0;
+        }
+        .rolledUp {
+          opacity: 100%;
+        }
+      }
+      &.inactiveBig {
+        .rolledUp {
+          height: 20% !important;
+          min-height: 20% !important;
+          max-height: 20% !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .intensivesBox {
+    margin-top: 15vw;
+
+    .intensiveMonthBox {
+      .intensiveBox {
+        .infoBox {
+          h2 {
+            font-size: 3vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .intensivesBox {
+    .intensiveMonthBox {
+      .title {
+        font-size: 3.5vw;
+      }
+      .intensiveBox {
+        grid-template-columns: repeat(1, 1fr);
+
+        .dateBox {
+          align-items: flex-end;
+        }
+        .imgBox {
+          padding: 2rem 0;
+          img {
+            max-width: 100%;
+            width: 100%;
+          }
+        }
+        .infoBox {
+          grid-column-start: 1;
+          grid-column-end: 2;
+          padding: 0;
+
+          h2 {
+            font-size: 4vw;
+          }
+        }
+        .authorsBox {
+          display: none;
+        }
+        .authorsBox {
+          display: grid;
+          column-gap: 10px;
+          row-gap: 10px;
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+          .info {
+            img {
+              border-radius: 50%;
+              width: 40px;
+              height: 50px;
+              object-fit: cover;
+              object-position: top;
+              background-size: cover;
+              background-position: top;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .intensivesBox {
+    padding: 0 $border_space_mobile;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .intensivesBox {
+    padding: 0;
+
+    .intensiveMonthBox {
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
+      .title {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 4vw;
+      }
+      .intensiveBox {
+        padding: 2rem 1rem;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .infoBox {
+          h2 {
+            font-size: 6vw;
+          }
+          p {
+            font-size: 3vw;
+          }
+        }
+        .authorsBoxInside {
+          .info {
+            .name,
+            .surname {
+              font-size: 3vw;
+            }
+          }
+        }
+        .dateBox {
+          h2 {
+            font-size: 10vw;
+            line-height: 8.6vw;
+          }
+        }
+      }
+    }
+  }
+  .schoolEnd {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .firstBox {
+    .lentaBlock {
+      .intensives,
+      .masterclasses {
+        h1 {
+          font-size: 8vw !important;
+        }
+      }
+      .intensives {
+        transform: rotateZ(8deg) translateX(-230vw);
+        width: 400%;
+        margin-top: 40vw;
+      }
+      .intensives.initialX {
+        transform: rotateZ(8deg) translateX(-139vw) !important;
+      }
+      .intensives.animateX {
+        transform: rotateZ(8deg) translateX(-230vw);
+      }
+      .masterclasses {
+        transform: rotateZ(-1deg) translateX(-250vw);
+      }
+      .masterclasses.initialX {
+        transform: rotateZ(-1deg) translateX(-158vw);
+      }
+      .masterclasses.animateX {
+        transform: rotateZ(-1deg) translateX(-250vw);
+      }
+    }
+  }
+  .intensivesBox {
+    .intensiveMonthBox {
+      .title {
+        font-size: 7vw;
+      }
+      .intensiveBox {
+        .infoBox {
+          p {
+            font-size: 3.5vw;
+          }
+        }
+        .authorsBoxInside {
+          .info {
+            img {
+              border-radius: 50%;
+              width: 40px;
+              height: 50px;
+            }
+            .name,
+            .surname {
+              font-size: 3.5vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.schoolEnd {
+  margin: 0;
+}

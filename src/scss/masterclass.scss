@@ -1,0 +1,272 @@
+@import "./variables.scss";
+
+.videoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  width: 100%;
+  .play {
+    position: absolute;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    transition: 0.2s;
+  }
+  .play.active {
+    opacity: 0;
+  }
+  #videoMain {
+    border: $border_length solid #000;
+  }
+  video {
+    width: 100%;
+    border: $border_length solid #000;
+  }
+
+  .imgBox {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.firstBoxMasterclass {
+  margin-top: 8rem;
+  padding: 0 $border_space_desktop;
+  padding-bottom: 8rem;
+
+  .formBox {
+    display: none !important;
+    opacity: 0;
+    position: fixed;
+    transition: all 0.2s ease-in-out;
+    z-index: 5001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+      display: flex !important;
+    }
+    &.activeAnimate {
+      opacity: 100%;
+    }
+
+    .form {
+      background-color: white;
+      width: max-content;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      position: relative;
+
+      .close {
+        position: absolute;
+        right: 0;
+        top: -30px;
+        cursor: url("../images/pointer active.png"), pointer !important;
+      }
+
+      .titleForm {
+        font-family: "Suisse Intl";
+        padding-bottom: 0.4rem;
+      }
+      .input {
+        // border: $border_length solid #000;
+        // width: 100%;
+        // padding: 15px;
+        margin-top: 10px;
+      }
+      .yellowBtn {
+        transform: scale(0.7) translateX(-3rem);
+      }
+    }
+  }
+  .authorsBox {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    .info {
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      &:not(:first-child) {
+        margin-top: 15px;
+      }
+      .name,
+      .surname {
+        font-family: "Suisse Intl";
+
+        font-size: 17px;
+        margin-left: 20px;
+      }
+    }
+  }
+  .authorsBoxFirst {
+    padding-bottom: 2rem;
+  }
+
+  .smallTitle {
+    font-family: "Suisse Intl";
+    font-size: 0.8rem;
+  }
+  // .title {
+  //   font-family: "TTHovesBold";
+  //   text-transform: uppercase;
+  //   font-size: 7.2vw;
+  //   width: 80%;
+  // }
+  .centerBox {
+    display: grid;
+    padding: 3.5rem 0;
+    grid-template-columns: repeat(2, 1fr);
+    .rightBox {
+      padding-left: $border_space_desktop;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      font-family: "Suisse Intl";
+
+      .descriptionFirst {
+        padding-top: 10px;
+      }
+      .descriptionFirst,
+      .descriptionSecond,
+      .descriptionThird {
+        line-height: $text_height;
+        font-size: 0.9rem;
+        white-space: pre-line;
+      }
+      .descriptionThird {
+        padding-top: 1.5rem;
+      }
+    }
+  }
+  .bottomBox {
+    display: flex;
+    // grid-template-columns: repeat(3, auto);
+    .dateBox {
+      h2 {
+        font-size: 8vw;
+        line-height: 7vw;
+        font-family: "TTHovesRegular";
+      }
+      p {
+        padding-left: 1.2vw;
+      }
+    }
+    .rightBox {
+      padding-left: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  .titleMasterclass {
+    font-family: "TTHovesBold";
+    text-transform: uppercase;
+  }
+}
+
+.price {
+  text-transform: uppercase;
+  font-family: "TTHovesBold";
+  font-size: 2.2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .firstBoxMasterclass {
+    margin-top: 5rem;
+    padding-bottom: 5rem;
+    .centerBox {
+      grid-template-columns: 1fr;
+      padding: 2rem 0;
+      .rightBox {
+        padding: 0;
+
+        .authorsBox {
+          display: none;
+        }
+        .descriptionFirst {
+          padding-top: 1rem;
+        }
+      }
+    }
+    .bottomBox {
+      display: block;
+      .dateBox {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .priceInside {
+          display: block !important;
+          font-size: 1.6rem;
+        }
+        .dateBoxFlex {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          h2 {
+            font-size: 2.5rem;
+            line-height: 2.2rem;
+            font-family: "TTHovesBold";
+          }
+          p {
+            padding-right: 3rem;
+          }
+        }
+      }
+      .rightBox {
+        padding: 0;
+        padding-top: 2.3rem;
+        .price {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .firstBoxMasterclass {
+    padding-left: $border_space_mobile;
+    padding-right: $border_space_mobile;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .firstBoxMasterclass {
+    margin-top: 4rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .firstBoxMasterclass {
+    .bottomBox {
+      .yellowBtn {
+        max-width: 100%;
+        font-size: 3.6vw;
+      }
+    }
+
+    .dateBoxFlex {
+      p {
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .firstBoxMasterclass {
+    margin-top: 3.5rem;
+  }
+}

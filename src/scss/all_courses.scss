@@ -1,0 +1,341 @@
+@import "./variables.scss";
+
+.firstBoxScroll {
+  padding-bottom: 40px;
+  .lentaBlock {
+    margin-top: 20px;
+    position: relative;
+    height: 100%;
+
+    h1 {
+      margin: 0 !important;
+      font-size: 5.5vw !important;
+    }
+
+    h1:not(.main) {
+      color: rgba(#000000, 0.1);
+    }
+
+    .one {
+      position: relative;
+      display: flex;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-family: "TTHovesBold";
+      background-color: $yellow;
+      border-top: $border_length solid #000;
+      border-bottom: $border_length solid #000;
+      padding: 20px 0;
+      width: 300%;
+      margin-top: 30vw;
+      // left: -50rem;
+      transform: rotateZ(8deg) translateX(-160vw);
+      transition: 1s ease-in-out;
+
+      span:not(.main) {
+        color: rgba(#000000, 0.1);
+      }
+    }
+    .one.initialX {
+      transform: rotateZ(8deg) translateX(-63vw);
+    }
+    .one.animateX {
+      transform: rotateZ(8deg) translateX(-160vw);
+    }
+  }
+}
+
+.allCoursesBox {
+  padding-left: $border_space_desktop;
+  padding-right: $border_space_desktop;
+  a {
+    cursor: url("../images/pointer active.png"), pointer;
+
+    * {
+      cursor: url("../images/pointer active.png"), pointer;
+    }
+
+    &:not(:last-child) {
+      .courseBox {
+        margin-bottom: 100px;
+      }
+    }
+
+    .courseBox {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      border: $border_length solid #000;
+      border-left: none;
+      position: relative;
+      background-color: white;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: $border_length;
+        top: 0;
+        height: 100%;
+        background-color: #000;
+      }
+
+      .left {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+
+        .top {
+          padding: 4vw;
+          border-right: $border_length solid #000;
+          border-bottom: $border_length solid #000;
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row-start: 1;
+          grid-row-end: 3;
+
+          .title {
+            font-size: 5vw;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            padding-top: 5rem;
+            padding-bottom: 1rem;
+          }
+
+          .text {
+            font-family: "Suisse Intl";
+            line-height: $text_height;
+          }
+
+          .authorsBox {
+            .info {
+              display: flex;
+              align-items: center;
+              height: 50px;
+              margin-top: 10px;
+
+              &:not(:last-child) {
+                margin-right: 20px;
+              }
+
+              .name,
+              .surname {
+                font-family: "Suisse Intl";
+
+                font-size: 17px;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+        .bottomLeft,
+        .bottomRight {
+          border-right: $border_length solid #000;
+        }
+      }
+      .right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        background: linear-gradient(180deg, #a597f9, rgba(255, 255, 255, 1));
+        .top {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row-start: 1;
+          grid-row-end: 3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: $border_length solid #000;
+        }
+        .bottomLeft,
+        .bottomRight {
+          &:not(:last-child) {
+            border-right: $border_length solid #000;
+          }
+        }
+
+        .bottomLeft {
+          h3 {
+            word-break: break-word;
+          }
+        }
+      }
+      .left,
+      .right {
+        .bottomLeft,
+        .bottomRight {
+          p {
+            font-family: "Suisse Intl";
+          }
+          h3 {
+            font-family: "TTHovesBold";
+            text-transform: uppercase;
+            font-size: 2.3vw;
+            padding-top: 5px;
+          }
+        }
+        .bottomLeft {
+          padding: 4vw;
+          grid-column-start: 1;
+          grid-column-end: 2;
+        }
+        .bottomRight {
+          padding: 4vw;
+          grid-column-start: 2;
+          grid-column-end: 3;
+        }
+
+        @media only screen and (max-width: 800px) {
+          .top {
+            img {
+              width: 150px;
+            }
+          }
+        }
+      }
+
+      .btnBottomCourse {
+        position: absolute;
+        left: 0;
+        bottom: -50px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .firstBoxScroll {
+    .lentaBlock {
+      .fixedLenta {
+        position: fixed;
+        z-index: -1;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .firstBoxScroll {
+    .lentaBlock {
+      .one {
+        margin-top: 40vw;
+      }
+    }
+  }
+  .allCoursesBox {
+    padding-left: $border_space_mobile;
+    padding-right: $border_space_mobile;
+
+    a {
+      .courseBox {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1), #a597f9);
+        grid-template-columns: 1fr;
+        .left {
+          grid-template-rows: repeat(3, minmax(150px, auto));
+          .top,
+          .bottomRight {
+            border-right: none;
+          }
+          .top {
+            .title {
+              padding-top: 3rem;
+              font-family: "TTHovesBold";
+            }
+          }
+        }
+        .right {
+          grid-template-rows: repeat(1, minmax(150px, auto));
+          background: none;
+          .top {
+            display: none;
+          }
+          .bottomLeft,
+          .bottomRight {
+            border-top: $border_length solid #000;
+          }
+        }
+        .left,
+        .right {
+          .bottomRight,
+          .bottomLeft {
+            h3 {
+              font-size: 3.5vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .allCoursesBox {
+    padding-left: 0;
+    padding-right: 0;
+
+    a {
+      .courseBox {
+        border-left: none;
+        border-right: none;
+        .btnBottomCourse {
+          left: 25px;
+          font-size: 1rem;
+
+          svg {
+            width: 30px;
+          }
+        }
+        .left,
+        .right {
+          .bottomRight,
+          .bottomLeft {
+            h3 {
+              font-size: 4vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .firstBoxScroll {
+    .lentaBlock {
+      .oneBigFontSize {
+        h1 {
+          font-size: 8vw !important;
+        }
+
+        transform: rotateZ(8deg) translateX(-160vw);
+      }
+      .oneBigFontSize.initialX {
+        transform: rotateZ(8deg) translateX(-93vw);
+      }
+      .oneBigFontSize.animateX {
+        transform: rotateZ(8deg) translateX(-160vw);
+      }
+    }
+  }
+
+  .allCoursesBox {
+    a {
+      .courseBox {
+        .left > .top > .title {
+          font-size: 8vw;
+        }
+        .left,
+        .right {
+          .bottomRight,
+          .bottomLeft {
+            h3 {
+              font-size: 5vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.schoolEnd {
+  margin-top: 100px;
+}

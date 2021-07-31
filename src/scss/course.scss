@@ -1,0 +1,285 @@
+@import "./variables.scss";
+
+.blueBoxScroll {
+  .boxPinBlueCourse {
+    .blueBox {
+      .blueBoxOne {
+        grid-row-end: 5;
+      }
+      .blueBoxTwo {
+        grid-column-end: 2;
+        grid-row-start: 5;
+        border-top: $border_length solid #000;
+        border-bottom: none;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            width: max-content;
+            margin-top: 5px;
+          }
+        }
+      }
+      .blueBoxThree {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        border-top: $border_length solid #000;
+        border-bottom: none;
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            width: max-content;
+            margin-top: 5px;
+          }
+        }
+      }
+      .blueBoxFour {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 5;
+        padding: 2.5vw 4vw;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        border-top: $border_length solid #000;
+        border-right: $border_length solid #000;
+        border-bottom: none;
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            width: max-content;
+            margin-top: 5px;
+          }
+        }
+      }
+      .blueBoxFive {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        border-top: $border_length solid #000;
+        padding: 2.5vw 4vw;
+        border-right: none;
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            width: max-content;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.secondBoxCourse {
+  margin: 4rem $border_space_desktop;
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  position: relative;
+  row-gap: 0;
+  column-gap: 0;
+  padding-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+  .box {
+    display: flex;
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    &:not(:last-child),
+    &:last-child {
+      border-bottom: 2px solid #000;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      margin-right: 50px;
+      margin-bottom: 1rem;
+    }
+
+    div {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      h1 {
+        text-transform: uppercase;
+        font-family: "TTHovesBold";
+        font-size: 1.6rem;
+        line-height: 1.5rem;
+        padding-bottom: 15px;
+      }
+      p {
+        font-family: "Suisse Intl";
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.flexBoxes {
+  margin: $border_space_desktop;
+
+  .titleMain {
+    font-family: "TTHovesBold";
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    margin-bottom: $border_space_desktop;
+  }
+
+  .boxFlex {
+    display: flex;
+    justify-content: space-between;
+    .box {
+      display: flex;
+
+      &:not(:last-child) {
+        margin-right: $border_space_desktop;
+      }
+
+      .left {
+        margin-right: $border_space_desktop;
+        .title {
+          font-family: "TTHovesBold";
+          text-transform: uppercase;
+          font-size: 1.7rem;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .right {
+        .title {
+          font-family: "TTHovesBold";
+          text-transform: uppercase;
+          font-size: 1.7rem;
+          margin: 0;
+          padding: 0;
+          margin-bottom: 15px;
+        }
+        .text {
+          font-family: "Suisse Intl";
+        }
+      }
+    }
+  }
+}
+
+.blueBoxAuthors {
+  border-bottom: none;
+  .blueBlockAuthorsCourse {
+    .blueBlockAuthors:nth-of-type(3) {
+      border-right: none;
+    }
+    .blueBlockAuthors:nth-of-type(5) {
+      border-bottom: $border_length solid #000;
+      border-right: $border_length solid #000;
+      display: block;
+    }
+  }
+}
+
+.sliderBoxCourse {
+  margin-top: $border_space_desktop * 1.8;
+
+  .mainSlider {
+    &.active {
+      div {
+        .graphicBox {
+          display: block;
+        }
+      }
+      .info {
+        div {
+          display: block;
+        }
+      }
+    }
+    .info {
+      div {
+        display: none;
+      }
+    }
+    div {
+      .textBox {
+        margin-top: 2.5rem;
+        .title {
+          font-family: "TTHovesBold";
+          font-size: 1.5rem;
+          text-transform: uppercase;
+        }
+        .text {
+          font-family: "Suisse Intl";
+          white-space: nowrap;
+
+          &:not(:first-child) {
+            margin-top: 3px;
+          }
+        }
+      }
+      .graphicBox {
+        width: 90%;
+        display: none;
+        .image {
+          img {
+            width: 100%;
+            border-right: $border_length solid #000;
+            border-bottom: $border_length solid #000;
+          }
+        }
+        .description {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+          white-space: pre-line;
+
+          p {
+            font-family: "Suisse Intl";
+            font-size: 0.9rem;
+            white-space: pre-line;
+          }
+        }
+      }
+    }
+  }
+}

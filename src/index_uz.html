@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <title>TEHNIKUM uz</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <div class="borderScreenRight"></div>
+    <div class="borderScreenLeft"></div>
+    <div class="borderScreenTop"></div>
+    <div class="borderScreenBottom"></div>
+    <nav>
+      <div class="leftNav">
+        <a href="https://tehnikum.school/">
+          <svg
+            width="150"
+            height="20"
+            viewBox="0 0 200 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.763 1.00372H0V5.13011H7.31535V29.1078H11.3918V5.13011H18.7072V1.00372H18.763ZM33.7288 0C25.4083 0 18.7072 6.69145 18.7072 15C18.7072 23.3085 25.4083 30 33.7288 30C39.9273 30 45.2323 26.2639 47.5218 20.9108L42.9986 20.5762C42.5519 21.3011 41.9934 21.9703 41.3792 22.6394C39.313 24.7026 36.6326 25.8178 33.7288 25.8178C30.825 25.8178 28.1445 24.7026 26.0784 22.6394C24.4031 20.9665 23.2863 18.7918 23.007 16.3941H48.6387C48.6945 15.948 48.6945 15.4461 48.6945 15C48.7504 6.69145 42.0493 0 33.7288 0ZM23.2863 12.2677C23.7888 10.4833 24.7382 8.75465 26.0784 7.36059C28.1445 5.2974 30.825 4.18216 33.7288 4.18216C36.6326 4.18216 39.313 5.2974 41.3792 7.36059C42.7194 8.69888 43.7245 10.4275 44.1713 12.2677H23.2863ZM72.0925 12.0446H55.5631V1.00372H51.4308V29.1078H55.5631V16.171H72.0925V29.1078H76.2248V1.00372H72.0925V12.0446ZM104.202 5.13011H107.887V25.1487H104.202V29.1078H115.594V25.1487H111.908V5.13011H115.594V1.00372H104.202V5.13011ZM96.7189 25.3717H93.6476L90.8555 1.00372H79.6312V29.1078H84.0427V4.79554H87.0582L89.7386 29.1078H100.963V1.00372H96.6631L96.7189 25.3717ZM123.3 1.00372H119.168V29.1078H123.3V19.461L145.358 29.4424V24.7026L124.138 15.0558L145.358 5.35316V0.669145L123.3 10.6506V1.00372ZM163.283 24.9814H153.008V1.00372H148.932V29.1078H167.415V1.00372H163.283V24.9814ZM189.138 1.00372L186.513 25.2602H184.168L181.543 1.00372H170.989V29.1078H175.233V4.68401H177.634L180.427 29.1078H190.031L192.935 4.79554H195.281L195.225 29.1078H199.636V1.00372H189.138Z"
+              fill="black"
+            />
+          </svg>
+        </a>
+        <div class="rightNavLeft">
+          <span><a href="https://tehnikum.school/">Рус</a></span> /
+          <span class="active"
+            ><a href="https://tehnikum.school/index_uz.html">O’zb</a></span
+          >
+        </div>
+      </div>
+      <div class="rightNav">
+        <span
+          ><a href="https://tehnikum.school/all_courses_uz.html"
+            >Все курсы</a
+          ></span
+        >
+        <span
+          ><a href="https://tehnikum.school/all_masterclasses_uz.html"
+            >Интенсивы</a
+          ></span
+        >
+        <span
+          ><a href="https://tehnikum.school/open_lessons_uz.html"
+            >открытые уроки</a
+          ></span
+        >
+        <span
+          ><a href="https://tehnikum.school/career_uz.html">Карьера</a></span
+        >
+        <span
+          ><a href="https://tehnikum.school/replies_uz.html">Отзывы</a></span
+        >
+        <div class="menuSpan" onclick="openMenu()">
+          <div>Меню&nbsp;&nbsp;</div>
+          <div>
+            <svg
+              width="16"
+              height="13"
+              viewBox="0 0 16 13"
+              fill="none"
+              style="margin-top: 3px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="15.6" height="2.6" fill="black" />
+              <rect y="5.19995" width="15.6" height="2.6" fill="black" />
+              <rect y="10.3999" width="15.6" height="2.6" fill="black" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="grayBack"></div>
+      <div class="mobileNav">
+        <div class="mobileNavFlex">
+          <div class="close" onclick="closeMenu()">
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L22 22M1.41005 21.3L21.71 1"
+                stroke="white"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div class="linksBox">
+            <span
+              ><a href="https://tehnikum.school/all_courses_uz.html"
+                >Все курсы</a
+              ></span
+            >
+            <span
+              ><a href="https://tehnikum.school/all_masterclasses_uz.html"
+                >Интенсивы</a
+              ></span
+            >
+            <span
+              ><a href="https://tehnikum.school/open_lessons_uz.html"
+                >открытые уроки</a
+              ></span
+            >
+            <span
+              ><a href="https://tehnikum.school/career_uz.html"
+                >Карьера</a
+              ></span
+            >
+            <span
+              ><a href="https://tehnikum.school/replies_uz.html"
+                >Отзывы</a
+              ></span
+            >
+          </div>
+          <div class="bottomMobileNav">
+            <span><a href="https://tehnikum.school/">Рус</a></span> /
+            <span class="active"
+              ><a href="https://tehnikum.school/index_uz.html">O’zb</a></span
+            >
+          </div>
+        </div>
+        <div class="rightMobileNavLine">
+          <div class="rightMobileNavLineBlue"></div>
+        </div>
+      </div>
+    </nav>
+    <div class="formBoxIndex">
+      <div class="grayBack"></div>
+      <div class="formBox">
+        <div class="close" onclick="closeModalForm()">
+          <svg
+            width="16"
+            height="23"
+            viewBox="0 0 23 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 1L22 22M1.41005 21.3L21.71 1"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <div class="form">
+          <p class="titleForm">
+            Чтобы руководителям было проще принять решение о покрытии стоимости
+            на обучение, мы подготовили шаблон письма, которое отправляется на
+            рабочую почту руководителю от лица Tehnikum School
+          </p>
+          <div class="flex">
+            <div class="inputBox">
+              <div class="input error">
+                <div class="title">От кого</div>
+                <input type="text" name="from" oninput="deleteError(this);" />
+                <div class="errorText">Обязательное поле для заполнения *</div>
+                <img src="info.svg" alt="info" class="errorImg" />
+              </div>
+              <div class="input">
+                <div class="title">Кому</div>
+                <input type="text" name="to" oninput="deleteError(this);" />
+              </div>
+              <div class="input">
+                <div class="title">Ваше имя</div>
+                <input
+                  type="text"
+                  name="name"
+                  oninput="deleteError(this);changeText(this, 'name')"
+                />
+              </div>
+              <div class="input">
+                <div class="title">Email</div>
+                <input type="text" name="email" oninput="deleteError(this);" />
+              </div>
+            </div>
+            <div class="selectValuesBox" id="selectValuesBoxOne">
+              <div class="select" onclick="openSelect('selectValuesBoxOne')">
+                <div class="title">Выбери курс</div>
+                <div class="text" id="selectTextOne">Неважно</div>
+                <img src="arrow_down.svg" alt="arrow_down" />
+              </div>
+              <div class="selectValues" id="selectValuesOne"></div>
+            </div>
+          </div>
+          <div class="titleName">Здравствуйте, <span id="name"></span></div>
+          <p class="text">
+            Коммуникационное агентство SETTERS из российского топ-5 запустило
+            образовательные курсы SETTERS ONLINE. На сегодняшний день наша
+            программа обучения состоит из четырех дисциплин.
+            <br /><br />
+            Если вы знакомы с миром digital, то наверняка знаете, что стоимость
+            разработки SMM-стратегии в среднем превышает 100 000 рублей, а
+            работа с лидерами мнений — influence-маркетинг — требует навыков
+            проверки блогеров и умения выстраивать коммуникацию.
+            <br /><br />
+            Мы полностью поддерживаем решение одного из ваших сотрудников
+            получить доступ к нашим онлайн-курсам, чтобы развить навыки
+            digital-маркетинга и в конечном
+          </p>
+        </div>
+        <a href="https://tehnikum.school/all_courses.html">
+          <div class="blueBtn">
+            Подобрать курс
+            <svg
+              width="32"
+              height="22"
+              viewBox="0 0 42 22"
+              fill="none"
+              style="padding-left: 10px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M28.2426 0.518613C28.3993 0.373102 28.5856 0.257656 28.7906 0.178885C28.9956 0.100115 29.2154 0.0595703 29.4373 0.0595703C29.6593 0.0595703 29.8791 0.100115 30.0841 0.178885C30.2891 0.257656 30.4753 0.373102 30.6321 0.518613L40.7571 9.89361C40.9142 10.0388 41.0389 10.2112 41.124 10.401C41.2091 10.5908 41.2529 10.7943 41.2529 10.9999C41.2529 11.2054 41.2091 11.4089 41.124 11.5987C41.0389 11.7885 40.9142 11.961 40.7571 12.1061L30.6321 21.4811C30.3152 21.7745 29.8855 21.9393 29.4373 21.9393C28.9892 21.9393 28.5595 21.7745 28.2426 21.4811C27.9257 21.1877 27.7477 20.7898 27.7477 20.3749C27.7477 19.9599 27.9257 19.562 28.2426 19.2686L37.1762 10.9999L28.2426 2.73111C28.0854 2.58597 27.9608 2.41355 27.8757 2.22372C27.7906 2.03389 27.7468 1.83039 27.7468 1.62486C27.7468 1.41934 27.7906 1.21584 27.8757 1.02601C27.9608 0.836179 28.0854 0.663755 28.2426 0.518613V0.518613Z"
+                fill="black"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.75 11C0.75 10.5856 0.92779 10.1882 1.24426 9.89515C1.56073 9.60212 1.98995 9.4375 2.4375 9.4375H37.875C38.3226 9.4375 38.7518 9.60212 39.0682 9.89515C39.3847 10.1882 39.5625 10.5856 39.5625 11C39.5625 11.4144 39.3847 11.8118 39.0682 12.1049C38.7518 12.3979 38.3226 12.5625 37.875 12.5625H2.4375C1.98995 12.5625 1.56073 12.3979 1.24426 12.1049C0.92779 11.8118 0.75 11.4144 0.75 11Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="firstBox">
+      <div class="lentaBlock">
+        <div class="one indexOne">
+          <span>Школа&nbsp;</span><span>Школа&nbsp;</span
+          ><span class="main">Школа&nbsp;</span><span>Школа&nbsp;</span
+          ><span>Школа&nbsp;</span><span>Школа&nbsp;</span
+          ><span>Школа&nbsp;</span><span>Школа</span>
+        </div>
+        <div class="two">
+          <span>Актуальных профессий&nbsp;</span
+          ><span class="main">Актуальных профессий&nbsp;</span
+          ><span>Актуальных профессий&nbsp;</span
+          ><span>Актуальных профессий</span>
+        </div>
+        <div class="oneMobile">
+          <span>Актуальных&nbsp;</span><span>Актуальных&nbsp;</span
+          ><span>Актуальных&nbsp;</span
+          ><span class="main">Актуальных&nbsp;</span
+          ><span>Актуальных &nbsp;</span><span>Актуальных&nbsp;</span
+          ><span>Актуальных&nbsp;</span><span>Актуальных</span>
+        </div>
+        <div class="twoMobile">
+          <span>Профессий&nbsp;</span><span>Профессий&nbsp;</span
+          ><span>Профессий&nbsp;</span><span class="main">Профессий&nbsp;</span
+          ><span>Профессий &nbsp;</span><span>Профессий&nbsp;</span
+          ><span>Профессий&nbsp;</span><span>Профессий</span>
+        </div>
+        <div class="threeMobile">
+          <span>В узбекистане&nbsp;</span><span>В узбекистане&nbsp;</span
+          ><span>В узбекистане&nbsp;</span
+          ><span class="main">В узбекистане&nbsp;</span
+          ><span>В узбекистане&nbsp;</span><span>В узбекистане&nbsp;</span
+          ><span>В узбекистане</span>
+        </div>
+        <div class="three">
+          <span>В узбекистане&nbsp;</span><span>В узбекистане&nbsp;</span
+          ><span>В узбекистане&nbsp;</span
+          ><span class="main">В узбекистане&nbsp;</span
+          ><span>В узбекистане&nbsp;</span><span>В узбекистане&nbsp;</span
+          ><span>В узбекистане</span>
+        </div>
+      </div>
+      <div class="innerRightBoxFlex">
+        <div class="innerRightBox" id="leftVideoBox">
+          <a href="https://tehnikum.school/all_courses.html">
+            <div class="blueBtn" style="margin-bottom: 50px">
+              Подобрать курс
+              <svg
+                width="32"
+                height="22"
+                viewBox="0 0 42 22"
+                fill="none"
+                style="padding-left: 10px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M28.2426 0.518613C28.3993 0.373102 28.5856 0.257656 28.7906 0.178885C28.9956 0.100115 29.2154 0.0595703 29.4373 0.0595703C29.6593 0.0595703 29.8791 0.100115 30.0841 0.178885C30.2891 0.257656 30.4753 0.373102 30.6321 0.518613L40.7571 9.89361C40.9142 10.0388 41.0389 10.2112 41.124 10.401C41.2091 10.5908 41.2529 10.7943 41.2529 10.9999C41.2529 11.2054 41.2091 11.4089 41.124 11.5987C41.0389 11.7885 40.9142 11.961 40.7571 12.1061L30.6321 21.4811C30.3152 21.7745 29.8855 21.9393 29.4373 21.9393C28.9892 21.9393 28.5595 21.7745 28.2426 21.4811C27.9257 21.1877 27.7477 20.7898 27.7477 20.3749C27.7477 19.9599 27.9257 19.562 28.2426 19.2686L37.1762 10.9999L28.2426 2.73111C28.0854 2.58597 27.9608 2.41355 27.8757 2.22372C27.7906 2.03389 27.7468 1.83039 27.7468 1.62486C27.7468 1.41934 27.7906 1.21584 27.8757 1.02601C27.9608 0.836179 28.0854 0.663755 28.2426 0.518613V0.518613Z"
+                  fill="black"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0.75 11C0.75 10.5856 0.92779 10.1882 1.24426 9.89515C1.56073 9.60212 1.98995 9.4375 2.4375 9.4375H37.875C38.3226 9.4375 38.7518 9.60212 39.0682 9.89515C39.3847 10.1882 39.5625 10.5856 39.5625 11C39.5625 11.4144 39.3847 11.8118 39.0682 12.1049C38.7518 12.3979 38.3226 12.5625 37.875 12.5625H2.4375C1.98995 12.5625 1.56073 12.3979 1.24426 12.1049C0.92779 11.8118 0.75 11.4144 0.75 11Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+          </a>
+          <div class="videoBoxIndex" onclick="playPause(this)">
+            <button class="play" id="playBtn">
+              <svg
+                width="60"
+                height="104"
+                viewBox="0 0 90 104"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.00001 3.50257L86 52L2.00001 100.497L2.00001 3.50257Z"
+                  fill="#FFEB80"
+                  stroke="black"
+                  stroke-width="4"
+                />
+              </svg>
+            </button>
+            <video
+              id="videoMain"
+              width="500"
+              height="300"
+              onended="showActive(this)"
+            >
+              <source src="./videoplayback (1).mp4" type="video/mp4" />
+              Your browser does not support HTML video.
+            </video>
+          </div>
+          <div class="videoDescription">
+            Не поверишь, что у нас тут происходит! При съемках этого видео ни
+            один студент не пострадал. Смотри до конца!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottomScrollBox">
+      <div class="sliderBoxMain sliderBox-one">
+        <img src="cool.webp" alt="cool" class="centerImg show" id="coolImg" />
+        <img src="peace.webp" alt="cool" class="centerImg hide" id="peaceImg" />
+        <img src="ok.webp" alt="cool" class="centerImg hide" id="okImg" />
+        <div class="titleSliderBox" id="oneTitleSlider">Курсы</div>
+        <div class="prevSlider" id="onePrevSlider" data-id="one"></div>
+        <div class="centerSlider" id="oneCenterSlider" data-id="one"></div>
+        <div class="nextSlider" id="oneNextSlider" data-id="one"></div>
+
+        <div class="mainSlider active" id="mainSliderOne"></div>
+        <div
+          class="mainSlider"
+          id="mainSliderTwo"
+          style="border-left: 3px solid #000"
+        ></div>
+        <div
+          class="mainSlider"
+          id="mainSliderThree"
+          style="border-left: 3px solid #000"
+        ></div>
+        <div
+          class="mainSlider"
+          id="mainSliderFour"
+          style="border-left: 3px solid #000"
+        >
+          <div>
+            <div class="info"></div>
+            <h1 class="titleSlider">Все курсы</h1>
+            <div class="sliderDescription">Их есть у нас</div>
+          </div>
+          <div>
+            <div class="bottomInfoBox"></div>
+            <div class="yellowBtn">
+              Все курсы
+              <svg
+                width="40"
+                height="20"
+                style="margin-left: 15px"
+                viewBox="0 0 24 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+            <div class="bottomSliderIcon">
+              <svg
+                width="40"
+                height="20"
+                viewBox="0 0 24 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blueBoxScroll">
+        <div class="boxPinBlue">
+          <div class="blueBox">
+            <div class="titleBox">О школе</div>
+            <div class="blueBoxOne blueBoxSpan">
+              <h1>
+                Tehnikum — это уникальное место, где можно получить новые
+                знания, навыки и даже профессию.<span
+                  >Двигаем людей на светлую сторону</span
+                >
+              </h1>
+            </div>
+            <div class="blueBoxTwo">
+              <div>
+                <h1>550+</h1>
+                <p>Стундентов прошли у нас обучение за все время</p>
+              </div>
+            </div>
+            <div class="blueBoxThree">
+              <h1>7+</h1>
+              <p>Лет опыта работы в digital у наших преподавателей</p>
+            </div>
+            <div class="blueBoxFour">
+              <img src="crossLeft.png" alt="" />
+            </div>
+            <div class="blueBoxFive">
+              <img src="cross.png" alt="" />
+            </div>
+            <div class="blueBoxSix">
+              <h1>200+</h1>
+              <p>Положительных отзывов о школе есть в открытом доступе</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sliderBox sliderBox-two" id="sliderBoxTwo">
+        <div class="prevSlider" id="twoPrevSlider" data-id="two"></div>
+        <div class="centerSlider" id="twoCenterSlider" data-id="two"></div>
+        <div class="nextSlider" id="twoNextSlider" data-id="two"></div>
+        <div class="rightPanel"></div>
+        <div class="titleSliderBox" id="twoTitleSlider">
+          Интенсивы и мастерклассы
+        </div>
+        <div class="mainSlider active" id="twoSliderOne"></div>
+        <div
+          class="mainSlider"
+          id="twoSliderTwo"
+          style="border-left: 3px solid #000"
+        ></div>
+        <div
+          class="mainSlider"
+          id="twoSliderThree"
+          style="border-left: 3px solid #000"
+        ></div>
+        <div
+          class="mainSlider mainSliderLast"
+          id="twoSliderFour"
+          style="border-left: 3px solid #000"
+        >
+          <div>
+            <div class="info"></div>
+            <h1 class="titleSlider">Все интенсивы и мастерклассы</h1>
+            <div class="sliderDescription">Их есть у нас!</div>
+          </div>
+          <div>
+            <div class="bottomInfoBox"></div>
+            <div class="yellowBtn">
+              <p class="initialYellowBtn">Записаться на мастеркласс</p>
+              <p class="mobileYellowBtn" style="display: none">Записаться</p>
+              <svg
+                width="40"
+                height="20"
+                style="margin-left: 15px"
+                viewBox="0 0 24 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+            <div class="bottomSliderIcon">
+              <svg
+                width="40"
+                height="20"
+                viewBox="0 0 24 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="yellowBox">
+        <div class="titleBox">Наши студенты устраиваются в</div>
+        <div class="yellowBoxGrid">
+          <div class="yellowBoxInside" style="padding: 5px">
+            <img src="muqarnas.svg" alt="muqarnas" />
+            <img src="muqarnasMobile.svg" class="imgMobile" alt="muqarnas" />
+          </div>
+          <div class="yellowBoxInside" style="padding: 5px">
+            <img src="testo.svg" alt="testo" />
+            <img src="testoMobile.svg" class="imgMobile" alt="testo" />
+          </div>
+          <div class="yellowBoxInside">
+            <img src="muqarnasMobile.svg" class="imgMobile" alt="samsung" />
+          </div>
+          <div class="yellowBoxInside" style="padding: 5px">
+            <img src="partizan.svg" alt="samsung" />
+            <img src="partizanMobile.svg" class="imgMobile" alt="samsung" />
+          </div>
+          <div class="yellowBoxInside"></div>
+          <div class="yellowBoxInside" style="padding: 5px">
+            <img src="dentsu.svg" alt="samsung" />
+            <img src="dentsuMobile.svg" class="imgMobile" alt="samsung" />
+          </div>
+          <div class="yellowBoxInside" style="padding: 5px">
+            <img src="forbes.svg" alt="samsung" />
+            <img src="forbesMobile.svg" class="imgMobile" alt="samsung" />
+          </div>
+          <div class="yellowBoxInside">
+            <img src="crossRight.png" alt="crossRight" />
+          </div>
+          <div class="yellowBoxInside" style="padding: 5px">
+            <img src="rozmetov.svg" alt="crossRight" />
+            <img src="rozmetovMobile.svg" class="imgMobile" alt="crossRight" />
+          </div>
+          <div class="yellowBoxInside"></div>
+          <div class="yellowBoxInside"></div>
+          <div class="yellowBoxInside">
+            <img src="cross.png" alt="crossRight" />
+          </div>
+          <div class="yellowBoxInside" style="padding: 5px">
+            <img src="mytaxi.svg" alt="crossRight" />
+            <img src="mytaxiMobile.svg" class="imgMobile" alt="crossRight" />
+          </div>
+        </div>
+      </div>
+      <div class="sliderBox sliderBox-three" id="sliderBoxThree">
+        <div class="prevSlider" id="threePrevSlider" data-id="three"></div>
+        <div class="centerSlider" id="threeCenterSlider" data-id="three"></div>
+        <div class="nextSlider" id="threeNextSlider" data-id="three"></div>
+        <div class="rightPanel"></div>
+        <div class="titleSliderBox" id="threeTitleSlider">
+          Вот что студенты говорят о нас
+        </div>
+        <div class="mainSlider active" id="threeSliderOne"></div>
+        <div
+          class="mainSlider"
+          id="threeSliderTwo"
+          style="border-left: 3px solid #000"
+        ></div>
+        <div
+          class="mainSlider"
+          id="threeSliderThree"
+          style="border-left: 3px solid #000"
+        ></div>
+        <div
+          class="mainSlider mainSliderLast"
+          id="threeSliderFour"
+          style="border-left: 3px solid #000"
+        >
+          <div>
+            <div class="info"></div>
+            <h1 class="titleSlider">Все интенсивы и мастерклассы</h1>
+            <div class="sliderDescriptionVideo">Их есть у нас!</div>
+          </div>
+
+          <div class="bottomSliderIcon">
+            <svg
+              width="40"
+              height="20"
+              viewBox="0 0 24 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="blueBoxAuthors blueBoxAuthorsBorderBottom">
+        <div class="titleBox">Наш преподавательский dream-team</div>
+        <div class="titleBoxMobile" style="display: none">Наш dream-team</div>
+        <div class="blueBlockAuthorsGrid" id="authorsBox"></div>
+      </div>
+      <div class="blueAuthorsBottom">
+        <div class="blueAuthorsBottomLeft" style="padding-right: 20px">
+          <h1>Письмо руководителю</h1>
+          <p>
+            Очень часто компании не против инвестировать в знания своих
+            сотрудников, но до них нужно донести эту идею. Мы поможем тебе
+            уговорить твоего руководителя, просто воспользуйся нашей формой.
+          </p>
+        </div>
+        <div class="yellowBtn" id="openModal">
+          Написать руководителю
+          <svg
+            width="40"
+            height="20"
+            style="margin-left: 15px"
+            viewBox="0 0 24 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="schoolEnd">
+        <h1 class="titleSchool">Появились вопросы по школе?</h1>
+        <p>
+          Ответим на все вопросы, проконсультируем насчет выбора курса да и
+          просто поговорим за жизнь
+        </p>
+        <div class="blueBtn" style="margin-bottom: 50px">
+          Написать в чат
+          <svg
+            width="32"
+            height="22"
+            viewBox="0 0 42 22"
+            fill="none"
+            style="padding-left: 10px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M28.2426 0.518613C28.3993 0.373102 28.5856 0.257656 28.7906 0.178885C28.9956 0.100115 29.2154 0.0595703 29.4373 0.0595703C29.6593 0.0595703 29.8791 0.100115 30.0841 0.178885C30.2891 0.257656 30.4753 0.373102 30.6321 0.518613L40.7571 9.89361C40.9142 10.0388 41.0389 10.2112 41.124 10.401C41.2091 10.5908 41.2529 10.7943 41.2529 10.9999C41.2529 11.2054 41.2091 11.4089 41.124 11.5987C41.0389 11.7885 40.9142 11.961 40.7571 12.1061L30.6321 21.4811C30.3152 21.7745 29.8855 21.9393 29.4373 21.9393C28.9892 21.9393 28.5595 21.7745 28.2426 21.4811C27.9257 21.1877 27.7477 20.7898 27.7477 20.3749C27.7477 19.9599 27.9257 19.562 28.2426 19.2686L37.1762 10.9999L28.2426 2.73111C28.0854 2.58597 27.9608 2.41355 27.8757 2.22372C27.7906 2.03389 27.7468 1.83039 27.7468 1.62486C27.7468 1.41934 27.7906 1.21584 27.8757 1.02601C27.9608 0.836179 28.0854 0.663755 28.2426 0.518613V0.518613Z"
+              fill="black"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.75 11C0.75 10.5856 0.92779 10.1882 1.24426 9.89515C1.56073 9.60212 1.98995 9.4375 2.4375 9.4375H37.875C38.3226 9.4375 38.7518 9.60212 39.0682 9.89515C39.3847 10.1882 39.5625 10.5856 39.5625 11C39.5625 11.4144 39.3847 11.8118 39.0682 12.1049C38.7518 12.3979 38.3226 12.5625 37.875 12.5625H2.4375C1.98995 12.5625 1.56073 12.3979 1.24426 12.1049C0.92779 11.8118 0.75 11.4144 0.75 11Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <div class="mapEndBox">
+          <div id="map"></div>
+          <div class="mapTitleBox">
+            <div>
+              <div class="titleBox">
+                <p>Адрес</p>
+                <h1>Ул. Тараса Шевченко дом 34</h1>
+              </div>
+              <div class="titleBox">
+                <p>Телефон</p>
+                <h1>
+                  <span
+                    ><a href="tel:998-90-937-33-57">+998 90 937-33-57</a></span
+                  >
+                </h1>
+              </div>
+              <div class="titleBox">
+                <p>E-mail</p>
+                <h1>
+                  <span
+                    ><a href="mailto:hi@tehnikum.school"
+                      >hi@tehnikum.school</a
+                    ></span
+                  >
+                </h1>
+              </div>
+            </div>
+            <div class="iconsBox">
+              <div class="box">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M33 37H40V40H33V37Z" fill="black" />
+                  <path d="M0 37H7V40H0V37Z" fill="black" />
+                  <path d="M0 0H40V3H0V0Z" fill="black" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M27.45 40V24.51H32.65L33.428 18.474H27.448V14.62C27.448 12.872 27.934 11.68 30.442 11.68H33.638V6.28C32.0902 6.11529 30.5345 6.03517 28.978 6.04C24.37 6.04 21.216 8.854 21.216 14.02V18.474H16V24.51H21.214V40H2.208C0.988 40 0 39.012 0 37.792V2.208C0 0.988 0.988 0 2.208 0H37.792C39.012 0 40 0.988 40 2.208V37.792C40 39.012 39.012 40 37.792 40H27.45Z"
+                    fill="black"
+                  />
+                </svg>
+                <p>Facebook</p>
+              </div>
+              <div class="box">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0H40V5H0V0Z" fill="black" />
+                  <path d="M0 36H40V40H0V36Z" fill="black" />
+                  <path
+                    d="M20 15.2375C20.9419 15.2379 21.8625 15.5175 22.6454 16.041C23.4284 16.5645 24.0385 17.3084 24.3987 18.1787C24.7589 19.049 24.853 20.0065 24.669 20.9302C24.485 21.8539 24.0313 22.7024 23.3652 23.3682C22.6991 24.0341 21.8505 24.4875 20.9267 24.6711C20.0029 24.8547 19.0454 24.7603 18.1753 24.3998C17.3051 24.0393 16.5614 23.4289 16.0382 22.6457C15.515 21.8626 15.2357 20.9419 15.2357 20C15.2367 18.7369 15.739 17.5258 16.6323 16.6328C17.5256 15.7398 18.7369 15.238 20 15.2375ZM8.86518 11.5768C9.10763 10.9624 9.47374 10.4043 9.94081 9.93724C10.4079 9.47017 10.9659 9.10406 11.5804 8.86161C13.4554 8.12143 17.9196 8.2875 20 8.2875C22.0804 8.2875 26.5402 8.11518 28.4205 8.86161C29.035 9.10406 29.593 9.47017 30.0601 9.93724C30.5272 10.4043 30.8933 10.9624 31.1357 11.5768C31.875 13.4518 31.7098 17.9205 31.7098 19.9991C31.7098 22.0777 31.875 26.5411 31.1321 28.4223C30.8897 29.0367 30.5236 29.5948 30.0565 30.0619C29.5894 30.5289 29.0314 30.8951 28.417 31.1375C26.542 31.8777 22.0777 31.7116 19.9964 31.7116C17.9152 31.7116 13.4571 31.8839 11.5768 31.1375C10.9624 30.8951 10.4043 30.5289 9.93724 30.0619C9.47017 29.5948 9.10406 29.0367 8.86161 28.4223C8.11607 26.5473 8.2875 22.0786 8.2875 20C8.2875 17.9214 8.11607 13.4589 8.86161 11.5777L8.86518 11.5768ZM20 27.3214C21.448 27.3214 22.8636 26.892 24.0676 26.0875C25.2716 25.2831 26.21 24.1396 26.7641 22.8018C27.3183 21.464 27.4632 19.9919 27.1807 18.5717C26.8982 17.1514 26.201 15.8469 25.177 14.823C24.1531 13.799 22.8486 13.1018 21.4283 12.8193C20.0081 12.5368 18.536 12.6817 17.1982 13.2359C15.8604 13.79 14.7169 14.7284 13.9125 15.9324C13.108 17.1364 12.6786 18.552 12.6786 20C12.6774 20.9618 12.866 21.9144 13.2335 22.8032C13.601 23.692 14.1403 24.4996 14.8203 25.1797C15.5004 25.8597 16.308 26.399 17.1968 26.7665C18.0856 27.134 19.0382 27.3226 20 27.3214ZM12.3768 14.0804C12.7148 14.0805 13.0453 13.9805 13.3265 13.7928C13.6076 13.6051 13.8268 13.3383 13.9563 13.026C14.0857 12.7138 14.1197 12.3701 14.0539 12.0386C13.988 11.707 13.8254 11.4024 13.5864 11.1633C13.3474 10.9243 13.0429 10.7614 12.7114 10.6954C12.3799 10.6294 12.0362 10.6632 11.7239 10.7925C11.4116 10.9218 11.1446 11.1409 10.9568 11.4219C10.769 11.703 10.6687 12.0334 10.6687 12.3714C10.6678 12.5959 10.7112 12.8184 10.7964 13.026C10.8816 13.2337 11.007 13.4225 11.1654 13.5816C11.3237 13.7407 11.512 13.867 11.7192 13.9532C11.9265 14.0394 12.1487 14.0838 12.3732 14.0839L12.3768 14.0804ZM4.28571 0H35.7143C36.8509 0 37.941 0.45153 38.7447 1.25526C39.5485 2.05898 40 3.14907 40 4.28571V35.7143C40 36.8509 39.5485 37.941 38.7447 38.7447C37.941 39.5485 36.8509 40 35.7143 40H4.28571C3.14907 40 2.05898 39.5485 1.25526 38.7447C0.451529 37.941 0 36.8509 0 35.7143V4.28571C0 3.14907 0.451529 2.05898 1.25526 1.25526C2.05898 0.45153 3.14907 0 4.28571 0ZM5.81429 25.8929C5.92946 28.1813 6.45178 30.2089 8.12232 31.875C9.79286 33.5411 11.8187 34.0741 14.1045 34.183C16.4625 34.3161 23.5321 34.3161 25.8902 34.183C28.1786 34.0679 30.1991 33.5446 31.8723 31.875C33.5455 30.2054 34.0714 28.1768 34.1804 25.8929C34.3134 23.5339 34.3134 16.4634 34.1804 14.1071C34.0652 11.8188 33.5491 9.79107 31.8723 8.125C30.1955 6.45893 28.1696 5.93214 25.8902 5.82321C23.5321 5.69018 16.4625 5.69018 14.1045 5.82321C11.8161 5.93839 9.78928 6.46161 8.12232 8.13125C6.45536 9.80089 5.92321 11.8295 5.81429 14.1179C5.68125 16.4679 5.68125 23.5321 5.81429 25.8929Z"
+                    fill="black"
+                  />
+                </svg>
+                <p>Instagram</p>
+              </div>
+              <div class="box">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="40" height="40" fill="black" />
+                  <path
+                    d="M28.6646 12.1104L10.9346 18.9474C9.72461 19.4334 9.73161 20.1084 10.7126 20.4094L15.2646 21.8294L25.7966 15.1844C26.2946 14.8814 26.7496 15.0444 26.3756 15.3764L17.8426 23.0774H17.8406L17.8426 23.0784L17.5286 27.7704C17.9886 27.7704 18.1916 27.5594 18.4496 27.3104L20.6606 25.1604L25.2596 28.5574C26.1076 29.0244 26.7166 28.7844 26.9276 27.7724L29.9466 13.5444C30.2556 12.3054 29.4736 11.7444 28.6646 12.1104V12.1104Z"
+                    fill="white"
+                  />
+                </svg>
+                <p>Telegram</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="contactBoxEnd">
+          <div>
+            <span>©2020, Tehnikum School</span>
+          </div>
+          <div class="contactBoxEndFlex">
+            <span><a href="#">Договор оферты</a></span>
+            <span><a href="#">Реквизиты</a></span>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="swiped-events.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineLite.min.js"
+      integrity="sha512-tSIDeirKC6suYILHqqPuZH3s0MvD4a5vCHXhBIcdmq4gQXZ2IB3fEYA5x2f3D2p/CbSqzKEvuTEVbS5VZ2u+ew=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"
+      integrity="sha512-ocsFo48WU8Xq6Y1Lwi7psXRAujG9E4TKNR4q1DbrKzaaxOMTEoao/a+mDoB+cYzY4lwbyxvqjkp/ZA1/MNlfsg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/BezierPlugin.min.js"
+      integrity="sha512-plyexAULVlTExvDn2yUZFJV9F8q+53MC/GpU9dEuNGXmrrI3J8Rcffjvxg3OOBALBvF+UILPLIBEoCeF2maqTQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <script src="leaflet-providers.js"></script>
+    <script>
+      // form modal
+
+      document
+        .querySelector("#openModal")
+        .addEventListener("click", () => openModalForm());
+
+      function openModalForm() {
+        console.log("open");
+        document.querySelector(".formBoxIndex").classList.add("active");
+        document.querySelector(".grayBack").classList.add("active");
+        setTimeout(() => {
+          document
+            .querySelector(".formBoxIndex")
+            .classList.add("activeAnimate");
+          document.querySelector(".grayBack").classList.add("activeAnimate");
+        }, 0);
+      }
+
+      function deleteError(elem) {
+        elem.parentElement.classList.remove("error");
+      }
+
+      function closeModalForm() {
+        document
+          .querySelector(".formBoxIndex")
+          .classList.remove("activeAnimate");
+        document.querySelector(".grayBack").classList.remove("activeAnimate");
+        setTimeout(() => {
+          document.querySelector(".formBoxIndex").classList.remove("active");
+          document.querySelector(".grayBack").classList.remove("active");
+        }, 200);
+      }
+
+      let myVideo = document.getElementById("videoMain");
+      let playBtn = document.getElementById("playBtn");
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".one").classList.add("initialX");
+        document.querySelector(".two").classList.add("initialX");
+        document.querySelector(".three").classList.add("initialX");
+        document.querySelector(".oneMobile").classList.add("initialX");
+        document.querySelector(".twoMobile").classList.add("initialX");
+        document.querySelector(".threeMobile").classList.add("initialX");
+      });
+
+      function playPause(e) {
+        e.children[0].classList.toggle("active");
+        if (e.children[1].paused) {
+          e.children[1].play();
+        } else e.children[1].pause();
+      }
+      function showActive(e) {
+        e.parentNode.children[0].classList.remove("active");
+      }
+
+      let triggerHookTop = ((85 / screen.height) * 100) / 100;
+
+      const flipPath = {
+        values: [{ x: 0, y: "-84%" }],
+      };
+
+      const tween = new TimelineLite();
+      tween.add(
+        TweenLite.to(".innerRightBoxFlex", 1, {
+          bezier: flipPath,
+          ease: Power1.easeInOut,
+        })
+      );
+
+      const controller = new ScrollMagic.Controller();
+
+      let triggerHookLeftVideo = 0.2;
+
+      if (window.matchMedia("(max-width: 1000px)").matches) {
+        triggerHookLeftVideo = 0.2;
+      } else {
+        triggerHookLeftVideo = 0.5;
+      }
+      if (window.matchMedia("(max-width: 700px)").matches) {
+        triggerHookLeftVideo = 0.4;
+      }
+      if (window.matchMedia("(min-height: 1710px)").matches) {
+        triggerHookLeftVideo = 0.2;
+      }
+      if (window.matchMedia("(min-height: 1030px)").matches) {
+        triggerHookLeftVideo = 0.3;
+      }
+      new ScrollMagic.Scene({
+        triggerElement: "#leftVideoBox",
+        duration: 1000,
+        triggerHook: triggerHookLeftVideo,
+      })
+        .on("enter", () => {
+          document.querySelector(".one").classList.remove("initialX");
+          document.querySelector(".one").classList.add("animateX");
+          document.querySelector(".two").classList.remove("initialX");
+          document.querySelector(".two").classList.add("animateX");
+          document.querySelector(".three").classList.remove("initialX");
+          document.querySelector(".three").classList.add("animateX");
+          document.querySelector(".oneMobile").classList.remove("initialX");
+          document.querySelector(".oneMobile").classList.add("animateX");
+          document.querySelector(".twoMobile").classList.remove("initialX");
+          document.querySelector(".twoMobile").classList.add("animateX");
+          document.querySelector(".threeMobile").classList.remove("initialX");
+          document.querySelector(".threeMobile").classList.add("animateX");
+        })
+        .on("leave", () => {
+          document.querySelector(".one").classList.add("initialX");
+          document.querySelector(".one").classList.remove("animateX");
+          document.querySelector(".two").classList.add("initialX");
+          document.querySelector(".two").classList.remove("animateX");
+          document.querySelector(".three").classList.add("initialX");
+          document.querySelector(".three").classList.remove("animateX");
+          document.querySelector(".oneMobile").classList.add("initialX");
+          document.querySelector(".oneMobile").classList.remove("animateX");
+          document.querySelector(".twoMobile").classList.add("initialX");
+          document.querySelector(".twoMobile").classList.remove("animateX");
+          document.querySelector(".threeMobile").classList.add("initialX");
+          document.querySelector(".threeMobile").classList.remove("animateX");
+        })
+        .addTo(controller);
+
+      function getFunctions() {
+        if (!window.matchMedia("(max-width: 800px)").matches) {
+          const sliderScene = new ScrollMagic.Scene({
+            triggerElement: ".sliderBoxMain",
+            duration: 600,
+            triggerHook: triggerHookTop,
+          })
+            .setPin(".sliderBoxMain")
+            .on("enter", function (e) {
+              document.querySelector("#mainSliderOne").classList.add("active");
+              document.querySelector("#coolImg").classList.add("show");
+              document.querySelector("#coolImg").classList.remove("hide");
+              document.querySelector("#peaceImg").classList.remove("show");
+              document.querySelector("#peaceImg").classList.add("hide");
+            })
+            .addTo(controller);
+          const sliderTwoScene = new ScrollMagic.Scene({
+            triggerElement: ".sliderBoxMain",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 600,
+          })
+            .setPin(".sliderBoxMain")
+            .on("enter", function (e) {
+              document
+                .querySelector("#mainSliderOne")
+                .classList.remove("active");
+              document.querySelector("#coolImg").classList.remove("show");
+              document.querySelector("#coolImg").classList.add("hide");
+              document.querySelector("#peaceImg").classList.add("show");
+              document.querySelector("#peaceImg").classList.remove("hide");
+              document.querySelector("#okImg").classList.remove("show");
+              document.querySelector("#okImg").classList.add("hide");
+            })
+            .setClassToggle("#mainSliderTwo", "active")
+            .addTo(controller);
+          const sliderThreeScene = new ScrollMagic.Scene({
+            triggerElement: ".sliderBoxMain",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 1200,
+          })
+            .setPin(".sliderBoxMain")
+            .on("enter", function (e) {
+              document
+                .querySelector("#mainSliderFour")
+                .classList.remove("active");
+              document.querySelector("#peaceImg").classList.remove("show");
+              document.querySelector("#peaceImg").classList.add("hide");
+              document.querySelector("#okImg").classList.add("show");
+              document.querySelector("#okImg").classList.remove("hide");
+            })
+            .setClassToggle("#mainSliderThree", "active")
+            .addTo(controller);
+          const sliderFourScene = new ScrollMagic.Scene({
+            triggerElement: ".sliderBoxMain",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 1800,
+          })
+            .setPin(".sliderBoxMain")
+            .setClassToggle("#mainSliderFour", "active")
+            .on("enter", function (e) {
+              document.querySelector("#okImg").classList.remove("show");
+              document.querySelector("#okImg").classList.add("hide");
+            })
+            .on("leave", function (e) {
+              document.querySelector("#mainSliderFour").classList.add("active");
+            })
+            .addTo(controller);
+
+          const flipThreePath = {
+            values: [{ x: 0, y: "-18vh" }],
+          };
+
+          const flipThreePathBlueBox = {
+            values: [
+              {
+                x: 0,
+                y: `-${document.querySelector(".blueBox").clientHeight}px`,
+              },
+            ],
+          };
+
+          document.querySelector(".sliderBox-two").style.marginTop = `-${
+            document.querySelector(".blueBox").clientHeight
+          }px`;
+
+          const tweenThree = new TimelineLite();
+          tweenThree.add(
+            TweenLite.to(".blueBoxScroll", 1, {
+              bezier: flipThreePathBlueBox,
+              ease: Power1.easeInOut,
+            })
+          );
+
+          new ScrollMagic.Scene({
+            triggerElement: ".sliderBoxMain",
+            duration: 2000,
+            triggerHook: 1,
+            offset: 3000,
+          })
+            .setTween(tweenThree)
+            .addTo(controller);
+
+          // Second Box
+
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxTwo",
+            duration: 600,
+            triggerHook: triggerHookTop,
+          })
+            .setPin("#sliderBoxTwo")
+            .on("enter", function (e) {
+              document.querySelector("#twoSliderOne").classList.add("active");
+            })
+            .addTo(controller);
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxTwo",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 600,
+          })
+            .setPin("#sliderBoxTwo")
+            .on("enter", function (e) {
+              document
+                .querySelector("#twoSliderOne")
+                .classList.remove("active");
+            })
+            .setClassToggle("#twoSliderTwo", "active")
+            .addTo(controller);
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxTwo",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 1200,
+          })
+            .setPin("#sliderBoxTwo")
+            .on("enter", function (e) {
+              document
+                .querySelector("#twoSliderFour")
+                .classList.remove("active");
+            })
+            .setClassToggle("#twoSliderThree", "active")
+            .addTo(controller);
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxTwo",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 1800,
+          })
+            .setPin("#sliderBoxTwo")
+            .setClassToggle("#twoSliderFour", "active")
+            .on("leave", function (e) {
+              document.querySelector("#twoSliderFour").classList.add("active");
+            })
+            .addTo(controller);
+
+          const flipThreePathYellowBox = {
+            values: [
+              {
+                x: 0,
+                y: `-${document.querySelector(".yellowBox").clientHeight}px`,
+              },
+            ],
+          };
+
+          const tweenTwoThree = new TimelineLite();
+          tweenTwoThree.add(
+            TweenLite.to(".yellowBox", 1, {
+              bezier: flipThreePathYellowBox,
+              ease: Power1.easeInOut,
+            })
+          );
+
+          document.querySelector(".sliderBox-three").style.marginTop = `-${
+            document.querySelector(".yellowBox").clientHeight
+          }px`;
+
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxTwo",
+            duration: 2000,
+            triggerHook: 1,
+            offset: 3000,
+          })
+            .setTween(tweenTwoThree)
+            .addTo(controller);
+
+          // Third box
+
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxThree",
+            duration: 600,
+            triggerHook: triggerHookTop,
+          })
+            .setPin("#sliderBoxThree")
+            .on("enter", function (e) {
+              document.querySelector("#threeSliderOne").classList.add("active");
+            })
+            .addTo(controller);
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxThree",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 600,
+          })
+            .setPin("#sliderBoxThree")
+            .on("enter", function (e) {
+              document
+                .querySelector("#threeSliderOne")
+                .classList.remove("active");
+            })
+            .setClassToggle("#threeSliderTwo", "active")
+            .addTo(controller);
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxThree",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 1200,
+          })
+            .setPin("#sliderBoxThree")
+            .on("enter", function (e) {
+              document
+                .querySelector("#threeSliderFour")
+                .classList.remove("active");
+            })
+            .setClassToggle("#threeSliderThree", "active")
+            .addTo(controller);
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxThree",
+            duration: 600,
+            triggerHook: triggerHookTop,
+            offset: 1800,
+          })
+            .setPin("#sliderBoxThree")
+            .setClassToggle("#threeSliderFour", "active")
+            .on("leave", function (e) {
+              document
+                .querySelector("#threeSliderFour")
+                .classList.add("active");
+            })
+            .addTo(controller);
+
+          const flipThreePathAuthors = {
+            values: [
+              {
+                x: 0,
+                y: `-${
+                  document.querySelector(".blueBoxAuthors").clientHeight
+                }px`,
+              },
+            ],
+          };
+
+          document.querySelector(".blueAuthorsBottom").style.marginTop = `-${
+            document.querySelector(".blueBoxAuthors").clientHeight
+          }px`;
+
+          const tweenThreeThree = new TimelineLite();
+          tweenThreeThree.add(
+            TweenLite.to(".blueBoxAuthors", 1, {
+              bezier: flipThreePathAuthors,
+              ease: Power1.easeInOut,
+            })
+          );
+
+          new ScrollMagic.Scene({
+            triggerElement: "#sliderBoxThree",
+            duration: 2000,
+            triggerHook: 1,
+            offset: 3000,
+          })
+            .setTween(tweenThreeThree)
+            .addTo(controller);
+        } else {
+          const flipPathBottomScrollBox = {
+            values: [{ x: 0, y: "-3%" }],
+          };
+          const tweenSliderBoxOne = new TimelineLite();
+          tweenSliderBoxOne.add(
+            TweenLite.to(".bottomScrollBox", 1, {
+              bezier: flipPathBottomScrollBox,
+              ease: Power1.easeInOut,
+            })
+          );
+          new ScrollMagic.Scene({
+            triggerElement: ".leftVideoBox",
+            duration: 1000,
+            triggerHook: 1,
+          })
+            .setTween(tweenSliderBoxOne)
+            .addTo(controller);
+
+          const flipPathBottomScrollBoxBack = {
+            values: [{ x: 0, y: "3%" }],
+          };
+          const tweenSliderBoxOneBack = new TimelineLite();
+          tweenSliderBoxOneBack.add(
+            TweenLite.to(".bottomScrollBox", 1, {
+              bezier: flipPathBottomScrollBoxBack,
+              ease: Power1.easeInOut,
+            })
+          );
+          new ScrollMagic.Scene({
+            triggerElement: ".leftVideoBox",
+            duration: 5000,
+            offset: 1000,
+            triggerHook: 1,
+          })
+            .setTween(tweenSliderBoxOneBack)
+            .addTo(controller);
+        }
+      }
+
+      async function getAPI() {
+        const formData = new FormData();
+
+        formData.append("action", "list");
+        formData.append("token", "123");
+
+        let res = await fetch("https://api.tehnikum.school/teacher.php", {
+          method: "POST",
+          body: formData,
+        });
+        res = await res.json();
+        console.log(res);
+        if (res.success) {
+          for (let item in res.rows) {
+            let blockLeft = document.createElement("div");
+            blockLeft.classList.add("blueBlockAuthors");
+            blockLeft.classList.add("blueBlockAuthorsImg");
+            blockLeft.innerHTML = `
+                <img src='https://admin.tehnikum.school/admin/${res.rows[item].imageurl}' alt="dmitriy" class="half" />
+                <img
+                  src='https://admin.tehnikum.school/admin/${res.rows[item].imageurl}'
+                  alt="dmitriy"
+                  class="fullHide"
+                  style="display: none"
+                />
+              `;
+            let blockRight = document.createElement("div");
+            blockRight.classList.add("blueBlockAuthors");
+            blockRight.classList.add("blueBlockAuthorsText");
+            blockRight.style.borderRight = "3px solid #000";
+            blockRight.innerHTML = `
+              <h1>${res.rows[item].name} ${res.rows[item].surname}</h1>
+             <p>
+                ${res.rows[item].description}
+              </p>
+                <span>Facebook&nbsp;</span>
+                <span>Linked in</span>
+            `;
+            document.querySelector("#authorsBox").appendChild(blockLeft);
+            document.querySelector("#authorsBox").appendChild(blockRight);
+            if (item == 0) {
+              for (let i = 0; i < 2; i += 1) {
+                let block = document.createElement("div");
+                block.classList.add("blueBlockAuthors");
+                block.innerHTML = `
+                <img src="crossRight.png" alt="" class="full" />
+              `;
+                document.querySelector("#authorsBox").appendChild(block);
+              }
+            }
+          }
+        }
+
+        await getFunctions();
+      }
+
+      getAPI();
+
+      const scene = new ScrollMagic.Scene({
+        triggerElement: ".leftVideoBox",
+        duration: 1000,
+        triggerHook: 1,
+      })
+        .setTween(tween)
+        .addTo(controller);
+
+      // map
+
+      var mymap = L.map("map").setView([41.303027, 69.267644], 15);
+      L.tileLayer(
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+        {
+          maxZoom: 18,
+          minZoom: 10,
+          id: "mapbox/streets-v11",
+          tileSize: 512,
+          zoomOffset: -1,
+          scrollWheelZoom: false,
+          accessToken:
+            "pk.eyJ1Ijoic25pbWVyb3Zza3kiLCJhIjoiY2tjd3Q1ZDZhMGd1ejJwbWpxcmJoaXk2diJ9.rPMva_appYkEp6DA5EE_3A",
+        }
+      )
+        // .provider("Stadia.AlidadeSmooth")
+        .addTo(mymap);
+      var marker = L.marker([41.303027, 69.267644]).addTo(mymap);
+      mymap.getContainer().addEventListener("mouseover", function () {
+        mymap.dragging.disable();
+      });
+
+      mymap.getContainer().addEventListener("mouseout", function () {
+        mymap.dragging.enable();
+      });
+
+      // menu
+      function openMenu() {
+        document.querySelector(".grayBack").classList.add("active");
+        setTimeout(() => {
+          document.querySelector(".grayBack").classList.add("activeAnimate");
+        }, 0);
+        document.querySelector(".mobileNav").classList.add("active");
+        setTimeout(() => {
+          document.querySelector(".mobileNav").classList.add("activeAnimate");
+        }, 0);
+      }
+      function closeMenu() {
+        document.querySelector(".grayBack").classList.remove("activeAnimate");
+        document.querySelector(".mobileNav").classList.remove("activeAnimate");
+        setTimeout(() => {
+          document.querySelector(".grayBack").classList.remove("active");
+        }, 200);
+        setTimeout(() => {
+          document.querySelector(".mobileNav").classList.remove("active");
+        }, 200);
+      }
+
+      // Slider
+
+      let pos = {};
+
+      prevSliders = document.getElementsByClassName("prevSlider");
+      for (let prevSliderItem of prevSliders) {
+        $(prevSliderItem).on("touchend click", function (event) {
+          event.stopPropagation();
+          event.preventDefault();
+          sliderPrev(prevSliderItem);
+        });
+      }
+
+      let centerSliders = document.getElementsByClassName("centerSlider");
+
+      for (let centerSliderItem of centerSliders) {
+        centerSliderItem.addEventListener("swiped-right", (e) => {
+          event.stopPropagation();
+          event.preventDefault();
+          sliderPrev(centerSliderItem);
+        });
+        centerSliderItem.addEventListener("swiped-left", (e) => {
+          event.stopPropagation();
+          event.preventDefault();
+          sliderNext(centerSliderItem);
+        });
+      }
+
+      nextSliders = document.getElementsByClassName("nextSlider");
+      for (let nextSliderItem of nextSliders) {
+        $(nextSliderItem).on("touchend click", function (event) {
+          event.stopPropagation();
+          event.preventDefault();
+          sliderNext(nextSliderItem);
+        });
+      }
+
+      function sliderNext(e) {
+        console.log(e);
+        if (pos[`${e.getAttribute("data-id")}`] === void 0) {
+          pos[`${e.getAttribute("data-id")}`] = 0;
+        }
+        if (pos[`${e.getAttribute("data-id")}`] === 3) {
+          pos[`${e.getAttribute("data-id")}`] = 0;
+        } else {
+          pos[`${e.getAttribute("data-id")}`] += 1;
+        }
+        console.log("set");
+        setTransform(e.getAttribute("data-id"));
+      }
+
+      function sliderPrev(e) {
+        if (pos[`${e.getAttribute("data-id")}`] === void 0) {
+          pos[`${e.getAttribute("data-id")}`] = 0;
+        }
+        if (pos[`${e.getAttribute("data-id")}`] === 0) {
+          pos[`${e.getAttribute("data-id")}`] = 3;
+        } else {
+          pos[`${e.getAttribute("data-id")}`] = Math.max(
+            pos[`${e.getAttribute("data-id")}`] - 1,
+            0
+          );
+        }
+        setTransform(e.getAttribute("data-id"));
+      }
+
+      function setTransform(_id) {
+        console.log("setTransform");
+        let sliderMain = document.querySelector(`.sliderBox-${_id}`);
+        sliderMain.style.transition = ".4s ease-in-out";
+        document.querySelector(`#${_id}TitleSlider`).style.transition =
+          ".4s ease-in-out";
+        if (pos[_id] === 3) {
+          document.querySelector(`#${_id}NextSlider`).style.width = "11.5vw";
+          document.querySelector(`#${_id}NextSlider`).style.borderTop =
+            "2px solid #000";
+          document.querySelector(`#${_id}NextSlider`).style.borderBottom =
+            "2px solid #000";
+        }
+        setTimeout(() => {
+          document.querySelector(
+            `#${_id}PrevSlider`
+          ).style.transform = `translateX(${
+            (pos[_id] * sliderMain.offsetWidth) / 17.7
+          }rem)`;
+          document.querySelector(
+            `#${_id}NextSlider`
+          ).style.transform = `translateX(${
+            (pos[_id] * sliderMain.offsetWidth) / 17.7
+          }rem)`;
+          document.querySelector(
+            `#${_id}CenterSlider`
+          ).style.transform = `translateX(${
+            (pos[_id] * sliderMain.offsetWidth) / 17.7
+          }rem)`;
+          document.querySelector(
+            `#${_id}TitleSlider`
+          ).style.transform = `translateX(${
+            (pos[_id] * sliderMain.offsetWidth) / 17.7
+          }rem)`;
+          sliderMain.style.transform =
+            "translate3d(" +
+            (-pos[_id] * sliderMain.offsetWidth) / 17.7 +
+            "rem,0,0)";
+        }, 0);
+      }
+
+      // API
+
+      const months = {
+        1: "Января",
+        2: "Февраля",
+        3: "Марта",
+        4: "Апреля",
+        5: "Мая",
+        6: "Июня",
+        7: "Июля",
+        8: "Августа",
+        9: "Сентября",
+        10: "Октября",
+        11: "Ноября",
+        12: "Декабря",
+      };
+
+      async function getTeacher(id, type) {
+        const formData = new FormData();
+
+        formData.append("action", "get");
+        formData.append("token", "123");
+        formData.append(`${type}`, `${id}`);
+
+        let res = await fetch(
+          `https://api.tehnikum.school/${type}.teacher.php`,
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+
+        res = await res.json();
+        let result = [];
+
+        if (res.success) {
+          const formDataTeacher = new FormData();
+
+          formDataTeacher.append("action", "list");
+          formDataTeacher.append("token", "123");
+
+          let res_teachers = await fetch(
+            "https://api.tehnikum.school/teacher.php",
+            {
+              method: "POST",
+              body: formDataTeacher,
+            }
+          );
+          res_teachers = await res_teachers.json();
+
+          if (res_teachers.success) {
+            for (let item of res.rows) {
+              for (let teacher of res_teachers.rows) {
+                if (teacher.id == item.teacher) {
+                  result.push(teacher);
+                }
+              }
+            }
+          }
+        }
+        return result;
+      }
+
+      async function getDataAPI() {
+        const formData = new FormData();
+
+        formData.append("action", "list");
+        formData.append("token", "123");
+
+        let res = await fetch("https://api.tehnikum.school/course.php", {
+          method: "POST",
+          body: formData,
+        });
+
+        res = await res.json();
+        console.log(res);
+        const idsCourses = [
+          "mainSliderOne",
+          "mainSliderTwo",
+          "mainSliderThree",
+        ];
+        if (res.success) {
+          for (let item in res.rows) {
+            if (item < 3) {
+              console.log(res.rows[item].id);
+              let teachers = await getTeacher(res.rows[item].id, "course");
+              console.log(teachers);
+              document.querySelector(`#${idsCourses[item]}`).innerHTML = `
+                <div class="mobileSliderOneClickRight" style="display: none"></div>
+                <div>
+                <div class="authorsBox">
+                  ${teachers
+                    .map((t) => {
+                      return `
+                      <div class="info">
+                        <img
+                          src="https://admin.tehnikum.school/admin/${t.imageurl}"
+                          alt="avatar"
+                          style="width: 50px"
+                        />
+                        <div>
+                          <div class="name">${t.name}</div>
+                          <div class="surname">${t.surname}</div>
+                        </div>
+                      </div>
+                      `;
+                    })
+                    .join("")}
+                  </div>
+                  <h1 class="titleSlider">${res.rows[item].name}</h1>
+                  <div class="sliderDescription">
+                    ${res.rows[item].description}
+                  </div>
+                </div>
+                <div>
+                  <div class="bottomInfoBox">
+                    <span class="bottomInfoBoxFirst">${new Date(
+                      res.rows[item].date
+                    ).getDate()} ${months[
+                new Date(res.rows[item].date).getMonth() + 1
+              ].toLowerCase()}</span>
+                    <span>${res.rows[item].duration}</span>
+                    <span>${res.rows[item].format}</span>
+                    <span>${res.rows[item].difficulty}</span>
+                  </div>
+                  <div class="yellowBtn">
+                    Подробнее о курсе
+                    <svg
+                      width="40"
+                      height="20"
+                      style="margin-left: 15px"
+                      viewBox="0 0 24 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </div>
+                  <div class="bottomSliderIcon">
+                    <svg
+                      width="40"
+                      height="20"
+                      viewBox="0 0 24 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              `;
+            }
+          }
+          for (let item of res.rows) {
+            let block = document.createElement("div");
+            block.classList.add("value");
+            block.addEventListener("click", (e) =>
+              chooseSelect(
+                e.target,
+                "selectValuesOne",
+                "selectTextOne",
+                "selectValuesBoxOne"
+              )
+            );
+
+            block.textContent = item.name;
+            document.querySelector("#selectValuesOne").appendChild(block);
+          }
+        }
+
+        res = await fetch("https://api.tehnikum.school/feedback.php", {
+          method: "POST",
+          body: formData,
+        });
+        res = await res.json();
+        console.log(res);
+        const idsFeedbacks = [
+          "threeSliderOne",
+          "threeSliderTwo",
+          "threeSliderThree",
+        ];
+        if (res.success) {
+          for (let item in res.rows) {
+            if (item < 3) {
+              if (res.rows[item].videourl) {
+                document.querySelector(`#${idsFeedbacks[item]}`).innerHTML = `
+                  <div>
+                  <div class="authorsBox">
+                  <div class="info">
+                    <img src="https://admin.tehnikum.school/admin/${
+                      res.rows[item].imageurl
+                    }" alt="avatar" style="width: 50px" />
+                    <div>
+                      <div class="name">${res.rows[item].name}</div>
+                      <div class="smallNameTitle">${
+                        res.rows[item].position
+                      }</div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="videoBox" onclick="playPause(this)">
+                    <div class="videoBox" onclick="playPause(this)">
+                      <iframe width="320" height="200"
+                      src="https://www.youtube.com/embed/${
+                        res.rows[item].videourl.split("v=")[1]
+                      }">
+                      </iframe>
+                    </div>
+                  </div>
+                  <div class="sliderDescriptionVideo">
+                    ${res.rows[item].text}
+                  </div>
+                </div>
+                <div>
+                  <div class="yellowBtn">
+                    Подробнее о курсе
+                    <svg
+                      width="40"
+                      height="20"
+                      style="margin-left: 15px"
+                      viewBox="0 0 24 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </div>
+                  <div class="bottomSliderIcon">
+                    <svg
+                      width="40"
+                      height="20"
+                      viewBox="0 0 24 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                `;
+              }
+            }
+          }
+        }
+        res = await fetch("https://api.tehnikum.school/masterclass.php", {
+          method: "POST",
+          body: formData,
+        });
+        res = await res.json();
+        console.log(res);
+        const idsMasterclasses = [
+          "twoSliderOne",
+          "twoSliderTwo",
+          "twoSliderThree",
+        ];
+        if (res.success) {
+          for (let item in res.rows) {
+            if (item < 3) {
+              let teachers = await getTeacher(res.rows[item].id, "masterclass");
+              document.querySelector(`#${idsMasterclasses[item]}`).innerHTML = `
+                <div>
+                  <div class="authorsBox">
+                ${teachers
+                  .map((t) => {
+                    return `
+                      <div class="info">
+                        <img
+                          src="https://admin.tehnikum.school/admin/${t.imageurl}"
+                          alt="avatar"
+                          style="width: 50px"
+                        />
+                        <div>
+                          <div class="name">${t.name}</div>
+                          <div class="surname">${t.surname}</div>
+                        </div>
+                      </div>
+                      `;
+                  })
+                  .join("")}
+                </div>
+                <h1 class="titleSlider">${res.rows[item].name}</h1>
+                <div class="sliderDescription">
+                  ${res.rows[item].description}
+                </div>
+              </div>
+              <div>
+                <div class="bottomInfoBox">
+                  <span class="bottomInfoBoxFirst">${new Date(
+                    res.rows[item].date
+                  ).getDate()} ${months[
+                new Date(res.rows[item].date).getMonth() + 1
+              ].toLowerCase()}</span>
+                    <span>${res.rows[item].difficulty}</span>
+                    <span>${res.rows[item].format}</span>
+                    <span>${res.rows[item].difficulty}</span>
+                </div>
+                <a href="masterclass.html?id=${res.rows[item].id}">
+                <div class="yellowBtn">
+                  <p class="initialYellowBtn">Записаться на мастеркласс</p>
+                  <p class="mobileYellowBtn" style="display: none">Записаться</p>
+                  <svg
+                    width="40"
+                    height="20"
+                    style="margin-left: 15px"
+                    viewBox="0 0 24 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                </a>
+                <div class="bottomSliderIcon">
+                  <svg
+                    width="40"
+                    height="20"
+                    viewBox="0 0 24 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.188 0.281006L15.78 1.72001L20.063 6.00001H0V8.00001H20.063L15.781 12.281L17.188 13.719L23.905 7.00001L17.188 0.281006Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+              </div>
+              `;
+            }
+          }
+        }
+
+        console.log(res);
+      }
+      getDataAPI();
+
+      for (let item of document.querySelectorAll(".input")) {
+        item.addEventListener("click", () => {
+          console.log(item.children[1].value.length);
+          if (!item.children[1].value.length > 0) {
+            item.classList.add("active");
+          }
+        });
+        $(item).on("focusout", () => {
+          if (!item.children[1].value.length > 0) {
+            item.classList.remove("active");
+          }
+        });
+      }
+      function chooseSelect(elem, idValues, idText, idMainSelectBox) {
+        for (let item of document.querySelector(`#${idValues}`).children) {
+          item.classList.remove("active");
+        }
+        elem.classList.add("active");
+        document.querySelector(`#${idText}`).textContent = elem.textContent;
+        document
+          .querySelector(`#${idMainSelectBox}`)
+          .classList.remove("active");
+      }
+
+      function openSelect(id) {
+        document.querySelector(`#${id}`).classList.toggle("active");
+      }
+
+      function changeText(elem, idText) {
+        document.querySelector(`#${idText}`).textContent = elem.value;
+      }
+    </script>
+  </body>
+</html>

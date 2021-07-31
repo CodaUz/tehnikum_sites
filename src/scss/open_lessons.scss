@@ -1,0 +1,277 @@
+@import "./variables.scss";
+.firstBox {
+  .lentaBlock {
+    .open_lessons_lenta {
+      &.initialX {
+        transform: rotateZ(8deg) translateX(-94.5vw) !important;
+      }
+    }
+    .lentaLessons {
+      position: relative;
+      display: flex;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-size: 5.5vw;
+      font-family: "TTHovesBold";
+      background-color: $yellow;
+      border-top: $border_length solid #000;
+      border-bottom: $border_length solid #000;
+      padding: 20px 0;
+      width: 400%;
+      z-index: 1;
+      margin-top: -10vw;
+      // left: -50rem;
+      transform: rotateZ(-1deg) translateX(0vw);
+      transition: 1s ease-in-out;
+
+      span:not(.main) {
+        color: rgba(#000000, 0.1);
+      }
+    }
+    img {
+      position: absolute;
+      right: 0;
+      bottom: -10vw;
+      width: 25vw;
+      z-index: 2;
+    }
+    .lentaLessons.initialX {
+      transform: rotateZ(-1deg) translateX(-117.5vw);
+    }
+    .lentaLessons.animateX {
+      transform: rotateZ(-1deg) translateX(0vw);
+    }
+  }
+}
+
+.selectBox,
+.selectPagesBox {
+  margin-top: 10rem;
+  padding: 0 $border_space_desktop;
+  display: flex;
+  flex-wrap: wrap;
+
+  .box {
+    cursor: url("../images/pointer active.png"), pointer !important;
+    user-select: none;
+    border: 2px solid #000;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-family: "Suisse Intl";
+    font-size: 16px;
+
+    &.active {
+      color: $blue;
+      border: 2px solid $blue;
+
+      span > a {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.lessonsBox,
+.careerRepliesBox {
+  margin: 3rem $border_space_desktop;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: $border_length solid #000;
+  border-left: 0;
+  border-bottom: none;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: $border_length;
+    top: 0;
+    height: 100%;
+    background-color: #000;
+  }
+
+  .blueBtn {
+    position: absolute;
+    bottom: -53px;
+    left: -3px;
+  }
+
+  .box {
+    padding: $border_space_desktop;
+    border-bottom: $border_length solid #000;
+
+    &:nth-child(odd) {
+      border-right: $border_length solid #000;
+    }
+
+    .authorsBox {
+      display: flex;
+      flex-wrap: wrap;
+      .info {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        .name,
+        .surname {
+          font-family: "Suisse Intl";
+
+          font-size: 17px;
+          margin-left: 10px;
+        }
+      }
+    }
+    .title {
+      text-transform: uppercase;
+      font-family: "TTHovesBold";
+      padding: 2rem 0;
+    }
+    .imgBox {
+      width: 100%;
+      position: relative;
+      img {
+        width: 100%;
+        // height: 300px;
+        border: $border_length solid #000;
+      }
+      .type {
+        position: absolute;
+        left: $border_length;
+        top: $border_length;
+        border-right: $border_length solid #000;
+        border-bottom: $border_length solid #000;
+        padding: 10px;
+        font-family: "Suisse Intl";
+        font-size: 16px;
+        background-color: white;
+      }
+    }
+    .desctiption {
+      font-family: "Suisse Intl";
+      padding: 1.5rem 0;
+    }
+    .yellowBtn {
+      svg {
+        width: 25px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .lessonsBox,
+  .careerRepliesBox {
+    .box {
+      padding: $border_space_desktop;
+    }
+  }
+  .careerRepliesBox {
+    &__box {
+      padding: $border_space_desktop !important;
+    }
+  }
+  .selectBox {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .firstBox {
+    .lentaBlock {
+      img {
+        display: none;
+      }
+    }
+  }
+  .selectBox {
+    padding-left: $border_space_mobile;
+    padding-right: $border_space_mobile;
+  }
+  .lessonsBox,
+  .careerRepliesBox {
+    margin-left: $border_space_mobile;
+    margin-right: $border_space_mobile;
+
+    grid-template-columns: 1fr;
+
+    .box {
+      &:nth-child(even) {
+        border-right: none;
+      }
+    }
+    .openLessonsBox {
+      &:nth-child(odd) {
+        border-right: none;
+      }
+    }
+  }
+  .careerRepliesBox {
+    &__box {
+      &:nth-child(even) {
+        border-right: none !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .lessonsBox {
+    margin-top: 0;
+    .box {
+      &:first-child {
+        border-top: $border_length solid #000;
+        margin-top: $border_space_mobile;
+      }
+    }
+  }
+  .lessonsBox,
+  .careerRepliesBox {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+
+    .box {
+      padding: 1rem;
+
+      .title {
+        font-size: 1.7rem;
+      }
+    }
+    .blueBtnHide {
+      display: none;
+    }
+  }
+  .careerRepliesBox {
+    &__box {
+      padding: 1rem !important;
+
+      .title {
+        font-size: 1.7rem !important;
+      }
+    }
+  }
+  .schoolEndHideMargin {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .firstBox {
+    .lentaBlock {
+      .lentaLessons {
+        h1 {
+          font-size: 8vw !important;
+        }
+      }
+      .lentaLessons.initialX {
+        transform: rotateZ(-1deg) translateX(-171vw);
+      }
+      .open_lessons_lenta.initialX {
+        transform: rotateZ(8deg) translateX(-137vw) !important;
+      }
+    }
+  }
+}

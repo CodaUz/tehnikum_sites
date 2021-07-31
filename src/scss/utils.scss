@@ -1,0 +1,207 @@
+@import "./variables.scss";
+
+.bottomNewsAboutCourse {
+  position: fixed;
+  bottom: $border_length;
+  left: $border_length;
+  right: $border_length;
+  border-top: $border_length solid #000;
+  z-index: 4000;
+  padding: 0 40px;
+  background-color: $yellow;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  color: rgba(#000000, 0.9);
+  -webkit-box-shadow: 0px -8px 30px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 0px -8px 30px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 0px -8px 30px 0px rgba(50, 50, 50, 0.5);
+
+  &.active {
+    display: flex;
+  }
+
+  .imgLeft {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+  }
+
+  .courseTitle {
+    font-family: "Miratrix";
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 20px 0;
+    word-break: break-all;
+  }
+
+  .imgRight {
+    margin-left: 20px;
+    width: 120px;
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+
+  .discount {
+    font-family: "TTHovesMedium";
+    margin-left: 20px;
+    font-size: 1.2rem;
+    width: 90px;
+  }
+
+  .timeBox {
+    padding: 5px 0;
+    .top {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      column-gap: 40px;
+      .text {
+        font-size: 4rem;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        line-height: 4.6vw;
+        font-family: "TTHovesDemiBold";
+        justify-self: center;
+      }
+    }
+    .bottom {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      column-gap: 40px;
+      .text {
+        font-family: "TTHovesMedium";
+        font-size: 1.2rem;
+        justify-self: center;
+      }
+    }
+  }
+
+  .blueBtn {
+    padding: 5px 20px;
+    border: 2px solid #000;
+    margin-left: 10px;
+    text-transform: lowercase;
+    padding-bottom: 7px;
+  }
+
+  .close {
+    font-family: "TTHovesDemiBold";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.2rem;
+    line-height: 1rem;
+    padding: 6px;
+    user-select: none;
+    cursor: url("../images/pointer active.png"), pointer;
+    border-left: $border_length solid #000;
+    border-bottom: $border_length solid #000;
+  }
+}
+
+.bottomNewsAboutCourseMobile {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  z-index: 2000;
+  display: none;
+
+  .yellowBtn {
+    border-radius: 17px;
+    -webkit-box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .bottomNewsAboutCourse {
+    .courseTitle {
+      font-size: 1.6rem;
+    }
+    .timeBox {
+      .top {
+        column-gap: 20px;
+        .text {
+          font-size: 3rem;
+        }
+      }
+      .bottom {
+        column-gap: 20px;
+        .text {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .bottomNewsAboutCourse {
+    .courseTitle {
+      font-size: 1.3rem;
+    }
+    .imgRight {
+      width: 100px;
+    }
+    .discount {
+      width: 70px;
+      margin-left: 10px;
+    }
+    .timeBox {
+      .top {
+        .text {
+          font-size: 2rem;
+          line-height: 2.6vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .bottomNewsAboutCourse {
+    .courseTitle {
+      font-size: 1.1rem;
+    }
+    .imgRight {
+      width: 80px;
+      margin-left: 0;
+    }
+    .discount {
+      font-size: 1rem;
+    }
+    .timeBox {
+      .top {
+        column-gap: 0px;
+        .text {
+          font-size: 1.6rem;
+        }
+      }
+      .bottom {
+        .text {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bottomNewsAboutCourse,
+  .bottomNewsAboutCourse.active {
+    display: none;
+  }
+  .bottomNewsAboutCourseMobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bottomNewsAboutCourseMobile {
+    left: 20px;
+  }
+}

@@ -1,0 +1,376 @@
+@import "./variables.scss";
+
+.twoCarrer {
+  position: relative;
+  z-index: -1;
+  display: flex;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 5.5vw;
+  font-family: "TTHovesBold";
+  background-color: $yellow;
+  border-top: $border_length solid #000;
+  border-bottom: $border_length solid #000;
+  padding: 20px 0;
+  width: 310%;
+  margin-top: 32vw;
+  // left: -50rem;
+  transform: rotateZ(8deg) translateX(-100vw);
+  transition: 1s ease-in-out;
+
+  span:not(.main) {
+    color: rgba(#000000, 0.1);
+  }
+}
+.twoCarrer.initialX {
+  transform: rotateZ(8deg) translateX(-50.5vw) !important;
+}
+.twoCarrer.animateX {
+  transform: rotateZ(8deg) translateX(-100vw) !important;
+}
+
+.selectPagesBox {
+  margin-top: -4rem;
+}
+
+.blueBoxOneTitle {
+  font-size: 3vw !important;
+}
+
+.titleBoxCareer {
+  position: absolute;
+  left: 0;
+  height: 35px;
+  top: -35px;
+  padding: 0 15px;
+  font-family: "Suisse Intl";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: $border_length solid #000;
+  border-left: $border_length solid #000;
+  border-right: $border_length solid #000;
+}
+
+.secondBoxCareer {
+  margin: 4rem $border_space_desktop;
+  padding: 4rem 0;
+  display: grid;
+  column-gap: 60px;
+  row-gap: 60px;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: $border_length solid #000;
+  border-bottom: $border_length solid #000;
+  position: relative;
+
+  .box {
+    display: flex;
+
+    img {
+      width: 60px;
+      height: 60px;
+      margin-right: 50px;
+    }
+
+    div {
+      h2 {
+        text-transform: uppercase;
+        font-family: "TTHovesBold";
+        font-size: 1.6rem;
+        line-height: 1.5rem;
+        padding-bottom: 15px;
+      }
+      p {
+        font-family: "Suisse Intl";
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.careerRepliesBox {
+  margin-bottom: 8rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    height: $border_length;
+  }
+
+  .imgBoxCareer {
+    padding-top: 1rem;
+  }
+  .blueBtn {
+    position: absolute;
+    left: 0px;
+    bottom: -50px;
+    width: calc(100% + 3px);
+  }
+  &__box {
+    padding: 4rem;
+    border-bottom: $border_length solid #000;
+
+    &:nth-child(odd) {
+      border-right: $border_length solid #000;
+    }
+
+    .authorsBox {
+      display: flex;
+      flex-wrap: wrap;
+      .info {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        .name,
+        .surname,
+        .smallNameTitle {
+          font-family: "Suisse Intl";
+
+          font-size: 17px;
+          margin-left: 10px;
+        }
+        .smallNameTitle {
+          font-size: 14px;
+        }
+      }
+    }
+    .title {
+      text-transform: uppercase;
+      font-family: "TTHovesBold";
+      padding: 2rem 0;
+    }
+    .imgBox {
+      width: 100%;
+      position: relative;
+      img {
+        width: 100%;
+        border: $border_length solid #000;
+      }
+      .type {
+        position: absolute;
+        left: $border_length;
+        top: $border_length;
+        border-right: $border_length solid #000;
+        border-bottom: $border_length solid #000;
+        padding: 10px;
+        font-family: "Suisse Intl";
+        font-size: 16px;
+        background-color: white;
+      }
+    }
+    .desctiption {
+      font-family: "Suisse Intl";
+      padding: 1.5rem 0;
+      white-space: pre-line;
+    }
+  }
+  &__replies {
+    &:nth-child(odd) {
+      border-right: none;
+    }
+    &:nth-child(even) {
+      border-right: $border_length solid #000;
+    }
+  }
+}
+
+.careerRepliesBoxThree {
+  grid-template-columns: repeat(3, 1fr);
+  border-left: none;
+  border-right: none;
+
+  .rightLine {
+    position: absolute;
+  }
+
+  .careerRepliesBox__box {
+    border-right: none;
+
+    &:nth-child(3n) {
+      border-left: $border_length solid #000;
+      border-right: $border_length solid #000;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .careerRepliesBoxThree {
+    .careerRepliesBox__box {
+      border-right: $border_length solid #000;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .careerRepliesBoxThree {
+    grid-template-columns: repeat(2, 1fr);
+    border-left: none;
+    border-right: none;
+    position: relative;
+
+    .rightLine {
+      position: absolute;
+      right: -$border_length;
+      top: 0;
+      height: 100%;
+      width: $border_length;
+      background-color: black;
+    }
+
+    .careerRepliesBox__box {
+      &:nth-child(3n) {
+        border-left: none;
+        border-right: none;
+      }
+      &:nth-child(odd) {
+        border-right: $border_length solid #000;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .secondBoxCareer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .selectPagesBox,
+  .boxPinBlueCareer {
+    padding-left: $border_space_mobile !important;
+    padding-right: $border_space_mobile !important;
+  }
+  .secondBoxCareer,
+  .careerRepliesBox {
+    margin-right: $border_space_mobile;
+    margin-left: $border_space_mobile;
+  }
+  .careerRepliesBox {
+    &__replies {
+      &:nth-child(odd) {
+        border-right: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .blueBoxScroll {
+    .boxPinBlueCareer {
+      // margin-top: -2rem !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+
+      .blueBox {
+        .blueBoxOne {
+          .blueBoxOneTitle {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            font-size: 5vw !important;
+          }
+        }
+      }
+    }
+  }
+}
+// @media only screen and (max-width: 500px) {
+//   .blueBoxScroll {
+//     .boxPinBlueCareer {
+//       .blueBox {
+//         .blueBoxOne {
+//           .blueBoxOneTitle {
+//             font-size: 4vw !important;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+@media only screen and (max-width: 600px) {
+  .careerRepliesBoxThree {
+    grid-template-columns: 1fr;
+
+    .careerRepliesBox__box {
+      border-right: none !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .titleBoxCareer {
+    top: -$border_length;
+    border-bottom: $border_length solid #000;
+  }
+  .secondBoxCareer {
+    row-gap: 0;
+    column-gap: 0;
+    padding-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    .box {
+      flex-direction: column;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      &:not(:last-child) {
+        border-bottom: $border_length solid #000;
+      }
+
+      img {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .careerRepliesBox {
+    border-top: $border_length solid #000;
+    border-right: $border_length solid #000;
+
+    &__box {
+      padding-top: 2.5rem !important;
+      padding-right: $border_space_mobile !important;
+      padding-left: $border_space_mobile !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .titleBoxCareer {
+    font-size: 3.3vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .firstBox {
+    .lentaBlock {
+      .twoCarrer {
+        h1 {
+          font-size: 8vw !important;
+        }
+
+        transform: rotateZ(8deg) translateX(-160vw);
+      }
+      .twoCarrer.initialX {
+        transform: rotateZ(8deg) translateX(-73vw) !important;
+      }
+      .twoLentaReply.initialX {
+        transform: rotateZ(8deg) translateX(-52vw) !important;
+      }
+      .twoCarrer.animateX {
+        transform: rotateZ(8deg) translateX(-100vw) !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .selectPagesBox {
+    justify-content: space-between;
+  }
+}
