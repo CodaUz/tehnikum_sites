@@ -1,0 +1,77 @@
+@import "./variables.scss";
+.firstBox {
+  .lentaBlock {
+    .open_lessons_lenta {
+      &.initialX {
+        transform: rotateZ(8deg) translateX(-94.5vw) !important;
+      }
+    }
+    .lentaLessons {
+      position: relative;
+      display: flex;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-size: 5.5vw;
+      font-family: "TTHovesBold";
+      background-color: $yellow;
+      border-top: $border_length solid #000;
+      border-bottom: $border_length solid #000;
+      padding: 20px 0;
+      width: 400%;
+      z-index: 1;
+      margin-top: -10vw;
+      // left: -50rem;
+      transform: rotateZ(-1deg) translateX(0vw);
+      transition: 1s ease-in-out;
+
+      span:not(.main) {
+        color: rgba(#000000, 0.1);
+      }
+    }
+    .lentaLessons.initialX {
+      transform: rotateZ(-1deg) translateX(-117.5vw);
+    }
+    .lentaLessons.animateX {
+      transform: rotateZ(-1deg) translateX(0vw);
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .firstBox {
+    .lentaBlock {
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .lessonsBox {
+    margin-top: 0;
+    .box {
+      &:first-child {
+        border-top: $border_length solid #000;
+        margin-top: $border_space_mobile;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .firstBox {
+    .lentaBlock {
+      h1 {
+        font-size: 8vw !important;
+      }
+
+      .lentaLessons.initialX {
+        transform: rotateZ(-1deg) translateX(-171vw);
+      }
+      .open_lessons_lenta.initialX {
+        transform: rotateZ(8deg) translateX(-137vw) !important;
+      }
+    }
+  }
+}

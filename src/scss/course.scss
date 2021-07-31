@@ -1,0 +1,1056 @@
+@import "./variables.scss";
+
+.blueBoxScroll {
+  .boxPinBlueCourse {
+    .blueBox {
+      .blueBoxOne {
+        grid-row-end: 5;
+      }
+      .blueBoxTwo {
+        grid-column-end: 2;
+        grid-row-start: 5;
+        border-top: $border_length solid #000;
+        border-bottom: none;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h2 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            width: max-content;
+            margin-top: 5px;
+          }
+        }
+      }
+      .blueBoxThree {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        border-top: $border_length solid #000;
+        border-bottom: none;
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h2 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            width: max-content;
+            margin-top: 5px;
+            word-break: break-all;
+          }
+        }
+      }
+      .blueBoxFour {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 5;
+        padding: 2.5vw 4vw;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        border-top: $border_length solid #000;
+        border-right: $border_length solid #000;
+        border-bottom: none;
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h2 {
+            word-break: break-all;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            width: max-content;
+            margin-top: 5px;
+          }
+        }
+      }
+      .blueBoxFive {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        border-top: $border_length solid #000;
+        padding: 2.5vw 4vw;
+        border-right: none;
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h2 {
+            font-size: 1.8rem;
+            word-break: break-all;
+            text-transform: uppercase;
+            font-family: "TTHovesBold";
+            width: max-content;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.secondBoxCourse {
+  margin: 4rem $border_space_desktop;
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  border-top: $border_length solid #000;
+  border-bottom: $border_length solid #000;
+  position: relative;
+  row-gap: 0;
+  column-gap: 0;
+  padding-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  position: relative;
+
+  .titleBoxCareer {
+    position: absolute;
+    left: 0;
+  }
+
+  .box {
+    display: flex;
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    &:not(:last-child),
+    &:last-child {
+      border-bottom: $border_length solid #000;
+    }
+
+    img {
+      min-width: 60px;
+      width: 60px;
+      height: 60px;
+      margin-right: 50px;
+      margin-bottom: 1rem;
+    }
+
+    div {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      h2 {
+        text-transform: uppercase;
+        font-family: "TTHovesBold";
+        font-size: 1.6rem;
+        line-height: 1.5rem;
+        padding-bottom: 15px;
+      }
+      p {
+        font-family: "Suisse Intl";
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.flexBoxes {
+  margin: $border_space_desktop;
+
+  .titleMain {
+    font-family: "TTHovesBold";
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    margin-bottom: $border_space_desktop;
+  }
+
+  .boxFlex {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: visible;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+    }
+
+    .box {
+      display: flex;
+
+      &:not(:last-child) {
+        margin-right: $border_space_desktop;
+      }
+
+      .left {
+        margin-right: $border_space_desktop;
+        .title {
+          font-family: "TTHovesBold";
+          text-transform: uppercase;
+          font-size: 1.7rem;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .right {
+        .title {
+          font-family: "TTHovesBold";
+          text-transform: uppercase;
+          font-size: 1.7rem;
+          margin: 0;
+          padding: 0;
+          margin-bottom: 15px;
+        }
+        .text {
+          font-family: "Suisse Intl";
+          min-width: 330px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .secondBoxCourse {
+    margin: $border_space_mobile;
+    margin-top: 50px;
+  }
+  .flexBoxes,
+  .textBoxCourse {
+    margin: $border_space_desktop $border_space_mobile !important;
+  }
+  .blueBox.full {
+    margin-top: $border_space_desktop * 1.5;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .flexBoxes {
+    .boxFlex {
+      .box {
+        .right {
+          .title {
+            font-size: 1.4rem;
+          }
+          .text {
+            min-width: 290px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .flexBoxes {
+    .boxFlex {
+      .box {
+        .right {
+          // .title {
+          //   font-size: 1.4rem;
+          // }
+          .text {
+            min-width: 250px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .flexBoxes {
+    .boxFlex {
+      .box {
+        .right {
+          .title {
+            font-size: 1.2rem;
+          }
+          .text {
+            min-width: 220px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .flexBoxes {
+    .boxFlex {
+      .box {
+        .left {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .flexBoxes {
+    .boxFlex {
+      .box:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.blueBoxAuthors {
+  border-bottom: none;
+  .blueBlockAuthorsCourse {
+    .blueBlockAuthors:nth-of-type(3) {
+      border-right: none;
+      display: flex;
+      align-items: flex-end;
+    }
+    .blueBlockAuthors:nth-of-type(5) {
+      border-bottom: $border_length solid #000;
+      border-right: $border_length solid #000;
+      display: block;
+    }
+  }
+  .blueBlockAuthorsTarget {
+    .blueBlockAuthors:nth-of-type(3) {
+      border-right: none;
+      grid-column-end: 5;
+      padding: 50px;
+
+      ul {
+        li {
+          font-family: "Suisse Intl";
+          font-size: 0.9rem;
+
+          &:not(:first-child) {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sliderBoxCourse {
+  margin-top: $border_space_desktop * 1.8;
+
+  .mainSlider {
+    &.active {
+      div {
+        .graphicBox {
+          display: block;
+        }
+      }
+      .info {
+        div {
+          display: block;
+        }
+      }
+    }
+    .info {
+      div {
+        display: none;
+      }
+    }
+    div {
+      .textBox {
+        margin-top: 2.5rem;
+        .title {
+          font-family: "TTHovesBold";
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+        .text {
+          font-family: "Suisse Intl";
+          white-space: nowrap;
+          font-size: 0.9rem;
+
+          &:not(:first-child) {
+            margin-top: 3px;
+          }
+        }
+      }
+      .graphicBox {
+        width: 90%;
+        display: none;
+        .image {
+          img {
+            width: 100%;
+            border-right: $border_length solid #000;
+            border-bottom: $border_length solid #000;
+          }
+        }
+        .description {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+
+          p {
+            font-family: "Suisse Intl";
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.marginBottom {
+  margin-bottom: $border_space_desktop;
+}
+
+.marginTop2x {
+  margin-top: $border_space_desktop * 2;
+}
+
+.blueBox {
+  margin: 4rem;
+  margin-bottom: 2rem;
+  margin-left: $border_space_desktop + $border_length;
+  margin-right: $border_space_desktop + $border_length;
+  position: relative;
+  border: $border_length solid #000;
+  background: linear-gradient(180deg, #a597f9, rgb(255, 255, 255));
+
+  .titleBox {
+    position: absolute;
+    font-family: "Suisse Intl";
+    height: 35px;
+    top: -38px;
+    left: -$border_length;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a597f9;
+    border-top: $border_length solid #000;
+    border-left: $border_length solid #000;
+    border-right: $border_length solid #000;
+  }
+
+  .boxFull {
+    &:not(:last-child) {
+      border-bottom: $border_length solid #000;
+    }
+    height: auto;
+
+    &.active {
+      .boxDown {
+        opacity: 1;
+      }
+      .boxUp {
+        .img {
+          transform: rotateZ(-45deg);
+        }
+      }
+    }
+
+    .boxUp {
+      display: flex;
+      justify-content: space-between;
+      padding: $border_space_desktop;
+      cursor: url("../images/pointer active.png"), pointer;
+
+      * {
+        cursor: url("../images/pointer active.png"), pointer;
+      }
+
+      .title {
+        font-family: "TTHovesBold";
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      .img {
+        height: 30px;
+        width: 30px;
+        min-width: 30px;
+        margin-left: 20px;
+        background-image: url("../images/add.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotateZ(0deg);
+        transition: transform 0.1s ease-in-out;
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      .boxUp {
+        .title {
+          font-size: 1.5rem;
+        }
+      }
+      .boxDown {
+        .title {
+          font-size: 1.4rem !important;
+        }
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .boxUp {
+        padding: $border_space_mobile;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .boxUp {
+        .title {
+          font-size: 1.3rem;
+        }
+        .img {
+          min-width: 20px;
+          width: 20px;
+        }
+      }
+      .boxDown {
+        .title {
+          font-size: 1.2rem !important;
+        }
+      }
+    }
+
+    .boxDown {
+      padding: $border_space_desktop 0;
+      margin: 0 $border_space_desktop;
+      border-top: $border_length solid #000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+
+      .title {
+        font-family: "TTHovesBold";
+        text-transform: uppercase;
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      .text {
+        font-family: "Suisse Intl";
+        margin-top: $border_space_desktop / 2;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .blueBox {
+    margin: $border_space_mobile;
+    margin-right: $border_space_mobile + $border_length;
+  }
+}
+
+.resumeBox {
+  margin: $border_space_desktop;
+  border: $border_length solid #000;
+
+  .titleMain {
+    background-color: $blue;
+    text-align: center;
+    font-family: "TTHovesBold";
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    padding: 30px 0;
+    border-bottom: $border_length solid #000;
+  }
+
+  .infoBox {
+    padding: $border_space_desktop;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $border_length solid #000;
+
+    .textBox {
+      .title {
+        font-family: "TTHovesBold";
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+      .text {
+        font-family: "Suisse Intl";
+        white-space: nowrap;
+        font-size: 0.9rem;
+
+        &:not(:first-child) {
+          margin-top: 3px;
+        }
+      }
+    }
+
+    .avatarBox {
+      display: flex;
+      align-items: center;
+      img {
+        width: 80px;
+        margin-right: $border_space_desktop / 2;
+      }
+    }
+  }
+  .skillsBox {
+    padding: $border_space_desktop;
+    border-bottom: $border_length solid #000;
+
+    .title {
+      font-family: "TTHovesBold";
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    ul {
+      margin-top: $border_space_desktop;
+      padding: $border_space_desktop 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      row-gap: $border_space_desktop;
+      column-gap: $border_space_desktop;
+
+      li {
+        font-family: "Suisse Intl";
+      }
+    }
+  }
+
+  .blueBoxResume {
+    border-top: $border_length solid #000;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: $border_space_desktop;
+    padding: ($border_space_desktop * 2) $border_space_desktop;
+    background: linear-gradient(180deg, #a597f9, rgb(255, 255, 255));
+    .title {
+      font-size: 4vw;
+      text-transform: uppercase;
+      font-family: "TTHovesBold";
+    }
+    .text {
+      font-family: "Suisse Intl";
+      font-size: 0.9rem;
+      margin-top: $border_space_desktop;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .btnBoxBorder {
+    padding-bottom: 25px;
+
+    .yellowBtn {
+      border-top: none;
+      border-left: none;
+    }
+  }
+}
+
+.formBoxCourse {
+  margin: $border_space_desktop;
+  border: $border_length solid #000;
+  .boxMain {
+    padding: $border_space_desktop;
+
+    &:not(:first-child) {
+      border-top: $border_length solid #000;
+    }
+
+    .titleMain {
+      font-size: 3rem;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      font-family: "TTHovesBold";
+      border-bottom: $border_length solid #000;
+    }
+    .box {
+      padding: $border_space_desktop 0;
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(2, auto);
+      align-items: start;
+
+      .title {
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-family: "TTHovesBold";
+      }
+
+      ul {
+        padding: $border_space_desktop / 2;
+
+        li {
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
+
+          font-family: "Suisse Intl";
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+.textBoxCourse {
+  margin: 0 $border_space_desktop;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: start;
+  column-gap: $border_space_desktop;
+
+  .title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: "TTHovesBold";
+  }
+  .text {
+    font-family: "Suisse Intl";
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .formBoxCourse {
+    .boxMain {
+      .titleMain,
+      .box > div > .title {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .textBoxCourse {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+  .formBoxCourse {
+    .boxMain {
+      .box {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .textBoxCourse {
+    grid-template-columns: 1fr;
+
+    .text {
+      padding: $border_space_mobile 0;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .textBoxCourse {
+    .title {
+      font-size: 2rem;
+    }
+  }
+}
+
+.formBox {
+  display: none !important;
+  opacity: 0;
+  position: fixed;
+  transition: all 0.2s ease-in-out;
+  z-index: 5001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    opacity: 1;
+    display: flex !important;
+  }
+  &.activeAnimate {
+    opacity: 100%;
+  }
+
+  .form {
+    background-color: white;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: -30px;
+      cursor: pointer;
+    }
+
+    .titleForm {
+      font-family: "Suisse Intl";
+      padding-bottom: 1rem;
+    }
+    // input {
+    //   border: $border_length solid #000;
+    //   width: 100%;
+    //   padding: 15px;
+    //   margin-bottom: 10px;
+    // }
+    .yellowBtn {
+      transform: scale(0.7) translateX(-3rem);
+    }
+
+    .boxFlexWrapper {
+      position: relative;
+
+      .blueBtn {
+        position: absolute;
+        left: 0;
+        bottom: -(($border_length + 1) + 50px);
+      }
+
+      .boxFlex {
+        display: flex;
+        border: $border_length solid #000;
+
+        .box {
+          margin: 0;
+          transition: 0.1s ease-in;
+
+          &:hover {
+            background-color: $blue;
+          }
+
+          &:not(:last-child) {
+            border-right: $border_length solid #000;
+          }
+
+          div {
+            &:not(:last-child) {
+              border-bottom: $border_length solid #000;
+            }
+            &:first-child {
+              padding: $border_space_desktop;
+            }
+            padding: 20px $border_space_desktop;
+          }
+
+          font-family: "TTHovesBold";
+          font-size: 1.3rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.blueBoxOneTitle {
+  span {
+    width: 350px !important;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .resumeBox {
+    .titleMain {
+      font-size: 2rem;
+    }
+    .infoBox {
+      .textBox {
+        .title {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .skillsBox {
+      .title {
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .blueBoxResume {
+    grid-template-columns: 1fr !important;
+
+    .text {
+      margin-bottom: $border_space_desktop;
+    }
+    img {
+      justify-self: center;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .blueBoxResume {
+    .title {
+      font-size: 1.8rem !important;
+    }
+  }
+  .formBoxCourse {
+    .boxMain {
+      .titleMain {
+        font-size: 1.8rem !important;
+      }
+      .box {
+        .title {
+          font-size: 1.8rem !important;
+        }
+      }
+    }
+  }
+  .resumeBox {
+    .titleMain {
+      font-size: 1.8rem;
+    }
+    .infoBox {
+      .textBox {
+        .title {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .skillsBox {
+      .title {
+        font-size: 1.5rem;
+      }
+    }
+    ul {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .formBoxCourse {
+    margin-left: $border_space_mobile;
+    margin-right: $border_space_mobile;
+
+    .boxMain {
+      padding-left: $border_space_mobile;
+      padding-right: $border_space_mobile;
+    }
+  }
+  .resumeBox {
+    margin-left: $border_space_mobile;
+    margin-right: $border_space_mobile;
+
+    .infoBox {
+      .avatarBox,
+      & > .textBox {
+        padding-right: $border_space_mobile !important;
+        padding-left: $border_space_mobile !important;
+      }
+    }
+    .skillsBox {
+      padding-right: $border_space_mobile !important;
+      padding-left: $border_space_mobile !important;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .resumeBox {
+    .titleMain {
+      font-size: 1.6rem;
+      padding-right: $border_space_mobile;
+      padding-left: $border_space_mobile;
+    }
+    .infoBox {
+      padding-right: 0;
+      padding-left: 0;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .avatarBox {
+        padding-right: $border_space_desktop;
+        padding-left: $border_space_desktop;
+      }
+
+      & > .textBox {
+        border-top: $border_length solid #000;
+        padding-top: $border_space_desktop;
+        width: 100%;
+        margin-top: $border_space_desktop;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .resumeBox {
+    margin-left: 0;
+    margin-right: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .blueBoxResume {
+    margin-left: $border_space_mobile;
+    margin-right: $border_space_mobile;
+    margin-bottom: $border_space_mobile;
+    border-left: $border_length solid #000;
+    border-right: $border_length solid #000;
+    border-bottom: $border_length solid #000;
+    .title {
+      font-size: 1.5rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .blueBoxResume {
+    padding: $border_space_desktop $border_space_mobile !important;
+  }
+  .blueBox.full {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .formBoxCourse {
+    .boxMain {
+      .titleMain {
+        font-size: 1.5rem !important;
+      }
+      .box {
+        .title {
+          font-size: 1.5rem !important;
+        }
+      }
+    }
+  }
+  .blueBoxResume {
+    .title {
+      font-size: 1.3rem !important;
+    }
+  }
+  .resumeBox {
+    .infoBox {
+      .avatarBox {
+        .title {
+          font-size: 1.3rem !important;
+        }
+      }
+    }
+  }
+}

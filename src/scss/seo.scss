@@ -1,0 +1,36 @@
+@import "./variables.scss";
+
+@media screen and (max-width: 700px) {
+  .infoBox {
+    margin-left: $border_space_mobile !important;
+    margin-right: $border_space_mobile !important;
+    padding-left: $border_space_mobile !important;
+    padding-right: $border_space_mobile !important;
+    .title {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .infoBox {
+    border: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    .title {
+      font-size: 1.8rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .titleBoxCareer {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block !important;
+    }
+  }
+}
