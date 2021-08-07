@@ -1,6 +1,6 @@
 require('@babel/polyfill')
 
-console.log('run')
+console.log('run...')
 
 function deleteError(elem) {
     elem.parentElement.classList.remove("error");
