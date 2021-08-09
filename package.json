@@ -14,6 +14,7 @@
     "@babel/preset-env": "^7.13.12",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^6.4.1",
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
@@ -25,6 +26,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@babel/core": "^7.15.0",
     "@babel/polyfill": "^7.12.1",
     "babel-loader": "^8.2.2",
     "html-critical-webpack-plugin": "^2.1.0"
