@@ -1,7 +1,5 @@
 require('@babel/polyfill')
 
-console.log('run...')
-
 function deleteError(elem) {
     elem.parentElement.classList.remove("error");
 }
@@ -136,12 +134,24 @@ function sendForm() {
     }
 }
 
+function playPause(e) {
+    if (e.paused) {
+        e.play();
+    } else e.pause();
+}
+
+function listenVideo() {
+    let myVideo = document.getElementById("videoMain");
+    myVideo.addEventListener('click', (e) => playPause(e.target))
+}
+
 function init() {
     sendForm()
     closeForm()
     openRequisite()
     initInputEvents()
     scrollToForm()
+    listenVideo()
 }
 
 init()
