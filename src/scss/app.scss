@@ -1,0 +1,1499 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: url("../images/pointer.png"), auto;
+}
+body {
+  overflow-x: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 1vw;
+}
+
+.headerBox {
+  background: $yellow;
+  padding-top: 4rem !important;
+
+  &__leftBox {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    display: grid;
+    align-content: space-between;
+
+    &__topBox {
+      display: grid;
+      grid-template-columns: 1fr auto;
+
+      img {
+        width: 50px;
+      }
+    }
+
+    &__bottomBox {
+      display: grid;
+      column-gap: 1vw;
+      grid-template-columns: repeat(5, 1fr);
+
+      &__leftBox {
+        grid-column-end: 3;
+        grid-column-start: 1;
+      }
+
+      &__rightBox {
+        grid-column-start: 4;
+        grid-column-end: 6;
+      }
+    }
+  }
+
+  &__rightBox {
+    grid-column-start: 8;
+    grid-column-end: 12;
+    justify-self: center;
+
+    img {
+      max-width: 370px;
+      width: 100%;
+    }
+
+    &__imgMobile {
+      display: none;
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+}
+
+.secondBox {
+  &__leftBox {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  &__centerBox {
+    grid-column-start: 5;
+    grid-column-end: 7;
+  }
+
+  &__rightBox {
+    grid-column-start: 8;
+    grid-column-end: 12;
+    display: grid;
+    row-gap: 3rem;
+    grid-template-rows: max-content;
+
+    &__top {
+      display: grid;
+      grid-template-columns: max-content;
+      justify-content: center;
+      grid-template-rows: max-content;
+
+
+      &__numberBox {
+        font-family: 'TTHovesMedium';
+        font-size: 5vw;
+        line-height: 5vw;
+
+        &.mobile {
+          display: none;
+        }
+      }
+
+      &__textBox {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+      }
+    }
+
+    &__bottom {
+      width: max-content;
+      justify-self: center;
+    }
+  }
+}
+
+.authorBox {
+  position: relative;
+
+  &__bg {
+    position: relative;
+    background: $yellow;
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 13;
+    height: min-content;
+    min-width: 100%;
+  }
+
+  .prevSlider, .nextSlider {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 30px);
+    z-index: 3;
+    width: 30px;
+    cursor: url("../images/pointer active.png"), pointer;
+  }
+
+  .nextSlider {
+    left: initial;
+    right: 20px;
+  }
+
+  &__leftBox {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    width: 100%;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+  &__rightBox {
+    grid-column-start: 6;
+    grid-column-end: 12;
+    padding-left: 2rem;
+
+    img {
+      align-self: end;
+      width: auto;
+      max-width: 400px;
+    }
+
+    &__companiesBox {
+      display: grid;
+      row-gap: 1.5rem;
+      img {
+        max-width: 70px;
+        width: min-content;
+      }
+      &__topBox, &__bottomBox {
+        display: flex;
+        justify-content: start;
+        justify-items: center;
+        align-items: center;
+        column-gap: 10px;
+        row-gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+.authorBoxSlider {
+  position: relative;
+  overflow: hidden;
+  display: none;
+
+  &.desktop {
+    display: block;
+  }
+
+  &__box {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    column-gap: 0;
+  }
+
+  .centerSlider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+}
+
+.programCourse {
+  grid-column-start: 2;
+  grid-column-end: 12;
+  display: grid;
+
+  .title {
+    padding-bottom: 2rem;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: .5fr 1fr 5fr;
+    column-gap: 3rem;
+
+    &__right {
+      &__title {
+        font-family: "TTHovesDemiBold";
+        font-size: 1.8rem;
+      }
+    }
+
+    &__left {
+      &__mobileBox {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 4rem;
+    width: max-content;
+    justify-self: center;
+  }
+}
+
+.greenBox {
+  background: $green;
+  display: grid;
+  border-top: $border_length solid $black;
+  border-bottom: $border_length solid $black;
+
+  &.yellow {
+    background: $yellow;
+  }
+
+  &.violet {
+    background: $violet;
+  }
+
+  .title {
+    grid-column-start: 2;
+    grid-column-end: 12;
+  }
+
+  &__appearanceBox {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+    column-gap: 2rem;
+
+    &__box {
+      position: relative;
+
+      &__text {
+        font-size: 1.2rem;
+        max-width: max-content;
+      }
+
+      &__appearanceBox {
+        background: $black;
+        padding: 2rem;
+        color: white;
+        position: absolute;
+        bottom: 150%;
+        transition: opacity .3s ease;
+        opacity: 0%;
+        display: none;
+
+        img {
+          max-width: 230px;
+        }
+
+        p {
+          font-family: "TTHovesRegular";
+          font-size: 1rem;
+          margin-top: 1rem;
+          max-width: 230px;
+        }
+      }
+
+      &__textMobile {
+        display: none;
+      }
+    }
+  }
+
+  &__box {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__textBox {
+      display: grid;
+      &__topBox {
+        &__title {
+          font-family: "ApercyProBold";
+          font-size: 1.5rem;
+        }
+        &__text {
+          font-size: 1.2rem;
+          font-family: "ApercyProRegular";
+          margin-top: .5rem;
+        }
+      }
+
+      &__bottomBox {
+        align-self: end;
+
+        &__title {
+          font-family: "ApercyProBold";
+          font-size: 1.1rem;
+        }
+
+        &__text {
+          font-family: "ApercyProRegular";
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    &__formBox {
+      grid-column-start: 8;
+      grid-column-end: 12;
+      margin-top: 5rem;
+
+      .btn {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+}
+
+.programBoxSlider {
+  position: relative;
+  overflow: hidden;
+  
+  .title {
+    grid-column-start: 2;
+    grid-column-end: 12;
+  }
+  .prevSlider, .nextSlider {
+    position: absolute;
+    z-index: 1;
+    right: 3rem;
+    top: 55%;
+    cursor: url("../images/pointer active.png"), pointer;
+  }
+
+  .prevSlider {
+    left: 3rem;
+  }
+
+  &__box {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    display: flex;
+    position: relative;
+    max-width: 100%;
+  }
+
+  &__programBox {
+    display: grid;
+    margin-top: 3rem;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+    min-width: 100%;
+    align-items: end;
+    column-gap: 1.5rem;
+
+    &>div:nth-of-type(1) {
+      grid-column-start: 2;
+      grid-column-end: 7;
+      height: max-content;
+    }
+
+    &>div:nth-of-type(2) {
+      grid-column-start: 7;
+      grid-column-end: 12;
+      height: max-content;
+    }
+
+    &__info {
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      &__name,
+      &__surname {
+        font-size: 17px;
+        white-space: nowrap;
+      }
+
+      &__smallNameTitle {
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      div {
+        margin-left: 7px;
+        font-family: "Suisse Intl";
+
+        div {
+          padding: $border_length 0;
+        }
+      }
+    }
+
+    &__textBox {
+      &__title {
+        text-transform: uppercase;
+        font-family: 'TTHovesBold';
+        font-size: 1.5rem;
+        padding-bottom: .3rem;
+      }
+
+      &__text {
+        font-family: 'Suisse Intl';
+      }
+    }
+
+
+    .graphicBox {
+      .image {
+        img {
+          width: 100%;
+          border-right: $border_length solid #000;
+          border-bottom: $border_length solid #000;
+        }
+      }
+      .description {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        p {
+          font-family: "Suisse Intl";
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .info {
+        div {
+          display: block !important;
+        }
+        .name,
+        .surname {
+          display: block !important;
+        }
+      }
+    }
+  }
+}
+
+.blackBox {
+  background: $black;
+
+  .title {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    color: white;
+  }
+
+  &__textBox {
+    grid-column-start: 1;
+    grid-column-end: 12;
+    padding-left: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    row-gap: 3rem;
+    display: grid;
+
+    &__topBox {
+      display: grid;
+      grid-template-columns: max-content 1fr max-content 1fr max-content 1fr max-content;
+      column-gap: 1.5rem;
+      justify-items: center;
+    }
+
+    &__bottomBox {
+      display: grid;
+      grid-template-columns: 20px 1fr max-content 1fr max-content 1fr;
+      column-gap: 1.5rem;
+      justify-items: center;
+
+      p {
+        text-align: end;
+      }
+    }
+
+    p {
+      font-family: "TTHovesDemiBold";
+      font-size: 1.3rem;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    img {
+      max-width: 40px;
+      max-height: 40px;
+      align-self: center;
+    }
+  }
+
+  &__textMobile {
+    display: none;
+  }
+}
+
+.replyBox {
+  .title {
+    grid-column-start: 2;
+    grid-column-end: 12;
+  }
+  &__studentsBox {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+
+    &>div:nth-of-type(3)>div:nth-of-type(2) {
+      left: -20%;
+    }
+
+    &__box {
+      position: relative;
+      display: grid;
+      align-content: space-between;
+      justify-self: center;
+
+      &__text {
+        text-align: center;
+        padding-top: 2rem;
+      }
+
+      img {
+        width: 100%;
+      }
+      &__infoBox {
+        position:absolute;
+        left: 20%;
+        bottom: 0;
+        border: $border_length solid $black;
+        background: white;
+        padding: 1rem;
+        width: 300px;
+        transition: opacity .3s ease;
+        opacity: 0%;
+        display: none;
+        z-index: 2;
+
+        a {
+          padding-top: .5rem;
+          color: $violet;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.schoolEnd {
+  margin: 2rem 0;
+  margin-bottom: 0;
+  padding: 3rem $border_space_desktop;
+  padding-right: $border_space_desktop + $border_length;
+  padding-bottom: 0;
+  border-top: $border_length solid #000;
+  background: linear-gradient(
+                  180deg
+          ,#a597f9,#fff 100%);
+
+  .titleSchool {
+    text-transform: uppercase;
+    font-family: "TTHovesBold";
+    font-size: 3vw;
+  }
+
+  p {
+    font-family: "Suisse Intl";
+    padding: 1.5vh 0;
+    padding-bottom: 5vh;
+  }
+
+  .mapEndBox {
+    border: $border_length solid #000;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    #map {
+      border-right: $border_length solid #000;
+      border-top: $border_length - 2px solid #000;
+    }
+    .mapTitleBox {
+      padding: 5vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .titleBox {
+        p {
+          font-family: "Suisse Intl";
+          text-transform: uppercase;
+          padding: 0;
+          padding-bottom: 3px;
+        }
+        h3 {
+          font-family: "TTHovesBold";
+          text-transform: uppercase;
+          padding-bottom: 25px;
+
+          a {
+            color: black;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .iconsBox {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        column-gap: 1rem;
+        margin-top: 2vw;
+
+        .box {
+          p {
+            padding-bottom: 0;
+            font-size: 0.9rem;
+          }
+
+          &:not(:first-child) {
+            padding-left: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contactBoxEnd {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  align-items: center;
+
+  span {
+    font-family: "Suisse Intl";
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    &:not(:first-child) {
+      padding-left: 3vw;
+    }
+  }
+}
+
+.formBoxIndex {
+  z-index: 6000;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+
+  &.active {
+    display: flex;
+  }
+  &.activeAnimate {
+    opacity: 1;
+  }
+
+  .formBox,
+  .formBoxMap {
+    position: fixed;
+    z-index: 60001;
+    width: max-content;
+    height: max-content;
+    border: $border_length solid #000;
+
+    .blueBtn {
+      position: fixed;
+      left: $border_space_desktop;
+      height: $border_space_desktop * 1.5;
+      bottom: $border_length;
+      border-bottom: none;
+    }
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: -30px;
+      cursor: url("../images/pointer active.png"), pointer;
+    }
+
+    .form {
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: $border_space_desktop;
+      position: relative;
+      overflow-y: auto;
+
+      .titleForm {
+        font-family: "TTHovesBold";
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+      }
+
+      @media screen and (max-width: 500px) {
+        .titleForm {
+          font-size: 1.2rem;
+        }
+      }
+
+      .flex {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        row-gap: 30px;
+
+        .inputBox {
+          display: grid;
+          grid-template-columns: repeat(2, 250px);
+          column-gap: $border_space_desktop;
+          row-gap: 30px;
+          margin-right: $border_space_desktop;
+        }
+        @media screen and (max-width: 715px) {
+          .inputBox {
+            grid-template-columns: 1fr;
+            margin-right: 0;
+
+            .input {
+              width: 100%;
+            }
+          }
+        }
+        .selectValuesBox {
+          width: 250px;
+        }
+      }
+      @media screen and (max-width: 715px) {
+        .flex {
+          width: 100%;
+
+          .selectValuesBox {
+            width: 100%;
+          }
+        }
+      }
+      @media screen and (max-width: 975px) {
+        .flex {
+          grid-template-columns: 1fr;
+        }
+      }
+      .titleName {
+        font-family: "TTHovesBold";
+        text-transform: uppercase;
+        margin-top: $border_space_desktop;
+        margin-bottom: 20px;
+      }
+      .text {
+        font-family: "Suisse Intl";
+        font-size: 0.9rem;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .form {
+        padding: $border_space_mobile;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .programBoxSlider {
+    .nextSlider {
+      right: 2rem;
+    }
+
+    .prevSlider {
+      left: 2rem
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .greenBox {
+    border: none;
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+
+    .title {
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+
+    &__appearanceBox {
+      grid-template-columns: 1fr;
+      padding-bottom: 0;
+      padding-top: 1rem;
+      grid-column-start: auto;
+      grid-column-end: auto;
+
+      &__box {
+
+        &:not(:first-child) {
+          margin-top: 1rem;
+        }
+
+        &__appearanceBox {
+          display: none;
+        }
+
+        &__text {
+          font-family: "TTHovesBold";
+          font-size: 1.4rem;
+        }
+
+        &__textMobile {
+          display: block;
+          font-family: "TTHovesRegular";
+          font-size: .9rem;
+          line-height: 1.1rem;
+          padding-top: .5rem;
+        }
+      }
+    }
+
+    &__box {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      grid-template-columns: 1fr;
+
+      &__textBox {
+        &__bottomBox {
+          margin: 3rem 0;
+        }
+      }
+
+      &__formBox {
+        grid-column-start: auto;
+        grid-column-end: auto;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .programBoxSlider {
+    &__programBox {
+      img {
+        width: 80%;
+      }
+    }
+  }
+
+  .schoolEnd {
+    padding: $border_space_desktop 0 !important;
+
+    .titleSchool {
+      font-size: 5vw !important;
+    }
+
+    .mapEndBox {
+      display: block;
+      width: 100%;
+      border: none;
+      border-top: $border_length solid #000;
+      border-bottom: $border_length solid #000;
+      #map {
+        display: none;
+      }
+      .mapTitleBox {
+        padding: 3rem $border_space_desktop;
+
+        .titleBox {
+          p {
+            margin: 0;
+            font-size: 3vw;
+          }
+          h3 {
+            font-size: 4vw;
+          }
+        }
+        .iconsBox {
+          .box {
+            p {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    p,
+    .titleSchool,
+    .blueBtn {
+      margin: 0 $border_space_desktop;
+    }
+  }
+
+  .contactBoxEnd {
+    padding: 3rem $border_space_desktop;
+    padding-top: 2rem !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+
+    .contactBoxEndFlex {
+      display: flex;
+      flex-direction: column;
+    }
+    span {
+      padding-left: 0 !important;
+      padding-top: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .secondBox {
+    &__leftBox {
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+
+    &__centerBox {
+      display: none;
+    }
+
+    &__rightBox {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      row-gap: 1rem;
+      margin-top: 1.5rem;
+
+      &__top {
+        &__numberBox {
+          display: none;
+          &.mobile {
+            display: block;
+            font-size: 3rem;
+          }
+        }
+        &__textBox {
+          display: none;
+        }
+      }
+
+      &__bottom {
+        width: 100%;
+      }
+    }
+  }
+
+  .headerBox {
+    padding-top: 5rem !important;
+
+    &__leftBox {
+      grid-column-start: auto;
+      grid-column-end: auto;
+
+      &__bottomBox {
+        grid-template-columns: 1fr;
+        &__leftBox {
+          grid-column-start: auto;
+          grid-column-end: auto;
+
+          p {
+            font-size: 1rem !important;
+
+            &.desktop {
+              display: none;
+            }
+          }
+        }
+        &__rightBox {
+          display: none;
+        }
+      }
+    }
+
+    &__rightBox {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      justify-self: initial;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      margin-top: 6rem;
+
+      &__text {
+        display: block;
+        padding-bottom: 20px;
+      }
+
+      img {
+        display: none;
+        max-width: 200px;
+        min-width: 250px;
+      }
+      &__imgMobile {
+        display: block !important;
+      }
+    }
+  }
+
+  .secondBox {
+    &__leftBox {
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+
+    &__centerBox {
+      display: none;
+    }
+
+    &__rightBox {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      row-gap: 1rem;
+      margin-top: 1.5rem;
+
+      &__top {
+        &__numberBox {
+          display: none;
+          &.mobile {
+            display: block;
+            font-size: 3rem;
+          }
+        }
+        &__textBox {
+          display: none;
+        }
+      }
+
+      &__bottom {
+        width: 100%;
+      }
+    }
+  }
+
+  .authorBoxSlider {
+    display: block;
+  }
+
+  .authorBox {
+    display: grid;
+    width: 100%;
+    min-width: 100%;
+    grid-template-rows: max-content 1fr;
+
+    &__bg {
+      background: transparent;
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+
+    &.desktop {
+      display: none;
+    }
+
+
+    &__leftBox {
+      display: none;
+    }
+
+    img.authorBox__leftBox {
+      grid-column-start: 1;
+      grid-column-end: 13;
+      min-height: auto;
+    }
+
+    &__rightBox {
+      grid-column-start: 1;
+      grid-column-end: 13;
+      p.mobile {
+        margin-top: 1rem;
+        font-size: .9rem;
+      }
+      p.bold {
+        display: none;
+      }
+
+      ul {
+        padding-top: 1rem;
+        font-size: .9rem;
+      }
+    }
+  }
+
+  .programCourse {
+    grid-column-start: auto;
+    grid-column-end: auto;
+
+    &__box {
+      column-gap: 0;
+      grid-template-columns: 1fr;
+
+      &__center {
+        display: none;
+      }
+
+      &__left {
+
+        h2.title {
+          display: none;
+        }
+
+        &__mobileBox {
+          display: grid;
+          grid-template-columns: repeat(2, max-content);
+          column-gap: 2rem;
+
+          &__left {
+            display: grid;
+            justify-items: center;
+            &__title {
+              font-family: "TTHovesMedium";
+              font-size: 4rem;
+            }
+
+            &__text {
+              font-family: "TTHovesMedium";
+              font-size: .9rem;
+              text-transform: uppercase;
+            }
+          }
+
+          &__right {
+            display: grid;
+            align-content: space-between;
+            padding: 1rem 0;
+            &__title {
+              font-family: "TTHovesBold";
+            }
+
+            &__text {
+              font-family: "TTHovesRegular";
+            }
+          }
+        }
+
+
+      }
+
+      &__right {
+        margin-top: 1rem;
+      }
+    }
+
+    &__btn {
+      margin-top: 3rem;
+      width: 100%;
+    }
+  }
+
+  .programBoxSlider {
+    .title {
+      grid-column-start: 1;
+    }
+
+    .prevSlider, .nextSlider {
+      width: 25px;
+      right: 1rem;
+    }
+
+    .prevSlider {
+      left: 1rem;
+    }
+
+    &__programBox {
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+
+      padding: 0 2rem;
+
+      &>div:nth-of-type(1), &>div:nth-of-type(2) {
+        grid-column-start: auto;
+        grid-column-end: auto;
+        height: auto;
+      }
+    }
+  }
+
+  .blackBox {
+    .title {
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+
+    &__textBox {
+      display: none;
+    }
+    
+    &__textMobile {
+      display: grid;
+      color: white;
+      font-size: 1.1rem;
+      font-family: "TTHovesMedium";
+      padding-top: 1rem;
+    }
+  }
+
+  .replyBox {
+    .title {
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+
+    &__studentsBox {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 0;
+
+      &__box {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+        width: 100%;
+        column-gap: 1rem;
+
+        &__block {
+          display: grid;
+          justify-items: center;
+          align-self: start;
+
+          img {
+            width: 100px;
+          }
+        }
+
+        &__text {
+          padding-top: 1rem;
+
+          span {
+            font-family: "TTHovesRegular";
+
+          }
+        }
+
+        &__infoBox {
+          opacity: 100%;
+          display: block;
+          position: relative;
+          height: max-content;
+          left: initial !important;
+          bottom: initial;
+          width: 100%;
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+
+          a {
+            word-break: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  .input {
+    .title {
+      font-family: "TTHovesMedium" !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .schoolEnd {
+    p,
+    .titleSchool,
+    .blueBtn {
+      margin: 0 $border_space_mobile;
+    }
+    .mapEndBox {
+      .mapTitleBox {
+        padding: $border_space_mobile;
+        .titleBox {
+          h3 {
+            font-size: 5vw;
+          }
+        }
+      }
+    }
+  }
+
+  .contactBoxEnd {
+    padding: $border_space_mobile;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .secondBox {
+    &__rightBox {
+      &__top {
+        .mobile {
+          font-size: 2.3rem;
+        }
+      }
+    }
+  }
+
+  .schoolEnd {
+    .titleSchool {
+      font-size: 7vw !important;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .headerBox {
+    &__rightBox {
+      img {
+        min-width: 200px;
+      }
+    }
+  }
+
+  .contactBoxEnd {
+    padding: 3rem $border_space_mobile;
+  }
+
+  .schoolEnd {
+    p,
+    .titleSchool,
+    .blueBtn {
+      margin: 0 $border_space_mobile;
+    }
+    .mapEndBox {
+      .mapTitleBox {
+        padding: 3rem $border_space_mobile;
+        .titleBox {
+          h3 {
+            font-size: 6vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .headerBox {
+    &__rightBox {
+      img {
+        max-width: 150px;
+      }
+    }
+  }
+  .secondBox {
+    &__rightBox {
+      &__top {
+        .mobile {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .replyBox {
+    &__studentsBox {
+      &__box {
+        &__block {
+          img {
+            width: 60px;
+          }
+
+          p {
+            font-size: .9rem !important;
+          }
+        }
+
+        &__infoBox {
+          p, a {
+            font-size: .9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .contactBoxEnd {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .programBoxSlider {
+    .prevSlider, .nextSlider {
+      width: 20px;
+      right: .5rem;
+    }
+
+    .prevSlider {
+      left: .5rem;
+    }
+
+    &__programBox {
+      &__info {
+        &__name {
+          font-size: .8rem;
+        }
+      }
+
+      &__textBox {
+        &__title {
+          font-size: 1.3rem;
+        }
+
+        &__text {
+          font-size: .8rem;
+        }
+      }
+
+      .graphicBox {
+        .description {
+          p {
+            font-size: .8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .schoolEnd {
+    .titleSchool {
+      font-size: 9vw !important;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .headerBox {
+    &__rightBox {
+      img {
+        min-width: 150px;
+      }
+    }
+  }
+}
