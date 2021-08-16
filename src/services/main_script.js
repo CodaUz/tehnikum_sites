@@ -1,5 +1,7 @@
 require("@babel/polyfill");
 
+console.log('run...')
+
 const ID_COURSE = -1;
 const MAX_LENGTH = 182;
 let FORMAT = 0;
