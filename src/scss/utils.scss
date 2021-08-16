@@ -1,0 +1,461 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+.bottomNewsAboutCourseMobile {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  z-index: 4000;
+  display: none;
+
+  .yellowBtn {
+    border-radius: 17px;
+    -webkit-box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+  }
+}
+
+.formBoxTakeCourseFinal {
+  .form {
+    height: 285px;
+    padding: 1.5rem;
+
+    .titleForm {
+      font-family: "TTHovesMedium";
+      padding-top: 1rem;
+      font-weight: normal;
+      font-size: 1.6rem;
+      line-height: 22px;
+    }
+
+    .textForm {
+      font-family: "TTHovesRegular";
+      font-size: 0.8rem;
+    }
+
+    .yellowBtn {
+      font-size: 0.7rem;
+      transform: none;
+      padding: 0 10px;
+      height: 37px;
+      border: 2px solid #000;
+      margin-top: 6rem;
+    }
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: url("../images/pointer active.png"), pointer;
+}
+
+.loader {
+  position: fixed;
+  z-index: 9999999;
+  background-color: white;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 100%;
+  transition: 1s;
+
+  &.active {
+    opacity: 0;
+  }
+
+  svg {
+    & > path {
+      animation: draw 3s ease infinite;
+    }
+  }
+
+  @keyframes draw {
+    0% {
+      stroke-dasharray: 50;
+    }
+    50% {
+      stroke-dasharray: 260;
+    }
+    100% {
+      stroke-dasharray: 50;
+    }
+  }
+}
+
+video {
+  cursor: url("../images/pointer active.png"), pointer;
+}
+
+input {
+  outline: none;
+}
+
+.borderScreenRight,
+.borderScreenLeft,
+.borderScreenTop,
+.borderScreenBottom {
+  position: fixed;
+  z-index: 2005;
+
+  background-color: #000;
+}
+.borderScreenRight {
+  height: 100%;
+  width: $border_length;
+  right: 0;
+  top: 0;
+}
+
+.borderScreenLeft {
+  height: 100%;
+  width: $border_length;
+  top: 0;
+  left: 0;
+}
+
+.borderScreenTop {
+  height: $border_length;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.borderScreenBottom {
+  height: $border_length;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.grayBack {
+  opacity: 0;
+  display: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 5000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000000, 0.7);
+
+  &.active {
+    display: block !important;
+  }
+  &.activeAnimate {
+    opacity: 1;
+  }
+}
+
+.padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+
+.btn {
+  padding: 15px 90px;
+  font-family: "TTHovesDemiBold";
+  font-size: 1.3rem;
+  user-select: none;
+  text-align: center;
+  height: max-content;
+  cursor: url("../images/pointer active.png"), pointer;
+
+  &__green {
+    background-color: $green;
+    color: white;
+  }
+
+  &__black {
+    background-color: $black;
+    color: white;
+  }
+}
+
+.title {
+  font-size: 4.3vw;
+  line-height: 4.3vw;
+  font-family: 'TTHovesMedium';
+  color: #232323;
+}
+
+h3 {
+  &.title {
+    font-size: 3vw;
+    line-height: 3vw;
+    font-family: 'TTHovesDemiBold';
+    color: #232323;
+  }
+}
+
+h2 {
+  &.title {
+    font-size: 4.5vw;
+    line-height: 4.5vw;
+    font-family: 'TTHovesDemiBold';
+    color: #232323;
+  }
+}
+
+p {
+  font-family: 'TTHovesMedium';
+
+  &.bold {
+    font-family: 'TTHovesDemiBold';
+    font-size: 1.1rem;
+  }
+}
+
+a {
+  &.bold {
+    font-family: 'TTHovesDemiBold';
+    font-size: 1.1rem;
+  }
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.pt-3 {
+  padding-top: 3rem;
+}
+
+.pb-1 {
+  padding-bottom: 1rem;
+}
+
+.pb-2 {
+  padding-bottom: 2rem;
+}
+
+.pb-3 {
+  padding-bottom: 3rem;
+}
+
+ul {
+  padding-left: 20px;
+  font-family: 'TTHovesMedium';
+
+  &.paddingList {
+    li {
+      &:not(:first-child) {
+        padding-top: .8rem;
+      }
+    }
+  }
+}
+
+
+.input {
+  border: $border_length solid $black;
+  width: 100%;
+  font-family: "TTHovesDemiBold";
+  font-size: .9rem;
+  position: relative;
+
+
+  .title {
+    position: absolute;
+    left: 1.5rem;
+    user-select: none;
+    top: 18px;
+    transition: all 0.1s ease;
+    font-family: "TTHovesDemiBold";
+    font-size: 1.1rem;
+    color: $black;
+    line-height: 1rem;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    padding: 20px 15px;
+    color: $black;
+    background: transparent;
+  }
+
+  &.active {
+    .title {
+      top: 0px;
+      font-size: 0.6rem;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.popupBox {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 6000;
+  padding: 30px;
+  transition: opacity .2s ease;
+  display: none;
+
+  &.active {
+    display: grid;
+    opacity: 0;
+  }
+  &.activeAnimate {
+    opacity: 100%;
+  }
+
+
+  &__box {
+    padding: 30px;
+    padding-top: 35px;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 10px 2px rgba(#000000, 0.15);
+    display: grid;
+    z-index: 6001;
+
+    &__title {
+      font-family: "ApercyProBold";
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    &__inputBox {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      row-gap: 10px;
+      margin-bottom: 15px;
+
+      &__input {
+        outline: none;
+        border: 1px solid #272727;
+        padding: 12px 15px;
+        border-radius: 13px;
+        max-width: 400px;
+        width: 100%;
+        font-family: "TTHovesRegular";
+      }
+    }
+
+    &__btn {
+      width: max-content;
+      justify-self: center;
+      text-transform: none !important;
+      border-radius: 13px;
+      font-size: 1rem;
+      padding: 15px 40px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .bottomNewsAboutCourseMobile {
+    display: block;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  h1 {
+    &.title {
+      font-size: 4rem;
+      line-height: initial;
+    }
+  }
+
+  h3 {
+    &.title {
+      font-size: 2.5rem;
+      line-height: initial;
+      font-family: 'TTHovesBold';
+    }
+  }
+
+  h2 {
+    &.title {
+      font-size: 2.5rem;
+      line-height: initial;
+      font-family: 'TTHovesDemiBold';
+    }
+  }
+
+  .padding {
+    padding: 1.5rem;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    font-family: 'TTHovesMedium';
+    font-size: 1rem;
+  }
+
+  ul {
+    padding-top: 0 !important;
+    font-family: "TTHovesRegular";
+
+    li {
+      margin-top: .7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bottomNewsAboutCourseMobile {
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    &.title {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    &.title {
+      font-size: 1.8rem;
+    }
+  }
+
+  h2, h3 {
+    &.title {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  .btn {
+    font-size: .75rem;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+} 
