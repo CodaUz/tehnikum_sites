@@ -166,7 +166,7 @@ body {
   background: #DBFE01;
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(3, max-content);
   align-items: center;
   justify-content: center;
   column-gap: 3rem;
@@ -180,6 +180,17 @@ body {
   p {
     font-family: 'TTHovesRegular';
     font-size: 1.8rem;
+  }
+
+  &__badge {
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    border-radius: 30px;
+
+    p {
+      font-family: 'GolosRegular';
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -981,6 +992,19 @@ body {
   }
 }
 
+@media only screen and (max-width: 650px) {
+  .discountBox {
+
+    p {
+      font-size: 1.3rem;
+    }
+
+    &__badge {
+      padding: 5px 15px;
+    }
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .header {
     &__mainBox {
@@ -1165,6 +1189,16 @@ body {
 
   .textImgBox__textBox__title {
     font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .discountBox {
+    padding: 1rem;
+
+    p {
+      font-size: .7rem;
+    }
   }
 }
 
