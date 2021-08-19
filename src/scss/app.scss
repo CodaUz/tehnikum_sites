@@ -64,7 +64,7 @@ body {
     &__title {
       text-transform: uppercase;
       font-family: 'TTHovesBold';
-      font-size: 3.5rem;
+      font-size: 5vw;
     }
 
     &__textBox {
@@ -75,8 +75,8 @@ body {
       &__left {
         p {
           font-family: 'TTHovesRegular';
-          font-size: 1.4rem;
-          max-width: 30rem;
+          font-size: 1.7rem;
+          width: 90%;
         }
 
         .btn {
