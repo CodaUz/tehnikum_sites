@@ -38,33 +38,39 @@ function listenSliders() {
     })
 
     $('.sliderBox__nextSlide').click(function () {
-        let id = $(this).data('id')
-        let number = $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).data('number')
-        let all_numbers = $(`.sliderBox__sliderDots[data-id="${id}"]`).children().length
-
-        number = (all_numbers-1) === number ? 0 : number+1
-
-        $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).removeClass('active')
-        $(`.sliderBox__sliderDots[data-id="${id}"]>.sliderBox__sliderDots__dot[data-number="${number}"]`).addClass('active')
-
-        moveSlider(id, number)
+        moveSlider($(this).data('id'))
     })
 
     $('.sliderBox__prevSlide').click(function () {
-        let id = $(this).data('id')
-        let number = $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).data('number')
-        let all_numbers = $(`.sliderBox__sliderDots[data-id="${id}"]`).children().length
-
-        number = number === 0 ? all_numbers-1 : number-1
-
-        $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).removeClass('active')
-        $(`.sliderBox__sliderDots[data-id="${id}"]>.sliderBox__sliderDots__dot[data-number="${number}"]`).addClass('active')
-
-        moveSlider(id, number)
+        moveSlider($(this).data('id'), undefined, false)
     })
+
+    for (let slide of document.querySelectorAll('.sliderBox__slider__slide')) {
+        slide.addEventListener("swiped-right", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            moveSlider(slide.parentElement.getAttribute('data-id'), undefined)
+        });
+
+        slide.addEventListener("swiped-left", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            moveSlider(slide.parentElement.getAttribute('data-id'), undefined, false)
+        });
+    }
 }
 
-function moveSlider(id, number_dot) {
+function moveSlider(id, number_dot=undefined, is_next=true) {
+    if (number_dot === undefined) {
+        number_dot = $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).data('number')
+        let all_numbers = $(`.sliderBox__sliderDots[data-id="${id}"]`).children().length
+
+        number_dot = is_next ? (all_numbers-1) === number_dot ? 0 : number_dot+1 : number_dot === 0 ? all_numbers-1 : number_dot-1
+
+        $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).removeClass('active')
+        $(`.sliderBox__sliderDots[data-id="${id}"]>.sliderBox__sliderDots__dot[data-number="${number_dot}"]`).addClass('active')
+    }
+
     $(`.sliderBox__slider[data-id="${id}"]`).children().each(function () {
         let number = number_dot * 100
         let multiple_value = $(window).width() <= MOBILE_WIDTH ? 20 : 100

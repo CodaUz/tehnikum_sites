@@ -186,10 +186,12 @@ body {
     border: 1px solid #000000;
     padding: 10px 20px;
     border-radius: 30px;
+    cursor: url("../images/pointer active.png"), auto;
 
     p {
       font-family: 'GolosRegular';
       font-size: 1.6rem;
+      cursor: url("../images/pointer active.png"), auto;
     }
   }
 }
