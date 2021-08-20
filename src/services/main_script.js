@@ -45,17 +45,18 @@ function listenSliders() {
         moveSlider($(this).data('id'), undefined, false)
     })
 
-    for (let slide of document.querySelectorAll('.sliderBox__slider__slide')) {
-        slide.addEventListener("swiped-right", (event) => {
+    for (let slider of document.querySelectorAll('.sliderBox__slider')) {
+        slider.addEventListener("swiped-right", (event) => {
             event.stopPropagation();
             event.preventDefault();
-            moveSlider(slide.parentElement.getAttribute('data-id'), undefined)
+            console.log('swipe right')
+            moveSlider(slider.getAttribute('data-id'), undefined, false)
         });
 
-        slide.addEventListener("swiped-left", (event) => {
+        slider.addEventListener("swiped-left", (event) => {
             event.stopPropagation();
             event.preventDefault();
-            moveSlider(slide.parentElement.getAttribute('data-id'), undefined, false)
+            moveSlider(slider.getAttribute('data-id'), undefined)
         });
     }
 }
@@ -216,7 +217,14 @@ function closePopupsOnBack() {
     })
 }
 
+function addRefToBtnLink() {
+    let query = window.location.search.substring(1);
+    let qs = parse_query_string(query);
+    $('#add_ref_btn').attr('href', `https://t.me/TehnikumWebinarBot?start=509371-smallchecklist${qs['r'] ? `-${qs['r']}` : ''}`)
+}
+
 function init() {
+    addRefToBtnLink()
     scrollToForm()
     closeFormWithCross()
     getMaxHeight()
