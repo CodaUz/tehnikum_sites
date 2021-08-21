@@ -385,6 +385,91 @@ span.bold {
   display: none;
 }
 
+.formBoxIndex .formBox .form .footer__mainBox__formBox__readyBox {
+  padding: 2rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .smallText, .textImgBox__textBox__text {
+    font-size: 1.2vw !important;
+  }
+
+  .footer__topBox__badge {
+    font-size: 1.1vw;
+  }
+
+  .title, .textImgBox__textBox__title {
+    font-size: 3.5vw;
+  }
+
+  .infoBox__title {
+    font-size: 3vw;
+  }
+
+  .text,
+  .learningPathBox__container__box__text,
+  .btn,
+  .learningPathBox__textBox__box__text,
+  .footer__mainBox__formBox__readyBox__title,
+  .formBoxIndex .formBox .form .footer__mainBox__formBox__readyBox__title {
+    font-size: 1.3vw;
+  }
+
+  .footer__mainBox__formBox__readyBox__text {
+    font-size: 1.1vw;
+  }
+
+  .formBoxIndex .formBox .form .titleName {
+    font-size: 1.5vw;
+  }
+
+  .btn img {
+    width: .5vw;
+  }
+
+  .youAfterCourse__container__box__title {
+    font-size: 1.45vw;
+  }
+
+  .youAfterCourse__container__box__text,
+  .advantagesBox__container__box__text,
+  .sliderBox__slider__speakerBox__text {
+    font-size: 1.40vw;
+  }
+
+  .sliderBox__slider__speakerBox__title {
+    font-size: 2vw;
+  }
+
+  .footer__mainBox__leftBox__tasksBox__box__textBox,
+  .formBoxIndex .formBox .form .footer__mainBox__formBox__readyBox__text {
+    font-size: 1.05vw;
+  }
+
+  input {
+    font-size: 1.15vw;
+  }
+
+  .learningPathBox__container__box__title,
+  .footer__mainBox__leftBox__title{
+    font-size: 1.7vw;
+  }
+
+  .textTitle, .blackTextBox__box {
+    font-size: 1.5vw;
+  }
+
+  .discountBox {
+    p {
+      font-size: 1.8vw;
+    }
+
+    h3 {
+      font-size: 3.5vw;
+    }
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .paddingLeft {
     padding-left: 10rem;
