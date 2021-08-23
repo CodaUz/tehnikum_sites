@@ -1,4 +1,5 @@
 require('@babel/polyfill')
+const moment = require('moment');
 
 const MOBILE_WIDTH = 800
 
@@ -223,7 +224,14 @@ function addRefToBtnLink() {
     $('#add_ref_btn').attr('href', `https://t.me/TehnikumWebinarBot?start=509371-smallchecklist${qs['r'] ? `-${qs['r']}` : ''}`)
 }
 
+function getNextDateDiscount() {
+    moment.locale('ru');
+    const date = moment().add(1, 'days').format('DD MMMM')
+    $('.discountDate').html(date)
+}
+
 function init() {
+    getNextDateDiscount()
     addRefToBtnLink()
     scrollToForm()
     closeFormWithCross()
