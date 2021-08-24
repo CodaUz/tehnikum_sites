@@ -140,13 +140,6 @@ async function takeCourse(formId, type_course='course') {
 
         $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
 
-        let res = await fetch(
-            `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=${type_course}&course=context${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-            {
-                method: "GET",
-            }
-        );
-        res = await res.json();
         fetch(
             `https://node.snimerovsky.xyz/log`,
             {
@@ -158,6 +151,14 @@ async function takeCourse(formId, type_course='course') {
                 body: JSON.stringify({site: 'context', name,phone})
             }
         );
+
+        let res = await fetch(
+            `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=${type_course}&course=context${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+            {
+                method: "GET",
+            }
+        );
+        res = await res.json();
     }
 }
 
