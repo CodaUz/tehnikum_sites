@@ -138,6 +138,12 @@ async function takeCourse(formId, type_course='course') {
             item.classList.remove("active");
         }
 
+        try {
+            yaCounter69008998.reachGoal(`Отправил заявку (${phone}, ${name})`);
+        } catch (e) {
+            console.log('error', e.message)
+        }
+
         $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
 
         fetch(
@@ -171,6 +177,10 @@ function closeFormWithCross() {
 function sendForm() {
     for (let btn of document.querySelectorAll(".sendForm")) {
         btn.addEventListener("click", () => {
+            try {
+                yaCounter69008998.reachGoal('заявка на курс');
+            } catch (e) {}
+
             return takeCourse(btn.getAttribute('data-form-id'))
         });
     }
@@ -231,7 +241,18 @@ function getNextDateDiscount() {
     $('.discountDate').html(date)
 }
 
+function listenYandexGoals() {
+    for (let btn of document.querySelectorAll(".getProgramLink")) {
+        btn.addEventListener("click", () => {
+            try {
+                yaCounter69008998.reachGoal('Скачал программу');
+            } catch (e) {}
+        });
+    }
+}
+
 function init() {
+    listenYandexGoals()
     getNextDateDiscount()
     addRefToBtnLink()
     scrollToForm()
