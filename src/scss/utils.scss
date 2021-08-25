@@ -1,0 +1,563 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+video {
+  cursor: url("../images/pointer active.png"), pointer;
+}
+
+.formBoxIndex {
+  z-index: 6000;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+
+  &.active {
+    display: flex;
+  }
+  &.activeAnimate {
+    opacity: 1;
+  }
+
+  .formBox {
+    position: fixed;
+    z-index: 60001;
+    width: max-content;
+    height: auto;
+
+    .blueBtn {
+      position: fixed;
+      left: $border_space_desktop;
+      height: $border_space_desktop * 1.5;
+      bottom: $border_length;
+      border-bottom: none;
+    }
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: -30px;
+      cursor: url("../images/pointer active.png"), pointer;
+    }
+
+    .form {
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow-y: auto;
+      border-radius: 20px;
+
+      .footer__mainBox__formBox {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        align-self: center;
+        position: relative;
+
+        &__input {
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        &__readyBox {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: black;
+          border-radius: 10px;
+          justify-items: center;
+          align-content: center;
+          display: none;
+          text-align: center;
+
+          &.active {
+            display: grid;
+          }
+
+          &__cross {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 20px;
+            cursor: url("../images/pointer active.png"), auto;
+          }
+
+          &__title {
+            font-family: 'TTHovesMedium';
+            font-size: 1.3rem;
+            color: white;
+          }
+
+          .btn {
+            margin-top: 1rem;
+          }
+
+          &__text {
+            font-family: 'TTHovesRegular';
+            color: rgba(255, 255, 255, 0.53);
+            font-size: 1rem;
+            margin-top: .5rem;
+          }
+
+          &__rocket {
+            max-width: 80px;
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      .titleName {
+        font-family: "TTHovesBold";
+        text-transform: lowercase;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+      .text {
+        font-family: "Suisse Intl";
+        font-size: 0.9rem;
+      }
+
+      input {
+        max-width: 300px;
+        border-radius: 20px;
+      }
+
+      .btn {
+        border-radius: 20px;
+        padding: 15px 25px;
+      }
+    }
+  }
+}
+
+.grayBack {
+  opacity: 0;
+  display: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 5000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000000, 0.7);
+
+  &.active {
+    display: block !important;
+  }
+  &.activeAnimate {
+    opacity: 1;
+  }
+}
+
+input {
+  outline: none;
+  width: 100%;
+  border: 1px solid #C0C0C0;
+  padding: 20px;
+  font-size: 1rem;
+  font-family: 'TTHovesRegular';
+}
+
+.input {
+  border: 1px solid #fff;
+  width: 100%;
+  font-family: "TTHovesMedium";
+  font-size: 0.9rem;
+  position: relative;
+
+  .errorText {
+    position: absolute;
+    left: 0;
+    font-family: "TTHovesMedium";
+    top: -18px;
+    font-size: 0.6rem;
+    color: #ff0000;
+    display: none;
+  }
+  .errorImg {
+    position: absolute;
+    top: 24%;
+    right: -30px;
+    display: none;
+  }
+
+  &.error {
+    border: 1px solid #ff0000;
+
+    .errorText,
+    .errorImg {
+      display: block;
+    }
+  }
+
+  .title {
+    position: absolute;
+    left: 20px;
+    user-select: none;
+    top: 16px;
+    transition: all 0.1s ease;
+    font-family: "TTHovesMedium";
+    font-size: 1.1rem;
+    color: white;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    padding: 20px;
+    background-color: #000;
+    color: white;
+    font-size: 1rem;
+  }
+
+  &.active {
+    .title {
+      top: 2px;
+      font-size: 0.6rem;
+    }
+  }
+}
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+
+.btn {
+  padding: 10px 40px;
+  width: max-content;
+  height: max-content;
+  font-family: 'TTHovesMedium';
+  font-size: 1.1rem;
+  user-select: none;
+  text-align: center;
+  cursor: url("../images/pointer active.png"), pointer;
+  text-transform: lowercase;
+  border-radius: 2px;
+
+  * {
+    cursor: url("../images/pointer active.png"), pointer;
+  }
+
+  span:not(:first-child):not(:last-child) {
+    padding: 0 1.5px;
+  }
+
+  span {
+    cursor: url("../images/pointer active.png"), pointer;
+  }
+
+  * {
+    cursor: url("../images/pointer active.png"), pointer;
+  }
+
+  &__blue {
+    background-color: $blue;
+    color: white;
+  }
+
+  &__white {
+    background-color: white;
+    color: black;
+  }
+
+  &__green {
+    background: #BCDA01;
+    color: black;
+  }
+
+  &__lightGreen {
+    background: #DBFE01;
+    color: black;
+    font-family: 'GolosRegular';
+    padding: 10px 25px;
+  }
+
+  &__black {
+    background: black;
+    color: white;
+    font-family: 'TTHovesRegular';
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    column-gap: 8px;
+    padding: 15px 25px;
+
+    img {
+      margin-top: 3px;
+    }
+  }
+
+  &__purple {
+    background: #AFB7FD;
+    color: #000;
+    font-family: 'GolosRegular';
+  }
+}
+
+.title {
+  font-family: "TTHovesBold";
+  font-size: 2.7rem;
+  text-transform: uppercase;
+}
+
+span.green {
+  color: #BCDA01;
+}
+
+span.purple {
+  color: #A4ACED;
+}
+
+span.black {
+  color: #000;
+}
+
+span.lightGreen {
+  color: #DBFE01;
+}
+
+.text {
+  font-family: "TTHovesRegular";
+  font-size: 1.1rem;
+}
+
+.bigText {
+  font-family: "TTHovesRegular";
+  font-size: 1.6rem;
+  text-transform: lowercase;
+}
+
+span.bold {
+  font-family: "TTHovesBold";
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.paddingTop {
+  padding-top: 4rem;
+}
+
+.padding {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.paddingLeft {
+  padding-left: 8rem;
+}
+
+.paddingRight {
+  padding-right: 8rem;
+}
+
+
+.mobile {
+  display: none;
+}
+
+.formBoxIndex .formBox .form .footer__mainBox__formBox__readyBox {
+  padding: 2rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .smallText, .textImgBox__textBox__text {
+    font-size: 1.2vw !important;
+  }
+
+  .footer__topBox__badge {
+    font-size: 1.1vw;
+  }
+
+  .title, .textImgBox__textBox__title {
+    font-size: 3.5vw;
+  }
+
+  .infoBox__title {
+    font-size: 3vw;
+  }
+
+  .text,
+  .learningPathBox__container__box__text,
+  .btn,
+  .learningPathBox__textBox__box__text,
+  .footer__mainBox__formBox__readyBox__title,
+  .formBoxIndex .formBox .form .footer__mainBox__formBox__readyBox__title {
+    font-size: 1.3vw;
+  }
+
+  .footer__mainBox__formBox__readyBox__text {
+    font-size: 1.1vw;
+  }
+
+  .formBoxIndex .formBox .form .titleName {
+    font-size: 1.5vw;
+  }
+
+  .btn img {
+    width: .5vw;
+  }
+
+  .youAfterCourse__container__box__title {
+    font-size: 1.45vw;
+  }
+
+  .youAfterCourse__container__box__text,
+  .advantagesBox__container__box__text,
+  .sliderBox__slider__speakerBox__text {
+    font-size: 1.40vw;
+  }
+
+  .sliderBox__slider__speakerBox__title {
+    font-size: 2vw;
+  }
+
+  .footer__mainBox__leftBox__tasksBox__box__textBox,
+  .formBoxIndex .formBox .form .footer__mainBox__formBox__readyBox__text {
+    font-size: 1.05vw;
+  }
+
+  input {
+    font-size: 1.15vw;
+  }
+
+  .learningPathBox__container__box__title,
+  .footer__mainBox__leftBox__title{
+    font-size: 1.7vw;
+  }
+
+  .textTitle, .blackTextBox__box {
+    font-size: 1.5vw;
+  }
+
+  .discountBox {
+    p {
+      font-size: 1.8vw;
+    }
+
+    h3 {
+      font-size: 3.5vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .paddingLeft {
+    padding-left: 6rem;
+  }
+
+  .paddingRight {
+    padding-right: 6rem;
+  }
+
+  .padding {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .padding {
+    padding-left: $border_space_mobile ;
+    padding-right: $border_space_mobile ;
+  }
+  .paddingLeft {
+    padding-left: $border_space_mobile ;
+  }
+
+  .paddingRight {
+    padding-right: $border_space_mobile ;
+  }
+
+  .paddingTop {
+    padding-top: 1rem;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .bigText {
+    font-size: 1rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  input {
+    max-width: 300px;
+    border-radius: 20px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 1.4rem;
+  }
+
+
+}
+
+@media screen and (max-width: 450px) {
+  .text, .bigText {
+    font-size: .9rem;
+  }
+}
+
+
+
+@media only screen and (max-width: 400px) {
+  .btn {
+    font-size: .75rem;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+} 
