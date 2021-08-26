@@ -405,7 +405,7 @@ span.bold {
 
 @media screen and (min-width: 1400px) {
   .smallText, .textImgBox__textBox__text {
-    font-size: 1.2vw !important;
+    font-size: 1.5vw !important;
   }
 
   .footer__topBox__badge {
@@ -426,7 +426,11 @@ span.bold {
   .learningPathBox__textBox__box__text,
   .footer__mainBox__formBox__readyBox__title,
   .formBoxIndex .formBox .form .footer__mainBox__formBox__readyBox__title {
-    font-size: 1.3vw;
+    font-size: 1.5vw;
+  }
+
+  .salaryBox__infoBox__box__title {
+    font-size: 2vw !important;
   }
 
   .footer__mainBox__formBox__readyBox__text {
@@ -457,7 +461,7 @@ span.bold {
 
   .footer__mainBox__leftBox__tasksBox__box__textBox,
   .formBoxIndex .formBox .form .footer__mainBox__formBox__readyBox__text {
-    font-size: 1.05vw;
+    font-size: 1.2vw;
   }
 
   input {
@@ -470,7 +474,7 @@ span.bold {
   }
 
   .textTitle, .blackTextBox__box {
-    font-size: 1.5vw;
+    font-size: 1.7vw;
   }
 
   .discountBox {

@@ -57,18 +57,30 @@ body {
     &__logo {
       max-width: 150px;
     }
+
+    @media screen and (max-width: 900px) {
+      &__logo {
+        max-width: 100px;
+      }
+    }
   }
 
   &__mainBox {
     &__title {
       text-transform: uppercase;
       font-family: 'TTHovesBold';
-      font-size: 5vw;
+      font-size: 6vw;
     }
 
     @media only screen and (min-width: 800px) {
       &__title {
         margin-top: -3rem;
+      }
+    }
+
+    @media only screen and (min-width: 900px) {
+      &__title {
+        margin-top: -2rem;
       }
     }
 
@@ -80,8 +92,7 @@ body {
       &__left {
         p {
           font-family: 'TTHovesRegular';
-          font-size: 2vw;
-          width: 90%;
+          font-size: 3vw;
         }
 
         .btn {
@@ -95,20 +106,25 @@ body {
 
       @media only screen and (min-width: 1300px) {
         &__img {
-          max-width: 300px;
+          max-width: 30vw;
+          margin-left: -6rem;
         }
       }
     }
 
     &__courseInfo {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      column-gap: 2rem;
       font-family: 'TTHovesRegular';
       font-size: 1.1rem;
       margin-top: 3rem;
+      display: flex;
 
       &__box {
+        max-width: 20vw;
+
+        &:not(:last-child) {
+          margin-right: 6vw;
+        }
+
         &__title {
           margin-bottom: 1.5rem;
           font-family: 'TTHovesMedium';
@@ -393,7 +409,7 @@ body {
     justify-self: center;
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    column-gap: 5rem;
+    column-gap: 7vw;
     margin-top: 3rem;
 
     &__box {
@@ -676,7 +692,7 @@ body {
     margin: 5rem 0;
 
     img {
-      max-width: 100px;
+      max-width: 130px;
     }
   }
 }
@@ -705,6 +721,12 @@ body {
     &__text {
       font-family: 'TTHovesRegular';
       font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: 800px) {
+      &__text {
+        width: 80%;
+      }
     }
   }
 }
@@ -789,17 +811,23 @@ body {
     &__formBox {
       background: white;
       border-radius: 10px;
-      padding: 2rem;
+      padding: 2.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       height: max-content;
       align-self: center;
       position: relative;
+      max-width: 500px;
+      justify-self: center;
 
       &__input {
         margin-top: 1rem;
         margin-bottom: 2rem;
+      }
+
+      .btn {
+        border-radius: 10px;
       }
 
       &__readyBox {
@@ -843,6 +871,8 @@ body {
           max-width: 80px;
           margin-top: 1rem;
         }
+
+
       }
     }
   }
@@ -851,10 +881,9 @@ body {
     margin-top: 2rem;
     display: grid;
     row-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
 
     &__leftBox {
-      justify-self: start;
-
       p, a {
         text-transform: uppercase;
         font-family: 'TTHovesBold';
@@ -864,10 +893,11 @@ body {
     }
 
     &__rightBox {
-      justify-self: end;
       display: grid;
       grid-template-columns: repeat(3, max-content);
       column-gap: 1rem;
+      align-self: end;
+      justify-self: end;
 
       img {
         width: 30px;
@@ -890,6 +920,12 @@ body {
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    &__infoBox {
+      grid-template-columns: initial;
+    }
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -905,7 +941,7 @@ body {
     &__topBox {
       grid-template-columns: max-content;
       justify-content: end;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
 
       &__logo {
         max-width: 300px;
@@ -1129,7 +1165,7 @@ body {
   }
 
   .whatWillYouKnow__container img {
-    max-width: 70px;
+    max-width: 100px;
   }
 
   .whatWillYouKnow__container {
