@@ -154,7 +154,7 @@ async function takeCourse(formId, type_course='course') {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({site: 'context', name,phone})
+                body: JSON.stringify({site: 'smm_specialist', name,phone})
             }
         );
 
