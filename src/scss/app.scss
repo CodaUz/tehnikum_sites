@@ -116,14 +116,6 @@ body {
             text-transform: capitalize;
           }
         }
-
-        &__text {
-          text-transform: lowercase;
-
-          &:first-letter {
-            text-transform: capitalize;
-          }
-        }
       }
 
       @media screen and (min-width: 800px) {
