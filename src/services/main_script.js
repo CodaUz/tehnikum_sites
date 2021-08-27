@@ -237,7 +237,7 @@ function addRefToBtnLink() {
 
 function getNextDateDiscount() {
     moment.locale('ru');
-    const date = moment().add(1, 'days').format('DD MMMM')
+    const date = moment().add(2, 'days').format('DD MMMM')
     $('.discountDate').html(date)
 }
 
