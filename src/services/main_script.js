@@ -232,7 +232,7 @@ function closePopupsOnBack() {
 function addRefToBtnLink() {
     let query = window.location.search.substring(1);
     let qs = parse_query_string(query);
-    $('#add_ref_btn').attr('href', `https://t.me/TehnikumWebinarBot?start=509371-smallchecklist${qs['r'] ? `-${qs['r']}` : ''}`)
+    $('#add_ref_btn').attr('href', `https://t.me/TehnikumWebinarBot?start=283660-smallchecklist${qs['r'] ? `-${qs['r']}` : ''}`)
 }
 
 function getNextDateDiscount() {
