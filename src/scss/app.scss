@@ -1,0 +1,88 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: url("../images/pointer.png"), auto;
+}
+
+a {
+  text-decoration: none;
+  img {
+    cursor: url("../images/pointer active.png"), auto;
+  }
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  font-family: 'MontserratRegular',Arial,sans-serif;
+}
+
+.mainBox {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  column-gap: 3rem;
+
+  img {
+    max-width: 550px;
+  }
+
+  &__textBox {
+    max-width: 500px;
+    padding-top: 1rem;
+    font-size: 20px;
+    line-height: 1.55;
+    font-weight: 400;
+    display: grid;
+  }
+
+  @media screen and (max-width: 1150px) {
+    img {
+      max-width: 500px;
+    }
+
+    &__textBox {
+      font-size: 18px;
+      row-gap: 10px;
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .mainBox {
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .mainBox {
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    justify-items: center;
+    padding: 1.5rem;
+
+    img {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    &__textBox {
+      max-width: 550px;
+      width: 100%;
+      row-gap: 1rem;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .mainBox {
+    &__textBox {
+      font-size: 13px;
+    }
+  }
+}
