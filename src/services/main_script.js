@@ -58,7 +58,7 @@ async function takeCourse(formId, type_course='course') {
             );
             res = await res.json();
         } finally {
-            window.location.replace("http://stackoverflow.com");
+            window.location.replace("https://us02web.zoom.us/j/87564656388?pwd=Zy9ieXZEdEsrczhWV3JoakwySC8zUT09");
         }
     }
 }
