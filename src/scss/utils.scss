@@ -1,6 +1,39 @@
 @import "./font.scss";
 @import "./variables.scss";
 
+
+@media screen and (min-width: 1400px) {
+  .mainTitle {
+    font-size: 3vw !important;
+  }
+
+  .bigText_normal {
+    font-size: 1.4vw !important;
+  }
+
+  .bigText_big {
+    font-size: 1.8vw !important;
+  }
+
+  .bigText_title {
+    font-size: 1.5vw !important;
+  }
+
+  .formContactBox .title {
+    font-size: 3.5vw;
+  }
+
+  .formContactBox .bigText {
+    font-size: 1.8vw;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .forWhomCourse__backGrid {
+    max-width: 13vw;
+  }
+}
+
 .bottomNewsAboutCourseMobile {
   position: fixed;
   bottom: 40px;

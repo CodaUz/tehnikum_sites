@@ -123,12 +123,13 @@ body {
 
     &__centerText {
       font-family: "TTHovesMedium";
-      font-size: 9rem;
+      font-size: 8rem;
       font-weight: normal;
       line-height: 9rem;
     }
 
     &__endText {
+      margin-top: 10px;
       font-family: "TTHovesMedium";
       font-size: 1.1rem;
       font-weight: normal;
@@ -205,7 +206,9 @@ body {
   position: relative;
 
   &__courseBox {
-    padding: 5rem 0;
+    padding: 2rem;
+    padding-left: 2rem !important;
+    padding-bottom: 0;
     padding-right: 17rem !important;
     display: grid;
     row-gap: 1rem;
@@ -221,6 +224,8 @@ body {
       &__number {
         font-family: "TTHovesMedium";
         font-size: 2.5rem;
+        letter-spacing: 5px;
+        border-bottom: 2px solid #000;
       }
 
 
@@ -230,7 +235,7 @@ body {
       position: absolute;
       right: 15rem;
       width: 1.5rem;
-      top: 2rem;
+      top: 35%;
     }
   }
 
@@ -238,7 +243,7 @@ body {
     position: absolute;
     right: 1rem;
     max-width: 20rem;
-    top: 5rem;
+    top: 35%;
   }
 }
 
@@ -285,6 +290,29 @@ body {
       }
     }
   }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    max-width: 25rem;
+    margin-right: 3rem;
+    margin-top: 4rem;
+  }
+
+  @media screen and (max-width: 1050px) {
+    &__img {
+      margin-right: 0;
+      margin-top: 8rem;
+      max-width: 20rem;
+    }
+  }
+
+  @media screen and (max-width: 860px) {
+    &__img {
+      max-width: 16rem;
+    }
+  }
 }
 
 .portfolioBox {
@@ -295,6 +323,12 @@ body {
 
   &__img {
     width: 60%;
+  }
+
+  @media screen and (max-width: 800px) {
+    &__img {
+      width: 90%;
+    }
   }
 }
 
@@ -385,6 +419,12 @@ body {
     video {
       max-width: 20rem;
       margin: 0 11rem;
+    }
+
+    @media screen and (max-width: 460px) {
+      video {
+        max-width: 14rem;
+      }
     }
   }
 
@@ -1106,10 +1146,11 @@ body {
     }
 
     &__contentBox {
+      width: 100%;
+
       &__textBox {
         z-index: 1;
-        max-width: 60%;
-
+        max-width: 80%;
       }
 
       &__img {
@@ -1203,6 +1244,14 @@ body {
 
   .whoUsePythonBox {
     margin-top: 3rem;
+  }
+
+  .forWhomCourse {
+    &__contentBox {
+      &__textBox {
+        max-width: 60%;
+      }
+    }
   }
 }
 

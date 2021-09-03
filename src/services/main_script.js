@@ -123,6 +123,8 @@ async function takeCourse(formId) {
                 body: JSON.stringify({site: 'kids_python_games', name,phone})
             }
         );
+
+        
     }
 }
 
