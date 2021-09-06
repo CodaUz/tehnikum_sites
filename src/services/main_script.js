@@ -51,14 +51,14 @@ async function takeCourse(formId, type_course='course') {
 
         try {
             let res = await fetch(
-                `https://api.tehnikum.school/amocrm/tilda_lead.php?course=smm-new&name_lead=Открытыйурок&Name=${name}&Phone=${phone}`,
+                `https://api.tehnikum.school/amocrm/tilda_lead.php?course=smm&name_lead=Открытыйурок&Name=${name}&Phone=${phone}`,
                 {
                     method: "GET",
                 }
             );
             res = await res.json();
         } finally {
-            window.location.replace("https://us02web.zoom.us/j/87564656388?pwd=Zy9ieXZEdEsrczhWV3JoakwySC8zUT09");
+            window.location.replace("https://us02web.zoom.us/j/87954904286?pwd=VGgxNEI1RXBadGFUSGVONWRjdkl5UT09");
         }
     }
 }
