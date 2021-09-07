@@ -1,0 +1,48 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+input {
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  line-height: 1.33;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0;
+  color: #000;
+  border: 1px solid #000;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  height: 50px;
+  font-family: 'MontserratRegular',Arial,sans-serif;
+}
+
+.btn {
+  box-sizing: border-box;
+  outline: none;
+  white-space: nowrap;
+  cursor: url("../images/pointer active.png"), auto;
+  margin: 0;
+  -webkit-appearance: none;
+  border: 0 none;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'MontserratRegular',Arial,sans-serif;
+
+  &__black {
+    color: #fff;
+    background-color: #000;
+    font-weight: 600;
+    font-size: 14px;
+    width: 160px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+  }
+}
