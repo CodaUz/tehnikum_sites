@@ -58,7 +58,7 @@ async function takeCourse(formId, type_course='course') {
             );
             res = await res.json();
         } finally {
-            window.location.replace("https://us02web.zoom.us/j/87954904286?pwd=VGgxNEI1RXBadGFUSGVONWRjdkl5UT09");
+            window.location.replace("https://us02web.zoom.us/j/81184695144?pwd=MTVLTTdESTUvbzNIUHdmUVNDT3N3QT09");
         }
     }
 }
