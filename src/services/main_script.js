@@ -51,7 +51,7 @@ async function takeCourse(formId, type_course='course') {
 
         try {
             let res = await fetch(
-                `https://api.tehnikum.school/amocrm/tilda_lead.php?course=smm&name_lead=Открытыйурок&Name=${name}&Phone=${phone}`,
+                `https://api.tehnikum.school/amocrm/tilda_lead.php?course=target&name_lead=Открытыйурок&Name=${name}&Phone=${phone}`,
                 {
                     method: "GET",
                 }
