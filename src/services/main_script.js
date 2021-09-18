@@ -147,7 +147,7 @@ async function takeCourse(isTelegam=false) {
     takeCourseParams['webinar_id'] = WEBINAR_ID
     takeCourseParams['phone'] = takeCourseParams['phone'].replace(/[ -]/g, '')
 
-    fetch(
+    await fetch(
         `https://node.snimerovsky.xyz/log`,
         {
           method: 'POST',
@@ -163,7 +163,7 @@ async function takeCourse(isTelegam=false) {
         }
     );
 
-    fetch(
+    await fetch(
         `https://api.tehnikum.school/amocrm/?`+ new URLSearchParams(takeCourseParams)
     );
 
