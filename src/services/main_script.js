@@ -2,6 +2,8 @@ require("@babel/polyfill");
 const moment = require('moment')
 const axios = require('axios')
 
+console.log('init')
+
 const ID_COURSE = 10;
 let FORMAT = 0;
 
