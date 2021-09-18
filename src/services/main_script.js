@@ -1,7 +1,8 @@
 require("@babel/polyfill");
+const moment = require('moment')
+const axios = require('axios')
 
-const ID_COURSE = -1;
-const MAX_LENGTH = 182;
+const ID_COURSE = 10;
 let FORMAT = 0;
 
 let PRICE = 0;
@@ -139,7 +140,14 @@ async function takeCourse(isTelegam=false) {
       item.classList.remove("active");
     }
 
-    await fetch(
+    let redisKey = Math.floor(Math.random()*900000000) + 100000000;
+    let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}`
+    const WEBINAR_ID = 450983
+
+    takeCourseParams['webinar_id'] = WEBINAR_ID
+    takeCourseParams['phone'] = takeCourseParams['phone'].replace(/[ -]/g, '')
+
+    fetch(
         `https://api.tehnikum.school/amocrm/?`+ new URLSearchParams(takeCourseParams)
     );
 
@@ -154,7 +162,9 @@ async function takeCourse(isTelegam=false) {
           body: JSON.stringify({
             site: 'smm_spec',
             name: takeCourseParams['name'],
-            phone: takeCourseParams['phone']
+            phone: takeCourseParams['phone'],
+            redisKey,
+            redisValue
           })
         }
     );
@@ -162,14 +172,16 @@ async function takeCourse(isTelegam=false) {
     let a= document.createElement('a');
 
     if (!isTelegam) {
-      a.href= 'https://tehnikum.school/smm0/thank-you';
-      a.click();
+      a.href= `https://tehnikum.school/smm0/thank-you?KEY=${redisKey}${qs.r ? `&r=${qs.r}` : ''}`;
     } else {
       let query = window.location.search.substring(1);
       let qs = parse_query_string(query);
-      a.href= `https://tehnikum.school/smm0/thank-you?t=true${qs.r ? `&r=${qs.r}` : ''}`;
-      a.click();
+      a.href= `https://tehnikum.school/smm0/thank-you?t=true&KEY=${redisKey}${qs.r ? `&r=${qs.r}` : ''}`;
     }
+
+    setTimeout(() => {
+      a.click();
+    }, 50)
   }
 }
 
@@ -461,7 +473,7 @@ for (let btn of document.querySelectorAll('.signUp')) {
           takeCourseParams = {
             name: document.querySelector('input[name="name"]').value,
             phone: document.querySelector('input[name="phone"]').value,
-            type: 'course',
+            action: 'program',
             course: 'smm-new',
           }
           if (qs.r) takeCourseParams['ref'] = qs.r
@@ -480,7 +492,7 @@ for (let btn of document.querySelectorAll('.getProgram')) {
           takeCourseParams = {
             name: document.querySelector('input[name="name"]').value,
             phone: document.querySelector('input[name="phone"]').value,
-            type: 'program',
+            action: 'program',
             course: 'smm-new',
           }
           if (qs.r) takeCourseParams['ref'] = qs.r
@@ -494,7 +506,7 @@ for (let btn of document.querySelectorAll('.signUpWithForm')) {
     takeCourseParams = {
       name: document.querySelector('#inputFormName').value,
       phone: document.querySelector('#inputFormPhone').value,
-      type: 'course',
+      action: 'program',
       course: 'smm-new',
     }
     if (qs.r) takeCourseParams['ref'] = qs.r
@@ -544,7 +556,32 @@ document.querySelector('.formBoxRequisiteClose').addEventListener('click', (e) =
   closeModalForm('#formRequisite', '#formBoxRequisiteBack')
 })
 
+async function initCourseData() {
+  let res = await axios.get('https://api.tehnikum.uz/course.php', {
+    params: {
+      action: 'get',
+      token: '123',
+      id: ID_COURSE
+    }
+  })
+  res = res['data']['row']
+  const [first_start_date, first_start_month] = moment(`${res['date']}`, 'YYYY-MM-DD').locale("ru").format('D MMMM').split(' ')
+  const [first_end_date, first_end_month] = moment(`${res['end_date']}`, 'YYYY-MM-DD').locale("ru").format('D MMMM').split(' ')
 
+  if (window.matchMedia("(min-width: 800px)").matches) {
+    $('h2.secondBox__rightBox__top__numberBox').text(`${first_start_date} - ${first_end_date}`)
+    $('.start_month').text(first_start_month)
+    $('.end_month').text(first_end_month)
+  } else {
+    $('h2.secondBox__rightBox__top__numberBox').html(`<span>${first_start_date} ${first_start_month} - ${first_end_date} ${first_end_month}</span>`)
+    $('.secondBox__rightBox__top__numberBox').css('width', `${$('.secondBox').width()}px`)
+    $('.secondBox__rightBox__top__numberBox').css('height', '35px')
+    $('.secondBox__rightBox__top__numberBox').textfill({});
+  }
+
+}
+
+initCourseData()
 
 // yandex maps
 

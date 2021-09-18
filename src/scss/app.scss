@@ -97,12 +97,14 @@ body {
       grid-template-columns: max-content;
       justify-content: center;
       grid-template-rows: max-content;
+      text-align: center;
 
 
       &__numberBox {
         font-family: 'TTHovesMedium';
         font-size: 5vw;
         line-height: 5vw;
+        text-transform: uppercase;
 
         &.mobile {
           display: none;
