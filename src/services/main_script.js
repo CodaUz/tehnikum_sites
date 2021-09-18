@@ -159,13 +159,11 @@ async function takeCourse(isTelegam=false) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            site: 'smm_spec',
+          body: JSON.stringify({site: 'smm_spec',
             name: takeCourseParams['name'],
             phone: takeCourseParams['phone'],
             redisKey,
-            redisValue
-          })
+            redisValue})
         }
     );
 
