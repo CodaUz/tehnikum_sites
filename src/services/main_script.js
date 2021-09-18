@@ -148,10 +148,6 @@ async function takeCourse(isTelegam=false) {
     takeCourseParams['phone'] = takeCourseParams['phone'].replace(/[ -]/g, '')
 
     fetch(
-        `https://api.tehnikum.school/amocrm/?`+ new URLSearchParams(takeCourseParams)
-    );
-
-    fetch(
         `https://node.snimerovsky.xyz/log`,
         {
           method: 'POST',
@@ -165,6 +161,10 @@ async function takeCourse(isTelegam=false) {
             redisKey,
             redisValue})
         }
+    );
+
+    fetch(
+        `https://api.tehnikum.school/amocrm/?`+ new URLSearchParams(takeCourseParams)
     );
 
     let a= document.createElement('a');
