@@ -141,7 +141,7 @@ async function takeCourse(isTelegam=false) {
     }
 
     let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-    let redisValue = `${encryptName(takeCourseParams['name'])}-${takeCourseParams['phone'].replace(/\D/g, "")}-${status}`
+    let redisValue = `${encryptName(takeCourseParams['name'])}-${takeCourseParams['phone'].replace(/\D/g, "")}-${status}-smm-new`
     const WEBINAR_ID = 450983
 
     takeCourseParams['webinar_id'] = WEBINAR_ID
