@@ -9,7 +9,8 @@ module.exports = {
 
   entry: "./index.js",
   output: {
-    filename: "bundle.js",
+    filename: '[name].js?t=' + new Date().getTime(),
+    chunkFilename: '[name]-chunk.js?t=' + new Date().getTime(),
     path: path.resolve(__dirname, "dist"),
   },
   module: {
