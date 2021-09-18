@@ -115,6 +115,7 @@ body {
         display: grid;
         grid-template-columns: repeat(2, max-content);
         justify-content: space-between;
+        column-gap: 10px;
       }
     }
 
