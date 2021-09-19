@@ -1,0 +1,45 @@
+.thanksBox {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    row-gap: 30px;
+    height: 100vh;
+    padding: 20px 50px;
+    background-image: url("/website-2/thank-you/confetti.svg");
+    background-color: #fff;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: contain;
+  
+    &__img {
+      width: 70px;
+    }
+  
+    &__title {
+      font-family: 'MontserratBold';
+      text-align: center;
+      font-size: 3rem;
+    }
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .thanksBox {
+      &__title {
+        font-size: 2rem;
+      }
+    }
+  } 
+  
+  @media only screen and (max-width: 600px) {
+    .thanksBox {
+      padding: 0 20px;
+  
+      &__title {
+        font-size: 1.5rem;
+      }
+  
+      &__btn {
+        font-size: .9rem;
+      }
+    }
+  }
