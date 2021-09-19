@@ -2,14 +2,14 @@ const path = require("path");
 const miniCss = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
 
   entry: "./index.js",
   output: {
-    filename: "bundle.js",
+    filename: '[name].js?t=' + new Date().getTime(),
+    chunkFilename: '[name]-chunk.js?t=' + new Date().getTime(),
     path: path.resolve(__dirname, "dist"),
   },
   module: {
