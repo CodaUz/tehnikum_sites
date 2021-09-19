@@ -1,6 +1,6 @@
 require("@babel/polyfill");
 
-console.log('running...')
+console.log('running python...')
 
 const ID_COURSE = -1;
 const MAX_LENGTH = 182;
