@@ -146,7 +146,7 @@ function parse_query_string(query) {
   return query_string;
 }
 
-async function takeCourse(formId, status) {
+async function takeCourse(formId) {
   let name = document.querySelector(`input[name="name${formId}"]`).value;
   let phone = document.querySelector(`input[name="phone${formId}"]`).value;
   let query = window.location.search.substring(1);
@@ -170,10 +170,10 @@ async function takeCourse(formId, status) {
       item.classList.remove("active");
     }
     let redisKey = Math.floor(Math.random()*9000000) + 1000000;
-    let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}`
+    let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-tg`
 
     await fetch(
-      `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=bl-reg&course=tg&status=${status}${qs.r ? `&ref=${qs.r}` : ''}`,
+      `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&action=bl-reg&course=tg${qs.r ? `&ref=${qs.r}` : ''}`,
       {
         method: "GET",
       }
@@ -240,8 +240,8 @@ for (let item of document.querySelectorAll(".input")) {
 for (let btn of document.querySelectorAll(".blueBoxSignUp__inputBox__sendBtn")) {
   btn.addEventListener('click', () => {
     let formId = btn.getAttribute('data-id')
-    let status = document.querySelector(`.blueBoxSignUp${formId}`).getAttribute('data-status')
-    takeCourse(formId, status)
+    // let status = document.querySelector(`.blueBoxSignUp${formId}`).getAttribute('data-status')
+    takeCourse(formId)
     yaCounter69008998.reachGoal('Запись на БУ тг');
   })
 }
