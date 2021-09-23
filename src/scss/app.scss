@@ -1,0 +1,1234 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: url("../images/pointer.png"), auto;
+}
+
+a {
+  img {
+    cursor: url("../images/pointer active.png"), auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #222222;
+}
+
+header, section, footer, .maxWidth {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.fullWidth {
+  max-width: initial;
+}
+
+.header {
+  padding-top: 37px;
+
+  @media screen and (max-width: 1240px) {
+    padding-right: 10px !important;
+  }
+
+  @media screen and (max-width: 800px) {
+    padding-right: 0px !important;
+  }
+
+  &__logo {
+    max-width: 295px;
+  }
+
+  &__contentBox {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+
+    &__textBox {
+      &__topBox {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        column-gap: 150px;
+        margin: 3rem 0;
+
+        &__box {
+          font-size: 21px;
+          font-family: 'TTHovesRegular';
+
+          &__text {
+            margin-top: 5px;
+            font-family: 'TTHovesBold';
+          }
+        }
+      }
+
+      &__title {
+        font-size: 80px;
+        font-family: 'Chava';
+        font-weight: normal;
+      }
+      &__text {
+        font-size: 27px;
+        font-family: 'TTHovesLight';
+        line-height: 37.8px;
+        margin: 1.5rem 0;
+        margin-bottom: 2.5rem;
+        font-weight: lighter;
+      }
+
+      &__btnBox {
+        display: grid;
+        max-width: 800px;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      max-width: 390px;
+    }
+  }
+
+  @media screen and (max-width: 1140px) {
+    &__contentBox {
+      &__textBox {
+        &__title {
+          font-size: 70px;
+        }
+        &__text {
+          font-size: 23px;
+          line-height: 34.8px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1040px) {
+    &__contentBox {
+      &__textBox {
+        &__title {
+          font-size: 60px;
+        }
+      }
+
+      &__img {
+        max-width: 310px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 940px) {
+    &__contentBox {
+      &__textBox {
+        &__topBox {
+          column-gap: 100px;
+        }
+      }
+      &__img {
+        max-width: 250px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 840px) {
+    &__contentBox {
+      &__textBox {
+        &__title {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    &__contentBox {
+      &__textBox {
+        &__topBoxImg {
+          display: grid;
+          grid-template-columns: 1fr max-content;
+
+          &__img {
+            width: 100%;
+            max-width: 200px;
+          }
+        }
+
+        &__topBox {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(2, max-content);
+          row-gap: 30px;
+          margin: 35px 0;
+
+          &__box {
+            height: max-content;
+          }
+        }
+
+        &__title, &__text, &__btnBox {
+          padding-right: $border_space_mobile;
+        }
+
+        &__text {
+          margin: 20px 0;
+        }
+
+        &__btnBox {
+          grid-template-columns: 1fr;
+          row-gap: 20px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 464px) {
+    &__logo {
+      max-width: 215px;
+    }
+
+    &__contentBox {
+      &__textBox {
+        &__topBoxImg {
+          &__img {
+            max-width: 150px;
+          }
+        }
+
+        &__title {
+          font-size: 42px;
+        }
+
+        &__text {
+          font-size: 18px;
+          line-height: 25.8px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    &__contentBox {
+      &__textBox {
+        &__topBoxImg {
+          &__img {
+            max-width: 140px;
+          }
+        }
+
+        &__title {
+          font-size: 33px;
+        }
+      }
+    }
+  }
+}
+
+.section {
+  margin-top: 160px;
+  overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    margin-top: 60px;
+  }
+
+  &.blueDiscount {
+    background: $dark_blue;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  &__fourGridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 70px;
+    column-gap: 90px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+
+    &__box {
+      &__img {
+        width: 210px;
+
+        @media screen and (max-width: 800px) {
+          width: 180px;
+        }
+      }
+
+      &__text {
+        margin-top: 20px;
+
+        @media screen and (max-width: 800px) {
+          margin-top: 10px;
+        }
+      }
+
+      &__title {
+        font-family: 'TTHovesDemiBold' !important;
+        font-weight: normal;
+
+        @media screen and (max-width: 800px) {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  &__speakerBox {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 50px;
+
+    @media screen and (max-width: 1110px) {
+      column-gap: 30px;
+    }
+
+    @media screen and (max-width: 1050px) {
+      grid-template-columns: 1fr;
+    }
+
+    &__img {
+      max-width: 400px;
+
+      @media screen and (max-width: 1110px) {
+        max-width: 350px;
+      }
+
+      @media screen and (max-width: 1050px) {
+        max-width: 350px;
+        margin-top: -40px;
+      }
+
+      @media screen and (max-width: 800px) {
+        margin-top: 0;
+      }
+
+      @media screen and (max-width: 580px) {
+        width: 100%;
+        max-width: initial;
+      }
+    }
+
+    &__contentBox {
+      &__text {
+        max-width: 566px;
+        margin-top: 20px;
+
+        @media screen and (max-width: 1050px) {
+          margin-top: 10px;
+        }
+      }
+      &__title {
+        font-family: 'TTHovesBold';
+        font-style: normal;
+        font-size: 48px;
+        line-height: 58px;
+
+        @media screen and (max-width: 1050px) {
+          margin-top: 20px;
+        }
+
+        @media screen and (max-width: 580px) {
+          font-size: 42px;
+          line-height: 45px;
+        }
+      }
+
+      &__gridBox {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        column-gap: 90px;
+        row-gap: 40px;
+
+        @media screen and (max-width: 1200px) {
+          column-gap: 30px;
+        }
+
+        @media screen and (max-width: 1110px) {
+          column-gap: 15px;
+          margin-top: 50px;
+        }
+
+        @media screen and (max-width: 1050px) {
+          row-gap: 30px;
+        }
+
+        @media screen and (max-width: 580px) {
+          margin-top: 40px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__box {
+          max-width: 250px;
+
+          &__img {
+            width: 36px;
+          }
+
+          &__text {
+            font-family: 'TTHovesRegular';
+            font-weight: normal;
+            font-size: 21px;
+            line-height: 140%;
+
+            @media screen and (max-width: 580px) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__gridBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 120px;
+    row-gap: 90px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+    }
+
+    &__box {
+      &__title {
+        font-family: 'TTHovesBold' !important;
+      }
+      &__text {
+        max-width: 400px;
+        margin-top: 20px;
+
+        @media screen and (max-width: 800px) {
+          max-width: initial;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .whatYouGetBox {
+    border: $border_length solid #000;
+    position: relative;
+    padding: 70px 64px;
+
+    @media screen and (max-width: 800px) {
+      padding: 40px 30px;
+    }
+
+    @media screen and (max-width: 580px) {
+      padding: 38px 20px;
+      padding-top: 60px;
+    }
+
+    &__rightIcon {
+      position: absolute;
+      top: -3px;
+      right: -3.5px;
+      width: 50px;
+      z-index: 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: -$border_length - 1px;
+      right: -$border_length - 1px;
+      background-color: white;
+    }
+
+    .title {
+      margin-bottom: 40px;
+
+      @media screen and (max-width: 800px) {
+        margin-bottom: 27px;
+      }
+    }
+
+    &__textBox {
+      &__box {
+        padding: 25px 0;
+        font-family: 'TTHovesRegular';
+        border-bottom: 1px solid #000;
+        transition: opacity .5s ease;
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        @media screen and (max-width: 800px) {
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+
+        &__text {
+          font-size: 21px;
+          line-height: 140%;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &.hidden {
+          display: none;
+          opacity: 0;
+        }
+      }
+
+    }
+  }
+
+  .diplomBox {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 20px;
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: 1fr;
+    }
+
+    &__img {
+      max-width: 430px;
+      margin-top: 13px;
+
+      @media screen and (max-width: 1000px) {
+        max-width: initial;
+        width: 100%;
+      }
+
+      @media screen and (max-width: 800px) {
+        margin-top: 0;
+      }
+    }
+
+    &__title {
+      display: none;
+
+      @media screen and (max-width: 1000px) {
+        display: block;
+        margin-bottom: 40px;
+      }
+
+      @media screen and (max-width: 800px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__textBox {
+      display: grid;
+      row-gap: 20px;
+
+      @media screen and (max-width: 1000px) {
+        margin-top: 40px;
+      }
+
+      @media screen and (max-width: 800px) {
+        margin-top: 20px;
+      }
+
+      &__title {
+        margin-bottom: 0 !important;
+
+        @media screen and (max-width: 1000px) {
+          display: none;
+        }
+      }
+
+      &__text {
+        max-width: 600px;
+
+        @media screen and (max-width: 800px) {
+          max-width: initial;
+        }
+      }
+
+      &__btn {
+        max-width: 328px;
+
+        @media screen and (max-width: 800px) {
+          max-width: initial;
+        }
+      }
+    }
+  }
+
+  &__salary {
+    display: grid;
+
+    &__title {
+      margin-bottom: 40px !important;
+
+      @media screen and (max-width: 800px) {
+        margin-bottom: 20px !important;
+      }
+    }
+    &__text {
+      max-width: 876px;
+      margin-bottom: 36px;
+
+      @media screen and (max-width: 800px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__img {
+      max-width: 1065px;
+      justify-self: center;
+      width: 100%;
+    }
+  }
+
+  &__studentBox {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+
+    &__img {
+      max-width: 579px;
+      width: 100%;
+    }
+
+    &__textBox {
+      align-self: center;
+      display: grid;
+      row-gap: 25px;
+
+      p {
+        font-family: 'TTHovesRegular';
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 140%;
+      }
+    }
+  }
+
+  &__feedbackBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+
+    @media screen and (max-width: 1000px) {
+      column-gap: 15px;
+    }
+
+    @media screen and (max-width: 800px) {
+      display: flex;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &__sliderDots {
+      display: flex;
+      margin: 10px 0;
+      justify-content: center;
+
+      &.black {
+        .sliderBox__sliderDots__dot.active {
+          background: #404040;
+        }
+      }
+
+      &.green {
+        .sliderBox__sliderDots__dot.active {
+          background: #BCDA01;
+        }
+      }
+
+      &__dot {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #C4C4C4;
+        border-radius: 50%;
+        cursor: url("../images/pointer active.png"), auto;
+
+        &:not(&:last-child) {
+          margin-right: 8px;
+        }
+
+        &.active {
+          background: #C4C4C4;
+        }
+      }
+    }
+
+    &__box {
+      background: #F0F7FD;
+      border-radius: 12px;
+      padding: 50px 25px 45px 25px;
+      display: grid;
+      row-gap: 10px;
+
+      @media screen and (max-width: 800px) {
+        min-width: 100%;
+        transition: transform 1s;
+        transform: translateX(0);
+      }
+
+      &__icon {
+        width: 38px;
+      }
+
+      &__text {
+        font-family: 'TTHovesRegular';
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 140%;
+
+        @media screen and (max-width: 1150px) {
+          font-size: 18px;
+        }
+
+        @media screen and (max-width: 800px) {
+          font-size: 21px;
+        }
+      }
+
+      &__student {
+        align-self: end;
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+        column-gap: 16px;
+
+        img {
+          width: 72px;
+
+          @media screen and (max-width: 1000px) {
+            width: 50px;
+          }
+
+          @media screen and (max-width: 800px) {
+            width: 72px;
+          }
+        }
+
+        &__name {
+          font-family: 'MontserratRegular';
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 27px;
+
+          @media screen and (max-width: 1000px) {
+            font-size: 16px;
+            line-height: 18px;
+          }
+
+          @media screen and (max-width: 800px) {
+            font-size: 18px;
+            line-height: 27px;
+          }
+        }
+      }
+    }
+  }
+
+  &__aboutUs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 97px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+    }
+
+    &__leftBox {
+      display: grid;
+      row-gap: 40px;
+
+      @media screen and (max-width: 800px) {
+        row-gap: 40px;
+      }
+
+      &__img {
+        max-width: 110px;
+      }
+      &__text {
+        font-family: 'TTHovesDemiBold' !important;
+
+        @media screen and (max-width: 800px) {
+          font-size: 22px !important;
+          line-height: 140% !important;
+        }
+      }
+
+    }
+
+    &__rightBox {
+      display: grid;
+      row-gap: 40px;
+
+      @media screen and (max-width: 800px) {
+        row-gap: 30px;
+      }
+
+      &__box {
+        display: grid;
+        row-gap: 5px;
+
+        &__title {
+          font-family: 'TTHovesBold';
+          font-size: 58px;
+          line-height: 68px;
+          letter-spacing: 0.01em;
+
+          @media screen and (max-width: 800px) {
+            font-size: 34px;
+            line-height: 40px;
+          }
+
+          @media screen and (max-width: 340px) {
+            font-size: 30px;
+          }
+        }
+        &__text {
+          font-family: 'TTHovesRegular';
+          font-weight: normal;
+          font-size: 21px;
+          line-height: 140%;
+
+          @media screen and (max-width: 800px) {
+            font-size: 16px;
+            line-height: 140%;
+          }
+        }
+      }
+    }
+  }
+
+  &__sliderBox {
+    &__text {
+      max-width: 748px;
+    }
+  }
+
+  .sliderBox {
+    &__text {
+      font-family: 'TTHovesRegular';
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    &__slider {
+      display: flex;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
+
+
+      &__slide {
+        width: calc(50% - 100px);
+        flex-shrink: 0;
+        margin: 20px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 1s;
+        transform: translateX(0);
+
+        @media screen and (max-width: 800px) {
+          min-width: 100%;
+          margin: 20px 0;
+        }
+
+        iframe {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__sliderDots {
+      display: flex;
+      justify-content: center;
+
+      &.black {
+        .sliderBox__sliderDots__dot.active {
+          background: #404040;
+        }
+      }
+
+      &.green {
+        .sliderBox__sliderDots__dot.active {
+          background: #BCDA01;
+        }
+      }
+
+      &__dot {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #C4C4C4;
+        border-radius: 50%;
+        cursor: url("../images/pointer active.png"), auto;
+
+        &:not(&:last-child) {
+          margin-right: 8px;
+        }
+
+        &.active {
+          background: #C4C4C4;
+        }
+      }
+    }
+  }
+}
+
+.blueDiscount {
+  display: grid;
+  justify-content: center;
+
+  &__title {
+    color: white;
+    text-transform: uppercase;
+    font-family: 'TTHovesBold';
+    font-size: 52px;
+    line-height: 61px;
+    letter-spacing: 0.03em;
+    font-style: normal;
+
+    @media screen and (max-width: 800px) {
+      max-width: 300px;
+      font-size: 43px;
+    }
+
+    @media screen and (max-width: 620px) {
+      font-size: 37px;
+      line-height: 47px;
+    }
+  }
+
+  &__timeBox {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 90px;
+    margin: 57px 0;
+
+    @media screen and (max-width: 800px) {
+      column-gap: 32px;
+      margin: 20px 0;
+    }
+
+    &__box {
+      &__time {
+        font-family: 'Chava';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 174px;
+        line-height: 107.5%;
+
+        @media screen and (max-width: 1000px) {
+          font-size: 144px;
+        }
+
+        @media screen and (max-width: 800px) {
+          font-size: 114px;
+        }
+
+        @media screen and (max-width: 620px) {
+          font-size: 80px;
+        }
+
+        @media screen and (max-width: 450px) {
+          font-size: 60px;
+        }
+
+        @media screen and (max-width: 400px) {
+          font-size: 50px;
+        }
+      }
+
+      &__text {
+        font-family: 'TTHovesRegular';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 27px;
+        line-height: 32px;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 620px) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    width: 328px;
+
+    @media screen and (max-width: 450px) {
+      max-width: 328px;
+      width: 100%;
+    }
+  }
+
+  .maxWidth {
+    display: grid;
+    justify-items: center;
+  }
+}
+
+footer {
+  margin-top: 160px;
+  background: #222222;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  .title {
+    color: white;
+    margin-bottom: 79px !important;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 140px;
+
+    @media screen and (max-width: 1140px) {
+      column-gap: 100px;
+    }
+
+    @media screen and (max-width: 1050px) {
+      grid-template-columns: 1fr;
+      row-gap: 66px;
+    }
+
+    &__leftBox {
+      &__textBox {
+        display: grid;
+        row-gap: 24px;
+
+        &__box {
+          display: grid;
+          grid-template-columns: max-content 1fr;
+          column-gap: 20px;
+          color: white;
+
+          &__img {
+            width: 28px;
+          }
+        }
+      }
+    }
+
+    &__formBox {
+      background: white;
+      max-height: 600px;
+      max-width: 475px;
+      border-radius: 12px;
+      padding: 60px 60px 50px 60px;
+      display: grid;
+      position: relative;
+      width: 100%;
+
+      @media screen and (max-width: 1050px) {
+        justify-self: center;
+      }
+
+      @media screen and (max-width: 800px) {
+        padding: 60px 28px;
+      }
+
+      &__readyBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #222222;
+        color: white;
+        border-radius: 10px;
+        justify-items: center;
+        align-content: center;
+        display: none;
+        text-align: center;
+        padding: 16px 39px;
+        z-index: 1;
+
+        &.active {
+          display: grid;
+        }
+
+        &__img {
+          max-width: 256px;
+          width: 100%;
+
+          @media screen and (max-width: 800px) {
+            max-width: 204px;
+          }
+        }
+
+        &__title {
+          font-family: 'Miratrix';
+          font-size: 43px;
+          line-height: 123.5%;
+          text-align: center;
+          text-transform: uppercase;
+          color: white;
+
+          @media screen and (max-width: 390px) {
+            font-size: 35px;
+          }
+        }
+
+        .btn {
+          margin-top: 1rem;
+        }
+
+        &__text {
+          font-family: 'TTHovesRegular';
+          font-size: 18px;
+          line-height: 21px;
+          margin-top: 10px;
+          color: white;
+
+          @media screen and (max-width: 390px) {
+            font-size: 16px;
+          }
+        }
+
+        &__rocket {
+          max-width: 80px;
+          margin-top: 1rem;
+        }
+      }
+
+
+      &__discount {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        color: white;
+        font-size: 50px;
+        line-height: 74px;
+        text-transform: uppercase;
+        font-family: 'TTHovesBold';
+        display: flex;
+
+        @media screen and (max-width: 1050px) {
+          left: initial;
+          right: -15px;
+        }
+
+        @media screen and (max-width: 800px) {
+          font-size: 40px;
+          line-height: 44px;
+          right: 0;
+        }
+
+        &__ellipse {
+          width: 130px;
+          height: 130px;
+          background: $dark_blue;
+          border-radius: 50%;
+          position: absolute;
+          top: -27px;
+          left: -20px;
+
+          @media screen and (max-width: 800px) {
+            width: 115px;
+            height: 115px;
+            top: -36px;
+            left: -20px;
+          }
+        }
+
+        p {
+          z-index: 1;
+
+          @media screen and (max-width: 900px) {
+            line-height: inherit !important;
+          }
+        }
+      }
+
+      &__title {
+        font-family: 'TTHovesBold';
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 800px) {
+          font-size: 26px;
+          line-height: 31px;
+        }
+      }
+
+      &__text {
+        font-family: 'TTHovesRegular';
+        font-size: 21px;
+        line-height: 140%;
+        text-align: center;
+        margin-top: 10px;
+
+        @media screen and (max-width: 800px) {
+          font-size: 16px;
+          line-height: 140%;
+        }
+      }
+
+      &__inputBox {
+        display: grid;
+        row-gap: 23px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        width: 328px;
+        margin-top: 30px;
+        justify-self: center;
+
+        @media screen and (max-width: 800px) {
+          width: 100%;
+        }
+      }
+
+
+      &__endBoldText {
+        margin-top: 41px;
+      }
+
+      &__endBoldText, &__endText {
+        font-family: 'TTHovesDemiBold';
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        text-transform: lowercase;
+        color: #222222;
+        opacity: 0.5;
+
+        @media screen and (max-width: 800px) {
+          font-size: 18px;
+          line-height: 21px;
+        }
+      }
+
+      &__endText {
+        margin-top: 10px;
+        font-family: 'TTHovesRegular';
+      }
+
+    }
+  }
+
+
+}

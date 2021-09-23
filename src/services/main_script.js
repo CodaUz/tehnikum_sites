@@ -1,0 +1,320 @@
+require('@babel/polyfill')
+const moment = require('moment')
+
+const MOBILE_WIDTH = 800
+
+function listenSliders() {
+    $('.sliderBox__sliderDots').each(function () {
+        const $sliderDots = $(this)
+        let id = $(this).data('id')
+        let n = 2
+
+        if ($(window).width() <= MOBILE_WIDTH) {
+            n = 1
+        }
+
+        let children_length = $(`.sliderBox__slider[data-id="${id}"]`).children().length
+        let number_of_dots = (children_length+(children_length%n))/n
+        if (children_length%n !== 0 && $(window).width() > MOBILE_WIDTH) {
+            number_of_dots += 1
+        }
+
+        for (let i=0; i < number_of_dots; i++)  {
+            let $dot = $("<div>", {"data-number": i, "class": `sliderBox__sliderDots__dot ${i === 0 ? 'active' : ''}`});
+
+            $dot.click(function () {
+                const number_dot = parseInt($(this).data('number'))
+
+                $sliderDots.children().each(function () {
+                    $(this).removeClass('active')
+                })
+
+                $(this).addClass('active')
+
+                moveSlider(id, number_dot)
+            })
+
+            $sliderDots.append($dot)
+        }
+    })
+
+    $('.sliderBox__nextSlide').click(function () {
+        moveSlider($(this).data('id'))
+    })
+
+    $('.sliderBox__prevSlide').click(function () {
+        moveSlider($(this).data('id'), undefined, false)
+    })
+
+    for (let slider of document.querySelectorAll('.sliderBox__slider')) {
+        slider.addEventListener("swiped-right", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            console.log('swipe right')
+            moveSlider(slider.getAttribute('data-id'), undefined, false)
+        });
+
+        slider.addEventListener("swiped-left", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            moveSlider(slider.getAttribute('data-id'), undefined)
+        });
+    }
+}
+
+function moveSlider(id, number_dot=undefined, is_next=true) {
+    if (number_dot === undefined) {
+        number_dot = $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).data('number')
+        let all_numbers = $(`.sliderBox__sliderDots[data-id="${id}"]`).children().length
+
+        number_dot = is_next ? (all_numbers-1) === number_dot ? 0 : number_dot+1 : number_dot === 0 ? all_numbers-1 : number_dot-1
+
+        $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).removeClass('active')
+        $(`.sliderBox__sliderDots[data-id="${id}"]>.sliderBox__sliderDots__dot[data-number="${number_dot}"]`).addClass('active')
+    }
+
+    $(`.sliderBox__slider[data-id="${id}"]`).children().each(function () {
+        let number = number_dot * 100
+        let multiple_value = 100
+        let number_px = $(window).width() <= MOBILE_WIDTH ? 0 : number_dot * multiple_value
+        $(this).css('transform', `translateX( calc(-${number}% - ${number_px}px))`)
+    })
+}
+
+function listenFeedbackSliders() {
+    $('.section__feedbackBox__sliderDots').children().each(function () {
+        const $sliderDot = $(this)
+
+        $sliderDot.on('click', function () {
+            moveFeedbackSlider(parseInt($sliderDot.data('index')))
+        })
+    })
+
+    for (let slider of document.querySelectorAll('.section__feedbackBox__box')) {
+        slider.addEventListener("swiped-right", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            moveFeedbackSlider(undefined, true, false)
+        });
+
+        slider.addEventListener("swiped-left", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            moveFeedbackSlider(undefined, true)
+        });
+    }
+}
+
+function moveFeedbackSlider(number, isSlide=false, isNext=true) {
+    if (isSlide) {
+        const maxIndex =  $('.section__feedbackBox__sliderDots').children().length - 1
+        let index = parseInt($('.section__feedbackBox__sliderDots__dot.active').data('index'))
+
+        index = isNext ? index + 1 : index - 1
+
+        if (index < 0) {
+            index = maxIndex
+        } else if (index > maxIndex) {
+            index = 0
+        }
+
+        number = index
+    }
+    const slideWidth = $('.section__feedbackBox').width()
+    const addWidth = 15
+    const translateX = (slideWidth*number) + (addWidth * number)
+    $('.section__feedbackBox__sliderDots__dot').removeClass('active')
+    $(`.section__feedbackBox__sliderDots__dot[data-index="${number}"]`).addClass('active')
+    $('.section__feedbackBox__box').css('transform', `translateX( ${translateX > 0 ? translateX * -1 : 0}px)`)
+}
+
+function listenPopups() {
+    $('.openPopup').click(() => {
+        openModalForm('.formBoxIndex')
+    })
+
+    $('.openProgramForm').click(() => {
+        $('.footer__mainBox__formBox__readyBox').removeClass('active')
+        $('div[data-form-id="Program"]').attr('data-program', 'true')
+        $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
+        $('p.footer__mainBox__formBox__text').text('Сразу после заполнения данных вы перейдете в Telegram, где сможете посмотреть всю программу')
+        $('p.titleName').text('Программа курса')
+        openModalForm('.formBoxIndex')
+    })
+
+    $('.openForm').click(() => {
+        $('.footer__mainBox__formBox__readyBox').removeClass('active')
+        $('div[data-form-id="Program"]').attr('data-program', '')
+        $('p.footer__mainBox__formBox__text').text('')
+        $('div.sendForm[data-form-id="Program"]').text('Записаться на курс')
+        $('p.titleName').text('оставь заявку')
+        openModalForm('.formBoxIndex')
+    })
+}
+
+function openModalForm(formName) {
+    document.querySelector(formName).classList.add("active");
+    document.querySelector(`${formName}>.grayBack`).classList.add("active");
+    setTimeout(() => {
+        document.querySelector(formName).classList.add("activeAnimate");
+        document.querySelector(`${formName}>.grayBack`).classList.add("activeAnimate");
+    }, 0);
+}
+
+function closeModalForm(formName) {
+    document.querySelector(`${formName}>.grayBack`).classList.remove("activeAnimate");
+    setTimeout(() => {
+        document.querySelector(formName).classList.remove("activeAnimate");
+        document.querySelector(formName).classList.remove("active");
+        document.querySelector(`${formName}>.grayBack`).classList.remove("active");
+    }, 100);
+}
+
+function closePopupsOnBack() {
+    $('.grayBack').click(function () {
+        closeModalForm('.formBoxIndex')
+    })
+}
+
+function parse_query_string(query) {
+    var vars = query.split("&");
+    var query_string = {};
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        var key = decodeURIComponent(pair[0]);
+        var value = decodeURIComponent(pair[1]);
+        // If first entry with this name
+        if (typeof query_string[key] === "undefined") {
+            query_string[key] = decodeURIComponent(value);
+            // If second entry with this name
+        } else if (typeof query_string[key] === "string") {
+            var arr = [query_string[key], decodeURIComponent(value)];
+            query_string[key] = arr;
+            // If third or later entry with this name
+        } else {
+            query_string[key].push(decodeURIComponent(value));
+        }
+    }
+    return query_string;
+}
+
+async function takeCourse(formId, is_redirect=false) {
+    let name = document.querySelector(`input[name="name${formId}"]`).value;
+    let phone = document.querySelector(`input[name="phone${formId}"]`).value;
+    let query = window.location.search.substring(1);
+    let qs = parse_query_string(query);
+
+    if (name && phone) {
+        document.querySelector(`input[name="name${formId}"]`).value = "";
+        document.querySelector(`input[name="phone${formId}"]`).value = "";
+        for (let item of document.querySelectorAll(".input")) {
+            item.classList.remove("active");
+        }
+
+        let redisKey = Math.floor(Math.random()*900000000) + 100000000;
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}`
+        const WEBINAR_ID = 604904
+
+
+        if (is_redirect) {
+            await fetch(
+                `https://node.snimerovsky.xyz/log`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({site: 'context', name,phone, redisKey, redisValue})
+                }
+            );
+
+            await fetch(
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=tg&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                {
+                    method: "GET",
+                }
+            );
+
+            let a= document.createElement('a');
+
+            a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
+            setTimeout(() => {
+                a.click();
+            }, 10)
+        } else {
+            $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
+            $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
+
+            fetch(
+                `https://node.snimerovsky.xyz/log`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({site: 'context', name,phone})
+                }
+            );
+
+            fetch(
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=course&course=tg${qs.r ?  `-${qs.r}` : ''}`,
+                {
+                    method: "GET",
+                }
+            );
+        }
+    }
+}
+
+function encryptName(name) {
+    return "ENCRYPT"+[...name].map(str => str.charCodeAt()).join("S")
+}
+
+function sendForm() {
+    for (let btn of document.querySelectorAll(".sendForm")) {
+        btn.addEventListener("click", () => {
+            if (btn.getAttribute('data-program') === 'true') {
+                return takeCourse(btn.getAttribute('data-form-id'), true)
+            }
+            return takeCourse(btn.getAttribute('data-form-id'))
+        });
+    }
+}
+
+function setCountDown() {
+    if (!localStorage.getItem('timeLeft')) {
+        localStorage.setItem('timeLeft', parseInt(new Date(moment().add("days", 2)).getTime()/1000))
+    }
+
+    let eventTime= parseInt(localStorage.getItem('timeLeft'));
+    let currentTime = parseInt(new Date().getTime()/1000);
+    let diffTime = eventTime - currentTime;
+    let duration = moment.duration(diffTime*1000, 'milliseconds');
+    let interval = 1000;
+
+    setInterval(function(){
+        duration = moment.duration(duration - interval, 'milliseconds');
+        if (duration.seconds() > 0) {
+            $('.timeDays').text(duration.days())
+            $('.timeHours').text(duration.hours())
+            $('.timeMinutes').text(duration.minutes())
+        }
+    }, interval);
+
+    console.log('moment', moment())
+}
+
+function init() {
+    setCountDown()
+    listenSliders()
+    listenFeedbackSliders()
+    listenPopups()
+    closePopupsOnBack()
+    sendForm()
+}
+
+$( window ).on( "load", function() {
+    init()
+});
