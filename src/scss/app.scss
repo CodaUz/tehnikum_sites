@@ -639,9 +639,13 @@ header, section, footer, .maxWidth {
     }
 
     &__sliderDots {
-      display: flex;
+      display: none;
       margin: 10px 0;
       justify-content: center;
+
+      @media screen and (max-width: 800px) {
+        display: flex;
+      }
 
       &.black {
         .sliderBox__sliderDots__dot.active {

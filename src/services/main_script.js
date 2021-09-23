@@ -2,6 +2,7 @@ require('@babel/polyfill')
 const moment = require('moment')
 
 const MOBILE_WIDTH = 800
+let POPUP_EVENT;
 
 function listenSliders() {
     $('.sliderBox__sliderDots').each(function () {
@@ -303,7 +304,57 @@ function setCountDown() {
         }
     }, interval);
 
-    console.log('moment', moment())
+}
+
+function openPopUp(formBox, grayBack, text, btnText, listener) {
+    if (text) {
+        document.querySelector('.popupBox__box__title').textContent = text
+    }
+    if (btnText) {
+        document.querySelector('.popupBox__box__btn').textContent = btnText
+    }
+    if (POPUP_EVENT) {
+        document.querySelector('.popupBox__box__btn').removeEventListener('click', POPUP_EVENT)
+    }
+    try {
+        document.querySelector('.popupBox__box__btn').addEventListener('click', listener)
+    } catch (e) {
+
+    }
+    document.querySelector(`${formBox}`).classList.add("active");
+    document.querySelector(`${grayBack}`).classList.add("active");
+
+    POPUP_EVENT = listener;
+
+    setTimeout(() => {
+        document.querySelector(`${grayBack}`).classList.add("activeAnimate");
+        document.querySelector(`${formBox}`).classList.add("activeAnimate");
+    }, 0);
+}
+
+function getReviewsVideos() {
+    for (let btn of document.querySelectorAll('.getVideo')) {
+        btn.addEventListener('click', (e) => {
+            // e.preventDefault()
+
+            const link = btn.getAttribute('data-link')
+
+            console.log('link', link)
+
+            document.querySelector('.popupBoxVideo').children[1].children[0].innerHTML = `
+      <iframe width="100%" height="300"
+              src="https://www.youtube.com/embed/${btn.getAttribute('data-link')}">
+      </iframe>
+    `
+
+            openPopUp('.popupBoxVideo', '.grayBackVideo')
+        })
+    }
+
+    document.querySelector('.grayBackVideo').addEventListener('click', (e) => {
+        closeModalForm('.popupBoxVideo', '.grayBackVideo')
+        e.target.parentElement.children[1].children[0].innerHTML = ''
+    })
 }
 
 function init() {
@@ -313,6 +364,7 @@ function init() {
     listenPopups()
     closePopupsOnBack()
     sendForm()
+    getReviewsVideos()
 }
 
 $( window ).on( "load", function() {
