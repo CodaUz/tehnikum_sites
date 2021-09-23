@@ -297,10 +297,13 @@ function setCountDown() {
 
     setInterval(function(){
         duration = moment.duration(duration - interval, 'milliseconds');
+        let days = parseInt(duration.days())
+        let hours = parseInt(duration.hours())
+        let minutes = parseInt(duration.minutes())
         if (duration.seconds() > 0) {
-            $('.timeDays').text(duration.days())
-            $('.timeHours').text(duration.hours())
-            $('.timeMinutes').text(duration.minutes())
+            $('.timeDays').text(`${days < 10 ? '0' : ''}${days}`)
+            $('.timeHours').text(`${hours < 10 ? '0' : ''}${hours}`)
+            $('.timeMinutes').text(`${minutes < 10 ? '0' : ''}${minutes}`)
         }
     }, interval);
 
