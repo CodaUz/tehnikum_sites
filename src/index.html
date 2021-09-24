@@ -86,7 +86,8 @@
                     <p class="titleName">оставь заявку</p>
                     <p class="footer__mainBox__formBox__text"></p>
                     <input type="text" name="nameProgram" placeholder="Имя">
-                    <input type="text" name="phoneProgram" class="footer__mainBox__formBox__input" data-mask="+998 00-000-0000" placeholder="+998 00-000-000">
+                    <input type="text" name="lastNameProgram" class="footer__mainBox__formBox__input" placeholder="Фамилия">
+                    <input type="text" name="phoneProgram" style="margin-bottom: 30px" data-mask="+998 00-000-0000" placeholder="+998 00-000-000">
                     <div class="btn btn__whiteInside sendForm" data-form-id="Program">Записаться на курс</div>
                 </div>
             </div>
@@ -119,7 +120,7 @@
                     <div class="header__btnBox__discount__ellipse"></div>
                     <p>10%<br>
                         <span class="header__btnBox__discount__smallText">
-                            у вас осталось<br> 00:08
+                            у вас осталось<br> <span class="timer">00:00:00</span>
                         </span>
                     </p>
                 </div>
@@ -377,7 +378,7 @@
             </div>
         </div>
         <div class="section__centerBtn btn btn__black openProgramForm">
-            Скачать программу
+            Скачать полную программу
         </div>
     </section>
 
@@ -691,10 +692,10 @@
         <div class="footer">
             <h2 class="title marginBottom14"><span class="purple">Хочешь узнать ещё больше?</span></h2>
             <div class="footer__typeBox">
-                <div class="footer__typeBox__type active">
+                <div class="footer__typeBox__type active" data-type="offline">
                     Оффлайн
                 </div>
-                <div class="footer__typeBox__type">
+                <div class="footer__typeBox__type" data-type="online">
                     Онлайн
                 </div>
             </div>
@@ -714,7 +715,7 @@
                         <div class="footer__formBox__discount__ellipse"></div>
                         <p>10%<br>
                         <span class="footer__formBox__discount__smallText">
-                            у вас осталось<br> 00:08
+                            у вас осталось<br> <span class="timer">00:00:00</span>
                         </span>
                         </p>
                     </div>
@@ -734,18 +735,18 @@
                         Остались вопросы?
                     </p>
                     <p class="footer__formBox__endText">
-                        Звони: +998 33 135 33 55<br>
+                        Звони: <span><a href="tel:+998 97-135-33-55">+998 97-135-33-55</a></span><br>
                         Наши консультанты доступны каждый день<br>
                         с 10:00 до 22:00.
                     </p>
                     <div class="footer__formBox__socials">
-                        <a href="">
+                        <a href="https://instagram.com/tehnikum.school?igshid=5uh70q7ckxx2" target="_blank">
                             <img src="images/instagram.svg" alt="instagram">
                         </a>
-                        <a href="">
+                        <a href="https://t.me/tehnikum_school" target="_blank">
                             <img src="images/telegram%20(1).svg" alt="telegram">
                         </a>
-                        <a href="">
+                        <a href="https://www.facebook.com/tehnikum.school" target="_blank">
                             <img src="images/facebook%20(1).svg" class="facebook" alt="facebook">
                         </a>
                     </div>

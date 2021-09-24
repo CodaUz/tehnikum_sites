@@ -1040,6 +1040,7 @@ header, section, footer, .maxWidth {
       font-family: 'MontserratRegular';
       padding: 10px 60px;
       border-radius: 6px;
+      cursor: url("../images/pointer active.png"), auto;
 
       @media screen and (max-width: 800px) {
         width: 100%;
@@ -1352,6 +1353,7 @@ header, section, footer, .maxWidth {
 
     &__box {
       padding: 20px;
+      min-height: 235px;
 
       @media screen and (max-width: 800px) {
         padding-bottom: 50px;
@@ -1446,9 +1448,14 @@ header, section, footer, .maxWidth {
 
       &__textBox {
         display: grid;
-        grid-template-columns: max-content max-content 1fr;
+        grid-template-columns: 0.5fr 1fr 1fr;
         column-gap: 30px;
         margin-top: 30px;
+
+        &__btn {
+          max-width: 349px;
+          max-height: 103px;
+        }
 
         @media screen and (max-width: 800px) {
           grid-template-columns: 1fr;

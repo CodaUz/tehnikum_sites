@@ -95,12 +95,10 @@
           }
 
           &__img {
-            max-width: 256px;
+            max-width: 150px;
             width: 100%;
-
-            @media screen and (max-width: 800px) {
-              max-width: 204px;
-            }
+            margin-top: -50px;
+            padding-bottom: 30px;
           }
 
           &__title {
@@ -148,10 +146,10 @@
       }
 
       .titleName {
-        font-family: "TTHovesBold";
+        font-family: "Miratrix";
         margin-bottom: 10px;
-        font-size: 26px;
-        line-height: 31px;
+        font-size: 44px;
+        line-height: 39px;
         text-align: center;
         text-transform: uppercase;
       }

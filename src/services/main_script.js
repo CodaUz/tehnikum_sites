@@ -55,6 +55,10 @@ function listenSliders() {
             moveSlider(slider.getAttribute('data-id'), undefined, false)
         });
 
+        setInterval(() => {
+            moveSlider(slider.getAttribute('data-id'), undefined)
+        }, 4000)
+
         slider.addEventListener("swiped-left", (event) => {
             event.stopPropagation();
             event.preventDefault();
@@ -139,7 +143,7 @@ function listenPopups() {
         $('div[data-form-id="Program"]').attr('data-program', 'true')
         $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
         $('p.footer__mainBox__formBox__text').text('Сразу после заполнения данных вы перейдете в Telegram, где сможете посмотреть всю программу')
-        $('p.titleName').text('Программа курса')
+        $('p.titleName').text('сделай первый шаг')
         openModalForm('.formBoxIndex')
     })
 
@@ -148,8 +152,8 @@ function listenPopups() {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', '')
         $('p.footer__mainBox__formBox__text').text('')
-        $('div.sendForm[data-form-id="Program"]').text('Записаться на курс')
-        $('p.titleName').text('оставь заявку')
+        $('div.sendForm[data-form-id="Program"]').text('Хочу учиться')
+        $('p.titleName').text('РЕШАЙСЯ')
         openModalForm('.formBoxIndex')
     })
 }
@@ -208,6 +212,9 @@ async function takeCourse(formId, is_redirect=false) {
 
     if (name && phone) {
         document.querySelector(`input[name="name${formId}"]`).value = "";
+        if (document.querySelector(`input[name="lastName${formId}"]`)) {
+            document.querySelector(`input[name="lastName${formId}"]`).value = ''
+        }
         document.querySelector(`input[name="phone${formId}"]`).value = "";
         for (let item of document.querySelectorAll(".input")) {
             item.classList.remove("active");
@@ -289,6 +296,7 @@ function setCountDown() {
             $('.timeDays').text(`${days < 10 ? '0' : ''}${days}`)
             $('.timeHours').text(`${hours < 10 ? '0' : ''}${hours}`)
             $('.timeMinutes').text(`${minutes < 10 ? '0' : ''}${minutes}`)
+            $('.timer').text(`${days < 10 ? '0' : ''}${days}:${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`)
         }
     }, interval);
 
@@ -382,6 +390,21 @@ function listenProgram() {
     }
 }
 
+function closeFormWithCross() {
+    $('.footer__formBox__readyBox__cross').click(function () {
+        $(this).parent().removeClass('active')
+    })
+}
+
+function listenType() {
+    for (let type of document.querySelectorAll('.footer__typeBox__type')) {
+        type.addEventListener('click', () => {
+            $('.footer__typeBox__type').removeClass('active')
+            type.classList.add('active')
+        })
+    }
+}
+
 function init() {
     setCountDown()
     listenSliders()
@@ -392,6 +415,8 @@ function init() {
     getReviewsVideos()
     getMaxHeight()
     listenProgram()
+    closeFormWithCross()
+    listenType()
 }
 
 $( window ).on( "load", function() {
