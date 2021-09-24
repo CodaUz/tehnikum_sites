@@ -241,6 +241,14 @@ header, section, footer, .maxWidth {
 
       @media screen and (max-width: 450px) {
         width: 100%;
+        max-width: 320px;
+      }
+    }
+
+    a {
+      @media screen and (max-width: 450px) {
+        width: 100%;
+        max-width: 320px;
       }
     }
   }
@@ -308,6 +316,10 @@ header, section, footer, .maxWidth {
         width: 100%;
         max-width: 180px;
         margin-left: -20px;
+
+        @media screen and (min-width: 1230px) {
+          max-width: 230px;
+        }
       }
 
       &__title {
@@ -347,7 +359,7 @@ header, section, footer, .maxWidth {
       @media screen and (max-width: 450px) {
        width: 250px;
         font-family: 'TTHovesBold' !important;
-        font-size: 24px;
+        font-size: 24px !important;
       }
     }
 

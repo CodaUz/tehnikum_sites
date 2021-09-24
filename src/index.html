@@ -76,7 +76,8 @@
                             спасибо за заявку!
                         </p>
                         <p class="footer__mainBox__formBox__readyBox__text">
-                            наш менеджер свяжется с вами</p>
+                            программу можете скачать
+                            в нашем telegram боте</p>
                         <a href="">
                             <div class="btn btn__whiteInside" style="margin-top: 40px">
                                 Скачать программу
@@ -87,7 +88,7 @@
                     <p class="footer__mainBox__formBox__text"></p>
                     <input type="text" name="nameProgram" placeholder="Имя">
                     <input type="text" name="lastNameProgram" class="footer__mainBox__formBox__input" placeholder="Фамилия">
-                    <input type="text" name="phoneProgram" style="margin-bottom: 30px" data-mask="+998 00-000-0000" placeholder="+998 00-000-000">
+                    <input type="text" name="phoneProgram" style="margin-bottom: 30px" data-mask="+998 00-000-0000" value="+998" placeholder="+998 00-000-000">
                     <div class="btn btn__whiteInside sendForm" data-form-id="Program">Записаться на курс</div>
                 </div>
             </div>
@@ -136,7 +137,7 @@
 
     <section class="section padding">
         <h2 class="title marginBottom14">что делает smm специалист?</h2>
-        <p class="text section__maxWidthText">Продвигает бренд в социальных сетях и управляет всеми процессами продвижения. Привлекает аудиторию к странице в соцсетях и конвертирует их в лояльных клиентов.</p>
+        <p class="section__maxWidthText section__gridBox__box__text">Продвигает бренд в социальных сетях и управляет всеми процессами продвижения. Привлекает аудиторию к странице в соцсетях и конвертирует их в лояльных клиентов.</p>
     </section>
 
     <div class="targetBox maxWidth">
@@ -442,9 +443,13 @@
             <div class="section__photoSliderBox__nextSlide"></div>
             <div class="section__photoSliderBox__prevSlide"></div>
             <div class="section__photoSliderBox__photoSlider">
-                <img src="images/sliderImg1.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide">
-                <img src="images/sliderImg2.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide">
-                <img src="images/sliderImg3.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide">
+                <img src="images/sliderImg1.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide active" data-index="1">
+                <img src="images/sliderImg2.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="2">
+                <img src="images/sliderImg3.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="3">
+                <img src="images/sliderImg4.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="4">
+                <img src="images/sliderImg5.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="5">
+                <img src="images/sliderImg6.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="6">
+                <img src="images/sliderImg7.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="7">
             </div>
         </div>
     </section>
@@ -728,7 +733,7 @@
                     <div class="footer__formBox__inputBox">
                         <input type="text" name="nameContact" placeholder="Имя">
                         <input type="text" name="lastNameContact" placeholder="Фамилия">
-                        <input type="text" name="phoneContact" class="footer__mainBox__formBox__input" data-mask="+998 00-000-0000" placeholder="+998 00-000-000">
+                        <input type="text" name="phoneContact" class="footer__mainBox__formBox__input" data-mask="+998 00-000-0000" value="+998" placeholder="+998 00-000-000">
                     </div>
                     <div class="btn btn__purple sendForm" data-form-id="Contact">Хочу учиться</div>
                     <p class="footer__formBox__endBoldText">
@@ -753,8 +758,8 @@
                 </div>
                 <div class="footer__course">
                     <p class="footer__course__title">мы подобрали для тебя курсы</p>
-                    <div>
-                        <div class="footer__course__box">
+                    <div class="footer__course__allBoxes">
+                        <div class="footer__course__box active" data-index="1">
                             <div class="footer__course__box__topBox mobile">
                                 <div class="footer__course__box__topBox__leftBox">
                                     <div class="footer__course__box__topBox__leftBox__box">
@@ -806,7 +811,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="footer__course__box">
+                        <div class="footer__course__box" data-index="2">
                             <div class="footer__course__box__topBox mobile">
                                 <div class="footer__course__box__topBox__leftBox">
                                     <div class="footer__course__box__topBox__leftBox__box">
@@ -857,7 +862,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="footer__course__box">
+                        <div class="footer__course__box" data-index="3">
                             <div class="footer__course__box__topBox mobile">
                                 <div class="footer__course__box__topBox__leftBox">
                                     <div class="footer__course__box__topBox__leftBox__box">
