@@ -1,0 +1,1536 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  cursor: url("../images/pointer.png"), auto;
+}
+
+a {
+  img {
+    cursor: url("../images/pointer active.png"), auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  font-family: 'TTHovesRegular';
+}
+
+header, section, footer, .maxWidth {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.fullWidth {
+  max-width: initial;
+}
+
+.header {
+  margin-top: 30px;
+  position: relative;
+
+  &__logo {
+    max-width: 130px;
+    width: 100%;
+  }
+
+  &__infoCourse {
+    margin-top: 50px;
+
+    @media screen and (max-width: 800px) {
+      margin-top: 29px;
+    }
+
+    &__box {
+
+      &:first-child {
+        margin-bottom: 20px;
+      }
+
+      &__title {
+        font-size: 25px;
+        line-height: 109.8%;
+        text-transform: lowercase;
+
+        @media screen and (max-width: 800px) {
+          font-size: 16px;
+          line-height: 109.8%;
+        }
+      }
+
+      &__text {
+        font-family: 'TTHovesBold';
+        font-size: 40px;
+        line-height: 109.8%;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 1000px) {
+          font-size: 33px;
+        }
+
+        @media screen and (max-width: 800px) {
+          font-size: 20px;
+          line-height: 109.8%;
+          margin-top: 10px;
+          text-transform: lowercase;
+        }
+
+      }
+    }
+  }
+
+  &__course {
+    margin-top: 40px;
+
+    @media screen and (max-width: 800px) {
+      margin-top: 29px;
+    }
+
+    &__title {
+      font-family: 'TTHovesMedium';
+      font-size: 35px;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 24px;
+        line-height: 21.67px;
+      }
+    }
+
+    &__name {
+      font-family: 'Miratrix';
+      font-size: 70px;
+      line-height: 60px;
+
+      @media screen and (max-width: 800px) {
+        font-size: 43px;
+        line-height: 38.83px;
+      }
+    }
+  }
+
+  &__description {
+    font-family: 'TTHovesMedium';
+    font-size: 35px;
+    line-height: 33px;
+    text-transform: lowercase;
+    max-width: 800px;
+    margin-top: 30px;
+
+    @media screen and (max-width: 800px) {
+      margin-top: 26px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      max-width: 600px;
+      font-size: 29px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      max-width: 500px;
+      font-size: 25px;
+    }
+
+    @media screen and (max-width: 800px) {
+      font-size: 14px;
+      line-height: 152.8%;
+    }
+  }
+
+  &__btnBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    max-width: 700px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    position: relative;
+
+    @media screen and (max-width: 1200px) {
+      max-width: 600px;
+    }
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+      max-width: initial;
+      row-gap: 10px;
+      justify-items: center;
+      margin-top: 60px;
+      margin-bottom: 0;
+    }
+
+    &__discount {
+      position: absolute;
+      top: 0;
+      left: -15px;
+      color: #000000;
+      font-size: 50px;
+      line-height: 13px;
+      text-transform: uppercase;
+      font-family: 'TTHovesBold';
+      display: none;
+      text-align: center;
+
+      @media screen and (max-width: 1050px) {
+        left: initial;
+        right: -15px;
+      }
+
+      @media screen and (max-width: 800px) {
+        display: flex;
+        font-size: 40px;
+        line-height: 15px;
+        top: -27px;
+        right: -38px;
+      }
+
+      @media screen and (max-width: 450px) {
+        right: 0;
+      }
+
+      &__ellipse {
+        width: 130px;
+        height: 130px;
+        background: #000000;
+        border-radius: 50%;
+        position: absolute;
+        top: -42px;
+        left: -20px;
+
+        @media screen and (max-width: 800px) {
+          width: 100px;
+          height: 100px;
+          top: -32px;
+          left: -18px;
+        }
+      }
+
+      p {
+        z-index: 1;
+        font-family: 'TTHovesMedium';
+        font-size: 36px;
+        color: white;
+
+        @media screen and (max-width: 900px) {
+          line-height: inherit !important;
+        }
+      }
+
+      &__smallText {
+        font-family: 'TTHovesRegular';
+        font-size: 10px !important;
+        line-height: 0px !important;
+        text-transform: lowercase;
+      }
+    }
+
+    .btn {
+      font-size: 18px;
+      position: relative;
+
+      @media screen and (max-width: 800px) {
+        width: 320px;
+      }
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__headImg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 550px;
+
+    @media screen and (max-width: 1100px) {
+      max-width: 450px;
+    }
+
+    @media screen and (max-width: 900px) {
+      max-width: 350px;
+    }
+
+    @media screen and (max-width: 800px) {
+     top: -30px;
+      z-index: -1;
+    }
+
+    @media screen and (max-width: 600px) {
+      max-width: 200px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    right: 30px;
+    top: 0;
+
+    * {
+      cursor: url("../images/pointer active.png"), auto;
+    }
+
+    img {
+      width: 35px;
+    }
+  }
+}
+
+.section {
+  margin-top: 40px;
+  display: grid;
+
+  &__maxWidthText {
+    max-width: 800px;
+  }
+
+  &__gridBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 100px;
+    column-gap: 120px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+      row-gap: 18px;
+    }
+
+    &__box {
+      &__img {
+        width: 100%;
+        max-width: 180px;
+        margin-left: -20px;
+      }
+
+      &__title {
+        text-transform: lowercase;
+        font-size: 28px;
+        margin-top: 18px;
+        max-width: 400px;
+      }
+
+      &__text {
+        font-size: 20px;
+        line-height: 23px;
+        margin-top: 30px;
+
+        @media screen and (max-width: 800px) {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+  &__forWhomCourseText {
+    margin-top: 80px;
+
+    &__title {
+      font-family: 'TTHovesBold';
+      border: 5px solid #AFB7FD;
+      border-radius: 50%;
+      width: 600px;
+      margin-bottom: 20px !important;
+      text-align: center;
+
+      @media screen and (max-width: 700px) {
+        width: 400px;
+      }
+
+      @media screen and (max-width: 450px) {
+       width: 250px;
+        font-family: 'TTHovesBold' !important;
+        font-size: 24px;
+      }
+    }
+
+    &__text {
+      max-width: 750px;
+    }
+  }
+
+  &__centerBtn {
+    max-width: 320px;
+    width: 100%;
+    justify-self: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 800px) {
+      margin-top: 50px;
+      margin-bottom: 0;
+    }
+  }
+
+  &.blueDiscount {
+    background: $purple;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  &.blackSalary {
+    background: #000000;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-top: 0;
+  }
+
+  &__programBox {
+    display: grid;
+    margin-top: 40px;
+    row-gap: 15px;
+
+    &__box {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+
+      &__number {
+        background: #000000;
+        color: white;
+        height: max-content;
+        width: 70px;
+        height: 70px;
+        border-radius: 20px 0 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: 800px) {
+          width: 40px;
+          height: 40px;
+        }
+
+
+        p {
+          margin: 0;
+          padding: 0;
+          font-family: 'TTHovesMedium';
+          font-size: 30px;
+
+          @media screen and (max-width: 800px) {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &__program {
+        background: $purple;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+        padding: 40px 40px;
+        padding-bottom: 0;
+        overflow: hidden;
+        cursor: url("../images/pointer active.png"), auto;
+
+        @media screen and (max-width: 800px) {
+          padding: 20px 20px;
+          padding-bottom: 0;
+        }
+
+
+
+        * {
+          cursor: url("../images/pointer active.png"), auto;
+        }
+
+        &__topBox {
+          display: grid;
+          grid-template-columns: 1fr max-content;
+          align-items: center;
+          padding-bottom: 40px;
+          column-gap: 10px;
+
+
+
+          &__text {
+            font-size: 32px;
+            font-family: 'TTHovesBold';
+            text-transform: uppercase;
+
+            @media screen and (max-width: 800px) {
+              font-size: 26px;
+            }
+
+            @media screen and (max-width: 400px) {
+              font-size: 16px;
+            }
+          }
+
+          &__img {
+            max-width: 40px;
+            transform: rotateZ(0deg);
+            transition: transform .3s ease;
+
+            @media screen and (max-width: 800px) {
+              max-width: 25px;
+            }
+          }
+        }
+
+        &__text {
+          max-height: 0;
+          transition: max-height .3s ease;
+
+          ul {
+            padding-bottom: 40px;
+          }
+        }
+
+        &.active {
+          .section__programBox__box__program__topBox__img {
+            transform: rotateZ(60deg);
+          }
+
+          .section__programBox__box__program__text {
+            max-height: 500px;
+          }
+        }
+      }
+    }
+  }
+
+  &__programBox__text {
+    font-size: 20px;
+    text-transform: lowercase;
+  }
+
+  &__whatWillYouKnow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 80px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+    }
+
+    &__leftBox, &__rightBox {
+      display: grid;
+      row-gap: 20px;
+
+      &__box {
+        &__img {
+          width: 100%;
+          max-width: 250px;
+
+          @media screen and (max-width: 800px) {
+            max-width: 150px !important;
+          }
+        }
+        &__title {
+          font-family: 'TTHovesMedium' !important;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+
+          @media screen and (max-width: 800px) {
+            font-size: 25px !important;
+            line-height: 92.08% !important;
+          }
+        }
+        &__text {
+          font-size: 22px;
+        }
+      }
+    }
+
+    &__rightBox {
+      &__box__img {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &__marginText {
+    margin-bottom: 30px;
+    max-width: 900px;
+  }
+
+  &__photoSliderBox {
+    position: relative;
+
+    &__nextSlide {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20%;
+      height: 100%;
+      z-index: 1;
+
+      @media screen and (max-width: 800px) {
+        width: 30%;
+      }
+    }
+
+    &__prevSlide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20%;
+      height: 100%;
+      z-index: 1;
+
+      @media screen and (max-width: 800px) {
+        width: 30%;
+      }
+    }
+
+    &__photoSlider {
+      display: flex;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
+
+      &__slide {
+        min-width: 40%;
+        width: 100%;
+        transition: transform 1s;
+        transform: translateX(0);
+
+        @media screen and (max-width: 800px) {
+          min-width: 70%;
+        }
+
+        &:not(:last-child) {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+
+  &__cases {
+    display: grid;
+    row-gap: 80px;
+    margin-top: 40px;
+
+    &__box {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      column-gap: 35px;
+
+      @media screen and (max-width: 800px) {
+        column-gap: 20px;
+      }
+
+      &__img {
+        width: 100%;
+        max-width: 200px;
+
+        @media screen and (max-width: 800px) {
+          max-width: 100px;
+        }
+      }
+
+      &__textBox {
+        max-width: 400px;
+
+        &__title, &__name {
+          text-transform: uppercase;
+          font-size: 24px;
+          font-family: 'TTHovesMedium';
+          line-height: 24px;
+        }
+
+        &__title {
+          @media screen and (max-width: 800px) {
+            font-size: 16px;
+            line-height: 15.41px;
+          }
+        }
+
+        &__name {
+          margin-top: 16px;
+          margin-bottom: 10px;
+
+          @media screen and (max-width: 800px) {
+            font-size: 13px;
+            line-height: 14px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+          }
+        }
+
+        &__text {
+          color: #858585;
+          margin-bottom: 40px;
+
+          @media screen and (max-width: 800px) {
+            margin-bottom: 24px;
+          }
+        }
+
+        @media screen and (max-width: 800px) {
+          .btn {
+            width: max-content;
+          }
+        }
+      }
+    }
+  }
+
+  &__studentsImg {
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  &__centerImgBox {
+    display: grid;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+}
+
+.blueDiscount {
+  display: grid;
+  justify-content: center;
+
+  &__title {
+    text-transform: uppercase;
+    font-family: 'TTHovesBold';
+    font-size: 52px;
+    line-height: 61px;
+    letter-spacing: 0.03em;
+    font-style: normal;
+
+    @media screen and (max-width: 800px) {
+      max-width: 300px;
+      font-size: 43px;
+    }
+
+    @media screen and (max-width: 620px) {
+      font-size: 37px;
+      line-height: 47px;
+    }
+  }
+
+  &__timeBox {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 40px;
+    margin: 57px 0;
+
+    @media screen and (max-width: 800px) {
+      column-gap: 32px;
+      margin: 20px 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      column-gap: 15px;
+    }
+
+    &__box {
+      &__time {
+        font-family: 'Miratrix';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 174px;
+        line-height: 107.5%;
+        background: white;
+        color: #000000;
+        min-width: 300px;
+
+        @media screen and (max-width: 1200px) {
+          font-size: 134px;
+          min-width: 200px;
+        }
+
+        @media screen and (max-width: 1000px) {
+          font-size: 144px;
+        }
+
+        @media screen and (max-width: 900px) {
+          font-size: 104px;
+          min-width: 150px;
+        }
+
+        @media screen and (max-width: 620px) {
+          font-size: 70px;
+          padding: 10px;
+          min-width: 80px;
+        }
+
+        @media screen and (max-width: 450px) {
+          font-size: 60px;
+
+        }
+
+        @media screen and (max-width: 400px) {
+          font-size: 40px;
+          min-width: 50px;
+        }
+      }
+
+      &__text {
+        font-family: 'TTHovesRegular';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 32px;
+        text-transform: lowercase;
+        margin-top: 15px;
+
+        @media screen and (max-width: 620px) {
+          font-size: 15px;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .btn {
+    width: 328px;
+
+    @media screen and (max-width: 450px) {
+      max-width: 328px;
+      width: 100%;
+    }
+  }
+
+  .maxWidth {
+    display: grid;
+    justify-items: center;
+  }
+}
+
+.targetBox {
+  margin-top: 30px;
+  position: relative;
+
+  &__img {
+    width: 100%;
+
+    @media screen and (max-width: 800px) {
+      height: 600px;
+      object-fit: cover;
+    }
+  }
+
+
+
+  &__textBox {
+    color: white;
+    position: absolute;
+    left: 25px;
+    bottom: 65px;
+
+
+    @media screen and (max-width: 1400px) {
+      left: 110px;
+    }
+
+    @media screen and (max-width: 800px) {
+      left: 24px;
+      max-width: 90%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px !important;
+  }
+
+  &__text {
+    font-size: 25px !important;
+    max-width: 760px;
+  }
+}
+
+.blackSalary {
+  color: white;
+
+  &__title {
+    margin-bottom: 0 !important;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+    }
+
+    &__leftBox {
+      p {
+        font-size: 23px;
+
+        @media screen and (max-width: 800px) {
+          font-size: 16px;
+        }
+      }
+
+
+
+      &__box {
+        margin-top: 50px;
+
+        &__title {
+          font-family: 'TTHovesBold';
+          font-size: 35px !important;
+
+          @media screen and (max-width: 800px) {
+            font-size: 35px !important;
+            line-height: 35.34px !important;
+          }
+        }
+      }
+    }
+
+    &__img {
+      max-width: 700px;
+      width: 100%;
+    }
+  }
+
+  &__centerText {
+    color: #676767;
+    text-align: center;
+    margin-top: 40px;
+    text-transform: lowercase;
+  }
+}
+
+.sliderBox {
+  &__text {
+    font-family: 'TTHovesRegular';
+    font-size: 1.1rem;
+    margin: 1rem 0;
+  }
+
+  &__slider {
+    display: flex;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    &__slide {
+      width: calc(50% - 100px);
+      flex-shrink: 0;
+      margin: 20px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 1s;
+      transform: translateX(0);
+
+      iframe {
+        max-width: 100%;
+      }
+    }
+
+    &__speakerBox {
+      display: flex;
+      flex-direction: column;
+      align-self: self-start;
+      background: rgba(175, 183, 253, 0.09);
+      padding: 2rem;
+      justify-content: start;
+
+      &__avatar {
+        max-width: 200px;
+      }
+
+      &__img {
+        max-width: 400px;
+        width: 100%;
+        align-self: self-start;
+        margin-top: 50px;
+      }
+
+      &__title {
+        font-family: 'TTHovesMedium';
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      &__text {
+        font-size: 1.3rem;
+        font-family: 'TTHovesRegular';
+      }
+    }
+  }
+
+  &__sliderDots {
+    display: flex;
+
+    &.black {
+      .sliderBox__sliderDots__dot.active {
+        background: #404040;
+      }
+    }
+
+    &.green {
+      .sliderBox__sliderDots__dot.active {
+        background: #BCDA01;
+      }
+    }
+
+    &.purple {
+      .sliderBox__sliderDots__dot.active {
+        background: #AFB7FD;
+      }
+    }
+
+    &__dot {
+      width: 10px;
+      height: 10px;
+      background: #ECECEC;
+      border-radius: 50%;
+      cursor: url("../images/pointer active.png"), auto;
+
+      &:not(&:last-child) {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.footer {
+  background: #000000;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: grid;
+
+  @media screen and (max-width: 800px) {
+    padding-bottom: 0;
+
+    .padding {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    .title, &__course__title {
+      padding-left: $border_space_mobile !important;
+      padding-right: $border_space_mobile !important;
+    }
+  }
+
+  &__typeBox {
+    background: rgba(46, 46, 46, 0.7);
+    border-radius: 6px;
+    padding: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 6px;
+    justify-items: center;
+    color: white;
+    width: max-content;
+    margin-top: 20px;
+    margin-bottom: 80px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr 1fr;
+      width: 90%;
+      justify-self: center;
+    }
+
+    &__type {
+      font-size: 18px;
+      line-height: 24px;
+      font-family: 'MontserratRegular';
+      padding: 10px 60px;
+      border-radius: 6px;
+
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+      }
+
+      &.active {
+        color: #000000;
+        background: white;
+      }
+    }
+  }
+
+  &__gridBox {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 40px;
+
+    @media screen and (max-width: 1300px) {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  &__formBox {
+    background: white;
+    max-width: 475px;
+    border-radius: 12px;
+    padding: 60px 60px 50px 60px;
+    display: grid;
+    position: relative;
+    width: 100%;
+
+    @media screen and (max-width: 1300px) {
+      justify-self: center;
+    }
+
+    @media screen and (max-width: 800px) {
+      padding: 60px 28px;
+      width: 90%;
+      padding-bottom: 10px;
+    }
+
+    &__readyBox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      color: white;
+      justify-items: center;
+      align-content: center;
+      display: none;
+      text-align: center;
+      padding: 16px 39px;
+      z-index: 1;
+
+      &.active {
+        display: grid;
+      }
+
+      &__img {
+        max-width: 256px;
+        width: 100%;
+
+        @media screen and (max-width: 800px) {
+          max-width: 204px;
+        }
+      }
+
+      &__cross {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 20px;
+        cursor: url("../images/pointer active.png"), auto;
+      }
+
+      &__brainImg {
+        margin-top: 40px;
+        max-width: 230px;
+        width: 100%;
+      }
+
+      &__title {
+        font-family: 'Miratrix';
+        font-size: 43px;
+        line-height: 123.5%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #AFB7FD;
+
+        @media screen and (max-width: 390px) {
+          font-size: 35px;
+        }
+      }
+
+      .btn {
+        margin-top: 1rem;
+      }
+
+      &__text {
+        font-family: 'TTHovesRegular';
+        font-size: 18px;
+        line-height: 21px;
+        margin-top: 10px;
+        color: white;
+
+        @media screen and (max-width: 390px) {
+          font-size: 16px;
+        }
+      }
+
+      &__rocket {
+        max-width: 80px;
+        margin-top: 1rem;
+      }
+    }
+
+
+    &__discount {
+      position: absolute;
+      top: 0;
+      left: -15px;
+      color: #000000;
+      font-size: 50px;
+      line-height: 13px;
+      text-transform: uppercase;
+      font-family: 'TTHovesBold';
+      display: flex;
+      text-align: center;
+
+      @media screen and (max-width: 1050px) {
+        left: initial;
+        right: -15px;
+      }
+
+      @media screen and (max-width: 800px) {
+        font-size: 40px;
+        right: 0;
+      }
+
+      &__ellipse {
+        width: 130px;
+        height: 130px;
+        background: #AFB7FD;
+        border-radius: 50%;
+        position: absolute;
+        top: -42px;
+        left: -20px;
+
+        @media screen and (max-width: 800px) {
+          width: 115px;
+          height: 115px;
+          top: -36px;
+          left: -20px;
+        }
+      }
+
+      p {
+        z-index: 1;
+        font-family: 'TTHovesBold';
+
+        @media screen and (max-width: 900px) {
+          line-height: inherit !important;
+        }
+      }
+
+      &__smallText {
+        font-family: 'TTHovesRegular';
+        font-size: 13px !important;
+        line-height: 0px !important;
+        text-transform: lowercase;
+      }
+    }
+
+    &__title {
+      font-family: 'TTHovesBold';
+      font-size: 25px;
+      line-height: 30px;
+      text-align: center;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 800px) {
+        font-size: 30px;
+        line-height: 36px;
+        font-family: 'Miratrix';
+        margin: 25px 0;
+      }
+    }
+
+    .btn {
+      border-radius: 2px;
+    }
+
+    &__inputTitle {
+      font-family: 'TTHovesBold';
+      font-size: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 50px;
+      margin-bottom: 0;
+    }
+
+    &__text {
+      font-family: 'TTHovesRegular';
+      font-size: 18px;
+      line-height: 140%;
+      margin-top: 10px;
+
+      span {
+        color: #9A9A9A;
+      }
+
+      @media screen and (max-width: 800px) {
+        font-size: 16px;
+        line-height: 140%;
+      }
+    }
+
+    &__inputBox {
+      display: grid;
+      row-gap: 23px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      width: 328px;
+      margin-top: 30px;
+      justify-self: center;
+
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        max-width: 200px;
+        border-radius: 20px;
+      }
+    }
+
+
+    &__endBoldText {
+      margin-top: 20px;
+    }
+
+    &__endBoldText, &__endText {
+      font-family: 'TTHovesRegular';
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      text-transform: lowercase;
+
+      @media screen and (max-width: 800px) {
+        font-size: 18px;
+        line-height: 21px;
+        display: none;
+      }
+    }
+
+    &__endText {
+      margin-top: 10px;
+
+    }
+
+    &__socials {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      justify-content: center;
+      column-gap: 10px;
+      margin-top: 20px;
+
+      @media screen and (max-width: 800px) {
+        margin-top: 60px;
+      }
+
+      img {
+        width: 30px;
+
+        &.facebook {
+          width: 15px;
+        }
+      }
+    }
+
+  }
+
+  &__course {
+    &__title {
+      font-family: 'TTHovesMedium';
+      font-size: 30px;
+      color: white;
+      text-transform: uppercase;
+      margin-top: -55px;
+
+      @media screen and (max-width: 1300px) {
+        margin-top: 50px;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      &>div {
+        display: flex;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100vw;
+        margin-top: 30px;
+      }
+    }
+
+
+    &__box {
+      padding: 20px;
+
+      @media screen and (max-width: 800px) {
+        padding-bottom: 50px;
+      }
+
+      &__topBox {
+        grid-template-columns: 1fr max-content;
+
+        @media screen and (max-width: 800px) {
+          display: grid !important;
+        }
+
+        &__leftBox {
+          display: grid;
+          row-gap: 27px;
+          grid-template-rows: max-content;
+
+          &__box {
+            &__title {
+              font-size: 16px;
+              line-height: 109.8%;
+              text-transform: lowercase;
+              color: rgba(0, 0, 0, 0.64);
+            }
+
+            &__text {
+              margin-top: 9px;
+              font-size: 20px;
+              line-height: 109.8%;
+            }
+          }
+        }
+
+        &__img {
+          width: 100%;
+          max-width: 150px;
+        }
+      }
+
+      @media screen and (max-width: 800px) {
+        min-width: 100%;
+        transition: transform 1s;
+        transform: translateX(0);
+      }
+
+      &:nth-of-type(1) {
+        margin-top: 20px;
+        background: linear-gradient(99.28deg, #F3B6FF 10.35%, #A4F5FF 62.05%);
+
+        @media screen and (max-width: 800px) {
+          margin-top: 0;
+        }
+      }
+
+      &:nth-of-type(2) {
+        background: linear-gradient(95.17deg, #D9FFB3 14.24%, #FFBFDA 89.47%);
+      }
+
+      &:nth-of-type(3) {
+        background: linear-gradient(93.37deg, #FFFFFF 43.99%, #D0A1FE 108.12%);
+      }
+
+      &:not(:first-child) {
+        margin-top: 5px;
+
+        @media screen and (max-width: 800px) {
+          margin-top: 0;
+        }
+      }
+
+      &__title {
+        font-family: 'TTHovesMedium';
+        font-size: 16px;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 800px) {
+          font-size: 24px;
+          line-height: 45px;
+        }
+      }
+
+      &__name {
+        font-family: 'Miratrix';
+        text-transform: uppercase;
+        font-size: 45px;
+
+        @media screen and (max-width: 800px) {
+          font-size: 40px;
+          line-height: 45px;
+        }
+      }
+
+      &__textBox {
+        display: grid;
+        grid-template-columns: max-content max-content 1fr;
+        column-gap: 30px;
+        margin-top: 30px;
+
+        @media screen and (max-width: 800px) {
+          grid-template-columns: 1fr;
+          row-gap: 20px;
+        }
+
+        &__infoCourse {
+          display: grid;
+          row-gap: 10px;
+
+          &__box {
+            display: grid;
+            row-gap: 5px;
+
+            &__title {
+              color: rgba(0, 0, 0, 0.64);
+              text-transform: lowercase;
+              font-size: 13px;
+            }
+
+            &__text {
+              text-transform: uppercase;
+              font-size: 15px;
+            }
+          }
+        }
+
+        &__description {
+          max-width: 300px;
+          width: 100%;
+          text-transform: lowercase;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .sliderBox__slider__slide {
+    width: calc(100% - 20px);
+    margin: 20px 10px;
+  }
+
+  .sliderBox__slider {
+    position: relative;
+
+    &__speakerBox {
+      &__avatar {
+        max-width: 150px;
+      }
+
+      &__title {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
+      &__text {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .sliderBox {
+    position: relative;
+
+    &__prevSlide {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 60px;
+      height: 90%;
+      z-index: 1;
+    }
+
+    &__nextSlide {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      width: 60px;
+      height: 90%;
+      z-index: 1;
+    }
+  }
+}
