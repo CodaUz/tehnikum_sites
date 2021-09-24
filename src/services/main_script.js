@@ -476,23 +476,24 @@ function setPrevPhotoSlide() {
 }
 
 function listenCoursesSlider() {
-
-    setInterval(() => {
-        moveCoursesSlider()
-    }, 4000)
-
-    for (let slider of document.querySelectorAll('.footer__course__box')) {
-        slider.addEventListener("swiped-right", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            moveCoursesSlider( false)
-        });
-
-        slider.addEventListener("swiped-left", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
+    if ($(window).width() < MOBILE_WIDTH) {
+        setInterval(() => {
             moveCoursesSlider()
-        });
+        }, 4000)
+
+        for (let slider of document.querySelectorAll('.footer__course__box')) {
+            slider.addEventListener("swiped-right", (event) => {
+                event.stopPropagation();
+                event.preventDefault();
+                moveCoursesSlider( false)
+            });
+
+            slider.addEventListener("swiped-left", (event) => {
+                event.stopPropagation();
+                event.preventDefault();
+                moveCoursesSlider()
+            });
+        }
     }
 }
 
