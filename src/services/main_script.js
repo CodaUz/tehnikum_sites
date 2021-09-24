@@ -354,7 +354,7 @@ function getReviewsVideos() {
 }
 
 function getMaxHeight() {
-    const classes = ['sliderBox__slider__speakerBox']
+    const classes = ['sliderBox__slider__speakerBox', 'footer__course__box']
 
     for (let name_class of classes) {
         let height = 0
@@ -405,144 +405,82 @@ function listenType() {
     }
 }
 
-function listenPhotoSlider() {
-    setInterval(() => {
-        setNextPhotoSlide()
-    }, 4000)
-
-    $('.section__photoSliderBox__nextSlide').on('click', (e) => {
-        setNextPhotoSlide()
-    })
-
-    $('.section__photoSliderBox__prevSlide').on('click', (e) => {
-        setPrevPhotoSlide()
-    })
-}
-
-function setNextPhotoSlide() {
-    const width = $('.section__photoSliderBox__photoSlider__slide').width()
-    let index = parseInt($('.section__photoSliderBox__photoSlider__slide.active').data('index'))
-    const maxIndex = $('.section__photoSliderBox__photoSlider').children().length
-
-    if (index === maxIndex - 1) {
-        index = 0
-    }
-
-
-    $('.section__photoSliderBox__photoSlider__slide').removeClass('active')
-
-    $('.section__photoSliderBox__photoSlider').children()[(index-1) + 1].classList.add('active')
-
-    let translate = width*index + (6 * (index-1))
-
-    if (translate < 0) {
-        translate = 0
-    }
-
-    if (index === maxIndex - 2) {
-        translate -= (width / 2)
-    }
-
-    $('.section__photoSliderBox__photoSlider__slide').css('transform', `translateX( -${translate}px)`)
-}
-
-function setPrevPhotoSlide() {
-    const width = $('.section__photoSliderBox__photoSlider__slide').width()
-    let index = parseInt($('.section__photoSliderBox__photoSlider__slide.active').data('index'))
-    const maxIndex = $('.section__photoSliderBox__photoSlider').children().length
-
-    index -= 2
-
-    if (index < 0) {
-        index = maxIndex - 2
-    }
-
-
-    $('.section__photoSliderBox__photoSlider__slide').removeClass('active')
-
-    $('.section__photoSliderBox__photoSlider').children()[(index-1) + 1].classList.add('active')
-
-
-    let translate = width*index + (6 * (index-1))
-    if (translate < 0) {
-        translate = 0
-    }
-
-    if (index === maxIndex - 2) {
-        translate -= (width / 2)
-    }
-
-    $('.section__photoSliderBox__photoSlider__slide').css('transform', `translateX( -${translate}px)`)
-}
-
 function listenCoursesSlider() {
     if ($(window).width() < MOBILE_WIDTH) {
-        setInterval(() => {
-            moveCoursesSlider()
-        }, 4000)
+        $('.footer__course__allBoxes').addClass('owl-carousel owl-theme')
 
-        for (let slider of document.querySelectorAll('.footer__course__box')) {
-            slider.addEventListener("swiped-right", (event) => {
-                event.stopPropagation();
-                event.preventDefault();
-                moveCoursesSlider( false)
-            });
-
-            slider.addEventListener("swiped-left", (event) => {
-                event.stopPropagation();
-                event.preventDefault();
-                moveCoursesSlider()
-            });
-        }
+        $('#courseSlider').owlCarousel({
+            margin: 0,
+            nav:false,
+            dots: false,
+            // autoplay: true,
+            items: 1
+        })
     }
-}
-
-function moveCoursesSlider(isNext=true) {
-    const width = $('.footer__course__allBoxes').width()
-    let index = parseInt($('.footer__course__box.active').data('index'))
-    const maxIndex = $('.footer__course__allBoxes').children().length
-
-    if (!isNext) {
-        index -= 2
-    }
-
-    if (isNext) {
-        if (index >= maxIndex) {
-            index = 0
-        }
-    } else {
-        if (index < 0) {
-            index = maxIndex - 1
-        }
-    }
-
-    $('.footer__course__box').removeClass('active')
-
-    $('.footer__course__allBoxes').children()[(index-1) + 1].classList.add('active')
-
-    let translate = width*index
-
-    if (translate < 0) {
-        translate = 0
-    }
-
-    $('.footer__course__box').css('transform', `translateX( -${translate}px)`)
 }
 
 function init() {
     setCountDown()
-    listenSliders()
-    listenFeedbackSliders()
     listenPopups()
     closePopupsOnBack()
     sendForm()
     getReviewsVideos()
-    getMaxHeight()
     listenProgram()
     closeFormWithCross()
     listenType()
-    listenPhotoSlider()
     listenCoursesSlider()
+
+    $('#photoSlider').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        items: 2.5,
+        dots: false,
+        autoplay: true,
+        responsive: {
+            0: {
+                items: 1.5
+            },
+            800: {
+                items: 2.5,
+            }
+        }
+    })
+
+    $('#speakerSlider').owlCarousel({
+        margin: 40,
+        nav:false,
+        items: 2,
+        dots: false,
+        autoplay: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            800: {
+                items: 2,
+            }
+        }
+    })
+
+    $('#videoSlider').owlCarousel({
+        margin: 40,
+        nav:false,
+        dots: false,
+        autoplay: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            800: {
+                items: 1.5,
+            }
+        }
+    })
+
+    setTimeout(() => {
+        getMaxHeight()
+    }, 0)
 }
 
 $( window ).on( "load", function() {

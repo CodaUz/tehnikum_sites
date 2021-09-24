@@ -22,6 +22,8 @@
     />
     <meta property="og:image:width" content="230" />
     <meta property="og:image:height" content="120" />
+    <link rel="stylesheet" href="libs/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl.theme.default.min.css">
     <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -439,16 +441,14 @@
             Мы создали среду, где хочется обучаться. Где тебя будут<br> поддерживать и направлять не только во время обучения,<br> но и после.
         </p>
         <div class="section__photoSliderBox">
-            <div class="section__photoSliderBox__nextSlide"></div>
-            <div class="section__photoSliderBox__prevSlide"></div>
-            <div class="section__photoSliderBox__photoSlider">
-                <img src="images/sliderImg1.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide active" data-index="1">
-                <img src="images/sliderImg2.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="2">
-                <img src="images/sliderImg3.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="3">
-                <img src="images/sliderImg4.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="4">
-                <img src="images/sliderImg5.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="5">
-                <img src="images/sliderImg6.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="6">
-                <img src="images/sliderImg7.png" alt="sliderImg" class="section__photoSliderBox__photoSlider__slide" data-index="7">
+            <div class="owl-carousel owl-theme" id="photoSlider">
+                <img src="images/sliderImg1.png" alt="sliderImg" class="item" data-index="1">
+                <img src="images/sliderImg2.png" alt="sliderImg" class="item" data-index="2">
+                <img src="images/sliderImg3.png" alt="sliderImg" class="item" data-index="3">
+                <img src="images/sliderImg4.png" alt="sliderImg" class="item" data-index="4">
+                <img src="images/sliderImg5.png" alt="sliderImg" class="item" data-index="5">
+                <img src="images/sliderImg6.png" alt="sliderImg" class="item" data-index="6">
+                <img src="images/sliderImg7.png" alt="sliderImg" class="item" data-index="7">
             </div>
         </div>
     </section>
@@ -563,10 +563,8 @@
             Тебя будут сопровождать только реальные практики, которые добились успеха в сфере.
             Это люди с многолетним опытом и авторскими методиками, которые применимы в Узбекистане. Каждый спикер преподает в удовольствие, поэтому заинтересован в твоем результате, а не своем.
         </p>
-        <div class="sliderBox__prevSlide mobile" data-id="two"></div>
-        <div class="sliderBox__nextSlide mobile" data-id="two"></div>
-        <div class="sliderBox__slider mt-2" data-id="two">
-            <div class="sliderBox__slider__slide sliderBox__slider__speakerBox">
+        <div class="sliderBox__slider mt-2 owl-carousel owl-theme" id="speakerSlider">
+            <div class="sliderBox__slider__speakerBox item">
                 <img src="images/speaker1.png" alt="avatar" class="sliderBox__slider__speakerBox__avatar">
                 <p class="sliderBox__slider__speakerBox__title">Дмитрий Середин</p>
                 <p class="sliderBox__slider__speakerBox__text">Объединяет в себе качества не только опытного маркетолога, но и успешного предпринимателя<br><br>
@@ -582,7 +580,7 @@
                 </p>
                 <img src="images/speakerProjects1.png" alt="projects" class="sliderBox__slider__speakerBox__img">
             </div>
-            <div class="sliderBox__slider__slide sliderBox__slider__speakerBox">
+            <div class="sliderBox__slider__speakerBox item">
                 <img src="images/speaker2.png" alt="avatar" class="sliderBox__slider__speakerBox__avatar">
                 <p class="sliderBox__slider__speakerBox__title">Акмаль Раимов</p>
                 <p class="sliderBox__slider__speakerBox__text">Директор сети пиццерий Dodo в Узбекистане<br><br>
@@ -593,7 +591,7 @@
                 </p>
                 <img src="images/speakerProjects2.png" alt="projects" class="sliderBox__slider__speakerBox__img">
             </div>
-            <div class="sliderBox__slider__slide sliderBox__slider__speakerBox">
+            <div class="sliderBox__slider__speakerBox item">
                 <img src="images/speaker3.png" alt="avatar" class="sliderBox__slider__speakerBox__avatar">
                 <p class="sliderBox__slider__speakerBox__title">Даник Камалов</p>
                 <p class="sliderBox__slider__speakerBox__text">Человек, который знает Telegram так же хорошо, как Павел Дуров<br><br>
@@ -604,7 +602,7 @@
                 </p>
                 <img src="images/speakerProjects3.png" alt="projects" class="sliderBox__slider__speakerBox__img">
             </div>
-            <div class="sliderBox__slider__slide sliderBox__slider__speakerBox">
+            <div class="sliderBox__slider__speakerBox item">
                 <img src="images/speaker4.png" alt="avatar" class="sliderBox__slider__speakerBox__avatar">
                 <p class="sliderBox__slider__speakerBox__title">Амир Мукумов</p>
                 <p class="sliderBox__slider__speakerBox__text">Тиктокер-стартапер с аудиторией более 50 тыс. предпринимателей, маркетологов и фрилансеров.<br><br>
@@ -624,26 +622,23 @@
             TEHNIKUM - лучшее место для развития. Гордимся результатами каждого студента и с удовольствием наблюдаем за их победами на профессиональном поприще - ознакомиться с их отзывами ты можешь тут:
 
         </p>
-        <div class="sliderBox__prevSlide mobile" data-id="one"></div>
-        <div class="sliderBox__nextSlide mobile" data-id="one"></div>
-        <div class="sliderBox__slider" data-id="one">
-            <div class="sliderBox__slider__slide">
+        <div class="sliderBox__slider owl-carousel owl-theme" id="videoSlider">
+            <div class="item">
                 <iframe width="100%" height="300"
                         src="https://www.youtube.com/embed/Ne56Zgwm9Ew" class="lazy-image">
                 </iframe>
             </div>
-            <div class="sliderBox__slider__slide">
+            <div class="item">
                 <iframe width="100%" height="300"
                         src="https://www.youtube.com/embed/nF26g2yjvPc" class="lazy-image">
                 </iframe>
             </div>
-            <div class="sliderBox__slider__slide">
+            <div class="item">
                 <iframe width="100%" height="300"
                         src="https://www.youtube.com/embed/NCblDYvcOak" class="lazy-image">
                 </iframe>
             </div>
         </div>
-        <div class="sliderBox__sliderDots purple" data-id="one"></div>
     </section>
 
     <section class="section padding">
@@ -757,8 +752,8 @@
                 </div>
                 <div class="footer__course">
                     <p class="footer__course__title">мы подобрали для тебя курсы</p>
-                    <div class="footer__course__allBoxes">
-                        <div class="footer__course__box active" data-index="1">
+                    <div class="footer__course__allBoxes" id="courseSlider">
+                        <div class="footer__course__box item" data-index="1">
                             <div class="footer__course__box__topBox mobile">
                                 <div class="footer__course__box__topBox__leftBox">
                                     <div class="footer__course__box__topBox__leftBox__box">
@@ -781,7 +776,8 @@
                                 <img src="images/course1%20(1).png" alt="course" class="footer__course__box__topBox__img">
                             </div>
                             <p class="footer__course__box__title">курс</p>
-                            <p class="footer__course__box__name">Графический дизайн</p>
+                            <p class="footer__course__box__name desktop">Графический дизайн</p>
+                            <p class="footer__course__box__name mobile">Графический<br> дизайн</p>
                             <div class="footer__course__box__textBox">
                                 <div class="footer__course__box__textBox__infoCourse desktop">
                                     <div class="footer__course__box__textBox__infoCourse__box">
@@ -810,7 +806,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="footer__course__box" data-index="2">
+                        <div class="footer__course__box item" data-index="2">
                             <div class="footer__course__box__topBox mobile">
                                 <div class="footer__course__box__topBox__leftBox">
                                     <div class="footer__course__box__topBox__leftBox__box">
@@ -833,7 +829,8 @@
                                 <img src="images/course2.png" alt="course" class="footer__course__box__topBox__img">
                             </div>
                             <p class="footer__course__box__title">курс</p>
-                            <p class="footer__course__box__name">SMM ДЛЯ НАЧИНАЮЩИХ</p>
+                            <p class="footer__course__box__name desktop">SMM ДЛЯ НАЧИНАЮЩИХ</p>
+                            <p class="footer__course__box__name mobile">SMM ДЛЯ<br> НАЧИНАЮЩИХ</p>
                             <div class="footer__course__box__textBox">
                                 <div class="footer__course__box__textBox__infoCourse desktop">
                                     <div class="footer__course__box__textBox__infoCourse__box">
@@ -861,7 +858,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="footer__course__box" data-index="3">
+                        <div class="footer__course__box item" data-index="3">
                             <div class="footer__course__box__topBox mobile">
                                 <div class="footer__course__box__topBox__leftBox">
                                     <div class="footer__course__box__topBox__leftBox__box">
@@ -884,7 +881,8 @@
                                 <img src="images/course3.png" alt="course" class="footer__course__box__topBox__img">
                             </div>
                             <p class="footer__course__box__title">курс</p>
-                            <p class="footer__course__box__name">SMM ДНЕВНОЙ</p>
+                            <p class="footer__course__box__name desktop">SMM ДНЕВНОЙ</p>
+                            <p class="footer__course__box__name mobile">SMM<br> ДНЕВНОЙ</p>
                             <div class="footer__course__box__textBox">
                                 <div class="footer__course__box__textBox__infoCourse desktop">
                                     <div class="footer__course__box__textBox__infoCourse__box">
@@ -926,6 +924,7 @@
     
     <script src="libs/swiped-events.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="libs/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>

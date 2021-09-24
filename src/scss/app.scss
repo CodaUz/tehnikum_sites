@@ -567,6 +567,7 @@ header, section, footer, .maxWidth {
 
   &__photoSliderBox {
     position: relative;
+    overflow: hidden;
 
     &__nextSlide {
       position: absolute;
@@ -940,21 +941,21 @@ header, section, footer, .maxWidth {
     }
 
     &__speakerBox {
-      display: flex;
-      flex-direction: column;
-      align-self: self-start;
+      display: grid;
+      grid-template-rows: repeat(3, max-content) 1fr;
       background: rgba(175, 183, 253, 0.09);
       padding: 2rem;
       justify-content: start;
 
       &__avatar {
-        max-width: 200px;
+        max-width: 300px;
+        justify-self: center;
       }
 
       &__img {
         max-width: 400px;
         width: 100%;
-        align-self: self-start;
+        align-self: self-end;
         margin-top: 50px;
       }
 
@@ -963,6 +964,7 @@ header, section, footer, .maxWidth {
         font-size: 2rem;
         margin-top: 1rem;
         margin-bottom: 2rem;
+        text-align: center;
       }
 
       &__text {
@@ -1371,6 +1373,8 @@ header, section, footer, .maxWidth {
 
       @media screen and (max-width: 800px) {
         padding-bottom: 50px;
+        display: grid;
+        grid-template-rows: 1fr max-content max-content 1fr;
       }
 
       &__topBox {
@@ -1413,7 +1417,7 @@ header, section, footer, .maxWidth {
         transform: translateX(0);
       }
 
-      &:nth-of-type(1) {
+      &[data-index="1"] {
         margin-top: 20px;
         background: linear-gradient(99.28deg, #F3B6FF 10.35%, #A4F5FF 62.05%);
 
@@ -1422,11 +1426,11 @@ header, section, footer, .maxWidth {
         }
       }
 
-      &:nth-of-type(2) {
+      &[data-index="2"] {
         background: linear-gradient(95.17deg, #D9FFB3 14.24%, #FFBFDA 89.47%);
       }
 
-      &:nth-of-type(3) {
+      &[data-index="3"] {
         background: linear-gradient(93.37deg, #FFFFFF 43.99%, #D0A1FE 108.12%);
       }
 
@@ -1469,6 +1473,13 @@ header, section, footer, .maxWidth {
         &__btn {
           max-width: 349px;
           max-height: 103px;
+
+          @media screen and (max-width: 800px) {
+            justify-self: center;
+            width: 100%;
+            height: max-content;
+            align-self: self-end;
+          }
         }
 
         @media screen and (max-width: 800px) {
@@ -1519,7 +1530,7 @@ header, section, footer, .maxWidth {
 
     &__speakerBox {
       &__avatar {
-        max-width: 150px;
+        max-width: 200px;
       }
 
       &__title {
