@@ -1340,6 +1340,7 @@ header, section, footer, .maxWidth {
   }
 
   &__course {
+
     &__title {
       font-family: 'TTHovesMedium';
       font-size: 30px;
@@ -1353,12 +1354,13 @@ header, section, footer, .maxWidth {
     }
 
     @media screen and (max-width: 800px) {
+      max-width: 100vw;
+
       &>div {
         display: flex;
         overflow: hidden;
         -webkit-overflow-scrolling: touch;
         margin-top: 30px;
-        max-width: calc(100vw - 15px);
       }
     }
 
