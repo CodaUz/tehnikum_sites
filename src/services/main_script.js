@@ -247,6 +247,26 @@ function getMaxHeight() {
     }
 }
 
+function getMaxWidth() {
+    const classes = ['footer__typeBox__type']
+
+    for (let name_class of classes) {
+        let width = 0
+
+        $(`.${name_class}`).each(function () {
+            $(this).css('width', ``)
+        })
+
+        $(`.${name_class}`).each(function () {
+            width = $(this).outerWidth() > width ? $(this).outerWidth() : width
+        })
+
+        $(`.${name_class}`).each(function () {
+            $(this).css('width', `${width}px`)
+        })
+    }
+}
+
 function listenProgram() {
     for (let box of document.querySelectorAll('.section__programBox__box__program')) {
         box.addEventListener('click', () => {
@@ -275,6 +295,17 @@ function listenType() {
         type.addEventListener('click', () => {
             $('.footer__typeBox__type').removeClass('active')
             type.classList.add('active')
+
+            let type_background = type.getAttribute('data-type-background')
+
+            if (type_background === 'left') {
+                $('.footer__typeBox__type[data-type-background="left"]').removeClass('right')
+            }
+
+            if (type_background === 'right') {
+                $('.footer__typeBox__type[data-type-background="left"]').addClass('right')
+            }
+
         })
     }
 }
@@ -399,6 +430,7 @@ function init() {
 
     setTimeout(() => {
         getMaxHeight()
+        getMaxWidth()
     }, 0)
 }
 
