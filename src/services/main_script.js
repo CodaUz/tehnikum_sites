@@ -376,6 +376,7 @@ function initSliders() {
         items: 2.5,
         dots: false,
         autoplay: true,
+        autoWidth: true,
         responsive: {
             0: {
                 items: 1.5
@@ -388,16 +389,17 @@ function initSliders() {
 
     $('#speakerSlider').owlCarousel({
         margin: 40,
-        nav:false,
-        items: 2,
+        nav: false,
         dots: false,
         autoplay: true,
         responsive: {
             0: {
-                items: 1
+                items: 1,
+                autoWidth: true,
             },
             800: {
                 items: 2,
+                autoWidth: false,
             }
         }
     })
@@ -409,23 +411,32 @@ function initSliders() {
         loop: true,
         responsive: {
             0: {
-                items: 1
+                items: 1,
+                autoWidth: true,
             },
             800: {
                 items: 1.5,
+                autoWidth: false,
             }
         }
     })
 }
 
 function setMaxWidth() {
-    // alert(`${window.innerWidth}, ${$(window).width()}`)
     if (window.innerWidth < MOBILE_WIDTH) {
-        $('.section').css('max-width', `${window.innerWidth}px`)
+        $('.sliderBox__slider__speakerBox').css('width', `${$('.section__studentsImg').width()}px`)
+        $('.videoFeedbackSlide').css('width', `${$('.section__studentsImg').width()}px`)
+        $('.photoSlide').css('width', `${$('.section__studentsImg').width()}px`)
     }
 }
 
 async function init() {
+
+    $( window ).resize(function() {
+        setMaxWidth()
+        getMaxWidth()
+    });
+
     setMaxWidth()
     setCountDown()
     listenPopups()
