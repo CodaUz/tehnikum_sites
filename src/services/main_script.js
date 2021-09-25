@@ -81,6 +81,7 @@ function parse_query_string(query) {
 async function takeCourse(formId, is_redirect=false) {
     let name = document.querySelector(`input[name="name${formId}"]`).value;
     let phone = document.querySelector(`input[name="phone${formId}"]`).value;
+    phone = phone.replace(/[ -]/g, '')
     let query = window.location.search.substring(1);
     let qs = parse_query_string(query);
 
@@ -95,8 +96,8 @@ async function takeCourse(formId, is_redirect=false) {
         }
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}`
-        const WEBINAR_ID = 604904
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-smm`
+        const WEBINAR_ID = 158386
 
         fetch(
             `https://node.snimerovsky.xyz/log`,
@@ -114,11 +115,13 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=tg&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=smm&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
             );
+
+            $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
 
 
         } else {
@@ -126,7 +129,7 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=course&course=tg${qs.r ?  `-${qs.r}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=course&course=smm${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
