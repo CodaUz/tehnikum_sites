@@ -418,7 +418,7 @@ function initSliders() {
     })
 }
 
-function init() {
+async function init() {
     setCountDown()
     listenPopups()
     closePopupsOnBack()
@@ -434,6 +434,14 @@ function init() {
     setTimeout(() => {
         getMaxHeight()
         getMaxWidth()
+
+        setTimeout(() => {
+            document.querySelector(".loader").classList.add("active");
+            setTimeout(() => {
+                document.querySelector("html").removeAttribute("style");
+                document.querySelector(".loader").style.display = "none";
+            }, 500);
+        }, 0)
     }, 0)
 }
 
