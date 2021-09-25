@@ -373,7 +373,7 @@ function initSliders() {
         loop:true,
         margin:10,
         nav:false,
-        items: 2.5,
+        items: 1,
         dots: false,
         autoplay: true,
         responsive: {
@@ -391,6 +391,7 @@ function initSliders() {
         nav: false,
         dots: false,
         autoplay: true,
+        items: 1,
         responsive: {
             0: {
                 items: 1,
@@ -406,6 +407,7 @@ function initSliders() {
         nav:false,
         dots: false,
         loop: true,
+        items: 1,
         responsive: {
             0: {
                 items: 1,
