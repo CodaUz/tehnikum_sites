@@ -376,7 +376,6 @@ function initSliders() {
         items: 2.5,
         dots: false,
         autoplay: true,
-        autoWidth: true,
         responsive: {
             0: {
                 items: 1.5
@@ -395,11 +394,9 @@ function initSliders() {
         responsive: {
             0: {
                 items: 1,
-                autoWidth: true,
             },
             800: {
                 items: 2,
-                autoWidth: false,
             }
         }
     })
@@ -412,11 +409,9 @@ function initSliders() {
         responsive: {
             0: {
                 items: 1,
-                autoWidth: true,
             },
             800: {
                 items: 1.5,
-                autoWidth: false,
             }
         }
     })
@@ -433,11 +428,11 @@ function setMaxWidth() {
 async function init() {
 
     $( window ).resize(function() {
-        setMaxWidth()
+        // setMaxWidth()
         getMaxWidth()
     });
 
-    setMaxWidth()
+    // setMaxWidth()
     setCountDown()
     listenPopups()
     closePopupsOnBack()
