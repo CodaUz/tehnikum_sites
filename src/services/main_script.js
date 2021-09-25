@@ -418,7 +418,15 @@ function initSliders() {
     })
 }
 
+function setMaxWidth() {
+    // alert(`${window.innerWidth}, ${$(window).width()}`)
+    if (window.innerWidth < MOBILE_WIDTH) {
+        $('.section').css('max-width', `${window.innerWidth}px`)
+    }
+}
+
 async function init() {
+    setMaxWidth()
     setCountDown()
     listenPopups()
     closePopupsOnBack()

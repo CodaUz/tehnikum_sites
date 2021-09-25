@@ -299,6 +299,10 @@ header, section, footer, .maxWidth {
   margin-top: 40px;
   display: grid;
 
+  @media screen and (max-width: 800px) {
+    overflow: hidden;
+  }
+
   &__maxWidthText {
     max-width: 800px;
   }
