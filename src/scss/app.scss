@@ -569,6 +569,7 @@ header, section, footer, .maxWidth {
   &__photoSliderBox {
     position: relative;
     overflow: hidden;
+    max-width: 100vw;
 
     &__nextSlide {
       position: absolute;
