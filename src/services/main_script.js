@@ -1,137 +1,11 @@
 require('@babel/polyfill')
 const moment = require('moment')
+const axios = require('axios')
 
 const MOBILE_WIDTH = 800
+const ID_COURSE = 9;
 let POPUP_EVENT;
 
-function listenSliders() {
-    $('.sliderBox__sliderDots').each(function () {
-        const $sliderDots = $(this)
-        let id = $(this).data('id')
-        let n = 2
-
-        if ($(window).width() <= MOBILE_WIDTH) {
-            n = 1
-        }
-
-        let children_length = $(`.sliderBox__slider[data-id="${id}"]`).children().length
-        let number_of_dots = (children_length+(children_length%n))/n
-        if (children_length%n === 0 && $(window).width() > MOBILE_WIDTH) {
-            number_of_dots += 1
-        }
-
-        for (let i=0; i < number_of_dots; i++)  {
-            let $dot = $("<div>", {"data-number": i, "class": `sliderBox__sliderDots__dot ${i === 0 ? 'active' : ''}`});
-
-            $dot.click(function () {
-                const number_dot = parseInt($(this).data('number'))
-
-                $sliderDots.children().each(function () {
-                    $(this).removeClass('active')
-                })
-
-                $(this).addClass('active')
-
-                moveSlider(id, number_dot)
-            })
-
-            $sliderDots.append($dot)
-        }
-    })
-
-    $('.sliderBox__nextSlide').click(function () {
-        moveSlider($(this).data('id'))
-    })
-
-    $('.sliderBox__prevSlide').click(function () {
-        moveSlider($(this).data('id'), undefined, false)
-    })
-
-    for (let slider of document.querySelectorAll('.sliderBox__slider')) {
-        slider.addEventListener("swiped-right", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            console.log('swipe right')
-            moveSlider(slider.getAttribute('data-id'), undefined, false)
-        });
-
-        setInterval(() => {
-            moveSlider(slider.getAttribute('data-id'), undefined)
-        }, 4000)
-
-        slider.addEventListener("swiped-left", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            moveSlider(slider.getAttribute('data-id'), undefined)
-        });
-    }
-}
-
-function moveSlider(id, number_dot=undefined, is_next=true) {
-    if (number_dot === undefined) {
-        number_dot = $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).data('number')
-        let all_numbers = $(`.sliderBox__sliderDots[data-id="${id}"]`).children().length
-
-        number_dot = is_next ? (all_numbers-1) === number_dot ? 0 : number_dot+1 : number_dot === 0 ? all_numbers-1 : number_dot-1
-
-        $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).removeClass('active')
-        $(`.sliderBox__sliderDots[data-id="${id}"]>.sliderBox__sliderDots__dot[data-number="${number_dot}"]`).addClass('active')
-    }
-
-    $(`.sliderBox__slider[data-id="${id}"]`).children().each(function () {
-        let number = number_dot * 100
-        let multiple_value = 100
-        let number_px = $(window).width() <= MOBILE_WIDTH ? 20 * number_dot : number_dot * multiple_value
-        $(this).css('transform', `translateX( calc(-${number}% - ${number_px}px))`)
-    })
-}
-
-function listenFeedbackSliders() {
-    $('.section__feedbackBox__sliderDots').children().each(function () {
-        const $sliderDot = $(this)
-
-        $sliderDot.on('click', function () {
-            moveFeedbackSlider(parseInt($sliderDot.data('index')))
-        })
-    })
-
-    for (let slider of document.querySelectorAll('.section__feedbackBox__box')) {
-        slider.addEventListener("swiped-right", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            moveFeedbackSlider(undefined, true, false)
-        });
-
-        slider.addEventListener("swiped-left", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            moveFeedbackSlider(undefined, true)
-        });
-    }
-}
-
-function moveFeedbackSlider(number, isSlide=false, isNext=true) {
-    if (isSlide) {
-        const maxIndex =  $('.section__feedbackBox__sliderDots').children().length - 1
-        let index = parseInt($('.section__feedbackBox__sliderDots__dot.active').data('index'))
-
-        index = isNext ? index + 1 : index - 1
-
-        if (index < 0) {
-            index = maxIndex
-        } else if (index > maxIndex) {
-            index = 0
-        }
-
-        number = index
-    }
-    const slideWidth = $('.section__feedbackBox').width()
-    const addWidth = 15
-    const translateX = (slideWidth*number) + (addWidth * number)
-    $('.section__feedbackBox__sliderDots__dot').removeClass('active')
-    $(`.section__feedbackBox__sliderDots__dot[data-index="${number}"]`).addClass('active')
-    $('.section__feedbackBox__box').css('transform', `translateX( ${translateX > 0 ? translateX * -1 : 0}px)`)
-}
 
 function listenPopups() {
     $('.openPopup').click(() => {
@@ -419,17 +293,48 @@ function listenCoursesSlider() {
     }
 }
 
-function init() {
-    setCountDown()
-    listenPopups()
-    closePopupsOnBack()
-    sendForm()
-    getReviewsVideos()
-    listenProgram()
-    closeFormWithCross()
-    listenType()
-    listenCoursesSlider()
+async function initCourseData() {
+    let res = await axios.get('https://api.tehnikum.uz/course.php', {
+        params: {
+            action: 'get',
+            token: '123',
+            id: ID_COURSE
+        }
+    })
+    res = res['data']['row']
+    const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
+    const first_date_format = first_date.locale("ru").format('D MMMM')
 
+    $('span.date').text(first_date_format)
+
+    let eventTime= parseInt(new Date(first_date).getTime()/1000);
+    let currentTime = parseInt(new Date().getTime()/1000);
+    let diffTime = eventTime - currentTime;
+    let duration = moment.duration(diffTime*1000, 'milliseconds');
+    let days = parseInt(duration.days())
+
+    let placesLeft = 50
+
+    if (days <= 30) {
+        placesLeft = 50
+    }
+    if (days <= 20) {
+        placesLeft = 30
+    }
+    if (days <= 12) {
+        placesLeft = 12
+    }
+    if (days <= 8) {
+        placesLeft = 6
+    }
+    if (days <= 3) {
+        placesLeft = 3
+    }
+
+    $('.placesLeft').text(placesLeft)
+}
+
+function initSliders() {
     $('#photoSlider').owlCarousel({
         loop:true,
         margin:10,
@@ -467,7 +372,7 @@ function init() {
         margin: 40,
         nav:false,
         dots: false,
-        autoplay: true,
+        loop: true,
         responsive: {
             0: {
                 items: 1
@@ -477,6 +382,20 @@ function init() {
             }
         }
     })
+}
+
+function init() {
+    setCountDown()
+    listenPopups()
+    closePopupsOnBack()
+    sendForm()
+    getReviewsVideos()
+    listenProgram()
+    closeFormWithCross()
+    listenType()
+    listenCoursesSlider()
+    initCourseData()
+    initSliders()
 
     setTimeout(() => {
         getMaxHeight()

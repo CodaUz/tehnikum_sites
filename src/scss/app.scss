@@ -1,5 +1,6 @@
 @import "./font.scss";
 @import "./variables.scss";
+@import "get-vw";
 
 * {
   margin: 0;
@@ -1267,7 +1268,7 @@ header, section, footer, .maxWidth {
       line-height: 140%;
       margin-top: 10px;
 
-      span {
+      &__title {
         color: #9A9A9A;
       }
 
