@@ -428,7 +428,6 @@ function setMaxWidth() {
 }
 
 async function init() {
-
     $( window ).resize(function() {
         // setMaxWidth()
         getMaxWidth()
