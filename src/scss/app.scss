@@ -191,7 +191,7 @@ html {
 
         @media screen and (max-width: 800px) {
           right: get-mobile-vw(-5px);
-          top: get-mobile-vw(-30px);
+          top: get-mobile-vw(-23px);
         }
 
         &__title {
@@ -200,8 +200,8 @@ html {
           font-family: 'TTHovesMedium';
 
           @media screen and (max-width: 800px) {
-            font-size: get-mobile-vw(36px);
-            line-height: get-mobile-vw(42.41px);
+            font-size: get-mobile-vw(34px);
+            line-height: get-mobile-vw(25px);
           }
         }
 
@@ -218,6 +218,7 @@ html {
             width: get-mobile-vw(85px);
             height: get-mobile-vw(85px);
             left: get-mobile-vw(-10px);
+            top: get-mobile-vw(-13px);
           }
         }
 
@@ -233,7 +234,7 @@ html {
 
           @media screen and (max-width: 800px) {
             font-size: get-mobile-vw(10px);
-            line-height: get-mobile-vw(11.18px);
+            line-height: 0;
           }
         }
       }
@@ -250,7 +251,7 @@ html {
       @media screen and (max-width: 800px) {
         max-width: get-mobile-vw(163.98px);
         right: get-mobile-vw(7px);
-        top: get-mobile-vw(88px);
+        top: get-mobile-vw(110px);
       }
     }
 
@@ -645,7 +646,7 @@ html {
       max-width: get-vw(921px);
 
       @media screen and (max-width: 800px) {
-        max-width: get-mobile-vw(322px);
+        max-width: get-mobile-vw(300px);
         font-size: get-mobile-vw(16px);
         line-height: get-mobile-vw(18.85px);
         padding-top: get-mobile-vw(19px);
@@ -675,7 +676,7 @@ html {
       @media screen and (max-width: 800px) {
         width: get-mobile-vw(52px);
         top: get-mobile-vw(89px);
-        right: get-mobile-vw(10px);
+        right: get-mobile-vw(5px);
       }
     }
   }
@@ -2323,8 +2324,8 @@ html {
 
       @media screen and (max-width: 800px) {
         left: initial;
-        right: 0;
-        top: get-mobile-vw(-30px);
+        right: get-mobile-vw(-5px);
+        top: get-mobile-vw(-23px);
       }
 
       &__title {
@@ -2332,8 +2333,8 @@ html {
         line-height: get-vw(103.09px);
 
         @media screen and (max-width: 800px) {
-          font-size: get-mobile-vw(36px);
-          line-height: get-mobile-vw(42.41px);
+          font-size: get-mobile-vw(34px);
+          line-height: get-mobile-vw(25px);
         }
       }
 
@@ -2348,9 +2349,10 @@ html {
         z-index: 1;
 
         @media screen and (max-width: 800px) {
-          width: get-mobile-vw(88px);
+          width: get-mobile-vw(85px);
           height: get-mobile-vw(85px);
           left: get-mobile-vw(-10px);
+          top: get-mobile-vw(-13px);
         }
       }
 
@@ -2366,7 +2368,7 @@ html {
 
         @media screen and (max-width: 800px) {
           font-size: get-mobile-vw(10px);
-          line-height: get-mobile-vw(11.18px);
+          line-height: 0;
         }
       }
     }
