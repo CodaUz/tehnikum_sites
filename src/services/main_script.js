@@ -363,20 +363,22 @@ async function initCourseData() {
     $('.placesLeft').text(placesLeft)
 }
 
-function initSliders() {
+function initPhotoSliders() {
     $('#photoSlider').owlCarousel({
         margin:10,
         nav:true,
         responsive: {
             0: {
-                items: 1.5
+                items: 1
             },
             800: {
                 items: 2.5,
             }
         }
     })
+}
 
+function initSpeakerSlider() {
     $('#speakerSlider').owlCarousel({
         margin: 40,
         nav: false,
@@ -391,7 +393,9 @@ function initSliders() {
             }
         }
     })
+}
 
+function initVideoSlider() {
     $('#videoSlider').owlCarousel({
         margin: 40,
         nav:false,
@@ -442,7 +446,9 @@ async function init() {
 }
 
 $(function () {
-    initSliders();
+    initPhotoSliders();
+    initSpeakerSlider();
+    initVideoSlider();
 });
 
 $( window ).on( "load", function() {

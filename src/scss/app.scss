@@ -1635,6 +1635,7 @@ html {
       font-size: get-vw(36px);
       line-height: get-vw(42.41px);
       margin: get-vw(40px) 0;
+      max-width: get-vw(980px);
 
       @media screen and (max-width: 800px) {
         font-size: get-mobile-vw(16px);
@@ -1650,7 +1651,7 @@ html {
         max-width: get-vw(618px) !important;
 
         @media screen and (max-width: 800px) {
-          max-width: get-mobile-vw(279.2px) !important;
+          max-width: get-mobile-vw(299.2px) !important;
         }
       }
     }
@@ -1758,6 +1759,7 @@ html {
         @media screen and (max-width: 800px) {
           background: rgba(222, 222, 222, 0.37);
           padding-bottom: get-mobile-vw(30px);
+          max-width: get-mobile-vw(316px);
         }
 
         &__avatar {
@@ -1769,13 +1771,15 @@ html {
           padding-left: get-vw(125px);
           padding-right: get-vw(125px);
           object-position: top;
+          text-align: center;
 
           @media screen and (max-width: 800px) {
-            width: get-mobile-vw(196px);
+            max-width: get-mobile-vw(280px);
             height: initial;
             border-radius: initial;
             padding: get-mobile-vw(33px) get-mobile-vw(69px);
             padding-bottom: get-mobile-vw(20px);
+            margin: 0 auto;
           }
         }
 
@@ -2036,6 +2040,7 @@ html {
       @media screen and (max-width: 800px) {
         padding-left: get-mobile-vw(27px);
         padding-right: get-mobile-vw(20px);
+        max-width: get-mobile-vw(330px);
       }
     }
   }
@@ -2660,8 +2665,8 @@ html {
           .footer__course__box__topBox__img {
             position: absolute;
             right: get-mobile-vw(30px);
-            top: get-mobile-vw(30px);
-            min-width: get-mobile-vw(110px);
+            top: get-mobile-vw(20px);
+            min-width: get-mobile-vw(100px);
           }
         }
       }
@@ -2673,8 +2678,8 @@ html {
           .footer__course__box__topBox__img {
             position: absolute;
             right: get-mobile-vw(30px);
-            top: get-mobile-vw(30px);
-            min-width: get-mobile-vw(130px);
+            top: get-mobile-vw(20px);
+            min-width: get-mobile-vw(120px);
           }
         }
       }
