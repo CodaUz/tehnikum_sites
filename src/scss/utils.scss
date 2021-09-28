@@ -171,23 +171,19 @@
       }
 
       .btn {
-        width: get-vw(487px);
-        height: get-vw(103px);
-        font-size: get-vw(30px);
-        line-height: get-vw(35.34px);
-        display: grid;
-        align-items: center;
-        justify-self: center;
-
-        @media screen and (max-width: 800px) {
-          width: get-mobile-vw(160px);
-          height: get-mobile-vw(35px);
-          font-size: get-mobile-vw(10px);
-          line-height: get-mobile-vw(16.49px);
-          border-radius: get-mobile-vw(20px);
-        }
+        border-radius: 20px;
+        padding: 15px 25px;
+        width: 100%;
       }
     }
+  }
+}
+
+.videoFeedbackSlide {
+  height: get-vw(500px);
+
+  @media screen and (max-width: 800px) {
+    height: get-mobile-vw(183px);
   }
 }
 

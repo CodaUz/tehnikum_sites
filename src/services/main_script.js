@@ -129,7 +129,7 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=course&course=smm-spec${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=smm-spec${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -366,12 +366,8 @@ async function initCourseData() {
 
 function initSliders() {
     $('#photoSlider').owlCarousel({
-        loop:true,
         margin:10,
-        nav:false,
-        items: 1,
-        dots: false,
-        autoplay: true,
+        nav:true,
         responsive: {
             0: {
                 items: 1.5
@@ -386,9 +382,7 @@ function initSliders() {
         margin: 40,
         nav: false,
         dots: false,
-        autoplay: true,
         items: 1,
-        loop: true,
         responsive: {
             0: {
                 items: 1,
@@ -403,8 +397,8 @@ function initSliders() {
         margin: 40,
         nav:false,
         dots: false,
-        loop: true,
         items: 1,
+        loop: true,
         responsive: {
             0: {
                 items: 1,
