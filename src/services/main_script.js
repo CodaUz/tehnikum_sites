@@ -174,6 +174,8 @@ function setCountDown() {
             $('.hours').text(`${hours < 10 ? '0' : ''}${hours}`)
             $('.minutes').text(`${minutes < 10 ? '0' : ''}${minutes}`)
             $('.timer').text(`${days < 10 ? '0' : ''}${days}:${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`)
+        } else {
+            $('.discountCircle').css('display', 'none')
         }
     }, interval);
 
@@ -422,11 +424,7 @@ function listenSalaryImages() {
     }
 }
 
-async function init() {
-    $( window ).resize(function() {
-        getMaxWidth()
-    });
-
+function init() {
     setCountDown()
     listenPopups()
     closePopupsOnBack()
@@ -437,20 +435,17 @@ async function init() {
     listenCoursesSlider()
     initCourseData()
     listenSalaryImages()
+    getMaxHeight()
+    getMaxWidth()
 
-    setTimeout(() => {
-        getMaxHeight()
+    $( window ).resize(function() {
         getMaxWidth()
-
-    }, 0)
+    });
 }
 
 $(function () {
     initPhotoSliders();
     initSpeakerSlider();
     initVideoSlider();
-});
-
-$( window ).on( "load", function() {
     init()
 });
