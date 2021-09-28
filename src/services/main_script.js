@@ -390,7 +390,7 @@ function initSliders() {
         margin: 40,
         nav: false,
         dots: false,
-        autoplay: true,
+        // autoplay: true,
         items: 1,
         responsive: {
             0: {

@@ -178,6 +178,14 @@
   }
 }
 
+.videoFeedbackSlide {
+  height: 583px;
+
+  @media screen and (max-width: 800px) {
+    height: 250px !important;
+  }
+}
+
 .bottomNewsAboutCourseMobile {
   position: fixed;
   bottom: 40px;

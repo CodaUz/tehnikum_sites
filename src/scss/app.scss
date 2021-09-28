@@ -622,6 +622,10 @@ header, section, footer, .maxWidth {
         }
       }
     }
+
+    img {
+      max-width: 500px;
+    }
   }
 
   &__cases {

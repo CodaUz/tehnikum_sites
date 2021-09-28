@@ -1,4 +1,5 @@
 $vw-viewport: 1889;
+$vw-mobile-viewport: 374;
 $vw-enable: true;
 
 @function get-vw($font) {
@@ -10,3 +11,11 @@ $vw-enable: true;
   @return $font;
 }
 
+@function get-mobile-vw($font) {
+  @if $vw-enable {
+    $vw-context: $vw-mobile-viewport * 0.01 * 1px;
+
+    @return $font / $vw-context * 1vw;
+  }
+  @return $font;
+}
