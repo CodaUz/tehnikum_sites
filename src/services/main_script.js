@@ -129,7 +129,7 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=course&course=smm-spec${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=smm-spec${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
