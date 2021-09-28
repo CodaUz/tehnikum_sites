@@ -337,7 +337,8 @@ html {
       @media screen and (max-width: 800px) {
         width: get-mobile-vw(404px);
         left: get-mobile-vw(10px);
-        top: get-mobile-vw(800px);
+        top: initial;
+        bottom: get-mobile-vw(35px);
         transform: rotateZ(277deg);
       }
     }
