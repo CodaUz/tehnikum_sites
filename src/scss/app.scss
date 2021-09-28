@@ -23,6 +23,7 @@ html {
   background: $gray;
   position: relative;
   overflow: hidden;
+  padding-bottom: get-vw(50px);
 
   &__topBox {
     padding-left: get-vw(352px);
@@ -47,7 +48,7 @@ html {
     }
 
     &__infoCourse {
-      padding-top: get-vw(89px);
+      padding-top: get-vw(69px);
       display: grid;
       row-gap: get-vw(51px);
 
@@ -130,8 +131,8 @@ html {
     &__description {
       font-family: 'TTHovesMedium';
       font-style: normal;
-      font-size: get-vw(36px);
-      line-height: get-vw(44.21px);
+      font-size: get-vw(34px);
+      line-height: get-vw(42.21px);
       max-width: get-vw(810px);
       padding-top: get-vw(50px);
       padding-bottom: get-vw(20px);
@@ -248,7 +249,7 @@ html {
       width: 100%;
       max-width: get-vw(846.39px);
       right: get-vw(42.61px);
-      top: get-vw(188px);
+      top: get-vw(128px);
       z-index: 2;
 
       @media screen and (max-width: 800px) {

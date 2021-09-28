@@ -101,7 +101,7 @@
     </div>
     <header class="header">
         <div class="header__topBox">
-            <img src="images/logo.png" alt="logo" class="header__topBox__logo desktop">
+            <img src="images/logo%20(1).svg" alt="logo" class="header__topBox__logo desktop">
             <img src="images/logo_mobile.svg" alt="logo" class="header__topBox__logo mobile">
             <div class="header__topBox__infoCourse">
                 <div class="header__topBox__infoCourse__box">
@@ -1176,6 +1176,51 @@
 
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script>
+    $('#photoSlider').owlCarousel({
+        margin:10,
+        nav:true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            800: {
+                items: 2.5,
+            }
+        }
+    })
+
+    $('#videoSlider').owlCarousel({
+        margin: 40,
+        nav:false,
+        dots: false,
+        items: 1,
+        loop: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            800: {
+                items: 1.5,
+            }
+        }
+    })
+    $('#speakerSlider').owlCarousel({
+        margin: 40,
+        nav: false,
+        dots: false,
+        items: 1,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            800: {
+                items: 2.2,
+            }
+        }
+    })
+
+</script>
     <script async>
       setTimeout(() => {
         !function(f,b,e,v,n,t,s)

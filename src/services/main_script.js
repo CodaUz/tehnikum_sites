@@ -366,53 +366,15 @@ async function initCourseData() {
 }
 
 function initPhotoSliders() {
-    $('#photoSlider').owlCarousel({
-        margin:10,
-        nav:true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            800: {
-                items: 2.5,
-            }
-        }
-    })
+
 }
 
 function initSpeakerSlider() {
-    $('#speakerSlider').owlCarousel({
-        margin: 40,
-        nav: false,
-        dots: false,
-        items: 1,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            800: {
-                items: 2.2,
-            }
-        }
-    })
+
 }
 
 function initVideoSlider() {
-    $('#videoSlider').owlCarousel({
-        margin: 40,
-        nav:false,
-        dots: false,
-        items: 1,
-        loop: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            800: {
-                items: 1.5,
-            }
-        }
-    })
+
 }
 
 function listenSalaryImages() {
