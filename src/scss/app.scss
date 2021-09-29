@@ -129,7 +129,7 @@ html {
     }
 
     &__course {
-      padding-top: get-vw(81px);
+      padding-top: get-vw(61px);
 
       @media screen and (max-width: 800px) {
         padding-top: get-mobile-vw(57px);
@@ -170,8 +170,8 @@ html {
       font-size: get-vw(34px);
       line-height: get-vw(42.21px);
       max-width: get-vw(810px);
-      padding-top: get-vw(50px);
-      padding-bottom: get-vw(20px);
+      padding-top: get-vw(40px);
+      padding-bottom: get-vw(10px);
 
       @media screen and (max-width: 800px) {
         font-size: get-mobile-vw(18px);
@@ -221,8 +221,8 @@ html {
 
       &__discount {
         position: absolute;
-        top: get-vw(-100px);
-        right: 0;
+        top: get-vw(-80px);
+        right: get-vw(-10px);
         color: #000000;
         text-transform: uppercase;
         font-family: 'TTHovesBold';
