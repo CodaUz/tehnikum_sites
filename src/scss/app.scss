@@ -2361,14 +2361,14 @@ html {
 
       &__title {
         font-family: 'Miratrix';
-        font-size: 43px;
-        line-height: 123.5%;
+        font-size: get-vw(40px);
+        line-height: get-vw(43px);
         text-align: center;
         text-transform: uppercase;
         color: #AFB7FD;
 
-        @media screen and (max-width: 390px) {
-          font-size: 35px;
+        @media screen and (max-width: 800px) {
+          font-size: get-mobile-vw(35px);
         }
       }
 

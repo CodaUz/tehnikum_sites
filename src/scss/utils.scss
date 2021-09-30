@@ -133,7 +133,7 @@
             text-transform: uppercase;
             color: white;
 
-            @media screen and (max-width: 390px) {
+            @media screen and (max-width: 800px) {
               font-size: get-mobile-vw(30px);
               line-height: get-mobile-vw(34px);
             }
@@ -150,7 +150,7 @@
             margin-top: get-vw(10px);
             color: white;
 
-            @media screen and (max-width: 390px) {
+            @media screen and (max-width: 800px) {
                margin-top: get-mobile-vw(15px);
               font-size: get-mobile-vw(16px);
               line-height: get-mobile-vw(18px);
