@@ -35,8 +35,9 @@ html {
       padding-left: get-mobile-vw(23px);
       padding-right: get-mobile-vw(24px);
       padding-top: get-mobile-vw(12px);
-      min-height: 94vh;
+      min-height: 80vh;
       display: grid;
+      grid-template-rows: max-content max-content max-content 1fr;
     }
 
     &__fixedHeader {
@@ -133,7 +134,7 @@ html {
       padding-top: get-vw(61px);
 
       @media screen and (max-width: 800px) {
-        padding-top: get-mobile-vw(57px);
+        padding-top: get-mobile-vw(70px);
       }
 
       &__title {
@@ -2369,6 +2370,7 @@ html {
 
         @media screen and (max-width: 800px) {
           font-size: get-mobile-vw(35px);
+          line-height:get-mobile-vw(38px);
         }
       }
 
