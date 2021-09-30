@@ -1820,66 +1820,6 @@ html {
             margin-top: get-mobile-vw(10px);
             margin-bottom: get-mobile-vw(10px);
           }
-
-          &.speaker1 {
-            background-image: url('../images/speaker1 (3).png');
-          }
-
-          &.speaker2 {
-            background-image: url('../images/speaker2 (2).png');
-          }
-
-          &.speaker3 {
-            background-image: url('../images/speaker3D.jpg');
-
-            @media screen and (max-width: 800px) {
-              background-image: url('../images/speaker3 (2).png');
-            }
-          }
-
-          &.speaker4 {
-            background-image: url('../images/speaker4 (3).png');
-          }
-
-          &.speaker5 {
-            background-image: url('../images/speaker5D.jpeg');
-
-            @media screen and (max-width: 800px) {
-              background-image: url('../images/speaker5.png');
-            }
-          }
-
-          &.speaker6 {
-            background-image: url('../images/speaker6D.png');
-
-            @media screen and (max-width: 800px) {
-              background-image: url('../images/speaker6.png');
-            }
-          }
-
-          &.speaker7 {
-            background-image: url('../images/speaker7.jpg');
-
-            @media screen and (max-width: 800px) {
-              background-image: url('../images/speaker7.png');
-            }
-          }
-
-          &.speaker8 {
-            background-image: url('../images/speaker8D.jpg');
-
-            @media screen and (max-width: 800px) {
-              background-image: url('../images/speaker8.png');
-            }
-          }
-
-          &.speaker9 {
-            background-image: url('../images/speaker9.png');
-
-            @media screen and (max-width: 800px) {
-              background-image: url('../images/speaker9 (1).png');
-            }
-          }
         }
 
         &__avatar {

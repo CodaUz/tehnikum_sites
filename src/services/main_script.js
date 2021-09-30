@@ -376,6 +376,7 @@ function listenSalaryImages() {
 
 function lazyLoad() {
     let lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
+    let lazyBackgroundImages = [].slice.call(document.querySelectorAll(".background-lazy-load"));
 
     if ("IntersectionObserver" in window) {
         let lazyImageObserver = new IntersectionObserver(function (
@@ -397,6 +398,33 @@ function lazyLoad() {
 
         lazyImages.forEach(function (lazyImage) {
             lazyImageObserver.observe(lazyImage);
+        });
+
+        let lazyImageBackgroundObserver = new IntersectionObserver(function (
+            entries,
+            observer
+        ) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    if (lazyImage.getAttribute('data-src-background')) {
+                        lazyImage.style.backgroundImage = `url("${lazyImage.getAttribute('data-src-background')}")`;
+
+                        if ($(window).width() < MOBILE_WIDTH && lazyImage.getAttribute('data-src-background-mobile')) {
+                            lazyImage.style.backgroundImage = `url("${lazyImage.getAttribute('data-src-background-mobile')}")`;
+                            lazyImage.removeAttribute("data-src-background-mobile");
+                        }
+
+                        lazyImage.classList.add("loaded");
+                        lazyImage.removeAttribute("data-src-background");
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                }
+            });
+        });
+
+        lazyBackgroundImages.forEach(function (lazyImage) {
+            lazyImageBackgroundObserver.observe(lazyImage);
         });
     }
 }
