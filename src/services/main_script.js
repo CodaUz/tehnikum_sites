@@ -163,7 +163,7 @@ async function takeCourse(formId, type_course='course') {
 
         if (type_course === 'program') {
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=target-full&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/\D/g, "")}&webinar_id=${WEBINAR_ID}&course=target-full&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
