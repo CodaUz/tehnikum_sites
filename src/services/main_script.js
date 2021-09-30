@@ -365,24 +365,39 @@ async function initCourseData() {
     $('.placesLeft').text(placesLeft)
 }
 
-function initPhotoSliders() {
-
-}
-
-function initSpeakerSlider() {
-
-}
-
-function initVideoSlider() {
-
-}
-
 function listenSalaryImages() {
     for (let type of document.querySelectorAll('.section__salaryBox__salaryImg')) {
         type.addEventListener('click', () => {
             $('.section__salaryBox__salaryImg').removeClass('active')
             type.classList.add('active')
         })
+    }
+}
+
+function lazyLoad() {
+    let lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
+
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function (
+            entries,
+            observer
+        ) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    if (lazyImage.src == "") {
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.classList.add("loaded");
+                        lazyImage.removeAttribute("data-src");
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                }
+            });
+        });
+
+        lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
     }
 }
 
@@ -399,6 +414,7 @@ function init() {
     listenSalaryImages()
     getMaxHeight()
     getMaxWidth()
+    lazyLoad()
 
     $( window ).resize(function() {
         getMaxWidth()
@@ -406,8 +422,5 @@ function init() {
 }
 
 $(function () {
-    initPhotoSliders();
-    initSpeakerSlider();
-    initVideoSlider();
     init()
 });

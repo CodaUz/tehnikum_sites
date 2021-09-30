@@ -23,7 +23,7 @@ html {
   background: $gray;
   position: relative;
   overflow: hidden;
-  padding-bottom: get-vw(100px);
+  padding-bottom: get-vw(200px);
 
   &__topBox {
     padding-left: get-vw(352px);
@@ -626,6 +626,10 @@ html {
   overflow: hidden;
   display: grid;
 
+  &.notGrid {
+    display: initial;
+  }
+
   &.whiteGray {
     background: #F0F0F0;
     color: #000000;
@@ -970,6 +974,7 @@ html {
       padding: get-vw(10px) get-vw(20px);
       text-align: center;
       white-space: nowrap;
+      margin-left: get-vw(305px);
 
       @media screen and (max-width: 800px) {
         border: none;
@@ -1417,7 +1422,7 @@ html {
   &__title {
     font-family: 'TTHovesMedium';
     font-size: get-vw(64px);
-    line-height: get-vw(57.79px);
+    line-height: get-vw(65.79px);
     text-transform: uppercase;
     padding-left: get-vw(347px);
     padding-top: get-vw(59px);
@@ -1466,7 +1471,7 @@ html {
     &__title {
       font-family: 'TTHovesMedium';
       font-size: get-vw(64px);
-      line-height: get-vw(57.79px);
+      line-height: get-vw(65.79px);
       text-transform: uppercase;
       padding-left: get-vw(353px);
 
@@ -1668,6 +1673,17 @@ html {
     }
 
     &__sliderBox {
+
+      .slick-list{padding:0 20% 0 0;}
+
+      &__slideWrap {
+        margin-right: get-vw(12.46px);
+
+        @media screen and (max-width: 800px) {
+          margin-right: get-mobile-vw(5px);
+        }
+      }
+
       &__slide {
         max-width: get-vw(618px) !important;
 
@@ -1688,7 +1704,7 @@ html {
     &__title {
       font-family: 'TTHovesMedium';
       font-size: get-vw(64px);
-      line-height: get-vw(57.79px);
+      line-height: get-vw(65.79px);
       text-transform: uppercase;
       padding-top: get-vw(59.61px);
 
@@ -1776,28 +1792,99 @@ html {
       &__speaker {
         background: rgba(175, 183, 253, 0.09);
         padding-bottom: get-vw(38px);
+        margin-right: get-vw(22px);
 
         @media screen and (max-width: 800px) {
           background: rgba(222, 222, 222, 0.37);
           padding-bottom: get-mobile-vw(30px);
           max-width: get-mobile-vw(316px);
+          margin-right: get-mobile-vw(7px);
+          margin-left: get-mobile-vw(7px);
+        }
+
+        &__avatarBox {
+          display: grid;
+          justify-content: center;
+          width: get-vw(250px);
+          height: get-vw(250px);
+          background-size:cover;
+          background-position:center;
+          border-radius:50%;
+          margin: 0 auto;
+          margin-top: get-vw(20px);
+
+          @media screen and (max-width: 800px) {
+            width: get-mobile-vw(140px);
+            height: get-mobile-vw(140px);
+            margin: 0 auto;
+            margin-top: get-mobile-vw(10px);
+            margin-bottom: get-mobile-vw(10px);
+          }
+
+          &.speaker1 {
+            background-image: url('../images/speaker1 (3).png');
+          }
+
+          &.speaker2 {
+            background-image: url('../images/speaker2 (2).png');
+          }
+
+          &.speaker3 {
+            background-image: url('../images/speaker3D.jpg');
+
+            @media screen and (max-width: 800px) {
+              background-image: url('../images/speaker3 (2).png');
+            }
+          }
+
+          &.speaker4 {
+            background-image: url('../images/speaker4 (3).png');
+          }
+
+          &.speaker5 {
+            background-image: url('../images/speaker5D.jpeg');
+
+            @media screen and (max-width: 800px) {
+              background-image: url('../images/speaker5.png');
+            }
+          }
+
+          &.speaker6 {
+            background-image: url('../images/speaker6D.png');
+
+            @media screen and (max-width: 800px) {
+              background-image: url('../images/speaker6.png');
+            }
+          }
+
+          &.speaker7 {
+            background-image: url('../images/speaker7.jpg');
+
+            @media screen and (max-width: 800px) {
+              background-image: url('../images/speaker7.png');
+            }
+          }
+
+          &.speaker8 {
+            background-image: url('../images/speaker8D.jpg');
+
+            @media screen and (max-width: 800px) {
+              background-image: url('../images/speaker8.png');
+            }
+          }
+
+          &.speaker9 {
+            background-image: url('../images/speaker9.png');
+
+            @media screen and (max-width: 800px) {
+              background-image: url('../images/speaker9 (1).png');
+            }
+          }
         }
 
         &__avatar {
-          width: get-vw(414px);
-          height: get-vw(424px);
-          object-fit: cover;
-          border-radius: 50%;
-          padding-top: get-vw(13px);
-          padding-left: get-vw(125px);
-          padding-right: get-vw(125px);
-          object-position: top;
-          text-align: center;
-
           @media screen and (max-width: 800px) {
             max-width: get-mobile-vw(280px);
-            height: initial;
-            border-radius: initial;
             padding: get-mobile-vw(33px) get-mobile-vw(69px);
             padding-bottom: get-mobile-vw(20px);
             margin: 0 auto;
@@ -1807,9 +1894,9 @@ html {
         &__title {
           margin-top: get-vw(40px);
           font-family: 'TTHovesMedium';
-          font-size: get-vw(40px);
-          line-height: get-vw(47.12px);
-          margin-bottom: get-vw(54.86px);
+          font-size: get-vw(35px);
+          line-height: get-vw(40px);
+          margin-bottom: get-vw(40px);
           text-align: center;
 
           @media screen and (max-width: 800px) {
@@ -1821,8 +1908,8 @@ html {
         }
 
         &__text, ul {
-          font-size: get-vw(36px);
-          line-height: get-vw(43.31px);
+          font-size: get-vw(34px);
+          line-height: get-vw(38px);
           font-family: 'TTHovesRegular';
           padding: 0 get-vw(58px);
 
@@ -1834,20 +1921,20 @@ html {
         }
 
         ul {
-          margin-top: get-vw(30px);
+          padding-top: get-vw(30px);
           list-style: none;
 
           li.marginTop {
-            margin-top: get-vw(30px);
+            padding-top: get-vw(30px);
           }
 
           @media screen and (max-width: 800px) {
             list-style: initial;
             padding-left: get-mobile-vw(40px);
-            margin-top: get-mobile-vw(15px);
+            padding-top: get-mobile-vw(15px);
 
             li.marginTop {
-              margin-top: get-mobile-vw(15px);
+              padding-top: get-mobile-vw(15px);
             }
           }
         }
@@ -1995,7 +2082,6 @@ html {
 
             @media screen and (max-width: 800px) {
               max-height: get-mobile-vw(1100px);
-              border-bottom: get-mobile-vw(2px) solid #FFFFFF;
             }
           }
           .section__weOftenAsked__questionBox__question__topBox {
@@ -2031,8 +2117,14 @@ html {
   &__sliderBox {
     padding-bottom: get-vw(172px);
 
+    .slick-list{padding:0 20% 0 0;}
+
     @media screen and (max-width: 800px) {
       padding-bottom: get-mobile-vw(22px);
+
+      .slick-list {
+        padding: 0;
+      }
 
       .section__title {
         max-width: get-mobile-vw(323px);
@@ -2058,10 +2150,13 @@ html {
     &__slider {
       padding-left: get-vw(347px);
 
+      .videoFeedbackSlide {
+        margin-right: get-vw(30px);
+      }
+
       @media screen and (max-width: 800px) {
+        max-width: initial;
         padding-left: get-mobile-vw(27px);
-        padding-right: get-mobile-vw(20px);
-        max-width: get-mobile-vw(330px);
       }
     }
   }
@@ -2101,22 +2196,36 @@ html {
       padding-bottom: get-mobile-vw(22px);
     }
 
-    &__text {
-      max-width: get-vw(1697px);
+    &__workBox {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      column-gap: get-vw(118px);
+      align-items: center;
       padding-left: get-vw(347px);
-      padding-top: get-vw(40px);
-      padding-bottom: get-vw(70px);
+      padding-right: get-vw(347px);
+      padding-top: get-vw(101px);
 
       @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+        row-gap: get-mobile-vw(19px);
         padding-left: get-mobile-vw(27px);
-        padding-top: get-mobile-vw(19px);
-        padding-bottom: get-mobile-vw(19px);
+        padding-right: get-mobile-vw(27px);
+        padding-top: 0;
+      }
+    }
+
+    &__text {
+      max-width: get-vw(685px);
+      padding-top: get-vw(40px);
+
+      @media screen and (max-width: 800px) {
+        padding-top: get-mobile-vw(10px);
         max-width: get-mobile-vw(324px);
       }
     }
 
     &__img {
-      width: get-vw(574px);
+      width: get-vw(390px);
       justify-self: center;
 
       @media screen and (max-width: 800px) {
@@ -2797,14 +2906,13 @@ html {
         &__description {
           width: get-vw(320px);
           text-transform: lowercase;
-          font-size: get-vw(16px);
+          font-size: get-vw(18px);
           line-height: get-vw(24.45px);
-          font-family: 'TTHovesRegular';
+          font-family: 'TTHovesMedium';
 
           @media screen and (max-width: 800px) {
             font-size: get-mobile-vw(13px);
             line-height: get-mobile-vw(19.86px);
-            font-family: 'TTHovesMedium';
             width: get-mobile-vw(305px);
             margin-top: get-mobile-vw(19px);
             margin-bottom: get-mobile-vw(10px);

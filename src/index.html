@@ -27,6 +27,7 @@
       <link rel="stylesheet" href="libs/owl.theme.default.min.css">
       <script src="libs/owl.carousel.min.js"></script>
       <script src="libs/swiped-events.min.js"></script>
+      <script src="libs/slick.min.js"></script>
     <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -102,11 +103,11 @@
     <header class="header">
         <div class="header__topBox">
             <div class="header__topBox__fixedHeader">
-                <a href="#"><img src="images/logo%20(1).svg" alt="logo" class="header__topBox__fixedHeader__logo desktop">
-                <img src="images/logo_mobile.svg" alt="logo" class="header__topBox__fixedHeader__logo mobile">
+                <a href="#"><img data-src="images/logo%20(1).svg" alt="logo" class="header__topBox__fixedHeader__logo desktop lazy-load">
+                <img data-src="images/logo_mobile.svg" alt="logo" class="header__topBox__fixedHeader__logo mobile lazy-load">
                 </a>
                 <div class="header__topBox__fixedHeader__menu">
-                    <img src="images/menu.png" alt="menu">
+                    <img data-src="images/menu.png" alt="menu" class="lazy-load">
                 </div>
             </div>
 
@@ -141,8 +142,8 @@
                 </div>
                     Записаться</div>
             </div>
-            <img src="images/headImg.svg" alt="headImg" class="header__topBox__headImg">
-            <img src="images/grid.svg" alt="headImg" class="header__topBox__gridImg">
+            <img data-src="images/headImg.svg" alt="headImg" class="header__topBox__headImg lazy-load">
+            <img data-src="images/grid.svg" alt="headImg" class="header__topBox__gridImg lazy-load">
         </div>
         <div class="header__info mobile">
             <h2 class="header__info__title">
@@ -153,34 +154,34 @@
             </p>
         </div>
         <div class="header__bottomBox">
-            <img src="images/knife.png" alt="knife" class="header__bottomBox__knife">
+            <img data-src="images/knife.png" alt="knife" class="header__bottomBox__knife lazy-load">
             <p class="header__bottomBox__text text1">Эффективная коммуникация с клиентами и с целевой аудиторией</p>
-            <img src="images/textArrow1.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow1 desktop">
-            <img src="images/textArrowMobile1.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow1 mobile">
+            <img data-src="images/textArrow1.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow1 desktop lazy-load">
+            <img data-src="images/textArrowMobile1.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow1 mobile lazy-load">
             <p class="header__bottomBox__text text2">Эффективное управление процессами, командой и бюджетом.</p>
-            <img src="images/textArrow1.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow2 desktop">
-            <img src="images/textArrowMobile2.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow2 mobile">
+            <img data-src="images/textArrow1.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow2 desktop lazy-load">
+            <img data-src="images/textArrowMobile2.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow2 mobile lazy-load">
             <p class="header__bottomBox__text text3">Составление дорожной карты и трекинг результатов</p>
-            <img src="images/textArrow2.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow3 desktop">
-            <img src="images/textArrowMobile3.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow3 mobile">
+            <img data-src="images/textArrow2.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow3 desktop lazy-load">
+            <img data-src="images/textArrowMobile3.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow3 mobile lazy-load">
             <p class="header__bottomBox__text text4">Работа с острой аналитикой и метриками эффективности</p>
-            <img src="images/textArrow2.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow4 desktop">
-            <img src="images/textArrowMobile4.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow4 mobile">
+            <img data-src="images/textArrow2.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow4 desktop lazy-load">
+            <img data-src="images/textArrowMobile4.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow4 mobile lazy-load">
             <p class="header__bottomBox__text text5">Проведение исследований,  стратегия по завоеванию рынка</p>
-            <img src="images/textArrow3.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow5 desktop">
-            <img src="images/textArrowMobile5.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow5 mobile">
+            <img data-src="images/textArrow3.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow5 desktop lazy-load">
+            <img data-src="images/textArrowMobile5.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow5 mobile lazy-load">
             <p class="header__bottomBox__text text6">Оценка KPI и оптимизация процессов</p>
-            <img src="images/textArrow4.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow6 desktop">
-            <img src="images/textArrowMobile6.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow6 mobile">
+            <img data-src="images/textArrow4.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow6 desktop lazy-load">
+            <img data-src="images/textArrowMobile6.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow6 mobile lazy-load">
             <p class="header__bottomBox__text text7">Использование алгоритмов соц.сетей для целей бизнеса</p>
-            <img src="images/textArrow5.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow7 desktop">
-            <img src="images/textArrowMobile7.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow7 mobile">
+            <img data-src="images/textArrow5.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow7 desktop lazy-load">
+            <img data-src="images/textArrowMobile7.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow7 mobile lazy-load">
             <p class="header__bottomBox__text text8">Автоматизированная воронка продаж и карта трафика</p>
-            <img src="images/textArrow6.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow8 desktop">
-            <img src="images/textArrowMobile8.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow8 mobile">
+            <img data-src="images/textArrow6.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow8 desktop lazy-load">
+            <img data-src="images/textArrowMobile8.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow8 mobile lazy-load">
             <p class="header__bottomBox__text text9">Создание лендинга и привлечение туда лидов (через SEO, контекст, таргет, SMM и др)</p>
-            <img src="images/textArrow6.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow9 desktop">
-            <img src="images/textArrowMobile9.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow9 mobile">
+            <img data-src="images/textArrow6.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow9 desktop lazy-load">
+            <img data-src="images/textArrowMobile9.svg" alt="text arrow" class="header__bottomBox__textArrow textArrow9 mobile lazy-load">
         </div>
     </header>
     <section class="section whiteGray">
@@ -193,8 +194,8 @@
 
                 Мы хотим прокачать новую отрасль в нашей стране и поднять её на самый высокий уровень!
             </p>
-            <img src="images/cursor1.png" alt="cursor" class="section__targetOfCourse__cursor1">
-            <img src="images/cursor2.png" alt="cursor" class="section__targetOfCourse__cursor2">
+            <img data-src="images/cursor1.png" alt="cursor" class="section__targetOfCourse__cursor1 lazy-load">
+            <img data-src="images/cursor2.png" alt="cursor" class="section__targetOfCourse__cursor2 lazy-load">
         </div>
     </section>
     <section class="section">
@@ -209,12 +210,12 @@
             <div class="section__forWhomThisCourse__gridBox">
                 <div class="section__forWhomThisCourse__gridBox__box">
                     <div class="section__forWhomThisCourse__gridBox__box__imgBox">
-                        <img src="images/typeStudent1.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img">
+                        <img data-src="images/typeStudent1.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img lazy-load">
                     </div>
 
                     <div class="section__forWhomThisCourse__gridBox__box__textBox">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__forWhomThisCourse__gridBox__box__textBox__gridImg">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__forWhomThisCourse__gridBox__box__textBox__gridImg lazy-load">
                         <p class="section__forWhomThisCourse__gridBox__box__textBox__text desktop">
                         <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title">Тем, кто хочет<br>
                         <span class="green">начать путь<br>
@@ -235,11 +236,11 @@
                 </div>
                 <div class="section__forWhomThisCourse__gridBox__box">
                     <div class="section__forWhomThisCourse__gridBox__box__imgBox">
-                        <img src="images/typeStudent2.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img">
+                        <img data-src="images/typeStudent2.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img lazy-load">
                     </div>
                     <div class="section__forWhomThisCourse__gridBox__box__textBox">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__forWhomThisCourse__gridBox__box__textBox__gridImg">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__forWhomThisCourse__gridBox__box__textBox__gridImg lazy-load">
                         <p class="section__forWhomThisCourse__gridBox__box__textBox__text desktop">
                         <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title">Тем, кто хочет<br>
                         <span class="green">освоить новую<br>
@@ -260,11 +261,11 @@
                 </div>
                 <div class="section__forWhomThisCourse__gridBox__box">
                     <div class="section__forWhomThisCourse__gridBox__box__imgBox">
-                        <img src="images/typeStudent3.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img">
+                        <img data-src="images/typeStudent3.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img lazy-load">
                     </div>
                     <div class="section__forWhomThisCourse__gridBox__box__textBox">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__forWhomThisCourse__gridBox__box__textBox__gridImg">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__forWhomThisCourse__gridBox__box__textBox__gridImg lazy-load">
                         <p class="section__forWhomThisCourse__gridBox__box__textBox__text desktop">
                         <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title">Тем, кто хочет<br>
                          <span class="green">продвигает свой бизнес в интернете</span></span>
@@ -281,11 +282,11 @@
                 </div>
                 <div class="section__forWhomThisCourse__gridBox__box">
                     <div class="section__forWhomThisCourse__gridBox__box__imgBox">
-                        <img src="images/typeStudent4.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img">
+                        <img data-src="images/typeStudent4.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img lazy-load">
                     </div>
                     <div class="section__forWhomThisCourse__gridBox__box__textBox">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__forWhomThisCourse__gridBox__box__textBox__gridImg">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__forWhomThisCourse__gridBox__box__textBox__gridImg lazy-load">
                         <p class="section__forWhomThisCourse__gridBox__box__textBox__text desktop">
                         <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title">Тем, кто продвигает<br>
                          <span class="green">сменить текущую работу на более востребованную</span></span>
@@ -372,9 +373,9 @@
                     </p>
                 </div>
             </div>
-            <img src="images/salaryImg1.png" alt="salaryImg" class="section__salaryBox__salaryImg active img1">
-            <img src="images/salaryImg2%20(1).png" alt="salaryImg" class="section__salaryBox__salaryImg img2">
-            <img src="images/salaryImg3%20(1).png" alt="salaryImg" class="section__salaryBox__salaryImg img3">
+            <img data-src="images/salaryImg1.png" alt="salaryImg" class="section__salaryBox__salaryImg active img1 lazy-load">
+            <img data-src="images/salaryImg2%20(1).png" alt="salaryImg" class="section__salaryBox__salaryImg img2 lazy-load">
+            <img data-src="images/salaryImg3%20(1).png" alt="salaryImg" class="section__salaryBox__salaryImg img3 lazy-load">
             <p class="section__salaryBox__textCenter">
                 Данные взяты из hh.uz и нашего hr<br> канала Техникум
             </p>
@@ -404,7 +405,7 @@
                         <p class="section__programBox__box__program__topBox__text">
                             Урок “ЗНАКОМСТВО”
                         </p>
-                        <img src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img">
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
                     </div>
                     <div class="section__programBox__box__program__text">
                         <ul>
@@ -427,7 +428,7 @@
                         <p class="section__programBox__box__program__topBox__text">
                             Урок “Основы маркетинга. KPI“
                         </p>
-                        <img src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img">
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
                     </div>
                     <div class="section__programBox__box__program__text">
                         <ul>
@@ -447,7 +448,7 @@
                         <p class="section__programBox__box__program__topBox__text">
                             урок “Построение воронок продаж“
                         </p>
-                        <img src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img">
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
                     </div>
                     <div class="section__programBox__box__program__text">
                         <ul>
@@ -467,7 +468,7 @@
                         <p class="section__programBox__box__program__topBox__text">
                             урок “Целевая аудитория“
                         </p>
-                        <img src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img">
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
                     </div>
                     <div class="section__programBox__box__program__text">
                         <ul>
@@ -487,7 +488,7 @@
                         <p class="section__programBox__box__program__topBox__text">
                             урок “Конкурентный анализ“
                         </p>
-                        <img src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img">
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
                     </div>
                     <div class="section__programBox__box__program__text">
                         <ul>
@@ -514,9 +515,9 @@
             <div class="section__whatWillYouKnow__gridBox">
                 <div class="section__whatWillYouKnow__gridBox__row">
                     <div class="section__whatWillYouKnow__gridBox__box box1">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile">
-                        <img src="images/know1.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile lazy-load">
+                        <img data-src="images/know1.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
                         <p class="section__whatWillYouKnow__gridBox__box__title">
                             Анализировать рынок, <span class="green">конкурентов и потребителей</span>
                         </p>
@@ -525,9 +526,9 @@
                         </p>
                     </div>
                     <div class="section__whatWillYouKnow__gridBox__box box2">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile">
-                        <img src="images/know2.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile lazy-load">
+                        <img data-src="images/know2.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
                         <p class="section__whatWillYouKnow__gridBox__box__title">
                             Формировать дорожную <span class="green">карту проекта</span>
                         </p>
@@ -538,9 +539,9 @@
                 </div>
                 <div class="section__whatWillYouKnow__gridBox__row">
                     <div class="section__whatWillYouKnow__gridBox__box box3">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile">
-                        <img src="images/know3.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile lazy-load">
+                        <img data-src="images/know3.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
                         <p class="section__whatWillYouKnow__gridBox__box__title">
                             Разрабатывать комплексную <span class="green">digital-стратегию</span>
                         </p>
@@ -549,9 +550,9 @@
                         </p>
                     </div>
                     <div class="section__whatWillYouKnow__gridBox__box box4">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile">
-                        <img src="images/know4.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile lazy-load">
+                        <img data-src="images/know4.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
                         <p class="section__whatWillYouKnow__gridBox__box__title">
                             Использовать <span class="green">преимущества разных интернет-площадок во благо бизнеса</span>
                         </p>
@@ -562,9 +563,9 @@
                 </div>
                 <div class="section__whatWillYouKnow__gridBox__row">
                     <div class="section__whatWillYouKnow__gridBox__box box5">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile">
-                        <img src="images/know5.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile lazy-load">
+                        <img data-src="images/know5.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
                         <p class="section__whatWillYouKnow__gridBox__box__title">
                             Использовать на практике <span class="green">все digital-инструменты</span>
                         </p>
@@ -573,9 +574,9 @@
                         </p>
                     </div>
                     <div class="section__whatWillYouKnow__gridBox__box box6">
-                        <img src="images/gridUnderText.svg" alt="grid"
-                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile">
-                        <img src="images/know6.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img">
+                        <img data-src="images/gridUnderText.svg" alt="grid"
+                             class="section__whatWillYouKnow__gridBox__box__gridImg mobile lazy-load">
+                        <img data-src="images/know6.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
                         <p class="section__whatWillYouKnow__gridBox__box__title">
                             Искусно <span class="green">управлять бюджетом</span>
                         </p>
@@ -585,9 +586,9 @@
                     </div>
                 </div>
                 <div class="section__whatWillYouKnow__gridBox__box box7">
-                    <img src="images/gridUnderText.svg" alt="grid"
-                         class="section__whatWillYouKnow__gridBox__box__gridImg mobile">
-                    <img src="images/know7.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img">
+                    <img data-src="images/gridUnderText.svg" alt="grid"
+                         class="section__whatWillYouKnow__gridBox__box__gridImg mobile lazy-load">
+                    <img data-src="images/know7.svg" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
                     <p class="section__whatWillYouKnow__gridBox__box__title">
                         <span class="green">Работать</span>
                         в команде и с клиентом
@@ -599,20 +600,20 @@
             </div>
         </div>
     </section>
-    <section class="section white">
+    <section class="section white notGrid">
         <div class="section__photoSlider">
             <h2 class="section__photoSlider__title"><span class="greenDark">атмосфера</span> обучения</h2>
             <p class="section__photoSlider__text">
                 Мы создали среду, где хочется обучаться. Где тебя будут поддерживать и направлять не только во время обучения, но и после.
             </p>
-            <div class="section__photoSlider__sliderBox owl-carousel owl-theme" id="photoSlider">
-                <img src="images/sliderImg1.png" alt="sliderImg1" class="section__photoSlider__sliderBox__slide item">
-                <img src="images/sliderImg2.png" alt="sliderImg2" class="section__photoSlider__sliderBox__slide item">
-                <img src="images/sliderImg3.png" alt="sliderImg3" class="section__photoSlider__sliderBox__slide item">
-                <img src="images/sliderImg4.png" alt="sliderImg4" class="section__photoSlider__sliderBox__slide item">
-                <img src="images/sliderImg5.png" alt="sliderImg5" class="section__photoSlider__sliderBox__slide item">
-                <img src="images/sliderImg6.png" alt="sliderImg6" class="section__photoSlider__sliderBox__slide item">
-                <img src="images/sliderImg7.png" alt="sliderImg7" class="section__photoSlider__sliderBox__slide item">
+            <div id="owl-demo" class="section__photoSlider__sliderBox">
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg1.png" alt="sliderImg1" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg2.png" alt="sliderImg2" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg3.png" alt="sliderImg3" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg4.png" alt="sliderImg4" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg5.png" alt="sliderImg5" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg6.png" alt="sliderImg6" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg7.png" alt="sliderImg7" class="section__photoSlider__sliderBox__slide lazy-load"></div>
             </div>
         </div>
     </section>
@@ -627,11 +628,11 @@
 
                 Не теряй время – <span class="bold">стань одним из нас уже сейчас</span>
             </p>
-            <img src="images/students.png" alt="students" class="section__gallery__img desktop">
-            <img src="images/studentsMobile.png" alt="students" class="section__gallery__img mobile">
+            <img data-src="images/students.png" alt="students" class="section__gallery__img desktop lazy-load">
+            <img data-src="images/studentsMobile.png" alt="students" class="section__gallery__img mobile lazy-load">
         </div>
     </section>
-<section class="section white">
+<section class="section white notGrid">
     <div class="section__speakerBox">
         <h2 class="section__speakerBox__title desktop">
             <span class="greenDark">CПИКЕРЫ</span> КУРСА
@@ -644,9 +645,9 @@
 
             Этап за этапом, ты познаешь все составляющие интернет-маркетинга и последние тренды, чтобы достигать самых высоких результатов и оптимизировать процессы в бизнесе.
         </p>
-        <div class="section__speakerBox__speakers owl-carousel owl-theme" id="speakerSlider">
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker1%20(3).png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar">
+        <div class="section__speakerBox__speakers" id="speakerSlider">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker1"></div>
                 <p class="section__speakerBox__speakers__speaker__title">Дмитрий Середин</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     Объединяет в себе качества не только опытного маркетолога, но и успешного предпринимателя
@@ -662,8 +663,8 @@
                     <li>Экс-директор SММ-агентства LATMEDIA</li>
                 </ul>
             </div>
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker2%20(2).png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker2"></div>
                 <p class="section__speakerBox__speakers__speaker__title">Ахмадеев Аскар</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     В маркетинге уже больше 2-ух лет
@@ -675,9 +676,8 @@
                         в Facebook</li>
                 </ul>
             </div>
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker3%20(2).png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar mobile">
-                <img src="images/speaker3D.jpg" alt="speaker" class="section__speakerBox__speakers__speaker__avatar desktop">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker3"></div>
                 <p class="section__speakerBox__speakers__speaker__title">Сергей Ким</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     Не блогер и не путешественник
@@ -691,8 +691,8 @@
                         Asia (Hyundai Uzbekistan)</li>
                 </ul>
             </div>
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker4%20(3).png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker4"></div>
                 <p class="section__speakerBox__speakers__speaker__title">Акмаль раимов</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     Директор сети пиццерий Dodo в Узбекистане
@@ -702,9 +702,9 @@
                     <li>Постоянный спикер и организатор таких мероприятий, как Usenet и Mobicon</li>
                 </ul>
             </div>
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker5.png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar mobile">
-                <img src="images/speaker5D.jpeg" alt="speaker" class="section__speakerBox__speakers__speaker__avatar desktop">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker5"></div>
+
                 <p class="section__speakerBox__speakers__speaker__title">Ильхом Собиров</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     Менеджер по развитию бизнеса компании Яндекс в Узбекистане
@@ -714,9 +714,9 @@
                     <li class="marginTop">Работал с проектами: Arda.uz, Express24.uz, Bringo.uz</li>
                 </ul>
             </div>
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker6.png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar mobile">
-                <img src="images/speaker6D.png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar desktop">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker6"></div>
+
                 <p class="section__speakerBox__speakers__speaker__title">Давронов Тахир</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     В веб-дизайне уже больше 2-х лет
@@ -727,9 +727,9 @@
                     <li class="marginTop">Закончил более 29 успешных проектов по другим направлениям в дизайне</li>
                 </ul>
             </div>
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker7.png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar mobile">
-                <img src="images/speaker7.jpg" alt="speaker" class="section__speakerBox__speakers__speaker__avatar desktop">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker7"></div>
+
                 <p class="section__speakerBox__speakers__speaker__title">Камилла Насырова</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     В интернет-маркетинге более 5 лет
@@ -740,9 +740,9 @@
                     <li class="marginTop">Настроила более 25 успешных компаний</li>
                 </ul>
             </div>
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker8.png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar mobile">
-                <img src="images/speaker8D.jpg" alt="speaker" class="section__speakerBox__speakers__speaker__avatar desktop">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker8"></div>
+
                 <p class="section__speakerBox__speakers__speaker__title">Миразиз Мирфазылов</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     Более 6 лет опыта поискового продвижения
@@ -753,9 +753,9 @@
                     <li class="marginTop">Среди клиентов крупные компании и организации Узбекистана</li>
                 </ul>
             </div>
-            <div class="section__speakerBox__speakers__speaker item">
-                <img src="images/speaker9.png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar desktop">
-                <img src="images/speaker9%20(1).png" alt="speaker" class="section__speakerBox__speakers__speaker__avatar mobile">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker9"></div>
+
                 <p class="section__speakerBox__speakers__speaker__title">Юрий Каграманян</p>
                 <p class="section__speakerBox__speakers__speaker__text">
                     Руководитель TEHNIMUKM CODING
@@ -786,8 +786,6 @@
                     <p class="section__weOftenAsked__questionBox__question__topBox__rightTextOpen">
                         !
                     </p>
-                    <img src="images/cursorQuestion.svg" alt="cursor"
-                         class="section__weOftenAsked__questionBox__question__topBox__cursor">
                 </div>
                 <div class="section__weOftenAsked__questionBox__question__text">
                     <p><br>Обучение длится 2,5 месяца, где ты будешь выполнять задания (на занятиях и дома) и сразу применять полученные навыки.<br>
@@ -805,8 +803,6 @@
                     <p class="section__weOftenAsked__questionBox__question__topBox__rightTextOpen">
                         !
                     </p>
-                    <img src="images/cursorQuestion.svg" alt="cursor"
-                         class="section__weOftenAsked__questionBox__question__topBox__cursor">
                 </div>
                 <div class="section__weOftenAsked__questionBox__question__text">
                     <p><br>Наши спикеры – эксперты маркетинга с многолетним опытом, за плечами которых сотни успешных кейсов. Они прошли весь этот путь с самых низов, набили шишек, узнали каждый этап изнутри накопили богатый экспириенс, который стоит целое состояние.<br><br><br></p>
@@ -823,8 +819,6 @@
                     <p class="section__weOftenAsked__questionBox__question__topBox__rightTextOpen">
                         !
                     </p>
-                    <img src="images/cursorQuestion.svg" alt="cursor"
-                         class="section__weOftenAsked__questionBox__question__topBox__cursor">
                 </div>
                 <div class="section__weOftenAsked__questionBox__question__text">
                     <p><br>Есть две опции – это диплом или сертификат.<br><br>
@@ -846,8 +840,6 @@
                     <p class="section__weOftenAsked__questionBox__question__topBox__rightTextOpen">
                         !
                     </p>
-                    <img src="images/cursorQuestion.svg" alt="cursor"
-                         class="section__weOftenAsked__questionBox__question__topBox__cursor">
                 </div>
                 <div class="section__weOftenAsked__questionBox__question__text">
                     <p><br>Выбирай, как удобно тебе: онлайн (прямая трансляция через ZOOM-платформу) или офлайн (в нашей аудитории).<br>
@@ -866,8 +858,6 @@
                     <p class="section__weOftenAsked__questionBox__question__topBox__rightTextOpen">
                         !
                     </p>
-                    <img src="images/cursorQuestion.svg" alt="cursor"
-                         class="section__weOftenAsked__questionBox__question__topBox__cursor">
                 </div>
                 <div class="section__weOftenAsked__questionBox__question__text">
                     <p><br>Мы всегда ориентированы на то, чтобы все знания ты усвоил основательно и понял материал каждого занятия. Поэтому наши специалисты ответят на любые твои вопросы и помогут – советом, напутствием или реальным делом.<br><br><br></p>
@@ -876,26 +866,26 @@
         </div>
     </div>
 </section>
-<section class="section white">
+<section class="section white notGrid">
     <div class="section__sliderBox">
         <h2 class="section__title"><span class="greenDark">выпускники</span> о школе</h2>
         <p class="section__text section__sliderBox__text">
             TEHNIKUM - лучшее место для развития. Гордимся результатами каждого студента и с удовольствием наблюдаем за их победами на профессиональном поприще - ознакомиться с их отзывами ты можешь тут:
         </p>
-        <div class="section__sliderBox__slider owl-carousel owl-theme" id="videoSlider">
+        <div class="section__sliderBox__slider" id="videoSlider">
             <div class="videoFeedbackSlide item">
                 <iframe width="100%" height="100%"
-                        src="https://www.youtube.com/embed/Ne56Zgwm9Ew" class="lazy-image">
+                        data-src="https://www.youtube.com/embed/Ne56Zgwm9Ew" class="lazy-load">
                 </iframe>
             </div>
             <div class="videoFeedbackSlide item">
                 <iframe width="100%" height="100%"
-                        src="https://www.youtube.com/embed/nF26g2yjvPc" class="lazy-image">
+                        data-src="https://www.youtube.com/embed/nF26g2yjvPc" class="lazy-load">
                 </iframe>
             </div>
             <div class="videoFeedbackSlide item">
                 <iframe width="100%" height="100%"
-                        src="https://www.youtube.com/embed/NCblDYvcOak" class="lazy-image">
+                        data-src="https://www.youtube.com/embed/NCblDYvcOak" class="lazy-load">
                 </iframe>
             </div>
         </div>
@@ -907,16 +897,21 @@
         <p class="section__diplomaBox__text section__text">
             Твой уровень квалификации подтвердит официальный документ, заверенный Маркетинговой Ассоциацией Узбекистана
         </p>
-        <img src="images/diploma%20(1).png" alt="disploma" class="section__diplomaBox__img">
+        <img data-src="images/diploma%20(1).png" alt="disploma" class="section__diplomaBox__img lazy-load">
     </div>
 </section>
 <section class="section white">
     <div class="section__work">
         <h2 class="section__title"><span class="greenDark">Мы помогаем</span> с трудоустройством</h2>
-        <p class="section__work__text section__text">
-            Твой уровень квалификации подтвердит официальный документ, заверенный Маркетинговой Ассоциацией Узбекистана
-        </p>
-        <img src="images/work.png" alt="work" class="section__work__img">
+        <div class="section__work__workBox">
+            <p class="section__work__text section__text">
+
+
+
+                Ты получишь доступ в закрытый канал TEHNIKUM HR, благодаря которому мы соединяем наших выпускников с потенциальными работодателями. Потому что наша миссия – не просто обучить тебя профессии, наша миссия –  помочь тебе реализовать свой потенциал
+            </p>
+            <img data-src="images/work.png" alt="work" class="section__work__img lazy-load">
+        </div>
     </div>
 </section>
 <section class="section green">
@@ -963,14 +958,14 @@
     <div class="footer__gridBox">
         <div class="footer__formBox" id="form">
             <div class="footer__mainBox__formBox__readyBox footer__formBox__readyBox" data-form-id="Contact">
-                <img src="images/cross.svg" alt="cross" class="footer__formBox__readyBox__cross" />
+                <img data-src="images/cross.svg" alt="cross" class="footer__formBox__readyBox__cross lazy-load" />
 
                 <p class="footer__formBox__readyBox__title">
                     спасибо за заявку!
                 </p>
                 <p class="footer__formBox__readyBox__text">
                     наш менеджер свяжется с вами</p>
-                <img src="images/brain%20(1).png" alt="cross" class="footer__formBox__readyBox__brainImg" />
+                <img data-src="images/brain%20(1).png" alt="cross" class="footer__formBox__readyBox__brainImg lazy-load" />
             </div>
             <div class="footer__formBox__discount discountCircle" data-form-id="Contact">
                 <div class="footer__formBox__discount__ellipse"></div>
@@ -999,13 +994,13 @@
             </p>
             <div class="footer__formBox__socials">
                 <a href="https://instagram.com/tehnikum.school?igshid=5uh70q7ckxx2" target="_blank">
-                    <img src="images/instagram.svg" alt="instagram">
+                    <img data-src="images/instagram.svg" alt="instagram" class="lazy-load">
                 </a>
                 <a href="https://t.me/tehnikum_school" target="_blank">
-                    <img src="images/telegram%20(1).svg" alt="telegram">
+                    <img data-src="images/telegram%20(1).svg" alt="telegram" class="lazy-load">
                 </a>
                 <a href="https://www.facebook.com/tehnikum.school" target="_blank">
-                    <img src="images/facebook%20(1).svg" class="facebook" alt="facebook">
+                    <img data-src="images/facebook%20(1).svg" class="facebook lazy-load" alt="facebook">
                 </a>
             </div>
         </div>
@@ -1032,7 +1027,7 @@
                                 </p>
                             </div>
                         </div>
-                        <img src="images/course1%20(2).png" alt="course" class="footer__course__box__topBox__img">
+                        <img data-src="images/course1%20(2).png" alt="course" class="footer__course__box__topBox__img lazy-load">
                     </div>
                     <p class="footer__course__box__title">курс</p>
                     <p class="footer__course__box__name desktop">smm специалист</p>
@@ -1084,7 +1079,7 @@
                                 </p>
                             </div>
                         </div>
-                        <img src="images/course2%20(1).png" alt="course" class="footer__course__box__topBox__img">
+                        <img data-src="images/course2%20(1).png" alt="course" class="footer__course__box__topBox__img lazy-load">
                     </div>
                     <p class="footer__course__box__title">курс</p>
                     <p class="footer__course__box__name desktop">контекстная реклама</p>
@@ -1138,7 +1133,7 @@
                                 </p>
                             </div>
                         </div>
-                        <img src="images/course3%20(1).png" alt="course" class="footer__course__box__topBox__img">
+                        <img data-src="images/course3%20(1).png" alt="course" class="footer__course__box__topBox__img lazy-load">
                     </div>
                     <p class="footer__course__box__title">курс</p>
                     <p class="footer__course__box__name desktop">target full course</p>
@@ -1181,47 +1176,46 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script>
-    $('#photoSlider').owlCarousel({
-        margin:10,
-        nav:true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            800: {
-                items: 2.5,
-            }
-        }
-    })
+    $(document).ready(function() {
+        $('#owl-demo').slick({
+            slidesToShow: 2,
+            dots: false,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
 
-    $('#videoSlider').owlCarousel({
-        margin: 40,
-        nav:false,
-        dots: false,
-        items: 1,
-        loop: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            800: {
-                items: 1.5,
-            }
-        }
-    })
-    $('#speakerSlider').owlCarousel({
-        margin: 40,
-        nav: false,
-        dots: false,
-        items: 1,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            800: {
-                items: 2.2,
-            }
-        }
+        $('#videoSlider').slick({
+            slidesToShow: 1,
+            dots: false,
+            arrows: false,
+        })
+
+        $('#speakerSlider').slick({
+            slidesToShow: 2,
+            dots: false,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        })
     })
 
 </script>
