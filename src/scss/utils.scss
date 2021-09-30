@@ -1,5 +1,6 @@
 @import "./font.scss";
 @import "./variables.scss";
+@import "./get-vw";
 
 .formBoxIndex {
   z-index: 6000;
@@ -26,8 +27,12 @@
     position: fixed;
     z-index: 60001;
     width: 100%;
-    max-width: 500px;
+    max-width: get-vw(500px);
     height: auto;
+
+    @media screen and (max-width: 800px) {
+      max-width: get-mobile-vw(356px);
+    }
 
     .blueBtn {
       position: fixed;
@@ -60,20 +65,27 @@
       }
 
       .footer__mainBox__formBox {
-        border-radius: 10px;
-        padding: 108px 30px;
+        border-radius: get-vw(10px);
+        padding: get-vw(108px) get-vw(30px);
         display: flex;
         flex-direction: column;
         align-items: center;
         height: max-content;
         align-self: center;
         width: 100%;
-        max-width: 400px;
+        max-width: get-vw(400px);
+
+        @media screen and (max-width: 800px) {
+          max-width: get-mobile-vw(356px);
+          padding-top: get-mobile-vw(67px);
+          padding-bottom: get-mobile-vw(43px);
+          padding-left: get-mobile-vw(47px);
+          padding-right: get-mobile-vw(47px);
+        }
 
         &__input {
-          margin-top: 23px;
-          margin-bottom: 30px;
-
+          margin-top: get-vw(23px);
+          margin-bottom: get-vw(30px);
         }
 
         &__readyBox {
@@ -88,45 +100,60 @@
           align-content: center;
           display: none;
           text-align: center;
-          padding: 16px 39px;
+          padding: get-vw(16px) get-vw(39px);
+
+          @media screen and (max-width: 800px) {
+            padding: get-mobile-vw(60px);
+            padding-top: 0;
+          }
 
           &.active {
             display: grid;
           }
 
           &__img {
-            max-width: 150px;
+            max-width: get-vw(150px);
             width: 100%;
-            margin-top: -50px;
-            padding-bottom: 30px;
+            margin-top: get-vw(-50px);
+            padding-bottom: get-vw(30px);
+
+            @media screen and (max-width: 800px) {
+              width: get-mobile-vw(100px);
+              max-width: initial;
+              margin-top: get-mobile-vw(11px);
+              margin-bottom: get-mobile-vw(10px);
+            }
           }
 
           &__title {
             font-family: 'Miratrix';
-            font-size: 43px;
-            line-height: 123.5%;
+            font-size: get-vw(43px);
+            line-height: get-vw(45px);
             text-align: center;
             text-transform: uppercase;
             color: white;
 
-            @media screen and (max-width: 390px) {
-              font-size: 35px;
+            @media screen and (max-width: 800px) {
+              font-size: get-mobile-vw(30px);
+              line-height: get-mobile-vw(34px);
             }
           }
 
           .btn {
-            margin-top: 1rem;
+            margin-top: get-vw(16px);
           }
 
           &__text {
             font-family: 'TTHovesRegular';
-            font-size: 18px;
-            line-height: 21px;
-            margin-top: 10px;
+            font-size: get-vw(18px);
+            line-height: get-vw(21px);
+            margin-top: get-vw(10px);
             color: white;
 
-            @media screen and (max-width: 390px) {
-              font-size: 16px;
+            @media screen and (max-width: 800px) {
+              margin-top: get-mobile-vw(15px);
+              font-size: get-mobile-vw(16px);
+              line-height: get-mobile-vw(18px);
             }
           }
 
@@ -137,42 +164,71 @@
         }
 
         &__text {
-          font-size: 16px;
-          line-height: 19px;
+          font-size: get-vw(16px);
+          line-height: get-vw(19px);
           text-align: center;
           font-family: 'TTHovesRegular';
-          margin-bottom: 30px;
+          margin-bottom: get-vw(30px);
         }
       }
 
       .titleName {
         font-family: "Miratrix";
-        margin-bottom: 10px;
-        font-size: 44px;
-        line-height: 39px;
+        margin-bottom: get-vw(10px);
+        font-size: get-vw(44px);
+        line-height: get-vw(39px);
         text-align: center;
         text-transform: uppercase;
+
+        @media screen and (max-width: 800px) {
+          font-size: get-mobile-vw(30px);
+          line-height: get-mobile-vw(34px);
+          margin-bottom: get-mobile-vw(21px);
+        }
       }
       .text {
         font-family: "Suisse Intl";
-        font-size: 0.9rem;
+        font-size: get-vw(14px);
       }
 
       input {
         width: 100%;
         background: $purple;
         color: #000000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+        font-size: get-vw(18px);
+        font-family: 'TTHovesRegular';
 
         &::placeholder {
           color: #000000;
         }
+
+        @media screen and (max-width: 800px) {
+          font-size: get-mobile-vw(16px);
+          line-height: get-mobile-vw(24px);
+
+          &[name='phoneProgram'] {
+            margin-top: get-mobile-vw(10px);
+          }
+        }
       }
 
       .btn {
-        border-radius: 20px;
-        padding: 15px 25px;
+        border-radius: get-vw(20px);
+        padding: get-vw(15px) get-vw(25px);
         width: 100%;
+        font-size: get-vw(18px);
+
+        @media screen and (max-width: 800px) {
+          width: get-mobile-vw(220px);
+          height: get-mobile-vw(48px);
+          padding: 0;
+          border-radius: get-mobile-vw(20px);
+          font-size: get-mobile-vw(14px);
+          line-height: get-mobile-vw(16.49px);
+          display: grid;
+          align-items: center;
+          margin-top: get-mobile-vw(39px);
+        }
       }
     }
   }
