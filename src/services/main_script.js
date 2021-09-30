@@ -124,12 +124,11 @@ function parse_query_string(query) {
 }
 
 async function takeCourse(formId, type_course='course') {
-    const formData = new FormData();
-
     let name = document.querySelector(`input[name="name${formId}"]`).value;
     let phone = document.querySelector(`input[name="phone${formId}"]`).value;
     let query = window.location.search.substring(1);
     let qs = parse_query_string(query);
+    const WEBINAR_ID = 283660
 
     if (name && phone) {
         document.querySelector(`input[name="name${formId}"]`).value = "";
@@ -146,6 +145,9 @@ async function takeCourse(formId, type_course='course') {
 
         $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
 
+        let redisKey = Math.floor(Math.random()*900000000) + 100000000;
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-target-full`
+
         fetch(
             `https://node.snimerovsky.xyz/log`,
             {
@@ -154,18 +156,34 @@ async function takeCourse(formId, type_course='course') {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({site: 'target_full_course', name,phone})
+                body: JSON.stringify({site: 'target_full_course', name,phone, redisKey, redisValue})
             }
         );
 
-        let res = await fetch(
-            `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=${type_course}&course=target-full${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-            {
-                method: "GET",
-            }
-        );
-        res = await res.json();
+
+        if (type_course === 'program') {
+            fetch(
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=target-full&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                {
+                    method: "GET",
+                }
+            );
+
+            $('#add_ref_btn').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
+        } else {
+            let res = await fetch(
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=${type_course}&course=target-full${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                {
+                    method: "GET",
+                }
+            );
+            res = await res.json();
+        }
     }
+}
+
+function encryptName(name) {
+    return "ENCRYPT"+[...name].map(str => str.charCodeAt()).join("S")
 }
 
 function closeFormWithCross() {
