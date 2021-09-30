@@ -169,7 +169,7 @@ function setCountDown() {
         let days = parseInt(duration.days())
         let hours = parseInt(duration.hours())
         let minutes = parseInt(duration.minutes())
-        if (duration.seconds() > 0) {
+        if (days >= 0 || hours >= 0 || minutes >= 0) {
             $('.days').text(`${days}`)
             $('.hours').text(`${hours < 10 ? '0' : ''}${hours}`)
             $('.minutes').text(`${minutes < 10 ? '0' : ''}${minutes}`)

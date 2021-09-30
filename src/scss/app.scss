@@ -223,8 +223,8 @@ html {
 
       &__discount {
         position: absolute;
-        top: get-vw(-80px);
-        right: get-vw(-10px);
+        top: get-vw(-70px);
+        right: get-vw(-20px);
         color: #000000;
         text-transform: uppercase;
         font-family: 'TTHovesBold';
@@ -253,14 +253,14 @@ html {
           background: white;
           border-radius: 50%;
           position: absolute;
-          top: get-vw(-22px);
-          left: get-vw(-20px);
+          top: get-vw(-42px);
+          left: get-vw(-25px);
 
           @media screen and (max-width: 800px) {
             width: get-mobile-vw(85px);
             height: get-mobile-vw(85px);
-            left: get-mobile-vw(-10px);
-            top: get-mobile-vw(-13px);
+            left: get-mobile-vw(-13px);
+            top: get-mobile-vw(-28px);
           }
         }
 
@@ -2418,7 +2418,7 @@ html {
 
     &__discount {
       position: absolute;
-      top: get-vw(-50px);
+      top: get-vw(-40px);
       left: get-vw(456px);
       color: #000000;
       text-transform: uppercase;
@@ -2429,7 +2429,7 @@ html {
       @media screen and (max-width: 800px) {
         left: initial;
         right: get-mobile-vw(-5px);
-        top: get-mobile-vw(-23px);
+        top: get-mobile-vw(1px);
       }
 
       &__title {
@@ -2448,7 +2448,7 @@ html {
         background: $green;
         border-radius: 50%;
         position: absolute;
-        top: get-vw(-42px);
+        top: get-vw(-62px);
         left: get-vw(-30px);
         z-index: 1;
 
@@ -2456,7 +2456,7 @@ html {
           width: get-mobile-vw(85px);
           height: get-mobile-vw(85px);
           left: get-mobile-vw(-10px);
-          top: get-mobile-vw(-13px);
+          top: get-mobile-vw(-28px);
         }
       }
 
