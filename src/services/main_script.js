@@ -455,7 +455,7 @@ async function init() {
             document.querySelector("html").removeAttribute("style");
             document.querySelector(".loader").style.display = "none";
         }, 500);
-    }, 0)
+    }, 1000)
 
     $( window ).resize(function() {
         getMaxWidth()
