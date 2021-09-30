@@ -385,13 +385,16 @@ function lazyLoad() {
         ) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    if (lazyImage.src == "") {
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImage.classList.add("loaded");
-                        lazyImage.removeAttribute("data-src");
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
+                    setTimeout(() => {
+                        let lazyImage = entry.target;
+                        if (lazyImage.src == "") {
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.add("loaded");
+                            lazyImage.removeAttribute("data-src");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    }, 10)
+
                 }
             });
         });
@@ -406,19 +409,21 @@ function lazyLoad() {
         ) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    if (lazyImage.getAttribute('data-src-background')) {
-                        lazyImage.style.backgroundImage = `url("${lazyImage.getAttribute('data-src-background')}")`;
+                    setTimeout(() => {
+                        let lazyImage = entry.target;
+                        if (lazyImage.getAttribute('data-src-background')) {
+                            lazyImage.style.backgroundImage = `url("${lazyImage.getAttribute('data-src-background')}")`;
 
-                        if ($(window).width() < MOBILE_WIDTH && lazyImage.getAttribute('data-src-background-mobile')) {
-                            lazyImage.style.backgroundImage = `url("${lazyImage.getAttribute('data-src-background-mobile')}")`;
-                            lazyImage.removeAttribute("data-src-background-mobile");
+                            if ($(window).width() < MOBILE_WIDTH && lazyImage.getAttribute('data-src-background-mobile')) {
+                                lazyImage.style.backgroundImage = `url("${lazyImage.getAttribute('data-src-background-mobile')}")`;
+                                lazyImage.removeAttribute("data-src-background-mobile");
+                            }
+
+                            lazyImage.classList.add("loaded");
+                            lazyImage.removeAttribute("data-src-background");
+                            lazyImageObserver.unobserve(lazyImage);
                         }
-
-                        lazyImage.classList.add("loaded");
-                        lazyImage.removeAttribute("data-src-background");
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
+                    }, 10)
                 }
             });
         });
@@ -444,11 +449,22 @@ function init() {
     getMaxWidth()
     lazyLoad()
 
+    setTimeout(() => {
+        document.querySelector(".loader").classList.add("active");
+        setTimeout(() => {
+            document.querySelector("html").removeAttribute("style");
+            document.querySelector(".loader").style.display = "none";
+        }, 500);
+    }, 0)
+
     $( window ).resize(function() {
         getMaxWidth()
     });
 }
 
 $(function () {
-    init()
+    setTimeout(() => {
+        init()
+    }, 1)
+
 });
