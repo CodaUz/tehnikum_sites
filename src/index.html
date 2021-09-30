@@ -72,9 +72,7 @@
                         <p class="footer__mainBox__formBox__readyBox__title">
                             спасибо за заявку!
                         </p>
-                        <p class="footer__mainBox__formBox__readyBox__text">
-                            программу можете скачать
-                            в нашем telegram боте</p>
+                        <p class="footer__mainBox__formBox__readyBox__text"></p>
                         <a href="" id="downloadProgram" target="_blank">
                             <div class="btn btn__whiteInside" style="margin-top: 40px">
                                 Скачать программу
@@ -82,10 +80,9 @@
                         </a>
                     </div>
                     <p class="titleName">оставь заявку</p>
-                    <p class="footer__mainBox__formBox__text"></p>
                     <input type="text" name="nameProgram" placeholder="Имя">
-<!--                    <input type="text" name="lastNameProgram" class="footer__mainBox__formBox__input" placeholder="Фамилия">-->
-                    <input type="text" name="phoneProgram" class="footer__mainBox__formBox__input" data-mask="+998 00-000-0000" value="+998" placeholder="+998 00-000-000">
+                    <input type="text" name="phoneProgram" class="footer__mainBox__formBox__input" data-type="phone" data-mask="+998 00-000-0000" value="+998" placeholder="+998 00-000-000">
+                    <p class="footer__mainBox__formBox__text"></p>
                     <div class="btn btn__whiteInside sendForm" data-form-id="Program">Записаться на курс</div>
                 </div>
             </div>
@@ -949,14 +946,14 @@
     <div class="footer__gridBox">
         <div class="footer__formBox" id="form">
             <div class="footer__mainBox__formBox__readyBox footer__formBox__readyBox" data-form-id="Contact">
-                <img data-src="images/cross.svg" alt="cross" class="footer__formBox__readyBox__cross lazy-load" />
+                <img data-src="images/crossBlack.svg" alt="cross" class="footer__formBox__readyBox__cross lazy-load" />
 
                 <p class="footer__formBox__readyBox__title">
                     спасибо за заявку!
                 </p>
                 <p class="footer__formBox__readyBox__text">
                     наш менеджер свяжется с вами</p>
-                <img data-src="images/brain%20(1).png" alt="cross" class="footer__formBox__readyBox__brainImg lazy-load" />
+                <img data-src="images/typeStudent1.png" alt="cross" class="footer__formBox__readyBox__brainImg lazy-load" />
             </div>
             <div class="footer__formBox__discount discountCircle" data-form-id="Contact">
                 <div class="footer__formBox__discount__ellipse"></div>
@@ -974,7 +971,7 @@
             <h3 class="footer__formBox__inputTitle">программа обучения</h3>
             <div class="footer__formBox__inputBox">
                 <input type="text" name="nameContact" placeholder="Имя">
-                <input type="text" name="phoneContact" class="footer__mainBox__formBox__input" data-mask="+998 00-000-0000" value="+998" placeholder="+998 00-000-000">
+                <input type="text" name="phoneContact" class="footer__mainBox__formBox__input" data-type="phone" data-mask="+998 00-000-0000" value="+998" placeholder="+998 00-000-000">
             </div>
             <button class="btn btn__green sendForm" data-form-id="Contact">Хочу учиться</button>
             <p class="footer__formBox__endBoldText">

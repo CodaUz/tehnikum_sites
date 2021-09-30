@@ -2324,7 +2324,7 @@ html {
       left: 0;
       width: 100%;
       height: 100%;
-      background: #252525;
+      background: $green;
       color: white;
       justify-items: center;
       align-content: center;
@@ -2332,6 +2332,11 @@ html {
       text-align: center;
       padding: get-vw(16px) get-vw(39px);
       z-index: 1;
+      border-radius: get-vw(5px);
+
+      @media screen and (max-width: 800px) {
+        border-radius: get-mobile-vw(5px);
+      }
 
       &.active {
         display: grid;
@@ -2348,25 +2353,36 @@ html {
 
       &__cross {
         position: absolute;
-        top: 15px;
-        right: 15px;
-        width: 20px;
+        top: get-vw(15px);
+        right: get-vw(15px);
+        width: get-vw(20px);
         cursor: url("../images/pointer active.png"), auto;
+
+        @media screen and (max-width: 800px) {
+          top: get-mobile-vw(15px);
+          right: get-mobile-vw(15px);
+          width: get-mobile-vw(20px);
+        }
       }
 
       &__brainImg {
-        margin-top: 40px;
-        max-width: 230px;
+        margin-top: get-vw(40px);
+        max-width: get-vw(270px);
         width: 100%;
+
+        @media screen and (max-width: 800px) {
+          margin-top: get-mobile-vw(40px);
+          max-width: get-mobile-vw(240px);
+        }
       }
 
       &__title {
         font-family: 'Miratrix';
-        font-size: get-vw(40px);
-        line-height: get-vw(43px);
+        font-size: get-vw(45px);
+        line-height: get-vw(47px);
         text-align: center;
         text-transform: uppercase;
-        color: #AFB7FD;
+        color: #000000;
 
         @media screen and (max-width: 800px) {
           font-size: get-mobile-vw(35px);
@@ -2380,13 +2396,16 @@ html {
 
       &__text {
         font-family: 'TTHovesRegular';
-        font-size: 18px;
-        line-height: 21px;
-        margin-top: 10px;
-        color: white;
+        font-size: get-vw(18px);
+        line-height: get-vw(21px);
+        margin-top: get-vw(5px);
+        margin-bottom: get-vw(15px);
+        color: #000000;
 
-        @media screen and (max-width: 390px) {
-          font-size: 16px;
+        @media screen and (max-width: 800px) {
+          margin-top: get-mobile-vw(15px);
+          font-size: get-mobile-vw(16px);
+          line-height: get-mobile-vw(18px);
         }
       }
 

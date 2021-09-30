@@ -16,7 +16,7 @@ function listenPopups() {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
         $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
-        $('p.footer__mainBox__formBox__text').text('')
+        $('p.footer__mainBox__formBox__text').html('программу можете скачать в<br> нашем telegram боте')
         $('p.titleName').text('сделай первый шаг')
         openModalForm('.formBoxIndex')
     })
@@ -434,6 +434,16 @@ function lazyLoad() {
     }
 }
 
+function listenPhoneInputs() {
+    for (let input of document.querySelectorAll('input[data-type="phone"]')) {
+        input.addEventListener('input', function (e) {
+            if (!this.value.startsWith('+998')) {
+                this.value = '+998'
+            }
+        })
+    }
+}
+
 async function init() {
     setCountDown()
     listenPopups()
@@ -448,6 +458,7 @@ async function init() {
     getMaxHeight()
     getMaxWidth()
     lazyLoad()
+    listenPhoneInputs()
 
     setTimeout(() => {
         document.querySelector(".loader").classList.add("active");

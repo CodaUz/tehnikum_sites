@@ -85,7 +85,7 @@
 
         &__input {
           margin-top: get-vw(23px);
-          margin-bottom: get-vw(30px);
+          //margin-bottom: get-vw(30px);
         }
 
         &__readyBox {
@@ -164,17 +164,24 @@
         }
 
         &__text {
-          font-size: get-vw(16px);
-          line-height: get-vw(19px);
+          font-size: get-vw(20px);
+          line-height: get-vw(22px);
           text-align: center;
           font-family: 'TTHovesRegular';
-          margin-bottom: get-vw(30px);
+          margin-bottom: get-vw(20px);
+          margin-top: get-vw(15px);
+
+          @media screen and (max-width: 800px) {
+            margin-bottom: 0;
+            font-size: get-mobile-vw(16px);
+            line-height: get-mobile-vw(18px);
+          }
         }
       }
 
       .titleName {
         font-family: "Miratrix";
-        margin-bottom: get-vw(10px);
+        margin-bottom: get-vw(30px);
         font-size: get-vw(44px);
         line-height: get-vw(39px);
         text-align: center;
