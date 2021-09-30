@@ -434,7 +434,7 @@ function lazyLoad() {
     }
 }
 
-function init() {
+async function init() {
     setCountDown()
     listenPopups()
     closePopupsOnBack()
@@ -443,7 +443,7 @@ function init() {
     closeFormWithCross()
     listenType()
     listenCoursesSlider()
-    initCourseData()
+    await initCourseData()
     listenSalaryImages()
     getMaxHeight()
     getMaxWidth()
