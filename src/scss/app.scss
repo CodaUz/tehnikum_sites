@@ -999,11 +999,6 @@ html {
         line-height: get-mobile-vw(19.41px);
         width: get-mobile-vw(324px);
         padding-top: get-mobile-vw(20px);
-        text-transform: lowercase;
-
-        &:first-letter {
-          text-transform: uppercase;
-        }
       }
     }
 
