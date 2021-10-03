@@ -22,11 +22,6 @@
     />
     <meta property="og:image:width" content="230" />
     <meta property="og:image:height" content="120" />
-      <script src="libs/jquery.js"></script>
-      <link rel="stylesheet" href="libs/owl.carousel.min.css">
-      <link rel="stylesheet" href="libs/owl.theme.default.min.css">
-      <script src="libs/owl.carousel.min.js"></script>
-      <script src="libs/slick.min.js"></script>
   </head>
 
   <body>
@@ -912,60 +907,11 @@
     </div>
 </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="libs/slick.min.js"></script>
+    <script src="libs/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#photoSlider').slick({
-                slidesToShow: 2,
-                dots: false,
-                arrows: false,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                responsive: [
-                    {
-                        breakpoint: 800,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-
-            $('#videoSlider').slick({
-                slidesToShow: 2,
-                dots: false,
-                arrows: false,
-                responsive: [
-                    {
-                        breakpoint: 800,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            })
-
-            $('#speakerSlider').slick({
-                slidesToShow: 2,
-                dots: false,
-                arrows: false,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                responsive: [
-                    {
-                        breakpoint: 800,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            })
-        })
-    </script>
     <script async>
       setTimeout(() => {
         !function(f,b,e,v,n,t,s)
