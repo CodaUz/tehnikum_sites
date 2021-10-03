@@ -1,6 +1,7 @@
 // Images
 import './images.js'
 
+
 // Styles
 import "./scss/owl.carousel.min.scss";
 import "./scss/owl.theme.default.min.scss";

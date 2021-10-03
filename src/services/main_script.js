@@ -527,5 +527,5 @@ async function init() {
 $( window ).on( "load", function() {
     setTimeout(() => {
         init()
-    }, 100)
+    }, 1000)
 });
