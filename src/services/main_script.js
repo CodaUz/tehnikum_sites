@@ -16,7 +16,7 @@ function listenPopups() {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
         $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
-        $('p.footer__mainBox__formBox__text').text('')
+        $('p.footer__mainBox__formBox__text').html('программу можете скачать в<br> нашем telegram боте')
         $('p.titleName').text('сделай первый шаг')
         openModalForm('.formBoxIndex')
     })
@@ -174,6 +174,8 @@ function setCountDown() {
             $('.timeHours').text(`${hours < 10 ? '0' : ''}${hours}`)
             $('.timeMinutes').text(`${minutes < 10 ? '0' : ''}${minutes}`)
             $('.timer').text(`${days < 10 ? '0' : ''}${days}:${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`)
+        } else {
+            $('.discountCircle').css('display', 'none')
         }
     }, interval);
 
@@ -368,72 +370,82 @@ async function initCourseData() {
     $('.placesLeft').text(placesLeft)
 }
 
-function initSliders() {
-    $('#photoSlider').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        items: 1,
-        dots: false,
-        autoplay: true,
-        responsive: {
-            0: {
-                items: 1.5
-            },
-            800: {
-                items: 2.5,
+function listenPhoneInputs() {
+    for (let input of document.querySelectorAll('input[data-type="phone"]')) {
+        input.addEventListener('input', function (e) {
+            if (!this.value.startsWith('+998')) {
+                this.value = '+998'
             }
-        }
-    })
-
-    $('#speakerSlider').owlCarousel({
-        margin: 40,
-        nav: false,
-        dots: false,
-        // autoplay: true,
-        items: 1,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            800: {
-                items: 2,
-            }
-        }
-    })
-
-    $('#videoSlider').owlCarousel({
-        margin: 40,
-        nav:false,
-        dots: false,
-        loop: true,
-        items: 1,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            800: {
-                items: 1.5,
-            }
-        }
-    })
+        })
+    }
 }
 
-function setMaxWidth() {
-    if (window.innerWidth < MOBILE_WIDTH) {
-        $('.sliderBox__slider__speakerBox').css('width', `${$('.section__studentsImg').width()}px`)
-        $('.videoFeedbackSlide').css('width', `${$('.section__studentsImg').width()}px`)
-        $('.photoSlide').css('width', `${$('.section__studentsImg').width()}px`)
+function lazyLoad() {
+    let lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
+    let lazyBackgroundImages = [].slice.call(document.querySelectorAll(".background-lazy-load"));
+
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function (
+            entries,
+            observer
+        ) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        let lazyImage = entry.target;
+                        if (lazyImage.src == "") {
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.add("loaded");
+                            lazyImage.removeAttribute("data-src");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    }, 10)
+
+                }
+            });
+        });
+
+        lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+
+        let lazyImageBackgroundObserver = new IntersectionObserver(function (
+            entries,
+            observer
+        ) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        let lazyImage = entry.target;
+                        if (lazyImage.getAttribute('data-src-background')) {
+                            lazyImage.style.backgroundImage = `url("${lazyImage.getAttribute('data-src-background')}")`;
+
+                            if ($(window).width() < MOBILE_WIDTH && lazyImage.getAttribute('data-src-background-mobile')) {
+                                lazyImage.style.backgroundImage = `url("${lazyImage.getAttribute('data-src-background-mobile')}")`;
+                                lazyImage.removeAttribute("data-src-background-mobile");
+                            }
+
+                            lazyImage.classList.add("loaded");
+                            lazyImage.removeAttribute("data-src-background");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    }, 10)
+                }
+            });
+        });
+
+        lazyBackgroundImages.forEach(function (lazyImage) {
+            lazyImageBackgroundObserver.observe(lazyImage);
+        });
     }
 }
 
 async function init() {
     $( window ).resize(function() {
-        // setMaxWidth()
         getMaxWidth()
     });
 
-    // setMaxWidth()
+    lazyLoad()
     setCountDown()
     listenPopups()
     closePopupsOnBack()
@@ -443,8 +455,8 @@ async function init() {
     closeFormWithCross()
     listenType()
     listenCoursesSlider()
-    initCourseData()
-    initSliders()
+    await initCourseData()
+    listenPhoneInputs()
 
     setTimeout(() => {
         getMaxHeight()
@@ -456,10 +468,12 @@ async function init() {
                 document.querySelector("html").removeAttribute("style");
                 document.querySelector(".loader").style.display = "none";
             }, 500);
-        }, 0)
+        }, 1000)
     }, 0)
 }
 
 $( window ).on( "load", function() {
-    init()
+    setTimeout(() => {
+        init()
+    }, 100)
 });
