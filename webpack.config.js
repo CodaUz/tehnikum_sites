@@ -3,12 +3,14 @@ const miniCss = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
 
   entry: "./index.js",
   output: {
+    publicPath: '',
     filename: '[name].js?t=' + new Date().getTime(),
     chunkFilename: '[name]-chunk.js?t=' + new Date().getTime(),
     path: path.resolve(__dirname, "dist"),
@@ -54,6 +56,11 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 8804,
+  },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
   },
   plugins: [
     new miniCss({

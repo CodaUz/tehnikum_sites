@@ -466,6 +466,15 @@ function initSliders() {
         slidesToShow: 2,
         dots: false,
         arrows: false,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     })
 
     $('#speakerSlider').slick({

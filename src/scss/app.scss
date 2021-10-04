@@ -2093,11 +2093,16 @@ html {
 
       .videoFeedbackSlide {
         margin-right: get-vw(30px);
+
+        @media screen and (max-width: 800px) {
+          margin: 0 20px;
+          margin-top: 20px;
+        }
       }
 
       @media screen and (max-width: 800px) {
         max-width: initial;
-        padding-left: get-mobile-vw(27px);
+        padding-left: 0;
       }
     }
   }
