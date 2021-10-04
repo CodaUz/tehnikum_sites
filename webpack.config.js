@@ -58,13 +58,18 @@ module.exports = {
     port: 8804,
   },
   optimization: {
+    splitChunks: {
+      minSize: 10000,
+      maxSize: 250000,
+    },
     minimizer: [
       new CssMinimizerPlugin(),
     ],
   },
   plugins: [
     new miniCss({
-      filename: "style.css",
+      filename: "[name].css",
+      chunkFilename: "[id].css",
     }),
     new HTMLWebpackPlugin({
       template: "./index.html",
@@ -80,7 +85,7 @@ module.exports = {
       width: 375,
       height: 565,
       penthouse: {
-        blockJSRequests: false,
+        blockJSRequests: true,
       },
     }),
     new CopyPlugin({
