@@ -57,25 +57,9 @@ module.exports = {
     compress: true,
     port: 8804,
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: "styles",
-          type: "css/mini-extract",
-          chunks: "all",
-          enforce: true,
-        },
-      },
-    },
-    minimizer: [
-      new CssMinimizerPlugin(),
-    ],
-  },
   plugins: [
     new miniCss({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
+      filename: '[name].[contenthash].css',
     }),
     new HTMLWebpackPlugin({
       template: "./index.html",
@@ -100,4 +84,19 @@ module.exports = {
       ],
     }),
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      },
+    },
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
 };
