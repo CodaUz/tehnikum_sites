@@ -59,8 +59,14 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      minSize: 10000,
-      maxSize: 250000,
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      },
     },
     minimizer: [
       new CssMinimizerPlugin(),
