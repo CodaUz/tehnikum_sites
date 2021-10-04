@@ -444,7 +444,50 @@ function listenPhoneInputs() {
     }
 }
 
+function initSliders() {
+    $('#photoSlider').slick({
+        slidesToShow: 2,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
+    $('#videoSlider').slick({
+        slidesToShow: 2,
+        dots: false,
+        arrows: false,
+    })
+
+    $('#speakerSlider').slick({
+        slidesToShow: 2,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    })
+}
+
 async function init() {
+    initSliders()
     setCountDown()
     listenPopups()
     closePopupsOnBack()
@@ -473,9 +516,6 @@ async function init() {
     });
 }
 
-$(function () {
-    setTimeout(() => {
-        init()
-    }, 1)
-
-});
+setTimeout(() => {
+    init()
+}, 1000)
