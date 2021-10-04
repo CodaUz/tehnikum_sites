@@ -393,7 +393,7 @@ function lazyLoad() {
                             lazyImage.removeAttribute("data-src");
                             lazyImageObserver.unobserve(lazyImage);
                         }
-                    }, 10)
+                    }, 100)
 
                 }
             });
@@ -423,7 +423,7 @@ function lazyLoad() {
                             lazyImage.removeAttribute("data-src-background");
                             lazyImageObserver.unobserve(lazyImage);
                         }
-                    }, 10)
+                    }, 100)
                 }
             });
         });
