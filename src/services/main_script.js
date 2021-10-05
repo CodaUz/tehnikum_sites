@@ -218,7 +218,7 @@ async function takeCourse(formId, is_redirect=false) {
 
 
         if (is_redirect) {
-            await fetch(
+             fetch(
                 `https://node.snimerovsky.xyz/log`,
                 {
                     method: 'POST',
@@ -230,7 +230,7 @@ async function takeCourse(formId, is_redirect=false) {
                 }
             );
 
-            await fetch(
+             fetch(
                 `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=tg&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
@@ -242,7 +242,7 @@ async function takeCourse(formId, is_redirect=false) {
             a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
             setTimeout(() => {
                 a.click();
-            }, 10)
+            }, 500)
         } else {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
