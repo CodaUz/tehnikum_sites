@@ -213,7 +213,7 @@ async function takeCourse(formId, is_redirect=false) {
         }
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}`
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-tg`
         const WEBINAR_ID = 604904
 
 
