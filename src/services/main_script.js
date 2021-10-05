@@ -226,7 +226,7 @@ async function takeCourse(formId, is_redirect=false) {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({site: 'context', name,phone, redisKey, redisValue})
+                    body: JSON.stringify({site: 'python-start', name,phone, redisKey, redisValue})
                 }
             );
 
@@ -255,12 +255,12 @@ async function takeCourse(formId, is_redirect=false) {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({site: 'context', name,phone})
+                    body: JSON.stringify({site: 'python-start', name,phone})
                 }
             );
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=course&course=tg${qs.r ?  `-${qs.r}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=tg${qs.r ?  `-${qs.r}` : ''}`,
                 {
                     method: "GET",
                 }
