@@ -1,7 +1,6 @@
 const path = require("path");
 const miniCss = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
@@ -64,14 +63,6 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "./index.html",
       filename: "index.html",
-    }),
-    new HtmlCriticalWebpackPlugin({
-      base: path.resolve(__dirname, "dist"),
-      src: "index.html",
-      dest: "index.html",
-      inline: true,
-      minify: true,
-      extract: true,
     }),
     new CopyPlugin({
       patterns: [
