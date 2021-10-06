@@ -3,7 +3,6 @@ const miniCss = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 const ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin');
 
 module.exports = {
@@ -64,25 +63,20 @@ module.exports = {
       filename: "index.html",
     }),
     new miniCss(),
-    new PreloadWebpackPlugin({
-      rel: 'preload',
-      include: 'allAssets',
-      fileWhitelist: [/styles(\.[0-9a-f]+)?\.css$/]
-    }),
     new CopyPlugin({
       patterns: [
         { from: "libs", to: "libs" },
         { from: "services", to: "services" },
       ],
     }),
-      // new ReplaceInFileWebpackPlugin([{
-      //   dir: 'dist',
-      //   files: ['index.html'],
-      //   rules: [{
-      //     search: '<link href="styles.css" rel="stylesheet">',
-      //     replace: ''
-      //   }]
-      // }])
+      new ReplaceInFileWebpackPlugin([{
+        dir: 'dist',
+        files: ['index.html'],
+        rules: [{
+          search: '<link href="styles.css" rel="stylesheet">',
+          replace: '<link href="styles.css" rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link href="styles.css" rel="stylesheet"></noscript>'
+        }]
+      }])
   ],
   optimization: {
     splitChunks: {
