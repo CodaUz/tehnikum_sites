@@ -69,14 +69,14 @@ module.exports = {
         { from: "services", to: "services" },
       ],
     }),
-      new ReplaceInFileWebpackPlugin([{
-        dir: 'dist',
-        files: ['index.html'],
-        rules: [{
-          search: '<link href="styles.css" rel="stylesheet">',
-          replace: '<link href="styles.css" rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link href="styles.css" rel="stylesheet"></noscript>'
-        }]
-      }])
+      // new ReplaceInFileWebpackPlugin([{
+      //   dir: 'dist',
+      //   files: ['index.html'],
+      //   rules: [{
+      //     search: '<link href="styles.css" rel="stylesheet">',
+      //     replace: '<link href="styles.css" rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link href="styles.css" rel="stylesheet"></noscript>'
+      //   }]
+      // }])
   ],
   optimization: {
     splitChunks: {
