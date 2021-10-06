@@ -62,12 +62,11 @@ module.exports = {
       template: "./index.html",
       filename: "index.html",
     }),
-    new miniCss({
-      filename: '[name].css',
-    }),
+    new miniCss(),
     new PreloadWebpackPlugin({
       rel: 'preload',
-      include: 'allAssets'
+      include: 'allAssets',
+      fileWhitelist: [/styles(\.[0-9a-f]+)?\.css$/]
     }),
     new CopyPlugin({
       patterns: [
