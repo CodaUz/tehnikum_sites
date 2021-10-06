@@ -59,28 +59,29 @@ module.exports = {
   },
   plugins: [
     new miniCss({
-      filename: '[name].[contenthash].css',
+      filename: '[name].css',
     }),
     new HTMLWebpackPlugin({
       template: "./index.html",
       filename: "index.html",
     }),
     new HtmlCriticalWebpackPlugin({
-      base: path.resolve(__dirname, "dist"),
-      src: "index.html",
-      dest: "index.html",
+      base: path.join(path.resolve(__dirname), 'dist/'),
+      src: 'index.html',
+      dest: 'index.html',
       inline: true,
       minify: true,
       extract: true,
       width: 375,
       height: 565,
       penthouse: {
-        blockJSRequests: true,
-      },
+        blockJSRequests: false,
+      }
     }),
     new CopyPlugin({
       patterns: [
         { from: "libs", to: "libs" },
+        { from: "services", to: "services" },
       ],
     }),
   ],

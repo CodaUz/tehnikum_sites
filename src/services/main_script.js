@@ -1,7 +1,3 @@
-require('@babel/polyfill')
-const moment = require('moment')
-const axios = require('axios')
-
 const MOBILE_WIDTH = 800
 const ID_COURSE = 9;
 let POPUP_EVENT;
@@ -169,13 +165,17 @@ function setCountDown() {
         let days = parseInt(duration.days())
         let hours = parseInt(duration.hours())
         let minutes = parseInt(duration.minutes())
-        if (days >= 0 || hours >= 0 || minutes >= 0) {
+
+        if (days >= 0 && hours >= 0 && minutes >= 0) {
             $('.days').text(`${days}`)
             $('.hours').text(`${hours < 10 ? '0' : ''}${hours}`)
             $('.minutes').text(`${minutes < 10 ? '0' : ''}${minutes}`)
             $('.timer').text(`${days < 10 ? '0' : ''}${days}:${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`)
         } else {
             $('.discountCircle').css('display', 'none')
+            $('.days').text('0')
+            $('.hours').text('00')
+            $('.minutes').text('00')
         }
     }, interval);
 
