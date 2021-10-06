@@ -3,6 +3,7 @@ const miniCss = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -57,12 +58,16 @@ module.exports = {
     port: 8804,
   },
   plugins: [
-    new miniCss({
-      filename: '[name].css',
-    }),
     new HTMLWebpackPlugin({
       template: "./index.html",
       filename: "index.html",
+    }),
+    new miniCss({
+      filename: '[name].css',
+    }),
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      include: 'allAssets'
     }),
     new CopyPlugin({
       patterns: [
