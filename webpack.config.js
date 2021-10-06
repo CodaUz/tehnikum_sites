@@ -75,14 +75,14 @@ module.exports = {
         { from: "services", to: "services" },
       ],
     }),
-      new ReplaceInFileWebpackPlugin([{
-        dir: 'dist',
-        files: ['index.html'],
-        rules: [{
-          search: '<link href="styles.css" rel="stylesheet">',
-          replace: ''
-        }]
-      }])
+      // new ReplaceInFileWebpackPlugin([{
+      //   dir: 'dist',
+      //   files: ['index.html'],
+      //   rules: [{
+      //     search: '<link href="styles.css" rel="stylesheet">',
+      //     replace: ''
+      //   }]
+      // }])
   ],
   optimization: {
     splitChunks: {
