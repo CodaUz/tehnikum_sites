@@ -66,17 +66,12 @@ module.exports = {
       filename: "index.html",
     }),
     new HtmlCriticalWebpackPlugin({
-      base: path.resolve(__dirname, 'src'),
-      src: 'index.html',
-      dest: '../dist/index.html',
+      base: path.resolve(__dirname, "dist"),
+      src: "index.html",
+      dest: "index.html",
       inline: true,
       minify: true,
       extract: true,
-      width: 375,
-      height: 565,
-      penthouse: {
-        blockJSRequests: false,
-      }
     }),
     new CopyPlugin({
       patterns: [
