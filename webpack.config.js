@@ -66,9 +66,9 @@ module.exports = {
       filename: "index.html",
     }),
     new HtmlCriticalWebpackPlugin({
-      base: path.join(path.resolve(__dirname), 'dist/'),
+      base: path.resolve(__dirname, 'src'),
       src: 'index.html',
-      dest: 'index.html',
+      dest: '../dist/index.html',
       inline: true,
       minify: true,
       extract: true,
