@@ -1160,7 +1160,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.22.0/axios.min.js"></script>
     <script async src="services/seo.js"></script>
     <script async src="services/utm.js"></script>
-    <script src="services/main_script.js"></script>
+    <script>
+        setTimeout(() => {
+            let script = document.createElement("script");
+            script.src = "services/main_script.js";
+            document.body.appendChild(script);
+        }, 3000);
+    </script>
     <script async>
       setTimeout(() => {
         !function(f,b,e,v,n,t,s)
@@ -1173,7 +1179,7 @@
                 'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '2247270262076810');
         fbq('track', 'PageView');
-      }, 4000);
+      }, 3500);
     </script>
     <script async>
         setTimeout(() => {

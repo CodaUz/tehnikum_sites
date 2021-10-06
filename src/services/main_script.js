@@ -445,57 +445,57 @@ function listenPhoneInputs() {
 }
 
 function initSliders() {
-    $('#photoSlider').slick({
-        slidesToShow: 2,
-        dots: false,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
+        $('#photoSlider').slick({
+            slidesToShow: 2,
+            dots: false,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            }
-        ]
-    });
+            ]
+        });
 
-    $('#videoSlider').slick({
-        slidesToShow: 2,
-        dots: false,
-        arrows: false,
-        responsive: [
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
+        $('#videoSlider').slick({
+            slidesToShow: 2,
+            dots: false,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            }
-        ]
-    })
+            ]
+        })
 
-    $('#speakerSlider').slick({
-        slidesToShow: 2,
-        dots: false,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
+        $('#speakerSlider').slick({
+            slidesToShow: 2,
+            dots: false,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            }
-        ]
-    })
+            ]
+        })
 }
 
-async function init() {
+function init() {
     initSliders()
     setCountDown()
     listenPopups()
@@ -505,26 +505,19 @@ async function init() {
     closeFormWithCross()
     listenType()
     listenCoursesSlider()
-    await initCourseData()
+    initCourseData()
     listenSalaryImages()
     getMaxHeight()
     getMaxWidth()
     lazyLoad()
     listenPhoneInputs()
 
+    document.querySelector(".loader").classList.add("active");
     setTimeout(() => {
-        document.querySelector(".loader").classList.add("active");
-        setTimeout(() => {
-            document.querySelector("html").removeAttribute("style");
-            document.querySelector(".loader").style.display = "none";
-        }, 500);
-    }, 1000)
-
-    $( window ).resize(function() {
-        getMaxWidth()
-    });
+        document.querySelector("html").removeAttribute("style");
+        document.querySelector(".loader").style.display = "none";
+    }, 500);
 }
 
-setTimeout(() => {
-    init()
-}, 1000)
+
+init()
