@@ -4,6 +4,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
+const ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -74,6 +75,14 @@ module.exports = {
         { from: "services", to: "services" },
       ],
     }),
+      new ReplaceInFileWebpackPlugin([{
+        dir: 'dist',
+        files: ['index.html'],
+        rules: [{
+          search: '<link href="styles.css" rel="stylesheet">',
+          replace: ''
+        }]
+      }])
   ],
   optimization: {
     splitChunks: {
