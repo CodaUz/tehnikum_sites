@@ -2,11 +2,11 @@
 import './images.js'
 
 // Styles
-import (/* webpackPreload: true */ "./scss/owl.carousel.min.scss");
-import (/* webpackPreload: true */"./scss/owl.theme.default.min.scss");
-import (/* webpackPreload: true */"./scss/slick.scss");
-import (/* webpackPreload: true */"./scss/app.scss");
-import (/* webpackPreload: true */ "./scss/utils.scss");
+import "./scss/owl.carousel.min.scss";
+import "./scss/owl.theme.default.min.scss";
+import "./scss/slick.scss";
+import "./scss/app.scss";
+import "./scss/utils.scss";
 
 // // App Scripts
 // import './services/main_script.js'
