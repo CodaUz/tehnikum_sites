@@ -3,7 +3,7 @@ const miniCss = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin');
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -69,14 +69,19 @@ module.exports = {
         { from: "services", to: "services" },
       ],
     }),
-      // new ReplaceInFileWebpackPlugin([{
-      //   dir: 'dist',
-      //   files: ['index.html'],
-      //   rules: [{
-      //     search: '<link href="styles.css" rel="stylesheet">',
-      //     replace: '<link href="styles.css" rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link href="styles.css" rel="stylesheet"></noscript>'
-      //   }]
-      // }])
+    new HtmlCriticalWebpackPlugin({
+      base: './dist',
+      src: "index.html",
+      dest: "index.html",
+      inline: true,
+      minify: true,
+      extract: true,
+      width: 375,
+      height: 565,
+      penthouse: {
+        blockJSRequests: false,
+      },
+    }),
   ],
   optimization: {
     splitChunks: {
