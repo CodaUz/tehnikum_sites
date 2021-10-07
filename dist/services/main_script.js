@@ -1,6 +1,3 @@
-require('@babel/polyfill')
-const moment = require('moment')
-
 const MOBILE_WIDTH = 800
 let POPUP_EVENT;
 
@@ -213,7 +210,7 @@ async function takeCourse(formId, is_redirect=false) {
         }
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-tg`
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-wp`
         const WEBINAR_ID = 604904
 
 
@@ -226,12 +223,12 @@ async function takeCourse(formId, is_redirect=false) {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({site: 'python-start', name,phone, redisKey, redisValue})
+                    body: JSON.stringify({site: 'website', name,phone, redisKey, redisValue})
                 }
             );
 
              fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=tg&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=wp&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -255,12 +252,12 @@ async function takeCourse(formId, is_redirect=false) {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({site: 'python-start', name,phone})
+                    body: JSON.stringify({site: 'website', name,phone})
                 }
             );
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=tg${qs.r ?  `-${qs.r}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=wp${qs.r ?  `-${qs.r}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -360,16 +357,68 @@ function getReviewsVideos() {
     })
 }
 
+function lazyLoad() {
+    let lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
+
+
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function (
+            entries,
+            observer
+        ) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    if (!lazyImage.src) {
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.classList.add("loaded");
+                        lazyImage.removeAttribute("data-src");
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                }
+            });
+        });
+
+        lazyImages.forEach(function (lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    }
+}
+
+function initSlickSliders() {
+    $('#photoSlider').slick({
+        slidesToShow: 2,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+}
+
 function init() {
+    lazyLoad()
+    initSlickSliders()
     setCountDown()
-    listenSliders()
     listenFeedbackSliders()
     listenPopups()
     closePopupsOnBack()
     sendForm()
     getReviewsVideos()
+
+    document.querySelector(".loader").classList.add("active");
+    setTimeout(() => {
+        document.querySelector("html").removeAttribute("style");
+        document.querySelector(".loader").style.display = "none";
+    }, 500);
 }
 
-$( window ).on( "load", function() {
-    init()
-});
+init()
