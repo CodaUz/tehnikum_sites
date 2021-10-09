@@ -178,6 +178,30 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 2787:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/cross.svg");
+
+/***/ }),
+
+/***/ 4861:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/crossBlack.svg");
+
+/***/ }),
+
 /***/ 6863:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -187,6 +211,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/diploma.png");
+
+/***/ }),
+
+/***/ 2245:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/facebook (1).svg");
 
 /***/ }),
 
@@ -355,6 +391,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/imgCaseMobile2_3.png");
+
+/***/ }),
+
+/***/ 5952:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/instagram.svg");
 
 /***/ }),
 
@@ -910,6 +958,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 598:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/telegram (1).svg");
+
+/***/ }),
+
 /***/ 4266:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -982,6 +1042,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 9889:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/work.png");
+
+/***/ }),
+
 /***/ 5279:
 /***/ (() => {
 
@@ -1032,7 +1104,10 @@ var map = {
 	"./course3_3.png": 5925,
 	"./course3_4.png": 6860,
 	"./course3_5.png": 6070,
+	"./cross.svg": 2787,
+	"./crossBlack.svg": 4861,
 	"./diploma.png": 6863,
+	"./facebook (1).svg": 2245,
 	"./grid.png": 9532,
 	"./headImg.png": 2742,
 	"./headImgMobile.png": 8200,
@@ -1047,6 +1122,7 @@ var map = {
 	"./imgCase3_2.png": 6514,
 	"./imgCase3_3.png": 7943,
 	"./imgCaseMobile2_3.png": 4682,
+	"./instagram.svg": 5952,
 	"./know1.png": 358,
 	"./know2.png": 9401,
 	"./know3.png": 6460,
@@ -1093,12 +1169,14 @@ var map = {
 	"./speakerCase3.png": 7789,
 	"./speakerCaseMobile1.png": 5916,
 	"./students.png": 304,
+	"./telegram (1).svg": 598,
 	"./thanks.png": 4266,
 	"./thanks2.png": 4928,
 	"./typeStudent1.png": 1909,
 	"./typeStudent2.png": 7100,
 	"./typeStudent3.png": 2357,
-	"./typeStudent4.png": 7130
+	"./typeStudent4.png": 7130,
+	"./work.png": 9889
 };
 
 
