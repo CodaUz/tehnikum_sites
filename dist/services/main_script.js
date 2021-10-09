@@ -11,9 +11,9 @@ function listenPopups() {
     $('.openProgramForm').click(() => {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
-        $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
-        $('p.footer__mainBox__formBox__text').html('программу можете скачать в<br> нашем telegram боте')
-        $('p.titleName').text('сделай первый шаг')
+        $('div.sendForm[data-form-id="Program"]').text('Скачать программу')
+        $('p.footer__mainBox__formBox__text').html('программа будет доступна<br> через наш telegram бот')
+        $('p.titleName').text('РЕШАЙСЯ')
         openModalForm('.formBoxIndex')
     })
 
@@ -92,8 +92,8 @@ async function takeCourse(formId, is_redirect=false) {
         }
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-digital`
-        const WEBINAR_ID = 158386
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-target-full`
+        const WEBINAR_ID = 283660
 
         fetch(
             `https://node.snimerovsky.xyz/log`,
@@ -103,7 +103,7 @@ async function takeCourse(formId, is_redirect=false) {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({site: 'digital', name,phone, redisKey, redisValue})
+                body: JSON.stringify({site: 'target_full_course', name,phone, redisKey, redisValue})
             }
         );
 
@@ -111,21 +111,22 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=digital&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=target-full&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
             );
 
-            $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
-
+            let a= document.createElement('a');
+            a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`;
+            a.click();
 
         } else {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=digital${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=target-full${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -255,25 +256,28 @@ function getMaxHeight() {
 function getMaxWidth() {
     const classes = ['footer__typeBox__type']
 
-    for (let name_class of classes) {
-        let width = 0
+    if ($(window).width() > MOBILE_WIDTH) {
+        for (let name_class of classes) {
+            let width = 0
 
-        $(`.${name_class}`).each(function () {
-            $(this).css('width', ``)
-        })
+            $(`.${name_class}`).each(function () {
+                $(this).css('width', ``)
+            })
 
-        $(`.${name_class}`).each(function () {
-            width = $(this).outerWidth() > width ? $(this).outerWidth() : width
-        })
+            $(`.${name_class}`).each(function () {
+                width = $(this).outerWidth() > width ? $(this).outerWidth() : width
+            })
 
-        $(`.${name_class}`).each(function () {
-            $(this).css('width', `${width}px`)
-        })
+            $(`.${name_class}`).each(function () {
+                $(this).css('width', `${width}px`)
+            })
+        }
     }
+
 }
 
 function listenProgram() {
-    const classes = ['.section__programBox__box__program', '.section__weOftenAsked__questionBox__question']
+    const classes = ['.section__programBox__box__program']
 
     for (let className of classes) {
         for (let box of document.querySelectorAll(className)) {
@@ -333,7 +337,7 @@ function listenCoursesSlider() {
 }
 
 async function initCourseData() {
-    const first_date =  moment(`2021-10-05`, 'YYYY-MM-DD')
+    const first_date =  moment(`2021-10-14`, 'YYYY-MM-DD')
     const first_date_format = first_date.locale("ru").format('D MMMM')
 
     $('span.date').text(first_date_format)
@@ -512,11 +516,11 @@ function init() {
     lazyLoad()
     listenPhoneInputs()
 
-    document.querySelector(".loader").classList.add("active");
-    setTimeout(() => {
-        document.querySelector("html").removeAttribute("style");
-        document.querySelector(".loader").style.display = "none";
-    }, 500);
+    // document.querySelector(".loader").classList.add("active");
+    // setTimeout(() => {
+    //     document.querySelector("html").removeAttribute("style");
+    //     document.querySelector(".loader").style.display = "none";
+    // }, 500);
 }
 
 
