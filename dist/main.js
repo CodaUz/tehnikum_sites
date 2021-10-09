@@ -178,6 +178,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 1190:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/cross.png");
+
+/***/ }),
+
 /***/ 2787:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1104,6 +1116,7 @@ var map = {
 	"./course3_3.png": 5925,
 	"./course3_4.png": 6860,
 	"./course3_5.png": 6070,
+	"./cross.png": 1190,
 	"./cross.svg": 2787,
 	"./crossBlack.svg": 4861,
 	"./diploma.png": 6863,
