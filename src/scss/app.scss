@@ -153,8 +153,8 @@ html {
         font-family: 'Miratrix';
         font-weight: 400;
         font-style: normal;
-        font-size: get-vw(140px);
-        line-height: get-vw(126px);
+        font-size: get-vw(110px);
+        line-height: get-vw(96px);
         text-transform: uppercase;
 
         @media screen and (max-width: 800px) {
@@ -167,7 +167,7 @@ html {
     &__description {
       font-family: 'TTHovesMedium';
       font-style: normal;
-      font-size: get-vw(36px);
+      font-size: get-vw(30px);
       line-height: get-vw(42.21px);
       max-width: get-vw(987px);
       padding-top: get-vw(30px);
@@ -186,7 +186,7 @@ html {
       display: grid;
       grid-template-columns: get-vw(373px) get-vw(373px);
       column-gap: get-vw(16px);
-      padding-top: get-vw(80px);
+      padding-top: get-vw(50px);
       align-items: center;
 
       @media screen and (max-width: 800px) {
@@ -290,7 +290,7 @@ html {
     &__headImg {
       position: absolute;
       width: get-vw(400px);
-      right: get-vw(388px);
+      right: get-vw(438px);
       top: get-vw(10px);
       z-index: 2;
 
@@ -303,7 +303,7 @@ html {
 
     &__bomb1 {
       position: absolute;
-      top: get-vw(900px);
+      top: get-vw(800px);
       left: 0;
       width: get-vw(50px);
 
@@ -316,7 +316,7 @@ html {
 
     &__bomb2 {
       position: absolute;
-      top: get-vw(700px);
+      top: get-vw(600px);
       right: 0;
       width: get-vw(129px);
 
