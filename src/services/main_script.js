@@ -517,11 +517,11 @@ function init() {
     lazyLoad()
     listenPhoneInputs()
 
-    // document.querySelector(".loader").classList.add("active");
-    // setTimeout(() => {
-    //     document.querySelector("html").removeAttribute("style");
-    //     document.querySelector(".loader").style.display = "none";
-    // }, 500);
+    document.querySelector(".loader").classList.add("active");
+    setTimeout(() => {
+        document.querySelector("html").removeAttribute("style");
+        document.querySelector(".loader").style.display = "none";
+    }, 500);
 }
 
 
