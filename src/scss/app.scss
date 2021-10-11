@@ -1531,10 +1531,13 @@ html {
       }
 
       &__slide {
-        max-width: get-vw(800px) !important;
+        width: get-vw(740px) !important;
+        height: get-vw(740px);
+        object-fit: cover;
 
         @media screen and (max-width: 800px) {
-          max-width: get-mobile-vw(338px) !important;
+          width: get-mobile-vw(328px) !important;
+          height: get-mobile-vw(328px);
         }
       }
     }
@@ -1882,8 +1885,6 @@ html {
       }
     }
   }
-
-
 
   &__work {
     display: grid;
@@ -2633,8 +2634,8 @@ html {
             font-size: get-mobile-vw(14px);
             line-height: get-mobile-vw(16.49px);
             border-radius: get-mobile-vw(20px) !important;
-            justify-self: center;
             align-self: end;
+            margin-left: get-mobile-vw(45px);
           }
         }
 
