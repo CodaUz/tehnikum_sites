@@ -1,0 +1,630 @@
+@import "./font.scss";
+@import "./variables.scss";
+@import "./get-vw";
+
+.formBoxIndex {
+  z-index: 6000;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+
+  &.active {
+    display: flex;
+  }
+  &.activeAnimate {
+    opacity: 1;
+  }
+
+  .formBox {
+    position: fixed;
+    z-index: 60001;
+    width: 100%;
+    max-width: get-vw(500px);
+    height: auto;
+
+    @media screen and (max-width: 800px) {
+      max-width: get-mobile-vw(356px);
+    }
+
+    .blueBtn {
+      position: fixed;
+      left: $border_space_desktop;
+      height: $border_space_desktop * 1.5;
+      bottom: $border_length;
+      border-bottom: none;
+    }
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: -30px;
+      cursor: url("../images/pointer active.png"), pointer;
+    }
+
+    .form {
+      background: $green;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow-y: auto;
+
+      @media screen and (max-width: 800px) {
+        width: initial;
+        margin: 0 25px;
+      }
+
+      .footer__mainBox__formBox {
+        border-radius: get-vw(10px);
+        padding: get-vw(108px) get-vw(30px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        align-self: center;
+        width: 100%;
+        max-width: get-vw(400px);
+
+        @media screen and (max-width: 800px) {
+          max-width: get-mobile-vw(356px);
+          padding-top: get-mobile-vw(67px);
+          padding-bottom: get-mobile-vw(43px);
+          padding-left: get-mobile-vw(47px);
+          padding-right: get-mobile-vw(47px);
+        }
+
+        &__input {
+          margin-top: get-vw(23px);
+          //margin-bottom: get-vw(30px);
+        }
+
+        &__readyBox {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #252525;
+          color: white;
+          justify-items: center;
+          align-content: center;
+          display: none;
+          text-align: center;
+          padding: get-vw(16px) get-vw(39px);
+
+          @media screen and (max-width: 800px) {
+            padding: 0;
+            padding-top: 0;
+          }
+
+          &.active {
+            display: grid;
+          }
+
+          &__img {
+            max-width: get-vw(150px);
+            width: 100%;
+            margin-top: get-vw(-50px);
+            padding-bottom: get-vw(30px);
+
+            &.thanks2 {
+              padding-bottom: 0;
+              max-width: get-vw(200px);
+
+              @media screen and (max-width: 800px) {
+                max-width: initial;
+                width: get-mobile-vw(150px);
+                margin-top: get-mobile-vw(-20px);
+              }
+            }
+
+            @media screen and (max-width: 800px) {
+              width: get-mobile-vw(100px);
+              max-width: initial;
+              margin-top: get-mobile-vw(11px);
+              margin-bottom: get-mobile-vw(10px);
+            }
+          }
+
+          &__title {
+            font-family: 'Miratrix';
+            font-size: get-vw(43px);
+            line-height: get-vw(45px);
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+            width: get-vw(227px);
+
+            @media screen and (max-width: 800px) {
+              font-size: get-mobile-vw(30px);
+              line-height: get-mobile-vw(34px);
+              width: get-mobile-vw(180px);
+            }
+          }
+
+          .btn {
+            margin-top: get-vw(16px);
+          }
+
+          &__text {
+            font-family: 'TTHovesRegular';
+            font-size: get-vw(18px);
+            line-height: get-vw(21px);
+            margin-top: get-vw(10px);
+            color: white;
+
+            @media screen and (max-width: 800px) {
+               margin-top: get-mobile-vw(15px);
+              font-size: get-mobile-vw(16px);
+              line-height: get-mobile-vw(18px);
+              width: get-mobile-vw(221px);
+            }
+          }
+
+          &__rocket {
+            max-width: 80px;
+            margin-top: 1rem;
+          }
+        }
+
+        &__text {
+          font-size: get-vw(20px);
+          line-height: get-vw(22px);
+          text-align: center;
+          font-family: 'TTHovesRegular';
+          margin-bottom: get-vw(20px);
+          margin-top: get-vw(15px);
+
+          @media screen and (max-width: 800px) {
+            margin-bottom: 0;
+            font-size: get-mobile-vw(16px);
+            line-height: get-mobile-vw(18px);
+          }
+        }
+      }
+
+      .titleName {
+        font-family: "Miratrix";
+        margin-bottom: get-vw(30px);
+        font-size: get-vw(44px);
+        line-height: get-vw(39px);
+        //width: get-vw(227px);
+        text-align: center;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 800px) {
+          font-size: get-mobile-vw(30px);
+          line-height: get-mobile-vw(34px);
+          margin-bottom: get-mobile-vw(21px);
+          width: initial;
+        }
+      }
+      .text {
+        font-family: "Suisse Intl";
+        font-size: get-vw(14px);
+      }
+
+      input {
+        width: 100%;
+        background: $green;
+        color: #000000;
+        font-size: get-vw(18px);
+        font-family: 'TTHovesRegular';
+
+        &::placeholder {
+          color: #000000;
+        }
+
+        @media screen and (max-width: 800px) {
+          font-size: get-mobile-vw(16px);
+          line-height: get-mobile-vw(24px);
+
+          &[name='phoneProgram'] {
+            margin-top: get-mobile-vw(10px);
+          }
+        }
+      }
+
+      .btn {
+        border-radius: get-vw(20px);
+        padding: get-vw(15px) get-vw(25px);
+        width: 100%;
+        font-size: get-vw(18px);
+
+        @media screen and (max-width: 800px) {
+          width: get-mobile-vw(220px);
+          height: get-mobile-vw(48px);
+          padding: 0;
+          border-radius: get-mobile-vw(20px);
+          font-size: get-mobile-vw(14px);
+          line-height: get-mobile-vw(16.49px);
+          display: grid;
+          align-items: center;
+          margin-top: get-mobile-vw(39px);
+        }
+      }
+    }
+  }
+}
+
+.videoFeedbackSlide {
+  height: get-vw(750px);
+
+  @media screen and (max-width: 800px) {
+    height: get-mobile-vw(183px);
+  }
+}
+
+.bottomNewsAboutCourseMobile {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  z-index: 4000;
+  display: none;
+
+  .yellowBtn {
+    border-radius: 17px;
+    -webkit-box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+  }
+}
+
+.formBoxTakeCourseFinal {
+  .form {
+    height: 285px;
+    padding: 1.5rem;
+
+    .titleForm {
+      font-family: "TTHovesMedium";
+      padding-top: 1rem;
+      font-weight: normal;
+      font-size: 1.6rem;
+      line-height: 22px;
+    }
+
+    .textForm {
+      font-family: "TTHovesRegular";
+      font-size: 0.8rem;
+    }
+
+    .yellowBtn {
+      font-size: 0.7rem;
+      transform: none;
+      padding: 0 10px;
+      height: 37px;
+      border: 2px solid #000;
+      margin-top: 6rem;
+    }
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: url("../images/pointer active.png"), pointer;
+}
+
+.loader {
+  position: fixed;
+  z-index: 9999999;
+  background-color: white;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 100%;
+  transition: 1s;
+
+  &.active {
+    opacity: 0;
+  }
+
+  svg {
+    & > path {
+      animation: draw 3s ease infinite;
+    }
+  }
+
+  @keyframes draw {
+    0% {
+      stroke-dasharray: 50;
+    }
+    50% {
+      stroke-dasharray: 260;
+    }
+    100% {
+      stroke-dasharray: 50;
+    }
+  }
+}
+
+video {
+  cursor: url("../images/pointer active.png"), pointer;
+}
+
+input {
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+  font-size: 20px;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.17);
+    top: -10px;
+  }
+}
+
+.borderScreenRight,
+.borderScreenLeft,
+.borderScreenTop,
+.borderScreenBottom {
+  position: fixed;
+  z-index: 2005;
+
+  background-color: #000;
+}
+.borderScreenRight {
+  height: 100%;
+  width: $border_length;
+  right: 0;
+  top: 0;
+}
+
+.borderScreenLeft {
+  height: 100%;
+  width: $border_length;
+  top: 0;
+  left: 0;
+}
+
+.borderScreenTop {
+  height: $border_length;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.borderScreenBottom {
+  height: $border_length;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.grayBack {
+  opacity: 0;
+  display: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 5000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000000, 0.7);
+
+  &.active {
+    display: block !important;
+  }
+  &.activeAnimate {
+    opacity: 1;
+  }
+}
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+
+.paddingLeft {
+  padding-left: get-vw(362px);
+
+  @media screen and (max-width: 800px) {
+    padding-left: get-mobile-vw(20px);
+  }
+}
+
+.btn {
+  font-family: 'TTHovesRegular';
+  user-select: none;
+  text-align: center;
+  cursor: url("../images/pointer active.png"), pointer;
+  padding: get-vw(8px) get-vw(16px);
+  border-radius: get-vw(20px);
+  box-sizing: border-box;
+
+  &__blue {
+    background-color: $dark_blue;
+    color: white;
+  }
+
+  &__yellow {
+    background: #FFF500;
+  }
+
+  &__black {
+    background: #000000;
+    color: white;
+  }
+
+  &__blackOutline {
+    border: get-vw(1px) solid #000000;
+  }
+
+  &__purple {
+    background: $purple;
+  }
+
+  &__gradient {
+    background: linear-gradient(96.65deg, #FDD1FF 22.73%, #E0FFFF 73.82%);
+  }
+
+  &__greenYellow {
+    background: linear-gradient(96.13deg, #01D1FE 0%, #DBFE01 84.16%);
+    color: black;
+  }
+
+  &__whiteInside {
+    background: white;
+    color: #000000;
+  }
+
+  &__white {
+    border: 1px solid #ffffff;
+    color: white;
+  }
+
+  &__gradient2 {
+    background: linear-gradient(180deg, #FDD1FF 0%, #E0FFFF 100%);
+  }
+
+  &__green {
+    background: #DBFE01;
+    color: #000000;
+  }
+
+  &.thanks {
+    padding: 15px 100px;
+    font-size: 1rem;
+  }
+}
+
+
+span.bold {
+  font-family: 'TTHovesBold' !important;
+}
+
+.title {
+  font-family: 'TTHovesMedium';
+  font-size: get-vw(55px);
+  line-height: get-vw(53.63px);
+  text-transform: uppercase;
+
+  @media screen and (max-width: 800px) {
+    font-size: get-mobile-vw(32px);
+    line-height: get-mobile-vw(32.27px);
+  }
+}
+
+.text {
+  font-family: 'TTHovesRegular';
+  font-size: get-vw(30px);
+  line-height: get-vw(36px);
+
+  @media screen and (max-width: 800px) {
+    font-size: get-mobile-vw(16px);
+    line-height: get-mobile-vw(18.85px);
+  }
+}
+
+.popupBox {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 6000;
+  padding: 30px;
+  transition: opacity .2s ease;
+  display: none;
+  top: 0;
+
+  &.active {
+    display: grid;
+    opacity: 0;
+  }
+  &.activeAnimate {
+    opacity: 100%;
+  }
+
+
+  &__box {
+    padding: 30px;
+    padding-top: 35px;
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 10px 2px rgba(#000000, 0.15);
+    display: grid;
+    z-index: 6001;
+
+    &__title {
+      font-family: "TTHovesRegular";
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    &__inputBox {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      row-gap: 10px;
+      margin-bottom: 15px;
+
+      &__input {
+        outline: none;
+        border: 1px solid #272727;
+        padding: 12px 15px;
+        max-width: 400px;
+        width: 100%;
+        font-family: "ApercyProRegular";
+
+        &::placeholder {
+          font-family: "ApercyProRegular";
+        }
+      }
+    }
+
+    &__btn {
+      width: max-content;
+      justify-self: center;
+      text-transform: none !important;
+      font-size: 1rem;
+      padding: 15px 40px;
+    }
+  }
+}
+
+.mobile {
+  display: none !important;
+}
+
+span.green {
+  color: $green;
+}
+
+span.purple {
+  color: $purple;
+}
+
+span.greenDark {
+  color: #BCDA01;
+}
+
+@media screen and (max-width: 800px) {
+  .bottomNewsAboutCourseMobile {
+    display: block;
+  }
+  .mobile {
+    display: block !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+}

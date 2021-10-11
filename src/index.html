@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <!-- Metabox -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta property="og:type" content="ru_RU" />
+    <meta property="og:site_name" content="Tehnikum.uz" />
+    <meta
+      property="og:title"
+      content="Школа актуальных профессий в Узбекистане - Tehnikum"
+    />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://tehnikum.school" />
+    <meta property="og:locale" content="" />
+    <meta
+      property="og:image"
+      content="https://tehnikum.school/coverVideo.webp"
+    />
+    <meta property="og:image:width" content="230" />
+    <meta property="og:image:height" content="120" />
+  </head>
+
+  <body>
+<!--    <div class="loader">-->
+<!--      <svg-->
+<!--        width="200"-->
+<!--        height="100"-->
+<!--        viewBox="0 0 200 30"-->
+<!--        fill=""-->
+<!--        class="svg"-->
+<!--        xmlns="http://www.w3.org/2000/svg"-->
+<!--      >-->
+<!--        <path-->
+<!--          class="path"-->
+<!--          stroke="black"-->
+<!--          stroke-width="2"-->
+<!--          d="M18.763 1.00372H0V5.13011H7.31535V29.1078H11.3918V5.13011H18.7072V1.00372H18.763ZM33.7288 0C25.4083 0 18.7072 6.69145 18.7072 15C18.7072 23.3085 25.4083 30 33.7288 30C39.9273 30 45.2323 26.2639 47.5218 20.9108L42.9986 20.5762C42.5519 21.3011 41.9934 21.9703 41.3792 22.6394C39.313 24.7026 36.6326 25.8178 33.7288 25.8178C30.825 25.8178 28.1445 24.7026 26.0784 22.6394C24.4031 20.9665 23.2863 18.7918 23.007 16.3941H48.6387C48.6945 15.948 48.6945 15.4461 48.6945 15C48.7504 6.69145 42.0493 0 33.7288 0ZM23.2863 12.2677C23.7888 10.4833 24.7382 8.75465 26.0784 7.36059C28.1445 5.2974 30.825 4.18216 33.7288 4.18216C36.6326 4.18216 39.313 5.2974 41.3792 7.36059C42.7194 8.69888 43.7245 10.4275 44.1713 12.2677H23.2863ZM72.0925 12.0446H55.5631V1.00372H51.4308V29.1078H55.5631V16.171H72.0925V29.1078H76.2248V1.00372H72.0925V12.0446ZM104.202 5.13011H107.887V25.1487H104.202V29.1078H115.594V25.1487H111.908V5.13011H115.594V1.00372H104.202V5.13011ZM96.7189 25.3717H93.6476L90.8555 1.00372H79.6312V29.1078H84.0427V4.79554H87.0582L89.7386 29.1078H100.963V1.00372H96.6631L96.7189 25.3717ZM123.3 1.00372H119.168V29.1078H123.3V19.461L145.358 29.4424V24.7026L124.138 15.0558L145.358 5.35316V0.669145L123.3 10.6506V1.00372ZM163.283 24.9814H153.008V1.00372H148.932V29.1078H167.415V1.00372H163.283V24.9814ZM189.138 1.00372L186.513 25.2602H184.168L181.543 1.00372H170.989V29.1078H175.233V4.68401H177.634L180.427 29.1078H190.031L192.935 4.79554H195.281L195.225 29.1078H199.636V1.00372H189.138Z"-->
+<!--          fill="white"-->
+<!--        />-->
+<!--      </svg>-->
+<!--    </div>-->
+    <div class="popupBox popupBoxVideo">
+      <div class="grayBack grayBackVideo"></div>
+      <div class="popupBox__box">
+        <div class="videoBox">
+
+        </div>
+      </div>
+    </div>
+    <div class="formBoxIndex" id="formRequisite">
+        <div class="grayBack"></div>
+        <div class="formBox">
+            <div class="form">
+                <div class="footer__mainBox__formBox" id="formProgram">
+                    <div class="footer__mainBox__formBox__readyBox" data-form-id="Program">
+                        <img src="images/thanks.png" alt="cross" class="footer__mainBox__formBox__readyBox__img" />
+                        <p class="footer__mainBox__formBox__readyBox__title">
+                            спасибо за заявку!
+                        </p>
+                        <p class="footer__mainBox__formBox__readyBox__text">
+                            наш менеджер свяжется с вами в ближайшее время</p>
+                    </div>
+                    <div class="footer__mainBox__formBox__readyBox" data-form-id="Program2">
+                        <img src="images/thanks2.png" alt="cross" class="footer__mainBox__formBox__readyBox__img thanks2" />
+                        <p class="footer__mainBox__formBox__readyBox__title">
+                            спасибо за заявку!
+                        </p>
+                    </div>
+                    <p class="titleName">оставь заявку</p>
+                    <input type="text" name="nameProgram" placeholder="Имя">
+                    <input type="text" name="phoneProgram" class="footer__mainBox__formBox__input" data-type="phone" data-mask="+998 00-000-0000" value="+998" placeholder="+998 00-000-000">
+                    <p class="footer__mainBox__formBox__text"></p>
+                    <div class="btn btn__black sendForm" data-form-id="Program">Записаться на курс</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header__topBox paddingLeft">
+            <div class="header__topBox__fixedHeader paddingLeft">
+                <a href="#"><img data-src="images/logo%20(3).svg" alt="logo" class="header__topBox__fixedHeader__logo lazy-load">
+                </a>
+                <div class="header__topBox__fixedHeader__menu">
+                    <img data-src="images/menu%20(1).png" alt="menu" class="lazy-load">
+                </div>
+            </div>
+
+            <div class="header__topBox__infoCourse">
+                <div class="header__topBox__infoCourse__box">
+                    <p class="header__topBox__infoCourse__box__title">Длительность</p>
+                    <p class="header__topBox__infoCourse__box__text">5 недель - 15 занятий</p>
+                </div>
+                <div class="header__topBox__infoCourse__box">
+                    <p class="header__topBox__infoCourse__box__title">Старт</p>
+                    <p class="header__topBox__infoCourse__box__text"><span class="date">19 октября</span> в 19:30 </p>
+                </div>
+            </div>
+            <div class="header__topBox__course">
+                <p class="header__topBox__course__title">курс</p>
+                <div class="header__topBox__course__name">
+                    <span class="green">контекстная<br> реклама</span>
+                </div>
+
+            </div>
+            <p class="header__topBox__description">
+                Начни искусно управлять результатами запросов Google и Яндекс<br><br>
+
+                Овладей стратегией продвижения в поисковиках
+            </p>
+            <div class="header__topBox__btnBox">
+                <a href="#program"><div class="btn btn__white">Посмотреть программу</div></a>
+                <div class="btn btn__greenYellow openForm">
+                    <div class="header__topBox__btnBox__discount discountCircle">
+                        <div class="header__topBox__btnBox__discount__ellipse"></div>
+                        <p><span class="header__topBox__btnBox__discount__title">10%</span>
+                        </p>
+                    </div>
+
+                    Записаться</div>
+            </div>
+            <img data-src="images/headImg.png" alt="headImg" class="header__topBox__headImg lazy-load desktop">
+            <img data-src="images/headImgMobile.png" alt="headImg" class="header__topBox__headImg lazy-load mobile">
+            <img data-src="images/bomb1.png" alt="rocket1" class="header__topBox__bomb1 lazy-load desktop">
+            <img data-src="images/bomb2.png" alt="rocket2" class="header__topBox__bomb2 lazy-load desktop">
+            <img data-src="images/bomb3.png" alt="rocket3" class="header__topBox__bomb3 lazy-load desktop">
+            <img data-src="images/bomb4.png" alt="rocket3" class="header__topBox__bomb4 lazy-load desktop">
+            <img data-src="images/bomb5.png" alt="rocket3" class="header__topBox__bomb5 lazy-load desktop">
+            <img data-src="images/bombMobile1.png" alt="rocket3" class="header__topBox__bomb1 lazy-load mobile">
+            <img data-src="images/bombMobile2.png" alt="rocket3" class="header__topBox__bomb2 lazy-load mobile">
+            <img data-src="images/bombMobile3.png" alt="rocket3" class="header__topBox__bomb3 lazy-load mobile">
+            <img data-src="images/bombMobile4.png" alt="rocket3" class="header__topBox__bomb4 lazy-load mobile">
+        </div>
+    </header>
+    <section class="section">
+        <div class="section__targetOfCourse">
+            <div class="section__targetOfCourse__gridBox">
+                <div class="section__targetOfCourse__gridBox__textBox">
+                    <h2 class="section__targetOfCourse__gridBox__textBox__title title">что делает контекстолог?</h2>
+                    <p class="section__targetOfCourse__gridBox__textBox__text text">
+                        Находит клиентов по горячим запросам в поисковиках и настраивает грамотную рекламу в Google и Яндекс
+                    </p>
+                </div>
+                <img data-src="images/imageTarget1.png" alt="imageTarget1" class="mobile lazy-load textBox">
+                <img data-src="images/imageTarget2.png" alt="imageTarget2" class="desktop lazy-load">
+                <div class="section__targetOfCourse__gridBox__textBox2">
+                    <h2 class="section__targetOfCourse__gridBox__textBox2__title title">цель курса</h2>
+                    <p class="section__targetOfCourse__gridBox__textBox2__text text">
+                        научить тебя приводить "теплых" клиентов на целевые сайты, повышать онлайн-продажи и узнаваемость в самых посещаемых поисковиках мира
+                    </p>
+                </div>
+                <img data-src="images/imageTarget2.png" alt="imageTarget2" class="mobile textBox2 lazy-load">
+            </div>
+        </div>
+    </section>
+    <section class="section white">
+        <div class="section__forWhomThisCourse">
+            <h2 class="section__forWhomThisCourse__title desktop title">
+                <span class="greenDark">КОМУ ПОДОЙДЕТ</span> КУРС
+            </h2>
+            <h2 class="section__forWhomThisCourse__title mobile title">
+                <span class="greenDark">КОМУ<br> ПОДОЙДЕТ</span> КУРС
+            </h2>
+            <div class="section__forWhomThisCourse__gridBox">
+                <div class="section__forWhomThisCourse__gridBox__box">
+                    <div class="section__forWhomThisCourse__gridBox__box__imgBox">
+                        <img data-src="images/typeStudent1.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img lazy-load">
+                    </div>
+
+                    <div class="section__forWhomThisCourse__gridBox__box__textBox">
+                        <p class="section__forWhomThisCourse__gridBox__box__textBox__text desktop">
+                            <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title"><span class="greenDark">Таргетологам</span></span>
+                            Расширишь свои возможности и научишься запускать рекламу в поисковиках. Твой средний чек будет расти наравне с авторитетом, ведь тебе будет подвластны самые эффективные виды рекламы в digital.
+                        </p>
+
+                        <p class="section__forWhomThisCourse__gridBox__box__textBox__text mobile">
+                         <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title mobile"><span class="greenDark">Таргетологам</span></span>
+                            Расширишь свои возможности и научишься запускать рекламу в поисковиках. Твой средний чек будет расти наравне с авторитетом, ведь тебе будет подвластны самые эффективные виды рекламы в digital.
+                        </p>
+                    </div>
+                </div>
+                <div class="section__forWhomThisCourse__gridBox__box">
+                    <div class="section__forWhomThisCourse__gridBox__box__imgBox">
+                        <img data-src="images/typeStudent2.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img lazy-load">
+                    </div>
+                    <div class="section__forWhomThisCourse__gridBox__box__textBox">
+                        <p class="section__forWhomThisCourse__gridBox__box__textBox__text desktop">
+                        <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title"><span class="greenDark">маркетологам</span></span>
+                            Для тебя уж точно владение инструментами контекстной рекламой – обязательное оружие, которое демонстрирует профессионализм и расширият твоё влияние на просторах интернета до максимума
+                        </p>
+                        <p class="section__forWhomThisCourse__gridBox__box__textBox__text mobile">
+                            <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title mobile"><span class="greenDark">маркетологам</span></span>
+                            Для тебя уж точно владение инструментами контекстной рекламой – обязательное оружие, которое демонстрирует профессионализм и расширият твоё влияние на просторах интернета до максимума
+                        </p>
+
+
+
+                    </div>
+                </div>
+                <div class="section__forWhomThisCourse__gridBox__box">
+                    <div class="section__forWhomThisCourse__gridBox__box__imgBox">
+                        <img data-src="images/typeStudent3.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img lazy-load">
+                    </div>
+                    <div class="section__forWhomThisCourse__gridBox__box__textBox">
+                        <p class="section__forWhomThisCourse__gridBox__box__textBox__text desktop">
+                            <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title"><span class="greenDark">Предпринимателям</span></span>
+                            После окончания курса ты узнаешь, как продвигать свой бизнес самостоятельно или какое мастерство требовать от своих сотрудников и подрядчиков для высокой эффективности
+                        </p>
+
+                        <p class="section__forWhomThisCourse__gridBox__box__textBox__text mobile">
+                        <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title mobile"><span class="greenDark">Предпринимателям</span></span>
+                            После окончания курса ты узнаешь, как продвигать свой бизнес самостоятельно или какое мастерство требовать от своих сотрудников и подрядчиков для высокой эффективности
+                        </p>
+                    </div>
+                </div>
+                <div class="section__forWhomThisCourse__gridBox__box">
+                    <div class="section__forWhomThisCourse__gridBox__box__imgBox">
+                        <img data-src="images/typeStudent4.png" alt="typeStudent" class="section__forWhomThisCourse__gridBox__box__imgBox__img lazy-load">
+                    </div>
+                    <div class="section__forWhomThisCourse__gridBox__box__textBox">
+                        <p class="section__forWhomThisCourse__gridBox__box__textBox__text desktop">
+                        <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title"><span class="greenDark">новичкам</span></span>
+                            С 0 овладеешь востребованной профессией и силой для мастерского управления результатами запросов в поисковиках
+                        </p>
+                        <p class="section__forWhomThisCourse__gridBox__box__textBox__text mobile">
+                            <span class="section__forWhomThisCourse__gridBox__box__textBox__text__title mobile"><span class="greenDark">новичкам</span></span>
+                            С 0 овладеешь востребованной профессией и силой для мастерского управления результатами запросов в поисковиках
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="section__frightBox">
+            <h2 class="section__frightBox__title title">
+                Страшно начать?
+            </h2>
+            <p class="section__frightBox__text">
+                Ты не будешь одинок: команда TEHNIKUM возьмёт тебя за руку и проведёт по пути от новичка до профессионала.
+            </p>
+            <div class="btn btn__whiteInside openProgramForm">Скачать программу</div>
+        </div>
+    </section>
+    <section class="section green">
+        <div class="section__discount">
+            <h2 class="section__discount__title title">
+                10% скидка действует
+            </h2>
+            <div class="section__discount__discountBox">
+                <div class="section__discount__discountBox__box">
+                    <div class="section__discount__discountBox__box__time days">2</div>
+                    <p class="section__discount__discountBox__box__title">
+                        дня
+                    </p>
+                </div>
+                <div class="section__discount__discountBox__box">
+                    <div class="section__discount__discountBox__box__time hours">00</div>
+                    <p class="section__discount__discountBox__box__title">
+                        часов
+                    </p>
+                </div>
+                <div class="section__discount__discountBox__box">
+                    <div class="section__discount__discountBox__box__time minutes">00</div>
+                    <p class="section__discount__discountBox__box__title">
+                        минут
+                    </p>
+                </div>
+            </div>
+            <div class="btn btn__black openForm">
+                Воспользоваться скидкой
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="section__salaryBox">
+            <h2 class="section__salaryBox__title title">
+                Зарплата контекстолога
+            </h2>
+            <p class="section__salaryBox__text">
+                Первичная настройка кампании
+                (зависит от объема работы и сроков)
+            </p>
+            <div class="section__salaryBox__textBox">
+                <div class="section__salaryBox__textBox__box">
+                    <p class="section__salaryBox__textBox__box__title">
+                        от $100 и выше
+                    </p>
+                    <p class="section__salaryBox__textBox__box__text text">
+                        Минимальная стоимость за 1 проект
+                        Одновременно можно вести около 20
+                    </p>
+                </div>
+                <div class="section__salaryBox__textBox__box">
+                    <p class="section__salaryBox__textBox__box__title">
+                        от $400 и более
+                    </p>
+                    <p class="section__salaryBox__textBox__box__text text">
+                        Большие проекты
+                    </p>
+                </div>
+                <div class="section__salaryBox__textBox__box">
+                    <p class="section__salaryBox__textBox__box__title">
+                        от $80 - $100
+                    </p>
+                    <p class="section__salaryBox__textBox__box__text text">
+                        последующее ведение контекстной рекламы
+                    </p>
+                </div>
+            </div>
+            <img data-src="images/salaryImg1.png" alt="salaryImg" class="section__salaryBox__salaryImg active img1 lazy-load">
+            <img data-src="images/salaryImg2.png" alt="salaryImg" class="section__salaryBox__salaryImg img2 lazy-load">
+            <img data-src="images/salaryImg3.png" alt="salaryImg" class="section__salaryBox__salaryImg img3 lazy-load">
+            <p class="section__salaryBox__textCenter">
+                Данные взяты из hh.uz и нашего hr<br> канала Техникум
+            </p>
+        </div>
+    </section>
+    <section class="section white" id="program">
+        <img data-src="images/programMobile.png" alt="programMobile" class="mobile section__programBox__img lazy-load">
+        <h2 class="section__title title desktop">
+            <span class="greenDark">программа</span> обучения<br>
+                1 месяц
+        </h2>
+        <h2 class="section__title title mobile">
+            <span class="greenDark">программа<br> обучения</span><br>
+            1 месяц
+        </h2>
+        <p class="section__programBox__text">
+            ГРАФИК ЗАНЯТИЙ: вт/чт/сб<br>
+            ТЕОРИЯ + ПРАКТИКА 30 часов<br>
+            15 уроков + защита в 19:30
+        </p>
+        <div class="section__programBox">
+            <div class="section__programBox__box">
+                <div class="section__programBox__box__number">
+                    <p>1</p>
+                </div>
+                <div class="section__programBox__box__program">
+                    <div class="section__programBox__box__program__topBox">
+                        <p class="section__programBox__box__program__topBox__text">
+                            Урок “Вводное занятие”
+                        </p>
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
+                    </div>
+                    <div class="section__programBox__box__program__text">
+                        <ul>
+                            <li class="text">Что такое контекстная реклама?</li>
+                            <li class="text">Зачем нужна контекстная реклама</li>
+                            <li class="text">Плюсы и минусы контекстной рекламы</li>
+                            <li class="text">Профессия контекстолог</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section__programBox__box">
+                <div class="section__programBox__box__number">
+                    <p>2</p>
+                </div>
+                <div class="section__programBox__box__program">
+                    <div class="section__programBox__box__program__topBox">
+                        <p class="section__programBox__box__program__topBox__text">
+                            Урок
+                            Одностраничные сайты
+                            на Tilda
+                        </p>
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
+                    </div>
+                    <div class="section__programBox__box__program__text">
+                        <ul>
+                            <li class="text">Преимущества сайта для бизнеса</li>
+                            <li class="text">Виды сайтов</li>
+                            <li class="text">Этапы создания сайта</li>
+                            <li class="text">Знакомство с Tilda</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section__programBox__box">
+                <div class="section__programBox__box__number">
+                    <p>3</p>
+                </div>
+                <div class="section__programBox__box__program">
+                    <div class="section__programBox__box__program__topBox">
+                        <p class="section__programBox__box__program__topBox__text">
+                            Урок “Сделаешь свой сайт
+                            на платформе Tilda“
+                        </p>
+
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
+                    </div>
+                    <div class="section__programBox__box__program__text">
+                        <ul>
+                            <li class="text">Работа в Zero Block</li>
+                            <li class="text">Подключение Яндекс метрики и Google аналитики</li>
+                            <li class="text">Базовая SEO-оптимизация сайта</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section__programBox__box">
+                <div class="section__programBox__box__number">
+                    <p>4</p>
+                </div>
+                <div class="section__programBox__box__program">
+                    <div class="section__programBox__box__program__topBox">
+                        <p class="section__programBox__box__program__topBox__text">
+                            Урок “введение в Рекламу Google.Ads“
+                        </p>
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
+                    </div>
+                    <div class="section__programBox__box__program__text">
+                        <ul>
+                            <li class="text">Что такое реклама в Google.Ads</li>
+                            <li class="text">Типы рекламных компаний</li>
+                            <li class="text">Структура рекламных компаний</li>
+                            <li class="text">Терминология</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section__programBox__box">
+                <div class="section__programBox__box__number">
+                    <p>5</p>
+                </div>
+                <div class="section__programBox__box__program">
+                    <div class="section__programBox__box__program__topBox">
+                        <p class="section__programBox__box__program__topBox__text">
+                            Урок. Семантическое ядро/Сбор ключевые слов (практика)
+                        </p>
+                        <img data-src="images/cross.png" alt="cross" class="section__programBox__box__program__topBox__img lazy-load">
+                    </div>
+                    <div class="section__programBox__box__program__text">
+                        <ul>
+                            <li class="text">Что такое семантическое ядро</li>
+                            <li class="text">Виды ключевых запросов</li>
+                            <li class="text">Типы соответствия</li>
+                            <li class="text">Исключения не целевых запросов/минус-слова</li>
+                            <li class="text">Сбор ключевых запросов и фильтрация</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section__btnCenter btn btn__black openProgramForm">
+            Скачать полную программу
+        </div>
+    </section>
+    <section class="section white">
+        <div class="section__whatWillYouKnow">
+            <h2 class="section__whatWillYouKnow__title title desktop">
+                <span class="greenDark">Что будешь уметь</span> после<br> курса:
+            </h2>
+            <h2 class="section__whatWillYouKnow__title mobile">
+                <span class="greenDark">Что будешь<br> уметь</span> после<br> курса:
+            </h2>
+            <div class="section__whatWillYouKnow__gridBox">
+                <div class="section__whatWillYouKnow__gridBox__row">
+                    <div class="section__whatWillYouKnow__gridBox__box box1">
+                        <img data-src="images/know1.png" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
+                        <p class="section__whatWillYouKnow__gridBox__box__title">
+                            <span>Формировать рекламный</span><br> <span>бюджет</span>
+                        </p>
+                        <p class="section__whatWillYouKnow__gridBox__box__text">
+                            определять цели, в соответствии с этим формировать бюджет и планировать рекламные кампании
+
+                        </p>
+                    </div>
+                    <div class="section__whatWillYouKnow__gridBox__box box2">
+                        <img data-src="images/know2.png" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
+                        <p class="section__whatWillYouKnow__gridBox__box__title">
+                            <span>управлять рекламными</span><br> <span>кампаниями в Яндексе и Google</span>
+                        </p>
+                        <p class="section__whatWillYouKnow__gridBox__box__text">
+                            Собирать семантику по пазлам, создавать по ним грамотные и цепляющие объявления
+                            дирижировать рекламными кабинетами Яндекс.Директ и Google Ads
+                        </p>
+                    </div>
+                </div>
+                <div class="section__whatWillYouKnow__gridBox__row">
+                    <div class="section__whatWillYouKnow__gridBox__box box3">
+                        <img data-src="images/know3.png" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
+                        <p class="section__whatWillYouKnow__gridBox__box__title">
+                            <span>оптимизировать</span><br> <span>рекламные кампании</span>
+                        </p>
+                        <p class="section__whatWillYouKnow__gridBox__box__text">
+                            Прогнозировать точки роста кампаний, доводит результат до финишных KPI и добиться лучших показателей при минимуме затрат
+                        </p>
+                    </div>
+                    <div class="section__whatWillYouKnow__gridBox__box box4">
+                        <img data-src="images/know4.png" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
+                        <p class="section__whatWillYouKnow__gridBox__box__title">
+                            <span>автоматизировать процессы</span>
+                        </p>
+                        <p class="section__whatWillYouKnow__gridBox__box__text">
+                            Лихо справляется с автоматическими стратегиями в Яндексе и Google и рулит большими рекламными кампаниями
+                        </p>
+                    </div>
+                </div>
+                <div class="section__whatWillYouKnow__gridBox__box box5">
+                    <img data-src="images/know5.png" alt="know" class="section__whatWillYouKnow__gridBox__box__img lazy-load">
+                    <p class="section__whatWillYouKnow__gridBox__box__title">
+                        <span>анализировать</span><br><span>рекламные кампании</span>
+                    </p>
+                    <p class="section__whatWillYouKnow__gridBox__box__text">
+                        Задавать тренды в системе аналитики, проводит отчеты в Яндекс.Метрике и Google Analytics через призму эффективности и работает с GTM
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section white notGrid">
+        <div class="section__photoSlider">
+            <h2 class="section__photoSlider__title title desktop"><span class="greenDark">атмосфера</span> обучения</h2>
+            <h2 class="section__photoSlider__title title mobile"><span class="greenDark">атмосфера</span><br> обучения</h2>
+            <p class="section__photoSlider__text">
+                Мы создали среду, где хочется обучаться. Где тебя будут поддерживать и направлять не только во время обучения, но и после.
+            </p>
+            <div id="photoSlider" class="section__photoSlider__sliderBox">
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg1.png" alt="sliderImg1" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg2.png" alt="sliderImg2" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg3.png" alt="sliderImg3" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg4.png" alt="sliderImg4" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg5.png" alt="sliderImg5" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg6.png" alt="sliderImg6" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+                <div class="section__photoSlider__sliderBox__slideWrap"><img data-src="images/sliderImg7.png" alt="sliderImg7" class="section__photoSlider__sliderBox__slide lazy-load"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section white">
+        <div class="section__gallery">
+            <h2 class="section__gallery__title title">
+                2 500 студентов<br>
+                <span class="greenDark">уже сделали первые шаги</span>
+            </h2>
+            <p class="section__gallery__text">
+                Они уже отбросили все сомнения и начали свою новую историю<br><br>
+
+                Не теряй время – <span class="bold">стань одним из нас уже сейчас</span>
+            </p>
+            <img data-src="images/students.png" alt="students" class="section__gallery__img lazy-load">
+        </div>
+    </section>
+<section class="section white notGrid">
+    <div class="section__speakerBox">
+        <h2 class="section__speakerBox__title desktop">
+            <span class="greenDark">Кто станет</span> твоим<br> наставником?
+        </h2>
+        <h2 class="section__speakerBox__title mobile">
+            <span class="greenDark">Кто станет</span> твоим наставником?
+        </h2>
+        <p class="section__speakerBox__text desktop">
+            Наши спикеры – эксперты маркетинга с многолетним опытом, за плечами которых сотни успешных кейсов<br><br>
+
+            Этап за этапом, ты познаешь все составляющие интернет-маркетинга и последние тренды, чтобы достигать самых высоких результатов и оптимизировать процессы в бизнесе.
+        </p>
+        <div class="section__speakerBox__speakers" id="speakerSlider">
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker1 background-lazy-load" data-src-background="http://localhost:8804/images/speaker1.png"></div>
+                <p class="section__speakerBox__speakers__speaker__title">Камилла Насырова</p>
+                <p class="section__speakerBox__speakers__speaker__text">
+                    В интернет-маркетинге более 5 лет</p>
+                <ul>
+                    <li>С 2018 года менеджер по контекстной рекламе в Digital-агентстве</li>
+                    <li>Фрилансер  с 2019 года по настоящее время/ Специалист по настройке и ведению рекламы в Google Ads, Яндекс.Директ</li>
+                    <li>Настроила более 25 успешных компаний</li>
+                </ul>
+            </div>
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker2 background-lazy-load" data-src-background="http://localhost:8804/images/speaker2.png"></div>
+                <p class="section__speakerBox__speakers__speaker__title">Ильхом Собиров</p>
+                <p class="section__speakerBox__speakers__speaker__text">
+                    Менеджер по развитию бизнеса компании Яндекс в Узбекистане</p>
+                <ul>
+                    <li>Работаю в диджитал маркетинге более 11 лет. Запустил более 100 успешных кейсов по SEO, контекстной рекламе</li>
+                    <li>Экс руководитель интернет магазина Olcha.uz</li>
+                    <li>Работал с проектами: Arda.uz, Express24.uz, Bringo.uz</li>
+                </ul>
+            </div>
+            <div class="section__speakerBox__speakers__speaker">
+                <div class="section__speakerBox__speakers__speaker__avatarBox speaker6 background-lazy-load" data-src-background="http://localhost:8804/images/speaker3.png"></div>
+                <p class="section__speakerBox__speakers__speaker__title">Давронов Тахир</p>
+                <p class="section__speakerBox__speakers__speaker__text">В веб-дизайне уже больше 2-х лет</p>
+                <ul>
+                    <li>В период пандемии ушел из офиса и стал работать на себя</li>
+                    <li>Разработал 21 сайт от идеи до готового продукта</li>
+                    <li>Закончил более 29 успешных проектов по другим направлениям в дизайне</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section white notGrid">
+    <div class="section__sliderBox">
+        <h2 class="section__title"><span class="greenDark">выпускники</span> о школе</h2>
+        <p class="section__text section__sliderBox__text">
+            TEHNIKUM - лучшее место для развития. Гордимся результатами каждого студента и с удовольствием наблюдаем за их победами на профессиональном поприще - ознакомиться с их отзывами ты можешь тут:
+        </p>
+        <div class="section__sliderBox__slider" id="videoSlider">
+            <div class="videoFeedbackSlide item">
+                <iframe width="100%" height="100%"
+                        data-src="https://www.youtube.com/embed/Ne56Zgwm9Ew" class="lazy-load">
+                </iframe>
+            </div>
+            <div class="videoFeedbackSlide item">
+                <iframe width="100%" height="100%"
+                        data-src="https://www.youtube.com/embed/nF26g2yjvPc" class="lazy-load">
+                </iframe>
+            </div>
+            <div class="videoFeedbackSlide item">
+                <iframe width="100%" height="100%"
+                        data-src="https://www.youtube.com/embed/NCblDYvcOak" class="lazy-load">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section white">
+    <div class="section__tools">
+        <h2 class="section__title desktop">
+            Какими инструментами <span class="greenDark">будешь<br> владеть</span> по окончанию курса:
+        </h2>
+        <h2 class="section__title mobile">
+            Какими инструментами <span class="greenDark">будешь владеть</span><br> по окончанию<br> курса:
+        </h2>
+        <div class="section__tools__gridBox">
+            <img data-src="images/tool1.png" alt="tool" class="lazy-load">
+            <img data-src="images/tool2.png" alt="tool" class="lazy-load">
+            <img data-src="images/tool3.png" alt="tool" class="lazy-load">
+            <img data-src="images/tool4.png" alt="tool" class="lazy-load">
+            <img data-src="images/tool5.png" alt="tool" class="lazy-load">
+        </div>
+    </div>
+</section>
+<section class="section white">
+    <div class="section__diplomaBox">
+        <h2 class="section__title">диплом</h2>
+        <p class="section__diplomaBox__text section__text">
+            Твой уровень квалификации подтвердит официальный документ, заверенный Маркетинговой Ассоциацией Узбекистана
+        </p>
+        <img data-src="images/diploma.png" alt="disploma" class="section__diplomaBox__img lazy-load">
+    </div>
+</section>
+<section class="section white">
+    <div class="section__work">
+        <h2 class="section__title"><span class="greenDark">Мы помогаем</span> с<br> трудоустройством</h2>
+        <div class="section__work__workBox">
+            <p class="section__work__text section__text">
+                Ты получишь доступ в закрытый канал TEHNIKUM HR, благодаря которому мы соединяем наших выпускников с потенциальными работодателями. Потому что наша миссия – не просто обучить тебя профессии, наша миссия –  помочь тебе реализовать свой потенциал
+            </p>
+            <img data-src="images/work.png" alt="work" class="section__work__img lazy-load">
+        </div>
+    </div>
+</section>
+<section class="section green">
+    <div class="section__discount">
+        <h2 class="section__discount__title title">
+            10% скидка действует
+        </h2>
+        <div class="section__discount__discountBox">
+            <div class="section__discount__discountBox__box">
+                <div class="section__discount__discountBox__box__time days">2</div>
+                <p class="section__discount__discountBox__box__title">
+                    дня
+                </p>
+            </div>
+            <div class="section__discount__discountBox__box">
+                <div class="section__discount__discountBox__box__time hours">00</div>
+                <p class="section__discount__discountBox__box__title">
+                    часов
+                </p>
+            </div>
+            <div class="section__discount__discountBox__box">
+                <div class="section__discount__discountBox__box__time minutes">00</div>
+                <p class="section__discount__discountBox__box__title">
+                    минут
+                </p>
+            </div>
+        </div>
+        <div class="btn btn__black openForm">
+            Воспользоваться скидкой
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <h2 class="footer__title title desktop"><span class="green">Хочешь узнать ещё больше?</span></h2>
+    <h2 class="footer__title title mobile">Хочешь узнать ещё больше?</h2>
+    <div class="footer__typeBox">
+        <div class="footer__typeBox__type background active" data-type-background="left" data-type="offline">
+            <p>Оффлайн</p>
+        </div>
+        <div class="footer__typeBox__type" data-type-background="right" data-type="online">
+            <p>Онлайн</p>
+        </div>
+    </div>
+    <div class="footer__gridBox">
+        <div class="footer__formBox" id="form">
+            <div class="footer__mainBox__formBox__readyBox footer__formBox__readyBox" data-form-id="Contact">
+                <img data-src="images/crossWhite.svg" alt="cross" class="footer__formBox__readyBox__cross lazy-load" />
+
+                <p class="footer__formBox__readyBox__title">
+                    спасибо за заявку!
+                </p>
+                <p class="footer__formBox__readyBox__text">
+                    наш менеджер свяжется с вами</p>
+                <img data-src="images/formThanks.png" alt="cross" class="footer__formBox__readyBox__brainImg lazy-load" />
+            </div>
+            <div class="footer__formBox__discount discountCircle" data-form-id="Contact">
+                <div class="footer__formBox__discount__ellipse"></div>
+                <p><span class="footer__formBox__discount__title">10%</span></p>
+            </div>
+            <h3 class="footer__formBox__title">оставь заявку</h3>
+            <p class="footer__formBox__text"><span class="footer__formBox__text__title">начало обучения:</span> <span class="date">19 октября</span><br>
+                <span class="footer__formBox__text__title">старт потока каждые:</span> 5 недель<br>
+                <span class="footer__formBox__text__title">осталось мест:</span> <span class="placesLeft"></span>
+            </p>
+            <div class="footer__formBox__inputBox">
+                <input type="text" name="nameContact" placeholder="Имя">
+                <input type="text" name="phoneContact" class="footer__mainBox__formBox__input" data-type="phone" data-mask="+998 00-000-0000" value="+998" placeholder="+998 00-000-000">
+            </div>
+            <button class="btn btn__green sendForm" data-form-id="Contact">Хочу учиться</button>
+            <p class="footer__formBox__endBoldText">
+                Остались вопросы?<br><br>
+                Звони: <span><a href="tel:+998 97-135-33-55">+998 97-135-33-55</a></span><br>
+                Наши консультанты доступны каждый день<br>
+                с 10:00 до 22:00.
+            </p>
+            <div class="footer__formBox__socials">
+                <a href="https://instagram.com/tehnikum.school?igshid=5uh70q7ckxx2" target="_blank">
+                    <img data-src="images/instagram.svg" alt="instagram" class="lazy-load">
+                </a>
+                <a href="https://t.me/tehnikum_school" target="_blank">
+                    <img data-src="images/telegram%20(1).svg" alt="telegram" class="lazy-load">
+                </a>
+                <a href="https://www.facebook.com/tehnikum.school" target="_blank">
+                    <img data-src="images/facebook%20(1).svg" class="facebook lazy-load" alt="facebook">
+                </a>
+            </div>
+        </div>
+        <div class="footer__course">
+            <p class="footer__course__title">мы подобрали для тебя курсы</p>
+            <div class="footer__course__allBoxes" id="courseSlider">
+                <div class="footer__course__box item" data-index="1">
+                    <div class="footer__course__box__topBox mobile">
+                        <div class="footer__course__box__topBox__leftBox">
+                            <div class="footer__course__box__topBox__leftBox__box">
+                                <p class="footer__course__box__topBox__leftBox__box__title">
+                                    Длительность
+                                </p>
+                                <p class="footer__course__box__topBox__leftBox__box__text">
+                                    6 недель
+                                </p>
+                            </div>
+                            <div class="footer__course__box__topBox__leftBox__box">
+                                <p class="footer__course__box__topBox__leftBox__box__title">
+                                    Старт
+                                </p>
+                                <p class="footer__course__box__topBox__leftBox__box__text">
+                                    20 октября
+                                </p>
+                            </div>
+                        </div>
+                        <img data-src="images/course1.png" alt="course" class="footer__course__box__topBox__img lazy-load">
+                    </div>
+                    <p class="footer__course__box__title">курс</p>
+                    <p class="footer__course__box__name">графический дизайн</p>
+                    <div class="footer__course__box__textBox">
+                        <div class="footer__course__box__textBox__infoCourse desktop">
+                            <div class="footer__course__box__textBox__infoCourse__box">
+                                <p class="footer__course__box__textBox__infoCourse__box__title">
+                                    Длительность
+                                </p>
+                                <p class="footer__course__box__textBox__infoCourse__box__text">
+                                    6 недель
+                                </p>
+                            </div>
+                            <div class="footer__course__box__textBox__infoCourse__box">
+                                <p class="footer__course__box__textBox__infoCourse__box__title">
+                                    Старт
+                                </p>
+                                <p class="footer__course__box__textBox__infoCourse__box__text">
+                                    20 октября
+                                </p>
+                            </div>
+                        </div>
+                        <p class="footer__course__box__textBox__description">
+                            Курс о том, как создавать креативные посты и не только<br>
+                            Углубитесь в мир графического дизайна и научитесь создавать визуальный контент
+                        </p>
+                        <div class="footer__course__box__textBox__btn btn btn__black openForm">
+                            Записаться
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__course__box item" data-index="2">
+                    <div class="footer__course__box__topBox mobile">
+                        <div class="footer__course__box__topBox__leftBox">
+                            <div class="footer__course__box__topBox__leftBox__box">
+                                <p class="footer__course__box__topBox__leftBox__box__title">
+                                    Длительность
+                                </p>
+                                <p class="footer__course__box__topBox__leftBox__box__text">
+                                    3 месяца
+                                </p>
+                            </div>
+                            <div class="footer__course__box__topBox__leftBox__box">
+                                <p class="footer__course__box__topBox__leftBox__box__title">
+                                    Старт
+                                </p>
+                                <p class="footer__course__box__topBox__leftBox__box__text">
+                                    5 октября
+                                </p>
+                            </div>
+                        </div>
+                        <img data-src="images/course2.png" alt="course" class="footer__course__box__topBox__img lazy-load">
+                        <img data-src="images/grid.png" alt="course" class="footer__course__box__topBox__grid lazy-load">
+                    </div>
+                    <p class="footer__course__box__title">курс</p>
+                    <p class="footer__course__box__name desktop">digital-маркетолог</p>
+                    <p class="footer__course__box__name mobile"><span class="greenDark">digital</span>-маркетолог</p>
+                    <div class="footer__course__box__textBox">
+                        <div class="footer__course__box__textBox__infoCourse desktop">
+                            <div class="footer__course__box__textBox__infoCourse__box">
+                                <p class="footer__course__box__textBox__infoCourse__box__title">
+                                    Длительность
+                                </p>
+                                <p class="footer__course__box__textBox__infoCourse__box__text">
+                                    3 месяца
+                                </p>
+                            </div>
+                            <div class="footer__course__box__textBox__infoCourse__box">
+                                <p class="footer__course__box__textBox__infoCourse__box__title">
+                                    Старт
+                                </p>
+                                <p class="footer__course__box__textBox__infoCourse__box__text">
+                                    5 октября
+                                </p>
+                            </div>
+                        </div>
+                        <p class="footer__course__box__textBox__description">
+                            Это ключевой специалист, который создаёт комплексную стратегию развития бренда в интернете
+                        </p>
+                        <div class="footer__course__box__textBox__btn btn btn__green openForm">
+                            Записаться
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__course__box item" data-index="3">
+                    <div class="footer__course__box__topBox mobile">
+                        <div class="footer__course__box__topBox__leftBox">
+                            <div class="footer__course__box__topBox__leftBox__box">
+                                <p class="footer__course__box__topBox__leftBox__box__title">
+                                    Длительность
+                                </p>
+                                <p class="footer__course__box__topBox__leftBox__box__text">
+                                    3 недели
+                                </p>
+                            </div>
+                            <div class="footer__course__box__topBox__leftBox__box">
+                                <p class="footer__course__box__topBox__leftBox__box__title">
+                                    Старт
+                                </p>
+                                <p class="footer__course__box__topBox__leftBox__box__text">
+                                    4 октября
+                                </p>
+                            </div>
+                        </div>
+                        <img data-src="images/course3.png" alt="course" class="footer__course__box__topBox__img lazy-load">
+                        <img data-src="images/course3_1.png" alt="course" class="footer__course__box__topBox__img3_1 lazy-load">
+                        <img data-src="images/course3_2.png" alt="course" class="footer__course__box__topBox__img3_2 lazy-load">
+                    </div>
+
+
+                    <p class="footer__course__box__title">курс</p>
+                    <p class="footer__course__box__name">target full course</p>
+                    <div class="footer__course__box__textBox">
+                        <div class="footer__course__box__textBox__infoCourse desktop">
+                            <div class="footer__course__box__textBox__infoCourse__box">
+                                <p class="footer__course__box__textBox__infoCourse__box__title">
+                                    Длительность
+                                </p>
+                                <p class="footer__course__box__textBox__infoCourse__box__text">
+                                    3 недели
+                                </p>
+                            </div>
+                            <div class="footer__course__box__textBox__infoCourse__box">
+                                <p class="footer__course__box__textBox__infoCourse__box__title">
+                                    Старт
+                                </p>
+                                <p class="footer__course__box__textBox__infoCourse__box__text">
+                                    4 октября
+                                </p>
+                            </div>
+                        </div>
+                        <p class="footer__course__box__textBox__description">
+                            Авторский курс от основателя топового агентстве в Узбекистане<br><br>
+
+                            12 занятий, после которых тебе не будет равных в таргете
+                        </p>
+                        <div class="footer__course__box__textBox__btn btn btn__gradient2 openForm">
+                            Записаться
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+    <script src="libs/jquery.js"></script>
+    <script src="libs/slick.min.js"></script>
+    <script src="libs/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/ru.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.22.0/axios.min.js"></script>
+    <script async src="services/seo.js"></script>
+    <script async src="services/utm.js"></script>
+    <script>
+        // setTimeout(() => {
+            let script = document.createElement("script");
+            script.src = "services/main_script.js";
+            document.body.appendChild(script);
+        // }, 3000);
+    </script>
+    <script async>
+      setTimeout(() => {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2247270262076810');
+        fbq('track', 'PageView');
+      }, 3500);
+    </script>
+    <script async>
+        setTimeout(() => {
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                (k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a);
+            })(
+                window,
+                document,
+                "script",
+                "https://mc.yandex.ru/metrika/tag.js",
+                "ym"
+            );
+
+            ym(69008998, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+            });
+        }, 4000);
+    </script>
+  </body>
+</html>
