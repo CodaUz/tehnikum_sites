@@ -98,7 +98,7 @@ async function takeCourse(formId, is_redirect=false) {
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
         const WEBINAR_ID = 283660
 
-        fetch(
+        await fetch(
             `https://node.snimerovsky.xyz/log`,
             {
                 method: 'POST',
@@ -113,7 +113,7 @@ async function takeCourse(formId, is_redirect=false) {
         if (is_redirect) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
-            fetch(
+            await fetch(
                 `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=${COURSE}&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
