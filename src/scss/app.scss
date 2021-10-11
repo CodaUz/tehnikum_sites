@@ -2038,17 +2038,17 @@ html {
           }
 
           &.imgCase1 {
-            width: get-vw(537px);
+            width: get-vw(600px);
             height: get-vw(161px);
 
             @media screen and (max-width: 800px) {
-              width: get-mobile-vw(220px);
+              width: get-mobile-vw(240px);
               height: get-mobile-vw(123px);
             }
           }
 
           &.imgCase2 {
-            width: get-vw(505px);
+            width: get-vw(550px);
             height: get-vw(465px);
 
             @media screen and (max-width: 800px) {
@@ -2058,7 +2058,7 @@ html {
           }
 
           &.imgCase3 {
-            width: get-vw(595px);
+            width: get-vw(640px);
             height: get-vw(339px);
 
             @media screen and (max-width: 800px) {
