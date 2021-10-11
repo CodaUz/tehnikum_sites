@@ -153,8 +153,8 @@ html {
         font-family: 'Miratrix';
         font-weight: 400;
         font-style: normal;
-        font-size: get-vw(110px);
-        line-height: get-vw(96px);
+        font-size: get-vw(120px);
+        line-height: get-vw(106px);
         text-transform: uppercase;
 
         @media screen and (max-width: 800px) {
@@ -186,7 +186,7 @@ html {
       display: grid;
       grid-template-columns: get-vw(373px) get-vw(373px);
       column-gap: get-vw(16px);
-      padding-top: get-vw(50px);
+      padding-top: get-vw(70px);
       align-items: center;
 
       @media screen and (max-width: 800px) {
@@ -720,7 +720,7 @@ html {
             padding-left: get-vw(71px);
 
             &__text {
-              max-width: get-vw(658px);
+              max-width: get-vw(521px);
             }
 
             @media screen and (max-width: 800px) {
@@ -1333,7 +1333,6 @@ html {
           font-family: 'TTHovesMedium';
           font-size: get-vw(40px);
           line-height: get-vw(47px);
-          text-transform: lowercase;
 
           span {
             border-bottom: get-vw(2px) solid $dark_green;
@@ -1432,7 +1431,6 @@ html {
           }
           .section__whatWillYouKnow__gridBox__box__text {
             width: get-vw(571px);
-            margin-top: get-vw(106px);
           }
 
           img {
@@ -1602,7 +1600,7 @@ html {
     &__title {
       font-family: 'TTHovesMedium';
       font-size: get-vw(64px);
-      line-height: get-vw(57.79px);
+      line-height: get-vw(64px);
       text-transform: uppercase;
       padding-top: get-vw(59.61px);
 
@@ -1696,8 +1694,8 @@ html {
         }
 
         &__text, ul, &__imgCases {
-          font-size: get-vw(34px);
-          line-height: get-vw(38px);
+          font-size: get-vw(30px);
+          line-height: get-vw(32px);
           font-family: 'TTHovesRegular';
           padding: 0 get-vw(58px);
 
@@ -1802,8 +1800,8 @@ html {
       }
 
       img:nth-of-type(1) {
-        width: get-vw(124px);
-        height: get-vw(124px);
+        width: get-vw(100px);
+        height: get-vw(100px);
 
         @media screen and (max-width: 800px) {
           width: get-mobile-vw(85px);
@@ -1813,8 +1811,7 @@ html {
       }
 
       img:nth-of-type(2) {
-        width: get-vw(226px);
-        height: get-vw(127px);
+        width: get-vw(220px);
         margin-left: get-vw(98px);
 
         @media screen and (max-width: 800px) {
@@ -1826,8 +1823,8 @@ html {
       }
 
       img:nth-of-type(3) {
-        width: get-vw(226px);
-        margin-left: get-vw(42px);
+        width: get-vw(190px);
+        margin-left: get-vw(40px);
 
         @media screen and (max-width: 800px) {
           width: get-mobile-vw(149px);
@@ -1837,8 +1834,8 @@ html {
       }
 
       img:nth-of-type(4) {
-        width: get-vw(308px);
-        margin-left: get-vw(11px);
+        width: get-vw(260px);
+        margin-left: get-vw(40px);
 
         @media screen and (max-width: 800px) {
           width: get-mobile-vw(220px);
@@ -1848,8 +1845,8 @@ html {
       }
 
       img:nth-of-type(5) {
-        width: get-vw(382px);
-        margin-left: get-vw(6px);
+        width: get-vw(320px);
+        margin-left: get-vw(40px);
 
         @media screen and (max-width: 800px) {
           width: get-mobile-vw(272px);
@@ -2046,7 +2043,7 @@ html {
     display: grid;
     grid-template-columns: max-content 1fr;
     column-gap: get-vw(71px);
-    margin-top: get-vw(40px);
+    margin-top: get-vw(0px);
 
     @media screen and (max-width: 800px) {
       grid-template-columns: 1fr;
@@ -2179,7 +2176,7 @@ html {
 
     &__discount {
       position: absolute;
-      top: get-vw(-50px);
+      top: get-vw(-20px);
       right: get-vw(-20px);
       color: #000000;
       text-transform: uppercase;
@@ -2194,8 +2191,8 @@ html {
       }
 
       &__title {
-        font-size: get-vw(96px);
-        line-height: get-vw(103.09px);
+        font-size: get-vw(80px);
+        line-height: get-vw(93px);
         font-family: 'TTHovesMedium';
 
         @media screen and (max-width: 800px) {
@@ -2205,12 +2202,12 @@ html {
       }
 
       &__ellipse {
-        width: get-vw(217px);
-        height: get-vw(217px);
+        width: get-vw(190px);
+        height: get-vw(190px);
         background: $green;
         border-radius: 50%;
         position: absolute;
-        top: get-vw(-60px);
+        top: get-vw(-50px);
         left: get-vw(-25px);
         z-index: 1;
 
@@ -2396,7 +2393,7 @@ html {
       line-height: get-vw(48.14px);
       color: white;
       text-transform: uppercase;
-      margin-top: get-vw(-220px);
+      margin-top: get-vw(-160px);
 
       @media screen and (max-width: 800px) {
         margin-top: 0;
@@ -2417,7 +2414,7 @@ html {
       padding-left: get-vw(37px);
       padding-top: get-vw(37px);
       width: get-vw(945px);
-      height: get-vw(320px);
+      height: get-vw(300px);
       position: relative;
       overflow: hidden;
 
@@ -2600,8 +2597,8 @@ html {
       &__name {
         font-family: 'Miratrix';
         text-transform: uppercase;
-        font-size: get-vw(70px);
-        line-height: get-vw(71.5px);
+        font-size: get-vw(60px);
+        line-height: get-vw(61.5px);
 
         @media screen and (max-width: 800px) {
           font-size: get-mobile-vw(43px);

@@ -11,7 +11,8 @@ function listenPopups() {
     $('.openProgramForm').click(() => {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
-        $('div.sendForm[data-form-id="Program"]').text('Скачать программу')
+        $('div.sendForm[data-form-id="Program"]').text('Получить программу')
+        $('div.sendForm[data-form-id="Program"]').addClass('btn__whiteInside')
         $('p.footer__mainBox__formBox__text').html('программа будет доступна<br> через наш telegram бот')
         $('p.titleName').text('сделай первый шаг')
         openModalForm('.formBoxIndex')
@@ -22,7 +23,8 @@ function listenPopups() {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', '')
         $('p.footer__mainBox__formBox__text').text('')
-        $('div.sendForm[data-form-id="Program"]').text('Хочу учиться')
+        $('div.sendForm[data-form-id="Program"]').text('Записаться')
+        $('div.sendForm[data-form-id="Program"]').removeClass('btn__whiteInside')
         $('p.titleName').text('РЕШАЙСЯ')
         openModalForm('.formBoxIndex')
     })
@@ -338,7 +340,7 @@ function listenCoursesSlider() {
 }
 
 async function initCourseData() {
-    const first_date =  moment(`2021-10-14`, 'YYYY-MM-DD')
+    const first_date =  moment(`2021-10-19`, 'YYYY-MM-DD')
     const first_date_format = first_date.locale("ru").format('D MMMM')
 
     $('span.date').text(first_date_format)
