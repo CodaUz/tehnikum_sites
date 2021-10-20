@@ -95,7 +95,7 @@ async function takeCourse(formId, is_redirect=false) {
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-target-full`
         const WEBINAR_ID = 283660
 
-        await fetch(
+        fetch(
             `https://node.snimerovsky.xyz/log`,
             {
                 method: 'POST',
