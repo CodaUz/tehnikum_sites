@@ -50,7 +50,7 @@
     }
 
     .form {
-      background: #c9e611;
+      background: #CB3B26;
       width: 100%;
       height: 100%;
       display: flex;
@@ -58,6 +58,7 @@
       align-items: flex-start;
       position: relative;
       overflow-y: auto;
+      color: white;
 
       @media screen and (max-width: 800px) {
         width: initial;
@@ -200,13 +201,13 @@
 
       input {
         width: 100%;
-        background: #c9e611;
-        color: #000000;
+        background: #CB3B26;
+        color: white;
         font-size: get-vw(18px);
         font-family: 'TTHovesRegular';
 
         &::placeholder {
-          color: #000000;
+          color: white;
         }
 
         @media screen and (max-width: 800px) {
