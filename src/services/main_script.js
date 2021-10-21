@@ -333,7 +333,7 @@ function listenCoursesSlider() {
 }
 
 async function initCourseData() {
-    const first_date =  moment(`2021-10-18`, 'YYYY-MM-DD')
+    const first_date =  moment(`2021-11-01`, 'YYYY-MM-DD')
     const first_date_format = first_date.locale("ru").format('D MMMM')
 
     $('span.date').text(first_date_format)
