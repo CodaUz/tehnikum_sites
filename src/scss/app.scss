@@ -113,7 +113,7 @@ body {
           left: get-mobile-vw(82px);
 
           &.animate {
-            animation: 2.9s linear 0.5s infinite normal animate_img1;
+            animation: 3.9s linear 0.5s infinite normal animate_img1;
 
             @keyframes animate_img1 {
               0% {
@@ -172,7 +172,7 @@ body {
           left: get-mobile-vw(10px);
 
           &.animate {
-            animation: 2.9s linear 1s infinite normal animate_img2;
+            animation: 3.9s linear 1s infinite normal animate_img2;
 
             @keyframes animate_img2 {
               0% {
@@ -237,7 +237,7 @@ body {
 
 
           &.animate {
-            animation: 3s linear 0s infinite normal animate_text;
+            animation: 4s linear 0s infinite normal animate_text;
 
             @keyframes animate_text {
               0% {
@@ -307,7 +307,7 @@ body {
 
 
             &.animate {
-              animation: 2s linear 0s infinite normal animate_arrow;
+              animation: 3s linear 0s infinite normal animate_arrow;
 
               @keyframes animate_arrow {
                 0% {

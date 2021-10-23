@@ -93,7 +93,7 @@ async function takeCourse(formId, is_redirect=false) {
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-digital`
-        const WEBINAR_ID = 158386
+        const WEBINAR_ID = 689249
 
         fetch(
             `https://node.snimerovsky.xyz/log`,
