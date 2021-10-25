@@ -766,7 +766,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4667:
+/***/ 5110:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -774,7 +774,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/speaker9.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/speaker9-2.png");
 
 /***/ }),
 
@@ -1177,7 +1177,7 @@ var map = {
 	"./speaker8.png": 638,
 	"./speaker8D.jpg": 5225,
 	"./speaker9 (1).png": 5346,
-	"./speaker9.png": 4667,
+	"./speaker9-2.png": 5110,
 	"./students.png": 304,
 	"./studentsMobile.png": 276,
 	"./telegram (1).svg": 598,
