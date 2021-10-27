@@ -1,0 +1,21 @@
+$vw-viewport: 1889;
+$vw-mobile-viewport: 360;
+$vw-enable: true;
+
+@function get-vw($font) {
+  @if $vw-enable {
+    $vw-context: $vw-viewport * 0.01 * 1px;
+
+    @return $font / $vw-context * 1vw;
+  }
+  @return $font;
+}
+
+@function get-mobile-vw($font) {
+  @if $vw-enable {
+    $vw-context: $vw-mobile-viewport * 0.01 * 1px;
+
+    @return $font / $vw-context * 1vw;
+  }
+  @return $font;
+}
