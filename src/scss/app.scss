@@ -754,10 +754,9 @@ body {
                     180deg, rgba(244, 158, 143, 0.5) -0.01%, rgba(231, 156, 245, 0.5) 30.86%), rgba(242, 255, 255, 0.7);
     backdrop-filter: blur(get-vw(10px));
     z-index: 1;
-    -webkit-mask-image: radial-gradient(circle get-vw(450px) at calc(100% - 35vw) -10vw, transparent get-vw(450px), #000 0);
-    -o-mask-image: radial-gradient(circle get-vw(450px) at calc(100% - 35vw) -10vw, transparent get-vw(450px), #000 0);
-    -moz-mask-image: radial-gradient(circle get-vw(450px) at calc(100% - 35vw) -10vw, transparent get-vw(450px), #000 0);
-    mask-image: radial-gradient(circle get-vw(450px) at calc(100% - 35vw) -10vw, transparent get-vw(450px), #000 0);
+
+    -webkit-mask-image: radial-gradient(circle get-vw(450px) at calc(100% - 35vw) -10vw, transparent 23.29vw, #000 0);
+    mask-image: radial-gradient(circle get-vw(450px) at calc(100% - 35vw) -10vw, transparent 23.29vw, #000 0);
     object-fit: cover;
     position: relative;
 
@@ -765,10 +764,8 @@ body {
       width: get-mobile-vw(299px);
       border-radius: get-mobile-vw(50px);
       margin-left: get-mobile-vw(10px);
-      -webkit-mask-image: radial-gradient(circle get-mobile-vw(80px) at calc(100% - 46vw) -11vw, transparent get-mobile-vw(80px), #000 0);
-      -o-mask-image: radial-gradient(circle get-mobile-vw(80px) at calc(100% - 46vw) -11vw, transparent get-mobile-vw(80px), #000 0);
-      -moz-mask-image: radial-gradient(circle get-mobile-vw(80px) at calc(100% - 46vw) -11vw, transparent get-mobile-vw(80px), #000 0);
-      mask-image: radial-gradient(circle get-mobile-vw(80px) at calc(100% - 46vw) -11vw, transparent get-mobile-vw(80px), #000 0);
+      -webkit-mask-image: radial-gradient(circle get-mobile-vw(80px) at calc(100% - 46vw) -11vw, transparent 24vw, #000 0);
+      mask-image: radial-gradient(circle get-mobile-vw(80px) at calc(100% - 46vw) -11vw, transparent 24vw, #000 0);
     }
     &__titleH3{
       padding-top: get-vw(350px);
