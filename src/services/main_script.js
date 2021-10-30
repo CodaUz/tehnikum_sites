@@ -93,7 +93,7 @@ async function takeCourse(formId, is_redirect=false) {
             item.classList.remove("active");
         }
 
-        const COURSE = 'context'
+        const COURSE = 'mini-blogger'
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
         const WEBINAR_ID = 283660
