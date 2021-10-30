@@ -30,10 +30,7 @@ var images = importAll(__webpack_require__(909));
  // Styles
 
 
- // // App Scripts
-// import './services/main_script.js'
-// import './services/seo.js'
-// import './services/utm.js'
+
 
 /***/ }),
 
