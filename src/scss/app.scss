@@ -828,6 +828,9 @@ header, section, footer, .maxWidth {
   }
 
   .sliderBox {
+    overflow: hidden;
+    margin-top: 1.5rem;
+
     &__text {
       font-family: 'TTHovesRegular';
       font-size: 1.1rem;
@@ -835,29 +838,8 @@ header, section, footer, .maxWidth {
     }
 
     &__slider {
-      display: flex;
-      overflow: hidden;
-      -webkit-overflow-scrolling: touch;
-
-
       &__slide {
-        width: calc(50% - 100px);
-        flex-shrink: 0;
-        margin: 20px 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 1s;
-        transform: translateX(0);
-
-        @media screen and (max-width: 800px) {
-          min-width: 100%;
-          margin: 20px 0;
-        }
-
-        iframe {
-          max-width: 100%;
-        }
+        margin-left: .5rem;
       }
     }
 

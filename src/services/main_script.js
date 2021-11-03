@@ -4,84 +4,6 @@ const moment = require('moment')
 const MOBILE_WIDTH = 800
 let POPUP_EVENT;
 
-function listenSliders() {
-    $('.sliderBox__sliderDots').each(function () {
-        const $sliderDots = $(this)
-        let id = $(this).data('id')
-        let n = 2
-
-        if ($(window).width() <= MOBILE_WIDTH) {
-            n = 1
-        }
-
-        let children_length = $(`.sliderBox__slider[data-id="${id}"]`).children().length
-        let number_of_dots = (children_length+(children_length%n))/n
-        if (children_length%n !== 0 && $(window).width() > MOBILE_WIDTH) {
-            number_of_dots += 1
-        }
-
-        for (let i=0; i < number_of_dots; i++)  {
-            let $dot = $("<div>", {"data-number": i, "class": `sliderBox__sliderDots__dot ${i === 0 ? 'active' : ''}`});
-
-            $dot.click(function () {
-                const number_dot = parseInt($(this).data('number'))
-
-                $sliderDots.children().each(function () {
-                    $(this).removeClass('active')
-                })
-
-                $(this).addClass('active')
-
-                moveSlider(id, number_dot)
-            })
-
-            $sliderDots.append($dot)
-        }
-    })
-
-    $('.sliderBox__nextSlide').click(function () {
-        moveSlider($(this).data('id'))
-    })
-
-    $('.sliderBox__prevSlide').click(function () {
-        moveSlider($(this).data('id'), undefined, false)
-    })
-
-    for (let slider of document.querySelectorAll('.sliderBox__slider')) {
-        slider.addEventListener("swiped-right", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            console.log('swipe right')
-            moveSlider(slider.getAttribute('data-id'), undefined, false)
-        });
-
-        slider.addEventListener("swiped-left", (event) => {
-            event.stopPropagation();
-            event.preventDefault();
-            moveSlider(slider.getAttribute('data-id'), undefined)
-        });
-    }
-}
-
-function moveSlider(id, number_dot=undefined, is_next=true) {
-    if (number_dot === undefined) {
-        number_dot = $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).data('number')
-        let all_numbers = $(`.sliderBox__sliderDots[data-id="${id}"]`).children().length
-
-        number_dot = is_next ? (all_numbers-1) === number_dot ? 0 : number_dot+1 : number_dot === 0 ? all_numbers-1 : number_dot-1
-
-        $(`.sliderBox__sliderDots[data-id="${id}"]>.active`).removeClass('active')
-        $(`.sliderBox__sliderDots[data-id="${id}"]>.sliderBox__sliderDots__dot[data-number="${number_dot}"]`).addClass('active')
-    }
-
-    $(`.sliderBox__slider[data-id="${id}"]`).children().each(function () {
-        let number = number_dot * 100
-        let multiple_value = 100
-        let number_px = $(window).width() <= MOBILE_WIDTH ? 0 : number_dot * multiple_value
-        $(this).css('transform', `translateX( calc(-${number}% - ${number_px}px))`)
-    })
-}
-
 function listenFeedbackSliders() {
     $('.section__feedbackBox__sliderDots').children().each(function () {
         const $sliderDot = $(this)
@@ -360,14 +282,33 @@ function getReviewsVideos() {
     })
 }
 
+function initSliders() {
+    $('#photoSlider').slick({
+        slidesToShow: 2,
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+}
+
 function init() {
     setCountDown()
-    listenSliders()
     listenFeedbackSliders()
     listenPopups()
     closePopupsOnBack()
     sendForm()
     getReviewsVideos()
+    initSliders()
 }
 
 $( window ).on( "load", function() {

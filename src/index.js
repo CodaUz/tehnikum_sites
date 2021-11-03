@@ -3,6 +3,7 @@ import './images.js'
 
 // Styles
 import "./scss/app.scss";
+import "./scss/slick.scss";
 import "./scss/utils.scss";
 
 // App Scripts
