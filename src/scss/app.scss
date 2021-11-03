@@ -593,7 +593,9 @@ header, section, footer, .maxWidth {
 
     &__sliderBox {
 
-      .slick-list{padding:0 20% 0 0;}
+      .slick-list {
+        padding:0 20% 0 0;
+      }
 
       &__slideWrap {
         margin-right: get-vw(12.46px);
@@ -960,6 +962,12 @@ header, section, footer, .maxWidth {
     display: flex;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
+
+    @media screen and (max-width: 800px) {
+      .slick-list {
+        padding:0 20% 0 0;
+      }
+    }
 
     &__slide {
       width: calc(50% - 100px);
