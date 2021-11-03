@@ -238,6 +238,30 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 508:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/favicon-16x16.png");
+
+/***/ }),
+
+/***/ 5489:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/favicon-32x32.png");
+
+/***/ }),
+
 /***/ 9532:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1121,6 +1145,8 @@ var map = {
 	"./crossBlack.svg": 4861,
 	"./diploma.png": 6863,
 	"./facebook (1).svg": 2245,
+	"./favicon-16x16.png": 508,
+	"./favicon-32x32.png": 5489,
 	"./grid.png": 9532,
 	"./headImg.png": 2742,
 	"./headImgMobile.png": 8200,
