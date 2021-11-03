@@ -274,6 +274,30 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 508:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/favicon-16x16.png");
+
+/***/ }),
+
+/***/ 489:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/favicon-32x32.png");
+
+/***/ }),
+
 /***/ 30:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -420,6 +444,8 @@ var map = {
 	"./bgImg1Mob.png": 61,
 	"./bgImg2.png": 412,
 	"./bgImg2Mob.png": 285,
+	"./favicon-16x16.png": 508,
+	"./favicon-32x32.png": 489,
 	"./figureMob.png": 30,
 	"./first-logo.png": 374,
 	"./formSphere1.png": 69,
