@@ -341,9 +341,6 @@ function listenCoursesSlider() {
 
 async function initCourseData() {
     const first_date =  moment(`2021-10-19`, 'YYYY-MM-DD')
-    const first_date_format = first_date.locale("ru").format('D MMMM')
-
-    $('span.date').text(first_date_format)
 
     let eventTime= parseInt(new Date(first_date).getTime()/1000);
     let currentTime = parseInt(new Date().getTime()/1000);
@@ -370,6 +367,25 @@ async function initCourseData() {
     }
 
     $('.placesLeft').text(placesLeft)
+    initCoursesInForm()
+}
+
+async function initCoursesInForm() {
+    const COURSES_ID = [[16, 'contextCourseDate'], [14, 'graphicDesignDate'], [13, 'targetFullCourseDate']]
+
+    for (let course_id of COURSES_ID) {
+        let res = await axios.get('https://api.tehnikum.uz/course.php', {
+            params: {
+                action: 'get',
+                token: '123',
+                id: course_id[0]
+            }
+        })
+        res = res['data']['row']
+        const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
+        const first_date_format = first_date.locale("ru").format('D MMMM')
+        $(`.${course_id[1]}`).text(first_date_format)
+    }
 }
 
 function listenSalaryImages() {
