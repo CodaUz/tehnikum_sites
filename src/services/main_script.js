@@ -1,5 +1,6 @@
 require('@babel/polyfill')
 const moment = require('moment');
+const axios = require('axios');
 
 const MOBILE_WIDTH = 800
 
@@ -269,6 +270,24 @@ function listenYandexGoals() {
     }
 }
 
+async function initCoursesInForm() {
+    const COURSES_ID = [[13, 'targetFullCourseDate']]
+
+    for (let course_id of COURSES_ID) {
+        let res = await axios.get('https://api.tehnikum.uz/course.php', {
+            params: {
+                action: 'get',
+                token: '123',
+                id: course_id[0]
+            }
+        })
+        res = res['data']['row']
+        const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
+        const first_date_format = first_date.locale("ru").format('D MMMM')
+        $(`.${course_id[1]}`).text(first_date_format)
+    }
+}
+
 function init() {
     listenYandexGoals()
     getNextDateDiscount()
@@ -280,6 +299,7 @@ function init() {
     sendForm()
     closePopupsOnBack()
     listenPopups()
+    initCoursesInForm()
 
     $(window).on('resize', () => {
         getMaxHeight()
