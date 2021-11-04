@@ -190,6 +190,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 5472:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/course3.png");
+
+/***/ }),
+
 /***/ 1190:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -853,6 +865,7 @@ var map = {
 	"./casesGrid.svg": 5547,
 	"./course1.png": 2182,
 	"./course2.png": 390,
+	"./course3.png": 5472,
 	"./cross.png": 1190,
 	"./cross.svg": 2787,
 	"./crossBlack.svg": 4861,
