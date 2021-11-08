@@ -282,11 +282,11 @@ function sendForm() {
 }
 
 function setCountDown() {
-    if (!localStorage.getItem('timeLeft')) {
-        localStorage.setItem('timeLeft', parseInt(new Date(moment().add("days", 2)).getTime()/1000))
+    if (!localStorage.getItem(`timeLeft${window.location.pathname}`)) {
+        localStorage.setItem(`timeLeft${window.location.pathname}`, parseInt(new Date(moment().add("days", 2)).getTime()/1000))
     }
 
-    let eventTime= parseInt(localStorage.getItem('timeLeft'));
+    let eventTime= parseInt(localStorage.getItem(`timeLeft${window.location.pathname}`));
     let currentTime = parseInt(new Date().getTime()/1000);
     let diffTime = eventTime - currentTime;
     let duration = moment.duration(diffTime*1000, 'milliseconds');
@@ -393,6 +393,31 @@ function lazyLoad() {
     // }
 }
 
+async function getCourseDate() {
+    const COURSE_ID = 23
+    let data = '2021-12-01'
+
+    let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            course_id: COURSE_ID
+        })
+    });
+    res = await res.json();
+    res = res['data']
+
+    if (res['date_start']) {
+        data = res['date_start']
+    }
+
+    const date_format = moment(data, 'YYYY-MM-DD').locale("ru").format('D MMMM')
+    $('.date').text(date_format)
+}
+
 function initSlickSliders() {
     $('#photoSlider').slick({
         slidesToShow: 2,
@@ -421,6 +446,7 @@ function init() {
     closePopupsOnBack()
     sendForm()
     getReviewsVideos()
+    getCourseDate()
 
     document.querySelector(".loader").classList.add("active");
     setTimeout(() => {
