@@ -133,10 +133,11 @@ async function takeCourse(formId, is_redirect=false) {
         for (let item of document.querySelectorAll(".input")) {
             item.classList.remove("active");
         }
+        const COURSE = 'python'
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-tg`
-        const WEBINAR_ID = 604904
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
+        const WEBINAR_ID = 817339
 
 
         if (is_redirect) {
@@ -148,12 +149,12 @@ async function takeCourse(formId, is_redirect=false) {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({site: 'python-start', name,phone, redisKey, redisValue})
+                    body: JSON.stringify({site: COURSE, name,phone, redisKey, redisValue})
                 }
             );
 
              fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=tg&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=${COURSE}&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -177,12 +178,12 @@ async function takeCourse(formId, is_redirect=false) {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({site: 'python-start', name,phone})
+                    body: JSON.stringify({site: COURSE, name,phone})
                 }
             );
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=tg${qs.r ?  `-${qs.r}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=${COURSE}${qs.r ?  `-${qs.r}` : ''}`,
                 {
                     method: "GET",
                 }
