@@ -134,9 +134,9 @@ function listenPopups() {
     $('.openProgramForm').click(() => {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
-        $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
-        $('p.footer__mainBox__formBox__text').text('Сразу после заполнения данных вы перейдете в Telegram, где сможете посмотреть всю программу')
-        $('p.titleName').text('Программа курса')
+        $('div.sendForm[data-form-id="Program"]').text('Записаться')
+        $('p.footer__mainBox__formBox__text').text('')
+        $('p.titleName').text('Бесплатная Лекция')
         openModalForm('.formBoxIndex')
     })
 
@@ -215,6 +215,9 @@ async function takeCourse(formId, is_redirect=false) {
 
 
         if (is_redirect) {
+            $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
+            $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
+
              fetch(
                 `https://node.snimerovsky.xyz/log`,
                 {
@@ -228,18 +231,18 @@ async function takeCourse(formId, is_redirect=false) {
             );
 
              fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=wp&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=wp&action=bl-reg${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
             );
 
-            let a= document.createElement('a');
-
-            a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
-            setTimeout(() => {
-                a.click();
-            }, 500)
+            // let a= document.createElement('a');
+            //
+            // a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
+            // setTimeout(() => {
+            //     a.click();
+            // }, 500)
         } else {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
