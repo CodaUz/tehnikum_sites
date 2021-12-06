@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <!-- Metabox -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta property="og:type" content="ru_RU" />
+    <meta property="og:site_name" content="Tehnikum.uz" />
+    <meta
+      property="og:title"
+      content="Школа актуальных профессий в Узбекистане - Tehnikum"
+    />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://tehnikum.school" />
+    <meta property="og:locale" content="" />
+    <meta
+      property="og:image"
+      content="https://tehnikum.school/coverVideo.webp"
+    />
+    <meta property="og:image:width" content="230" />
+    <meta property="og:image:height" content="120" />
+      <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  </head>
+
+  <body>
+<!--    <div class="loader">-->
+<!--      <svg-->
+<!--        width="200"-->
+<!--        height="100"-->
+<!--        viewBox="0 0 200 30"-->
+<!--        fill=""-->
+<!--        class="svg"-->
+<!--        xmlns="http://www.w3.org/2000/svg"-->
+<!--      >-->
+<!--        <path-->
+<!--          class="path"-->
+<!--          stroke="black"-->
+<!--          stroke-width="2"-->
+<!--          d="M18.763 1.00372H0V5.13011H7.31535V29.1078H11.3918V5.13011H18.7072V1.00372H18.763ZM33.7288 0C25.4083 0 18.7072 6.69145 18.7072 15C18.7072 23.3085 25.4083 30 33.7288 30C39.9273 30 45.2323 26.2639 47.5218 20.9108L42.9986 20.5762C42.5519 21.3011 41.9934 21.9703 41.3792 22.6394C39.313 24.7026 36.6326 25.8178 33.7288 25.8178C30.825 25.8178 28.1445 24.7026 26.0784 22.6394C24.4031 20.9665 23.2863 18.7918 23.007 16.3941H48.6387C48.6945 15.948 48.6945 15.4461 48.6945 15C48.7504 6.69145 42.0493 0 33.7288 0ZM23.2863 12.2677C23.7888 10.4833 24.7382 8.75465 26.0784 7.36059C28.1445 5.2974 30.825 4.18216 33.7288 4.18216C36.6326 4.18216 39.313 5.2974 41.3792 7.36059C42.7194 8.69888 43.7245 10.4275 44.1713 12.2677H23.2863ZM72.0925 12.0446H55.5631V1.00372H51.4308V29.1078H55.5631V16.171H72.0925V29.1078H76.2248V1.00372H72.0925V12.0446ZM104.202 5.13011H107.887V25.1487H104.202V29.1078H115.594V25.1487H111.908V5.13011H115.594V1.00372H104.202V5.13011ZM96.7189 25.3717H93.6476L90.8555 1.00372H79.6312V29.1078H84.0427V4.79554H87.0582L89.7386 29.1078H100.963V1.00372H96.6631L96.7189 25.3717ZM123.3 1.00372H119.168V29.1078H123.3V19.461L145.358 29.4424V24.7026L124.138 15.0558L145.358 5.35316V0.669145L123.3 10.6506V1.00372ZM163.283 24.9814H153.008V1.00372H148.932V29.1078H167.415V1.00372H163.283V24.9814ZM189.138 1.00372L186.513 25.2602H184.168L181.543 1.00372H170.989V29.1078H175.233V4.68401H177.634L180.427 29.1078H190.031L192.935 4.79554H195.281L195.225 29.1078H199.636V1.00372H189.138Z"-->
+<!--          fill="white"-->
+<!--        />-->
+<!--      </svg>-->
+<!--    </div>-->
+    <div class="popupBox popupBoxVideo">
+      <div class="grayBack grayBackVideo"></div>
+      <div class="popupBox__box">
+        <div class="videoBox">
+
+        </div>
+      </div>
+    </div>
+    <div class="formBoxIndex" id="formRequisite">
+        <div class="grayBack"></div>
+        <div class="formBox">
+            <div class="form">
+                <div class="footer__mainBox__formBox" id="formProgram">
+                    <div class="footer__mainBox__formBox__readyBox" data-form-id="Program">
+                        <img src="images/thanks.png" alt="cross" class="footer__mainBox__formBox__readyBox__img" />
+                        <p class="footer__mainBox__formBox__readyBox__title">
+                            спасибо за заявку!
+                        </p>
+                        <p class="footer__mainBox__formBox__readyBox__text">
+                            наш менеджер свяжется с вами</p>
+                    </div>
+                    <p class="titleName">оставь заявку</p>
+                    <p class="footer__mainBox__formBox__text"></p>
+                    <input type="text" name="nameProgram" placeholder="Имя">
+                    <input type="text" name="phoneProgram" class="footer__mainBox__formBox__input" data-mask="+998 00-000-0000" placeholder="+998 00-000-000">
+                    <div class="btn btn__blue sendForm" data-form-id="Program">Записаться на курс</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header padding">
+        <img src="images/Logo.svg" alt="logo" class="header__logo">
+        <div class="header__contentBox">
+            <div class="header__contentBox__textBox">
+                <div class="header__contentBox__textBox__topBoxImg">
+                    <div class="header__contentBox__textBox__topBox">
+                        <div class="header__contentBox__textBox__topBox__box">
+                            <p class="header__contentBox__textBox__topBox__box__title">старт</p>
+                            <p class="header__contentBox__textBox__topBox__box__text">14 декабря</p>
+                        </div>
+                        <div class="header__contentBox__textBox__topBox__box">
+                            <p class="header__contentBox__textBox__topBox__box__title">длительность</p>
+                            <p class="header__contentBox__textBox__topBox__box__text">2 месяца | 24 занятия</p>
+                        </div>
+                    </div>
+                    <img src="images/pic_python.svg" alt="python" class="header__contentBox__textBox__topBoxImg__img mobile">
+                </div>
+                <h1 class="header__contentBox__textBox__title">
+                    Python для начинающих
+                </h1>
+                <p class="header__contentBox__textBox__text">
+                    Python — самый быстрорастущий язык программирования за последние несколько лет.  Даже если ты никогда не программировал, ты с легкостью сможешь его выучить
+                </p>
+                <div class="header__contentBox__textBox__btnBox">
+                    <div class="btn btn__blue openProgramForm">Записаться на бесплатную лекцию</div>
+                    <div class="btn btn__white openForm">Записаться на курс</div>
+                </div>
+            </div>
+            <img src="images/pic_python.svg" alt="python" class="header__contentBox__img desktop">
+        </div>
+    </header>
+    <section class="section padding">
+        <h2 class="title">Этот курс для тебя,<br> если ты...</h2>
+        <div class="section__fourGridContainer">
+            <div class="section__fourGridContainer__box">
+                <img src="images/pic_memoji_01.png" alt="emoji" class="section__fourGridContainer__box__img">
+                <h3 class="section__fourGridContainer__box__title text">
+                    FRONT-END РАЗРАБОТЧИК
+                </h3>
+                <p class="section__fourGridContainer__box__text text">Если ты уже владеешь навыками front-end разработки, то Python - лучший язык, чтобы начать изучение back-end и встать на путь full-stack разработчика</p>
+            </div>
+            <div class="section__fourGridContainer__box">
+                <img src="images/pic_memoji_03.png" alt="emoji" class="section__fourGridContainer__box__img">
+                <h3 class="section__fourGridContainer__box__title text">
+                    СТУДЕНТ
+                </h3>
+                <p class="section__fourGridContainer__box__text text">Профессия Python-разработчика это отличная возможность для того, чтобы построить карьеру в сфере IT. В конце курса у тебя уже будет портфолио для трудоустройства</p>
+            </div>
+            <div class="section__fourGridContainer__box">
+                <img src="images/pic_memoji_02.png" alt="emoji" class="section__fourGridContainer__box__img">
+                <h3 class="section__fourGridContainer__box__title text">
+                    НАЧИНАЮЩИЙ ПРОГРАММИСТ
+                </h3>
+                <p class="section__fourGridContainer__box__text text">Тем, кто уже начал осваивать Python, но хочет получить структурированные знания и конструктивный фидбек</p>
+            </div>
+            <div class="section__fourGridContainer__box">
+                <img src="images/pic_memoji_04.png" alt="emoji" class="section__fourGridContainer__box__img">
+                <h3 class="section__fourGridContainer__box__title text">
+                    ХОЧЕШЬ ОБУЧИТЬСЯ НОВОЙ ПРОФЕССИИ
+                </h3>
+                <p class="section__fourGridContainer__box__text text">Python-разработчик является одной из самых перспективных профессий на сегодняшний день</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section fullWidth blueDiscount">
+        <div class="padding maxWidth">
+            <h2 class="blueDiscount__title">
+                10% скидка действует
+            </h2>
+            <div class="blueDiscount__timeBox">
+                <div class="blueDiscount__timeBox__box">
+                    <p class="blueDiscount__timeBox__box__time timeDays">00</p>
+                    <p class="blueDiscount__timeBox__box__text">дней</p>
+                </div>
+                <div class="blueDiscount__timeBox__box">
+                    <p class="blueDiscount__timeBox__box__time timeHours">00</p>
+                    <p class="blueDiscount__timeBox__box__text">часов</p>
+                </div>
+                <div class="blueDiscount__timeBox__box">
+                    <p class="blueDiscount__timeBox__box__time timeMinutes">00</p>
+                    <p class="blueDiscount__timeBox__box__text">минут</p>
+                </div>
+            </div>
+            <a href="#form">
+                <div class="btn btn__white">Воспользоваться скидкой</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section padding">
+        <h2 class="title">А кто преподает?</h2>
+        <div class="section__speakerBox">
+            <img src="images/speaker.png" alt="speaker" class="section__speakerBox__img">
+            <div class="section__speakerBox__contentBox">
+                <h3 class="section__speakerBox__contentBox__title">Роман Ицков</h3>
+                <p class="section__speakerBox__contentBox__text text">Практикующий преподаватель с опытом работы в крупнейших компаниях в сфере разработки и внедрения телеграм-ботов</p>
+                <div class="section__speakerBox__contentBox__gridBox">
+                    <div class="section__speakerBox__contentBox__gridBox__box">
+                        <img src="images/speakerIcon1.svg" alt="speakerIcon"
+                             class="section__speakerBox__contentBox__gridBox__box__img">
+                        <p class="section__speakerBox__contentBox__gridBox__box__text">
+                            Призёр олимпиад по программированию
+                        </p>
+                    </div>
+                    <div class="section__speakerBox__contentBox__gridBox__box">
+                        <img src="images/speakerIcon2.svg" alt="speakerIcon"
+                             class="section__speakerBox__contentBox__gridBox__box__img">
+                        <p class="section__speakerBox__contentBox__gridBox__box__text">
+                            Работает со средним и малым бизнесом
+                        </p>
+                    </div>
+                    <div class="section__speakerBox__contentBox__gridBox__box">
+                        <img src="images/speakerIcon3.svg" alt="speakerIcon"
+                             class="section__speakerBox__contentBox__gridBox__box__img">
+                        <p class="section__speakerBox__contentBox__gridBox__box__text">
+                            Более 5 лет опыта в программировании
+                        </p>
+                    </div>
+                    <div class="section__speakerBox__contentBox__gridBox__box">
+                        <img src="images/speakerIcon4.svg" alt="speakerIcon"
+                             class="section__speakerBox__contentBox__gridBox__box__img">
+                        <p class="section__speakerBox__contentBox__gridBox__box__text">
+                            Любимец всех студентов
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section padding">
+        <h2 class="title">За 2 месяца ты станешь<br> полноценным Python-<br>разработчиком</h2>
+        <div class="section__gridBox">
+            <div class="section__gridBox__box">
+                <p class="section__gridBox__box__title text">—  Обучаем с нуля</p>
+                <p class="section__gridBox__box__text text">Начнешь с самых основ и будешь двигаться от простого к сложному, закрепляя каждый урок практикой</p>
+            </div>
+            <div class="section__gridBox__box">
+                <p class="section__gridBox__box__title text">—  Помогаем лучшим студентам с трудоустройством</p>
+                <p class="section__gridBox__box__text text">Лучших студентов мы рекомендуем в ведущие веб-студии Узбекистана</p>
+            </div>
+            <div class="section__gridBox__box">
+                <p class="section__gridBox__box__title text">—  70% практики</p>
+                <p class="section__gridBox__box__text text">Большая часть курса проходит в режиме live-коддинга, что позволяет сразу применить знания на практике и сформировать портфолио</p>
+            </div>
+            <div class="section__gridBox__box">
+                <p class="section__gridBox__box__title text">—  Доводим до результата</p>
+                <p class="section__gridBox__box__text text">В рамках курса за твоими успехами будут следить тьюторы, которые ответят на любые возникающие вопросы и помогут усвоить материал</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section padding">
+        <div class="whatYouGetBox">
+            <h2 class="title">
+                Что вы изучите:
+            </h2>
+            <img class="whatYouGetBox__rightIcon" src="images/polygon.svg" />
+            <div class="whatYouGetBox__textBox">
+                <div class="whatYouGetBox__textBox__box">
+                    <p class="whatYouGetBox__textBox__box__title">Основы Python, работа с Git</p>
+                </div>
+                <div class="whatYouGetBox__textBox__box">
+                    <p class="whatYouGetBox__textBox__box__title">Функции</p>
+                </div>
+                <div class="whatYouGetBox__textBox__box">
+                    <p class="whatYouGetBox__textBox__box__title">Объектно-ориентированное программирование</p>
+                </div>
+                <div class="whatYouGetBox__textBox__box">
+                    <p class="whatYouGetBox__textBox__box__title">Работа с базами данных</p>
+                </div>
+                <div class="whatYouGetBox__textBox__box">
+                    <p class="whatYouGetBox__textBox__box__title">Принципы HTTP и работа с API, формат JSON</p>
+                </div>
+                <div class="whatYouGetBox__textBox__box">
+                    <p class="whatYouGetBox__textBox__box__title">Django Framework</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section padding">
+        <div class="diplomBox">
+            <h2 class="diplomBox__title title">диплом об окончании курса</h2>
+            <img src="images/pic_diplom.png" alt="diplom" class="diplomBox__img">
+            <div class="diplomBox__textBox">
+                <h2 class="diplomBox__textBox__title title">диплом об<br> окончании курса</h2>
+                <p class="diplomBox__textBox__text text">Он дополнит твое портфолио и выгодно выделит тебя на собеседовании в компанию мечты</p>
+                <a href="#">
+                    <div class="diplomBox__textBox__btn btn btn__blue openProgramForm">
+                        Записаться на бесплатную лекцию
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section__salary padding">
+        <h2 class="section__salary__title title">Сколько может<br> зарабатывать Python-<br>разработчик?</h2>
+        <p class="section__salary__text text">
+            По данным сайта hh.uz большие компании готовы платить начинающим Python-разработчикам от <span class="bold">300$</span>. Тебе лишь нужно набираться опыта и твой доход будет расти с каждым разом
+            . А мы готовы тебе помочь в этом!
+        </p>
+        <img src="images/pic_hh.png" alt="salary" class="section__salary__img">
+    </section>
+
+    <section class="section padding">
+        <h2 class="title">Кроме этого тебя ждут:</h2>
+        <div class="section__studentBox">
+            <img src="images/pic_student-box.png" alt="studentBox" class="section__studentBox__img">
+            <div class="section__studentBox__textBox">
+                <p class="section__studentBox__textBox__text">
+                    150$ от наших партнёров
+                </p>
+                <p class="section__studentBox__textBox__text">
+                    Компьютер для каждого студента со всеми необходимыми программами
+                </p>
+                <p class="section__studentBox__textBox__text">
+                    Набор студента: приветственное письмо с ссылкой на закрытую группу, канцелярские принадлежности, стикеры и партнерские промо-коды
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section padding">
+        <h2 class="title marginBottom40">Отзывы наших студентов</h2>
+        <div class="section__feedbackBox" id="feedbackBox">
+            <div class="section__feedbackBox__box getVideo" data-link="v-Hv1K9YegI">
+                <img src="images/icon_youtube.svg" alt="youtube" class="section__feedbackBox__box__icon">
+                <p class="section__feedbackBox__box__text">
+                    Перед курсом у меня были страхи, но после первого урока все сомнения исчезли. Я отучился здесь и планирую развиваться и зарабатывать в этой сфере. Советую всем TEHNIKUM
+                </p>
+                <div class="section__feedbackBox__box__student">
+                    <img src="images/student1.png" alt="avatar" class="section__feedbackBox__box__student__avatar">
+                    <p class="section__feedbackBox__box__student__name">
+                        Бобурбек<br> Халилов
+                    </p>
+                </div>
+            </div>
+            <div class="section__feedbackBox__box getVideo" data-link="v-Hv1K9YegI">
+                <img src="images/icon_youtube.svg" alt="youtube" class="section__feedbackBox__box__icon">
+                <p class="section__feedbackBox__box__text">
+                    В январе этого года я нашла TEHNIKUM, их атмосфера очень поддерживает, заряжает на успех и развеивает все страхи. Занимайся, учись и развивайся в TEHNIKUM CODING
+                </p>
+                <div class="section__feedbackBox__box__student">
+                    <img src="images/student2.png" alt="avatar" class="section__feedbackBox__box__student__avatar">
+                    <p class="section__feedbackBox__box__student__name">
+                        Ойниса<br> Касымова
+                    </p>
+                </div>
+            </div>
+            <div class="section__feedbackBox__box getVideo" data-link="v-Hv1K9YegI">
+                <img src="images/icon_youtube.svg" alt="youtube" class="section__feedbackBox__box__icon">
+                <p class="section__feedbackBox__box__text">
+                    После курса, я начал изучать тестирование, это помогло мне устроиться ведущим специалистом в Билайн. Там я успешно реализовал проект по разработке веб-сайта. Теперь я хочу открыть свою IT-компанию на аутсорсе и развивать ее.
+                </p>
+                <div class="section__feedbackBox__box__student">
+                    <img src="images/student3.png" alt="avatar" class="section__feedbackBox__box__student__avatar">
+                    <p class="section__feedbackBox__box__student__name">
+                        Хусан<br>
+                        Мухтаров
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section__feedbackBox__sliderDots">
+            <div class="section__feedbackBox__sliderDots__dot active" data-index="0"></div>
+            <div class="section__feedbackBox__sliderDots__dot" data-index="1"></div>
+            <div class="section__feedbackBox__sliderDots__dot" data-index="2"></div>
+        </div>
+
+    </section>
+
+    <section class="section fullWidth blueDiscount">
+        <div class="padding maxWidth">
+            <h2 class="blueDiscount__title">
+                10% скидка действует
+            </h2>
+            <div class="blueDiscount__timeBox">
+                <div class="blueDiscount__timeBox__box">
+                    <p class="blueDiscount__timeBox__box__time timeDays">00</p>
+                    <p class="blueDiscount__timeBox__box__text">дней</p>
+                </div>
+                <div class="blueDiscount__timeBox__box">
+                    <p class="blueDiscount__timeBox__box__time timeHours">00</p>
+                    <p class="blueDiscount__timeBox__box__text">часов</p>
+                </div>
+                <div class="blueDiscount__timeBox__box">
+                    <p class="blueDiscount__timeBox__box__time timeMinutes">00</p>
+                    <p class="blueDiscount__timeBox__box__text">минут</p>
+                </div>
+            </div>
+            <a href="#form">
+                <div class="btn btn__white">Воспользоваться скидкой</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section padding">
+        <h2 class="title">Немного о нас</h2>
+        <div class="section__aboutUs">
+            <div class="section__aboutUs__leftBox">
+                <img src="images/aboutUs.png" alt="aboutUs" class="section__aboutUs__leftBox__img">
+                <p class="section__aboutUs__leftBox__text text">Резиденты IT-парка и одна из самых успешных DIGITAL-школ в Узбекистане</p>
+            </div>
+            <div class="section__aboutUs__rightBox">
+                <div class="section__aboutUs__rightBox__box">
+                    <p class="section__aboutUs__rightBox__box__title">
+                        > 2500
+                    </p>
+                    <p class="section__aboutUs__rightBox__box__text">
+                        выпускников
+                    </p>
+                </div>
+                <div class="section__aboutUs__rightBox__box">
+                    <p class="section__aboutUs__rightBox__box__title">
+                        10 направлений
+                    </p>
+                    <p class="section__aboutUs__rightBox__box__text">
+                        обучения в сфере Digital
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section padding">
+        <div class="section__sliderBox">
+            <h2 class="title marginBottom14">Все еще сомневаешься?</h2>
+            <p class="section__sliderBox__text text">
+                Тогда последний козырь: после каждого выпуска мы устраиваем крутые вечеринки в честь вручения дипломов!
+            </p>
+            <div class="sliderBox">
+                <div class="section__sliderBox__slider" id="photoSlider">
+                    <img src="images/slider_image_01.png" alt="slider" class="section__sliderBox__slider__img sliderBox__slider__slide">
+                    <img src="images/slider_image_02.png" alt="slider" class="section__sliderBox__slider__img sliderBox__slider__slide">
+                    <img src="images/slider_image_03%20(1).png" alt="slider" class="section__sliderBox__slider__img sliderBox__slider__slide">
+                    <img src="images/slider_image_04.png" alt="slider" class="section__sliderBox__slider__img sliderBox__slider__slide">
+                    <img src="images/slider_image_05.png" alt="slider" class="section__sliderBox__slider__img sliderBox__slider__slide">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer fullWidth">
+        <div class="padding maxWidth">
+            <div class="footer">
+                <div class="footer__leftBox">
+                    <h2 class="title">запишись на курс прямо сейчас!</h2>
+                    <div class="footer__leftBox__textBox">
+                        <div class="footer__leftBox__textBox__box">
+                            <img src="images/icon_python.svg" alt="icon" class="footer__leftBox__textBox__box__img">
+                            <p class="footer__leftBox__textBox__box__text text">Программирование на Python</p>
+                        </div>
+                        <div class="footer__leftBox__textBox__box">
+                            <img src="images/icon_game_bot.svg" alt="icon" class="footer__leftBox__textBox__box__img">
+                            <p class="footer__leftBox__textBox__box__text text">Разработка востребованных телеграм-ботов</p>
+                        </div>
+                        <div class="footer__leftBox__textBox__box">
+                            <img src="images/icon_database.svg" alt="icon" class="footer__leftBox__textBox__box__img">
+                            <p class="footer__leftBox__textBox__box__text text">Работа с базами данных</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__formBox" id="form">
+                    <div class="footer__mainBox__formBox__readyBox footer__formBox__readyBox" data-form-id="Contact">
+                        <img src="images/thanks.png" alt="cross" class="footer__formBox__readyBox__img" />
+                        <p class="footer__formBox__readyBox__title">
+                            спасибо за заявку!
+                        </p>
+                        <p class="footer__formBox__readyBox__text">
+                            наш менеджер свяжется с вами</p>
+                    </div>
+                    <div class="footer__formBox__discount" data-form-id="Contact">
+                        <div class="footer__formBox__discount__ellipse"></div>
+                        <p>10%</p>
+                    </div>
+                    <h3 class="footer__formBox__title">оставь заявку</h3>
+                    <p class="footer__formBox__text">начало обучения: 14 декабря</p>
+                    <div class="footer__formBox__inputBox">
+                        <input type="text" name="nameContact" placeholder="Имя">
+                        <input type="text" name="phoneContact" class="footer__mainBox__formBox__input" data-mask="+998 00-000-0000" placeholder="+998 00-000-000">
+                    </div>
+                    <div class="btn btn__blue sendForm" data-form-id="Contact">Запись на курс</div>
+                    <p class="footer__formBox__endBoldText">
+                        Остались вопросы?
+                    </p>
+                    <p class="footer__formBox__endText">
+                        Звони: +998 33 135 33 55<br>
+                        Наши консультанты доступны каждый день<br>
+                        с 10:00 до 22:00.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="libs/jquery.js"></script>
+    <script src="libs/slick.min.js"></script>
+<script src="libs/swiped-events.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   setTimeout(() => {
+      //     document.querySelector(".loader").classList.add("active");
+      //     setTimeout(() => {
+      //       document.querySelector("html").removeAttribute("style");
+      //       document.querySelector(".loader").style.display = "none";
+      //     }, 500);
+      //   }, 3000);
+      // });
+
+      setTimeout(() => {
+        let script = document.createElement("script");
+        script.async = true;
+        script.src = "services/utm.js";
+        document.body.appendChild(script);
+      }, 2000);
+
+      setTimeout(() => {
+        let script = document.createElement("script");
+        script.async = true;
+        script.src = "services/main_script.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.async = true;
+        script.src = "services/api.js";
+        document.body.appendChild(script);
+      }, 4000);
+    </script>
+    <script async>
+      setTimeout(() => {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1063245477548161');
+          fbq('track', 'PageView');
+
+
+          (function (m, e, t, r, i, k, a) {
+          m[i] =
+            m[i] ||
+            function () {
+              (m[i].a = m[i].a || []).push(arguments);
+            };
+          m[i].l = 1 * new Date();
+          (k = e.createElement(t)),
+            (a = e.getElementsByTagName(t)[0]),
+            (k.async = 1),
+            (k.src = r),
+            a.parentNode.insertBefore(k, a);
+        })(
+          window,
+          document,
+          "script",
+          "https://mc.yandex.ru/metrika/tag.js",
+          "ym"
+        );
+
+        ym(69008998, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true,
+        });
+      }, 3000);
+    </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-210529914-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-210529914-1');
+</script>
+  </body>
+</html>
