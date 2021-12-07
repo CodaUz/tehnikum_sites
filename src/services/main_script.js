@@ -163,12 +163,12 @@ async function takeCourse(formId, is_redirect=false) {
                 }
             );
 
-            // let a= document.createElement('a');
-            //
-            // a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
-            // setTimeout(() => {
-            //     a.click();
-            // }, 500)
+            let a= document.createElement('a');
+
+            a.href= `https://t.me/TehnikumWebinarBot?start=37-webinarpool-11`;
+            setTimeout(() => {
+                a.click();
+            }, 500)
         } else {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
