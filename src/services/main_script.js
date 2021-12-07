@@ -215,8 +215,7 @@ async function takeCourse(formId, is_redirect=false) {
 
 
         if (is_redirect) {
-            $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
-            $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
+            closeModalForm('.formBoxIndex')
 
              fetch(
                 `https://node.snimerovsky.xyz/log`,
