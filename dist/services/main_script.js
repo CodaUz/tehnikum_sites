@@ -216,6 +216,7 @@ async function takeCourse(formId, is_redirect=false) {
 
 
         if (is_redirect) {
+
              fetch(
                 `https://node.snimerovsky.xyz/log`,
                 {
@@ -396,24 +397,24 @@ function lazyLoad() {
 
 async function getCourseDate() {
     const COURSE_ID = 23
-    let data = '2021-12-01'
+    let data = '2022-01-15'
 
-    let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            course_id: COURSE_ID
-        })
-    });
-    res = await res.json();
-    res = res['data']
-
-    if (res['date_start']) {
-        data = res['date_start']
-    }
+    // let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         course_id: COURSE_ID
+    //     })
+    // });
+    // res = await res.json();
+    // res = res['data']
+    //
+    // if (res['date_start']) {
+    //     data = res['date_start']
+    // }
 
     const date_format = moment(data, 'YYYY-MM-DD').locale("ru").format('D MMMM')
     $('.date').text(date_format)
