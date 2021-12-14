@@ -131,10 +131,10 @@ function listenPopups() {
         openModalForm('.formBoxIndex')
     })
 
-    $('.openProgramForm').click(() => {
+    $('.openProgramForm').on('click', function () {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
-        $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
+        $('div.sendForm[data-form-id="Program"]').text(`${$(this).hasClass('full') ? 'Скачать полную программу' : 'Скачать программу'}`)
         $('p.footer__mainBox__formBox__text').text('Сразу после заполнения данных вы перейдете в Telegram, где сможете посмотреть всю программу')
         $('p.titleName').text('Программа курса')
         openModalForm('.formBoxIndex')
@@ -144,7 +144,7 @@ function listenPopups() {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', '')
         $('p.footer__mainBox__formBox__text').text('')
-        $('div.sendForm[data-form-id="Program"]').text('Записаться на курс')
+        $('div.sendForm[data-form-id="Program"]').text('Оставить заявку')
         $('p.titleName').text('оставь заявку')
         openModalForm('.formBoxIndex')
     })
