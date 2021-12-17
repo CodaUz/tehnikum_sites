@@ -338,6 +338,7 @@ async function initCourseData() {
         }
     })
     res = res['data']['row']
+    console.log('res', res)
     const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
     const first_date_format = first_date.locale("ru").format('D MMMM')
 
@@ -368,6 +369,7 @@ async function initCourseData() {
     }
 
     $('.placesLeft').text(placesLeft)
+    $('.duration').text(res['duration'])
     initCoursesInForm()
 }
 
