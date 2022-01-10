@@ -89,11 +89,11 @@
         &__datesBox {
           margin-bottom: get-vw(30px);
           margin-right: get-vw(-90px);
+          align-self: self-start;
 
           @media screen and (max-width: 800px) {
             margin-right: 0;
             margin-bottom: get-mobile-vw(30px);
-            align-self: self-start;
           }
 
           &__title {
