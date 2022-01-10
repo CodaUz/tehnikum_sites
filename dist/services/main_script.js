@@ -136,7 +136,10 @@ function listenPopups() {
         $('div[data-form-id="Program"]').attr('data-program', 'true')
         $('div.sendForm[data-form-id="Program"]').text('Записаться')
         $('p.footer__mainBox__formBox__text').text('')
-        $('p.titleName').text('Бесплатная Лекция')
+        $('p.titleName').text('Записаться на бесплатную лекцю')
+        $('p.titleName').css('text-align', 'start')
+        $('.footer__mainBox__formBox__datesBox').css('display', 'block')
+        $('.footer__mainBox__formBox').addClass('datesBox')
         openModalForm('.formBoxIndex')
     })
 
@@ -146,6 +149,8 @@ function listenPopups() {
         $('p.footer__mainBox__formBox__text').text('')
         $('div.sendForm[data-form-id="Program"]').text('Записаться на курс')
         $('p.titleName').text('оставь заявку')
+        $('.footer__mainBox__formBox__datesBox').css('display', 'none')
+        $('.footer__mainBox__formBox').removeClass('datesBox')
         openModalForm('.formBoxIndex')
     })
 }
@@ -212,10 +217,9 @@ async function takeCourse(formId, is_redirect=false) {
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
-        const WEBINAR_ID = 362556
+        const WEBINAR_ID = +$('.footer__mainBox__formBox__datesBox__gridBox__box.active').data('id')
 
-
-        if (is_redirect) {
+        if (is_redirect && WEBINAR_ID) {
             closeModalForm('.formBoxIndex')
 
 
@@ -240,7 +244,7 @@ async function takeCourse(formId, is_redirect=false) {
 
             let a= document.createElement('a');
 
-            a.href= `https://t.me/TehnikumWebinarBot?start=38-webinarpool-17`;
+            a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-longwebinar${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
             setTimeout(() => {
                 a.click();
             }, 500)
@@ -422,6 +426,48 @@ async function getCourseDate() {
     $('.date').text(date_format)
 }
 
+async function initWebinarDates() {
+    try {
+        const COURSE = 'html'
+        let webinars = await fetch('https://api-webinar.tehnikum.school/api/get_webinars')
+        webinars = await webinars.json()
+        webinars = webinars.filter(v => moment(v['data_start']) && moment(v['data_start']) >= moment() && v['course'] === COURSE)
+        webinars = webinars.map(v => {
+            return {
+                ...v,
+                time_start: new Date(moment(v['data_start'])).getTime(),
+                date_start_text: moment(v['data_start']).locale("ru").format('D MMMM'),
+                date_start_time: moment(v['data_start']).locale("ru").format('HH:mm')
+            }
+        })
+        webinars.sort((a,b) => (a.time_start > b.time_start) ? -1 : ((b.time_start > a.time_start) ? 1 : 0))
+        let index = 0
+
+        if (webinars.length === 0) {
+            $('.footer__mainBox__formBox__datesBox').remove()
+        }
+
+        for (let webinar of webinars) {
+            $('.footer__mainBox__formBox__datesBox__gridBox').append(`
+                <div class="footer__mainBox__formBox__datesBox__gridBox__box ${index === 0 ? 'active' : ''}" data-id="${webinar['id_webinar']}">
+                    <p>${webinar['date_start_text']}<br> ${webinar['date_start_time']}</p>
+                </div>
+            `)
+            index += 1
+        }
+
+        $('.footer__mainBox__formBox__datesBox__gridBox__box').on('click', function () {
+            $('.footer__mainBox__formBox__datesBox__gridBox__box').addClass('notActive')
+
+            $(this).removeClass('notActive')
+            $(this).addClass('active')
+        })
+
+    } catch (e) {
+        console.log('error initWebinarDates', e.message)
+    }
+}
+
 function initSlickSliders() {
     $('#photoSlider').slick({
         slidesToShow: 2,
@@ -441,7 +487,7 @@ function initSlickSliders() {
     });
 }
 
-function init() {
+async function init() {
     lazyLoad()
     initSlickSliders()
     setCountDown()
@@ -451,6 +497,7 @@ function init() {
     sendForm()
     getReviewsVideos()
     getCourseDate()
+    await initWebinarDates()
 
     document.querySelector(".loader").classList.add("active");
     setTimeout(() => {
