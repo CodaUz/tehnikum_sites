@@ -76,9 +76,97 @@
         width: 100%;
         max-width: get-vw(328px);
 
+
         @media screen and (max-width: 800px) {
-          max-width: get-mobile-vw(267px);
           padding: get-mobile-vw(90px) 0;
+          max-width: get-mobile-vw(267px);
+
+          &.datesBox {
+            padding: get-mobile-vw(35px) 0;
+          }
+        }
+
+        &__datesBox {
+          margin-bottom: get-vw(30px);
+          margin-right: get-vw(-90px);
+
+          @media screen and (max-width: 800px) {
+            margin-right: 0;
+            margin-bottom: get-mobile-vw(30px);
+            align-self: self-start;
+          }
+
+          &__title {
+            font-family: 'TTHovesRegular';
+            font-size: get-vw(18px);
+            line-height: get-vw(27px);
+            margin-bottom: get-vw(10px);
+
+            @media screen and (max-width: 800px) {
+              font-size: get-mobile-vw(18px);
+              line-height: get-mobile-vw(27px);
+              margin-bottom: get-mobile-vw(10px);
+            }
+          }
+
+          &__gridBox {
+            display: grid;
+            row-gap: get-vw(10px);
+            column-gap: get-vw(10px);
+            grid-template-columns: repeat(4, max-content);
+
+            @media screen and (max-width: 800px) {
+              row-gap: get-mobile-vw(10px);
+              column-gap: get-mobile-vw(10px);
+              grid-template-columns: repeat(2, 1fr);
+            }
+
+            &__box {
+              padding: get-vw(8px) get-vw(12px);
+              border-radius: get-vw(6px);
+              border: get-vw(1px) solid #000000;
+
+              @media screen and (max-width: 800px) {
+                padding: get-mobile-vw(8px) get-mobile-vw(12px);
+                border-radius: get-mobile-vw(6px);
+                border: get-mobile-vw(1px) solid #000000;
+              }
+
+              p {
+                font-family: 'TTHovesRegular';
+                font-size: get-vw(15px);
+                line-height: get-vw(17.67px);
+                letter-spacing: 0.02em;
+                text-align: center;
+
+                @media screen and (max-width: 800px) {
+                  font-size: get-mobile-vw(15px);
+                  line-height: get-mobile-vw(17.67px);
+                }
+              }
+
+              &.active {
+                border: get-vw(1px) solid #6E3ABA;
+
+                @media screen and (max-width: 800px) {
+                  border: get-mobile-vw(1px) solid #6E3ABA;
+                }
+
+                p {
+                  color: #6E3ABA;
+                }
+              }
+
+              &.notActive {
+                opacity: 0.3;
+                border: get-vw(1px) solid #000000;
+
+                p {
+                  color: #000000;
+                }
+              }
+            }
+          }
         }
 
         &__input {
