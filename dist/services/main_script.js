@@ -218,7 +218,7 @@ async function takeCourse(formId, is_redirect=false) {
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
         const WEBINAR_ID = +$('.footer__mainBox__formBox__datesBox__gridBox__box.active').data('id')
-        const WEBINAR_NAME = +$('.footer__mainBox__formBox__datesBox__gridBox__box.active').data('name')
+        const WEBINAR_NAME = $('.footer__mainBox__formBox__datesBox__gridBox__box.active').data('name')
 
         if (is_redirect && WEBINAR_ID) {
             closeModalForm('.formBoxIndex')
