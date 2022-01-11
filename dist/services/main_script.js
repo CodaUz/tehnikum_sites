@@ -136,7 +136,7 @@ function listenPopups() {
         $('div[data-form-id="Program"]').attr('data-program', 'true')
         $('div.sendForm[data-form-id="Program"]').text('Записаться')
         $('p.footer__mainBox__formBox__text').text('')
-        $('p.titleName').text('Записаться на бесплатную лекцю')
+        $('p.titleName').text('Записаться на бесплатную лекцию')
         $('p.titleName').css('text-align', 'start')
         $('.footer__mainBox__formBox__datesBox').css('display', 'block')
         $('.footer__mainBox__formBox').addClass('datesBox')
