@@ -218,6 +218,7 @@ async function takeCourse(formId, is_redirect=false) {
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
         const WEBINAR_ID = +$('.footer__mainBox__formBox__datesBox__gridBox__box.active').data('id')
+        const WEBINAR_NAME = +$('.footer__mainBox__formBox__datesBox__gridBox__box.active').data('name')
 
         if (is_redirect && WEBINAR_ID) {
             closeModalForm('.formBoxIndex')
@@ -236,7 +237,7 @@ async function takeCourse(formId, is_redirect=false) {
             );
 
              fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=${COURSE}&action=bl-reg${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&webinarpool_webinarname=${WEBINAR_NAME}&course=${COURSE}&action=bl-reg${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -449,7 +450,7 @@ async function initWebinarDates() {
 
         for (let webinar of webinars) {
             $('.footer__mainBox__formBox__datesBox__gridBox').append(`
-                <div class="footer__mainBox__formBox__datesBox__gridBox__box ${index === 0 ? 'active' : ''}" data-id="${webinar['id_webinar']}">
+                <div class="footer__mainBox__formBox__datesBox__gridBox__box ${index === 0 ? 'active' : ''}" data-id="${webinar['id_webinar']}" data-name="${webinar['date_start_text']} ${webinar['date_start_time']}">
                     <p>${webinar['date_start_text']}<br> ${webinar['date_start_time']}</p>
                 </div>
             `)
