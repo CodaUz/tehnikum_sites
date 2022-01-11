@@ -440,7 +440,7 @@ async function initWebinarDates() {
                 date_start_time: moment(v['data_start']).locale("ru").format('HH:mm')
             }
         })
-        webinars.sort((a,b) => (a.time_start > b.time_start) ? -1 : ((b.time_start > a.time_start) ? 1 : 0))
+        webinars.sort((a,b) => (a.time_start < b.time_start) ? -1 : ((b.time_start < a.time_start) ? 1 : 0))
         let index = 0
 
         if (webinars.length === 0) {
