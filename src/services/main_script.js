@@ -11,7 +11,9 @@ let PRICE = 0;
 let FORMAT_STUDY = 'offline';
 
 let POPUP_EVENT;
-let takeCourseParams = {}
+let takeCourseParams = {
+  action: 'course'
+}
 
 let query = window.location.search.substring(1);
 let qs = parse_query_string(query);
@@ -166,7 +168,7 @@ async function takeCourse(isTelegam=false) {
     );
 
     await fetch(
-        `https://api.tehnikum.school/amocrm/?`+ new URLSearchParams(takeCourseParams)
+        `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?`+ new URLSearchParams(takeCourseParams)
     );
 
     let a= document.createElement('a');
