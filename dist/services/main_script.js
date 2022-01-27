@@ -228,7 +228,7 @@ async function takeCourse(formId, is_redirect=false) {
             );
 
              fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=wp&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=wp&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -257,7 +257,7 @@ async function takeCourse(formId, is_redirect=false) {
             );
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=wp${qs.r ?  `-${qs.r}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=wp${qs.r ?  `-${qs.r}` : ''}`,
                 {
                     method: "GET",
                 }
