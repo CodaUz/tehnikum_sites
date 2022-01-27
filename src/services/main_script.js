@@ -164,7 +164,7 @@ async function takeCourse(formId, type_course='course') {
 
         if (type_course === 'program') {
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone.replace(/\D/g, "")}&webinar_id=${WEBINAR_ID}&course=target-full&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone.replace(/\D/g, "")}&webinar_id=${WEBINAR_ID}&course=target-full&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -173,7 +173,7 @@ async function takeCourse(formId, type_course='course') {
             $('#add_ref_btn').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
         } else {
             let res = await fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=${type_course}&course=target-full${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&type=${type_course}&course=target-full${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
