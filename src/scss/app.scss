@@ -717,13 +717,18 @@ header, section, footer, .maxWidth {
 
         img {
           width: 72px;
+          border-radius: 50%;
+          height: 72px;
+          object-fit: cover;
 
           @media screen and (max-width: 1000px) {
             width: 50px;
+            height: 50px;
           }
 
           @media screen and (max-width: 800px) {
             width: 72px;
+            height: 72px;
           }
         }
 
