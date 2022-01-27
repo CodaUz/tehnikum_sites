@@ -186,7 +186,7 @@ async function takeCourse(formId, status) {
     setThanks()
 
     let res = await fetch(
-        `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=course&course=smm-diz&status=${status}${qs.key ? `KEY${qs.key}` : ''}`,
+        `https://tg-api.tehnikum.school/amo_crm/v1/create_lead/?name=${name}&phone=${phone}&type=course&course=smm-diz&status=${status}${qs.key ? `KEY${qs.key}` : ''}`,
         {
           method: "GET",
         }

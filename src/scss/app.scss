@@ -14,6 +14,11 @@ a {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   width: 100%;
   margin: 0 auto;
@@ -222,7 +227,7 @@ nav {
         }
       }
     }
-   
+
   }
   .rightNav {
     background-color: $yellow;
@@ -262,8 +267,7 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: calc(100vh - 70px);
-  margin-top: 70px;
+  height: 100vh;
   display: grid;
   justify-items: center;
   align-content: center;
@@ -363,11 +367,20 @@ nav {
       grid-row-start: 1;
       grid-row-end: 3;
       grid-column-start: 3;
-      grid-column-end: 8;
+      grid-column-end: 13;
+
+      img {
+        &.left {
+          left: calc(25% - 28px);
+        }
+        &.right {
+          left: calc(75% - 18px);
+        }
+      }
     }
 
     #courseBoxTwo {
-      grid-row-start: 1;
+      grid-row-start: 3;
       grid-row-end: 6;
       grid-column-start: 8;
       grid-column-end: 13;
@@ -405,6 +418,13 @@ nav {
       grid-row-start: 6;
       grid-row-end: 7;
       grid-column-start: 8;
+      grid-column-end: 13;
+    }
+
+    #courseBoxSix {
+      grid-row-start: 7;
+      grid-row-end: 9;
+      grid-column-start: 3;
       grid-column-end: 13;
     }
 
@@ -813,7 +833,6 @@ nav {
 @media only screen and (max-width: 800px) {
   .welcomeBox {
     justify-items: flex-start;
-    margin-top: 4rem;
     height: 400px;
     box-shadow: 0px 2px 10px rgba(1, 21, 52, 0.16);
 
@@ -988,7 +1007,6 @@ nav {
   }
 
   .welcomeBox {
-    margin-top: 3rem;
     height: 300px;
   }
 
@@ -998,11 +1016,5 @@ nav {
         font-size: 1.4rem;
       }
     }
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .welcomeBox {
-    margin-top: 2.5rem;
   }
 }
