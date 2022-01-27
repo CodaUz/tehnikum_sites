@@ -141,7 +141,7 @@ async function takeCourse(isTelegam=false) {
     }
 
     await fetch(
-        `https://api.tehnikum.school/amocrm/?`+ new URLSearchParams(takeCourseParams)
+        `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?`+ new URLSearchParams(takeCourseParams)
     );
 
     fetch(
