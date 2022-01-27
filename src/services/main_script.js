@@ -159,7 +159,7 @@ async function takeCourse(formId, type_course='course') {
         );
 
         let res = await fetch(
-            `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&type=${type_course}&course=smm${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+            `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&type=${type_course}&action=course&course=smm${qs['r'] ? `&ref=${qs['r']}` : ''}`,
             {
                 method: "GET",
             }
