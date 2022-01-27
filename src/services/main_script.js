@@ -116,7 +116,7 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
             await fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=${COURSE}&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=${COURSE}&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -131,7 +131,7 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=${COURSE}${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=${COURSE}${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
