@@ -290,6 +290,10 @@ input {
   }
 }
 
+.mobile {
+  display: none !important;
+}
+
 @media only screen and (max-width: 900px) {
   .thanksBox {
     &__title {
@@ -309,6 +313,10 @@ input {
 
   .paddingTop {
     padding-top: 3rem;
+  }
+
+  .mobile {
+    display: block !important;
   }
 }
 
@@ -357,4 +365,4 @@ input {
     padding-left: 18px;
     padding-right: 18px;
   }
-} 
+}
