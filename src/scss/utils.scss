@@ -318,6 +318,10 @@ input {
   .mobile {
     display: block !important;
   }
+
+  .desktop {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {

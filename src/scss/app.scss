@@ -836,7 +836,12 @@ nav {
     column-gap: 5rem;
 
     @media only screen and (max-width: 800px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 500px) {
       grid-template-columns: 1fr;
+      row-gap: 1rem;
     }
   }
 
@@ -887,7 +892,7 @@ nav {
     }
 
     @media only screen and (max-width: 800px) {
-      display: none;
+      grid-template-columns: 1fr;
     }
   }
 
@@ -944,18 +949,15 @@ nav {
 
 @media only screen and (max-width: 800px) {
   .welcomeBox {
-    justify-items: flex-start;
     height: 400px;
     box-shadow: 0px 2px 10px rgba(1, 21, 52, 0.16);
 
     &__title {
-      display: none;
-      text-align: start;
       font-size: 1.6rem;
     }
 
     .btn {
-      display: none;
+      width: max-content;
     }
   }
 
@@ -1079,19 +1081,9 @@ nav {
     margin-top: 3rem;
     padding: 20px;
 
-    &__addressBox {
-      display: none;
-    }
-
-    .maxWidth {
-      grid-template-columns: 1fr;
-      width: max-content;
-    }
-
     &__iconLogoBox {
-      .logo {
-        display: none;
-      }
+
+      justify-items: center;
 
       &__iconsBox {
         column-gap: 25px;
