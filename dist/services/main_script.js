@@ -472,7 +472,7 @@ async function initWebinarDates() {
 function initSlickSliders() {
     $('#photoSlider').slick({
         slidesToShow: 2,
-        dots: false,
+        dots: true,
         arrows: false,
         autoplay: true,
         autoplaySpeed: 2000,

@@ -99,3 +99,38 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem 0;
+
+    @media screen and (min-width: 800px) {
+        display: none !important;
+    }
+
+    list-style-type: none;
+
+    li {
+        margin: 0 0.25rem;
+    }
+
+    button {
+        display: block;
+        width: get-mobile-vw(10px);
+        height: get-mobile-vw(10px);
+        border: get-mobile-vw(1px) solid #C4C4C4;
+        padding: 0;
+        background: white;
+
+        border-radius: 100%;
+
+        text-indent: -9999px;
+    }
+
+    li.slick-active button {
+        background-color: #C4C4C4;
+    }
+
+}
