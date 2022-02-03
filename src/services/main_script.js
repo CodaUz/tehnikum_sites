@@ -96,7 +96,7 @@ async function takeCourse(formId, is_redirect=false) {
         }
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-smm-spec`
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-smm`
         const WEBINAR_ID = 158386
 
         fetch(
@@ -107,7 +107,7 @@ async function takeCourse(formId, is_redirect=false) {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({site: 'smm-spec', name,phone, redisKey, redisValue})
+                body: JSON.stringify({site: 'smm', name,phone, redisKey, redisValue})
             }
         );
 
@@ -115,7 +115,7 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
             fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=smm-spec&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=smm&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -123,13 +123,12 @@ async function takeCourse(formId, is_redirect=false) {
 
             $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
 
-
         } else {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
             fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=smm-spec${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=smm${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
