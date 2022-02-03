@@ -126,7 +126,7 @@ async function takeCourse(formId, is_redirect=false) {
 
 
             fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=smm${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=digital${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
