@@ -1,6 +1,3 @@
-require('@babel/polyfill')
-const moment = require('moment')
-
 function listenPopups() {
     $('.openPopup').click(() => {
         openModalForm('.formBoxIndex')
@@ -9,7 +6,7 @@ function listenPopups() {
     $('.openProgramForm').click(() => {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
-        $('div.sendForm[data-form-id="Program"]').text('Скачать программу')
+        $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
         $('p.footer__mainBox__formBox__text').text('Сразу после заполнения данных вы перейдете в Telegram, где сможете посмотреть всю программу')
         $('p.titleName').text('Программа курса')
         openModalForm('.formBoxIndex')
@@ -19,7 +16,7 @@ function listenPopups() {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', '')
         $('p.footer__mainBox__formBox__text').text('')
-        $('div.sendForm[data-form-id="Program"]').text('Оставить заявку')
+        $('div.sendForm[data-form-id="Program"]').text('Записаться на курс')
         $('p.titleName').text('оставь заявку')
         openModalForm('.formBoxIndex')
     })
@@ -72,11 +69,13 @@ function parse_query_string(query) {
 }
 
 async function takeCourse(formId, is_redirect=false) {
+    console.log('test')
     let name = document.querySelector(`input[name="name${formId}"]`).value;
     let phone = document.querySelector(`input[name="phone${formId}"]`).value;
     let query = window.location.search.substring(1);
     let qs = parse_query_string(query);
 
+    console.log(name, phone)
     if (name && phone) {
         document.querySelector(`input[name="name${formId}"]`).value = "";
         document.querySelector(`input[name="phone${formId}"]`).value = "";
@@ -189,6 +188,4 @@ function init() {
     sendForm()
 }
 
-$( window ).on( "load", function() {
-    init()
-});
+init()
