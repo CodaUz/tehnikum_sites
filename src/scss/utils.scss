@@ -1,0 +1,568 @@
+@import "./font.scss";
+@import "./variables.scss";
+
+.formBoxIndex {
+  z-index: 6000;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: none;
+  opacity: 0;
+
+  &.active {
+    display: flex;
+  }
+  &.activeAnimate {
+    opacity: 1;
+  }
+
+  .formBox {
+    position: fixed;
+    z-index: 60001;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+
+    .blueBtn {
+      position: fixed;
+      left: $border_space_desktop;
+      height: $border_space_desktop * 1.5;
+      bottom: $border_length;
+      border-bottom: none;
+    }
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: -30px;
+      cursor: pointer;
+    }
+
+    .form {
+      background: #F0F7FD;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow-y: auto;
+      border-radius: 20px;
+
+      @media screen and (max-width: 800px) {
+        width: initial;
+        margin: 0 25px;
+      }
+
+      .footer__mainBox__formBox {
+        border-radius: 10px;
+        padding: 108px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        align-self: center;
+        width: 100%;
+        max-width: 400px;
+
+        &__input {
+          margin-top: 23px;
+          margin-bottom: 30px;
+
+        }
+
+        &__readyBox {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #222222;
+          color: white;
+          border-radius: 10px;
+          justify-items: center;
+          align-content: center;
+          display: none;
+          text-align: center;
+          padding: 16px 39px;
+
+          &.active {
+            display: grid;
+          }
+
+          &__img {
+            max-width: 256px;
+            width: 100%;
+
+            @media screen and (max-width: 800px) {
+              max-width: 204px;
+            }
+          }
+
+          &__title {
+            font-family: 'Miratrix';
+            font-size: 43px;
+            line-height: 123.5%;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+
+            @media screen and (max-width: 390px) {
+              font-size: 35px;
+            }
+          }
+
+          .btn {
+            margin-top: 1rem;
+          }
+
+          &__text {
+            font-family: 'TTHovesRegular';
+            font-size: 18px;
+            line-height: 21px;
+            margin-top: 10px;
+            color: white;
+
+            @media screen and (max-width: 390px) {
+              font-size: 16px;
+            }
+          }
+
+          &__rocket {
+            max-width: 80px;
+            margin-top: 1rem;
+          }
+        }
+
+        &__text {
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          font-family: 'TTHovesRegular';
+          margin-bottom: 30px;
+        }
+      }
+
+      .titleName {
+        font-family: "TTHovesBold";
+        margin-bottom: 10px;
+        font-size: 26px;
+        line-height: 31px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+      .text {
+        font-family: "Suisse Intl";
+        font-size: 0.9rem;
+      }
+
+      input {
+        width: 100%;
+        background: #F0F7FD;
+      }
+
+      .btn {
+        border-radius: 20px;
+        padding: 15px 25px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.bottomNewsAboutCourseMobile {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  z-index: 4000;
+  display: none;
+
+  .yellowBtn {
+    border-radius: 17px;
+    -webkit-box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: -6px 6px 30px 0px rgba(50, 50, 50, 0.75);
+  }
+}
+
+.formBoxTakeCourseFinal {
+  .form {
+    height: 285px;
+    padding: 1.5rem;
+
+    .titleForm {
+      font-family: "TTHovesMedium";
+      padding-top: 1rem;
+      font-weight: normal;
+      font-size: 1.6rem;
+      line-height: 22px;
+    }
+
+    .textForm {
+      font-family: "TTHovesRegular";
+      font-size: 0.8rem;
+    }
+
+    .yellowBtn {
+      font-size: 0.7rem;
+      transform: none;
+      padding: 0 10px;
+      height: 37px;
+      border: 2px solid #000;
+      margin-top: 6rem;
+    }
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.loader {
+  position: fixed;
+  z-index: 9999999;
+  background-color: white;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 100%;
+  transition: 1s;
+
+  &.active {
+    opacity: 0;
+  }
+
+  svg {
+    & > path {
+      animation: draw 3s ease infinite;
+    }
+  }
+
+  @keyframes draw {
+    0% {
+      stroke-dasharray: 50;
+    }
+    50% {
+      stroke-dasharray: 260;
+    }
+    100% {
+      stroke-dasharray: 50;
+    }
+  }
+}
+
+video {
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+  font-size: 20px;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.17);
+    top: -10px;
+  }
+}
+
+.borderScreenRight,
+.borderScreenLeft,
+.borderScreenTop,
+.borderScreenBottom {
+  position: fixed;
+  z-index: 2005;
+
+  background-color: #000;
+}
+.borderScreenRight {
+  height: 100%;
+  width: $border_length;
+  right: 0;
+  top: 0;
+}
+
+.borderScreenLeft {
+  height: 100%;
+  width: $border_length;
+  top: 0;
+  left: 0;
+}
+
+.borderScreenTop {
+  height: $border_length;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.borderScreenBottom {
+  height: $border_length;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.grayBack {
+  opacity: 0;
+  display: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 5000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000000, 0.7);
+
+  &.active {
+    display: block !important;
+  }
+  &.activeAnimate {
+    opacity: 1;
+  }
+}
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-family: 'TTHovesMedium';
+  user-select: none;
+  text-align: center;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__blue {
+    background-color: $dark_blue;
+    color: white;
+  }
+
+  &__white {
+    background-color: white;
+    color: $dark_blue;
+    border: 1px solid $dark_blue;
+    font-weight: normal;
+    font-size: 18px;
+  }
+
+  &.thanks {
+    padding: 15px 100px;
+    font-size: 1rem;
+  }
+}
+
+.title {
+  font-family: "TTHovesMedium";
+  font-size: 58px;
+  text-transform: uppercase;
+  margin-bottom: 90px;
+
+  @media screen and (max-width: 800px) {
+    margin-bottom: 40px;
+  }
+
+  &.marginBottom40 {
+    margin-bottom: 40px;
+  }
+  &.marginBottom14 {
+    margin-bottom: 14px;
+  }
+}
+
+.textH1 {
+  font-family: "MontserratBold";
+  font-size: 2.3rem;
+}
+
+span.bold {
+  font-family: 'TTHovesBold' !important;
+}
+
+.textH3 {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.popupBox {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 6000;
+  padding: 30px;
+  transition: opacity .2s ease;
+  display: none;
+  top: 0;
+
+  &.active {
+    display: grid;
+    opacity: 0;
+  }
+  &.activeAnimate {
+    opacity: 100%;
+  }
+
+
+  &__box {
+    padding: 30px;
+    padding-top: 35px;
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 10px 2px rgba(#000000, 0.15);
+    display: grid;
+    z-index: 6001;
+
+    &__title {
+      font-family: "TTHovesRegular";
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    &__inputBox {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      row-gap: 10px;
+      margin-bottom: 15px;
+
+      &__input {
+        outline: none;
+        border: 1px solid #272727;
+        padding: 12px 15px;
+        max-width: 400px;
+        width: 100%;
+        font-family: "ApercyProRegular";
+
+        &::placeholder {
+          font-family: "ApercyProRegular";
+        }
+      }
+    }
+
+    &__btn {
+      width: max-content;
+      justify-self: center;
+      text-transform: none !important;
+      font-size: 1rem;
+      padding: 15px 40px;
+    }
+  }
+}
+
+.text {
+  font-family: 'TTHovesRegular';
+  font-size: 27px;
+  line-height: 37.8px;
+  font-weight: normal;
+
+  @media screen and (max-width: 800px) {
+    font-size: 18px;
+    line-height: 25.8px;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .padding {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .textH3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  p {
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bottomNewsAboutCourseMobile {
+    display: block;
+  }
+  .title {
+    font-size: 35px;
+  }
+
+  .textH1 {
+    font-size: 2rem;
+  }
+
+  .textH3 {
+    font-size: 1.1rem;
+  }
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+  .padding {
+    padding-left: $border_space_mobile;
+    padding-right: $border_space_mobile;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bottomNewsAboutCourseMobile {
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+  .textH1 {
+    font-size: 1.6rem;
+  }
+  .textH3 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .btn {
+    font-size: .75rem;
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 100%;
+  }
+}
