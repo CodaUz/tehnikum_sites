@@ -82,7 +82,7 @@ async function takeCourse(formId, is_redirect=false) {
         for (let item of document.querySelectorAll(".input")) {
             item.classList.remove("active");
         }
-        const COURSE = 'web_design'
+        const COURSE = 'web-design'
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
