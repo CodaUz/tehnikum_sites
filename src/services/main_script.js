@@ -69,13 +69,11 @@ function parse_query_string(query) {
 }
 
 async function takeCourse(formId, is_redirect=false) {
-    console.log('test')
     let name = document.querySelector(`input[name="name${formId}"]`).value;
     let phone = document.querySelector(`input[name="phone${formId}"]`).value;
     let query = window.location.search.substring(1);
     let qs = parse_query_string(query);
 
-    console.log(name, phone)
     if (name && phone) {
         document.querySelector(`input[name="name${formId}"]`).value = "";
         document.querySelector(`input[name="phone${formId}"]`).value = "";
@@ -86,7 +84,7 @@ async function takeCourse(formId, is_redirect=false) {
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
-        const WEBINAR_ID = 817339
+        const WEBINAR_ID = 143300
 
 
         if (is_redirect) {
