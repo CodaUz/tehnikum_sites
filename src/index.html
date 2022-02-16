@@ -493,21 +493,19 @@
         }, 500);
     </script>
     <script async>
-      setTimeout(() => {
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '380765123771814');
-          fbq('track', 'PageView');
-      }, 3500);
-    </script>
-    <script async>
         setTimeout(() => {
+
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1063245477548161');
+            fbq('track', 'PageView');
+
             (function (m, e, t, r, i, k, a) {
                 m[i] =
                     m[i] ||
@@ -534,7 +532,7 @@
                 accurateTrackBounce: true,
                 webvisor: true,
             });
-        }, 4000);
+        }, 3000);
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-210529914-1"></script>

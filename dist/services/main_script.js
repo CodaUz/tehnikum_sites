@@ -69,24 +69,22 @@ function parse_query_string(query) {
 }
 
 async function takeCourse(formId, is_redirect=false) {
-    console.log('test')
     let name = document.querySelector(`input[name="name${formId}"]`).value;
     let phone = document.querySelector(`input[name="phone${formId}"]`).value;
     let query = window.location.search.substring(1);
     let qs = parse_query_string(query);
 
-    console.log(name, phone)
     if (name && phone) {
         document.querySelector(`input[name="name${formId}"]`).value = "";
         document.querySelector(`input[name="phone${formId}"]`).value = "";
         for (let item of document.querySelectorAll(".input")) {
             item.classList.remove("active");
         }
-        const COURSE = 'web_design'
+        const COURSE = 'web-design'
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
-        const WEBINAR_ID = 817339
+        const WEBINAR_ID = 143300
 
 
         if (is_redirect) {
@@ -132,7 +130,7 @@ async function takeCourse(formId, is_redirect=false) {
             );
 
             fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=${COURSE}${qs.r ?  `-${qs.r}` : ''}`,
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=${COURSE}${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
