@@ -1,0 +1,93 @@
+@import "./font.scss";
+
+@mixin rotated-text($num-letters: 80, $angle-span: 360deg) {
+  $angle: $angle-span / $num-letters;
+  @for $i from 1 through $num-letters {
+    .char-#{$i} {
+      transform: rotate($angle * $i);
+    }
+  }
+}
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.mainBox {
+  width: 1080px;
+  height: 1080px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__circleText {
+    width: 910px;
+    height: 910px;
+    border-radius: 50%;
+    position: absolute;
+    display: grid;
+    grid-template-rows: max-content max-content;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    font-family: 'TTHovesMedium';
+    text-transform: uppercase;
+
+    h1 {
+      width: max-content;
+      margin: 0 auto;
+      font-size: 90px;
+    }
+  }
+
+  &__circle {
+    width: 910px;
+    height: 910px;
+    background: red;
+    border-radius: 50%;
+
+    span {
+      display: block;
+    }
+    > .text {
+      height: 574px;
+      position: relative;
+      font-family: 'Miratrix';
+      [class*="char"] {
+        bottom: 0;
+        height: 92%;
+        left: 0;
+        margin: auto;
+        min-width: 5px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        transform-origin: center bottom;
+        width: auto;
+        font-size: 58px;
+        top: -12rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 70px;
+        letter-spacing: 0.01em;
+
+      }
+      @include rotated-text();
+    }
+  }
+}
+
+.miratrix {
+  font-family: 'Chava';
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
+.bold {
+  font-family: 'TTHovesBold';
+}

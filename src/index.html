@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mainBox">
+        <div class="mainBox__circle">
+            <span class="text">TEHNIKUM TEHNIKUM TEHNIKUM TEHNIKUM TEHNIKUM TEHNIKUM TEHNIKUM TEHNIKUM TEHNIKUM</span>
+        </div>
+        <div class="mainBox__circleText">
+
+        </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function parse_query_string(query) {
+            let vars = query.split("&");
+            let query_string = {};
+            for (let i = 0; i < vars.length; i++) {
+                let pair = vars[i].split("=");
+                let key = decodeURIComponent(pair[0]);
+                let value = decodeURIComponent(pair[1]);
+                if (typeof query_string[key] === "undefined") {
+                    query_string[key] = decodeURIComponent(value);
+                } else if (typeof query_string[key] === "string") {
+                    let arr = [query_string[key], decodeURIComponent(value)];
+                    query_string[key] = arr;
+                } else {
+                    query_string[key].push(decodeURIComponent(value));
+                }
+            }
+            return query_string;
+        }
+
+        const query = window.location.search.substring(1);
+        const qs = parse_query_string(query);
+
+        function setRotateText() {
+            $.fn.lettering = function(name) {
+                var t = this.text(),
+                    tl = t.length,
+                    r = '';
+
+                for(var i = 0; i < tl; i++) {
+                    const letter_width = {
+                        'E': '47px',
+                        'H': '23px',
+                        'N': '11px',
+                        'I': '1px'
+                    }
+
+                    const padding_widths = {
+                        72: '43px',
+                        73: '94px',
+                        74: '70px',
+                        75: '57px',
+                        76: '53px',
+                        77: '42px',
+                        78: '39px',
+                        79: '32px'
+                    }
+
+                    const width = letter_width[t[i]]
+                    const padding_width = padding_widths[i]
+
+                    r += `<span class="${name}-${i}" style="${width ? `width: ${width};` : ''} ${padding_width ? `padding-right: ${padding_width}` : ''}">${t[i]}</span>`;
+                }
+
+                this.html(r);
+            };
+            $.fn.rotate = function(children) {
+                this.css({
+                    transform: 'rotate(-' + parseInt((360 / 80) * ((children.text().length - 1) / 2)) + 'deg)'
+                });
+            };
+
+            var parent = $('.mainBox__circle');
+            var children = parent.children('.text');
+
+            parent.rotate(children);
+            children.lettering('char');
+        }
+
+        function colorController() {
+            if (qs['bg_color']) {
+                $('.mainBox').css({
+                    backgroundColor: qs['bg_color']
+                })
+            }
+
+            if (qs['text_color']) {
+                $('.mainBox__circle').css({
+                    color: qs['text_color']
+                })
+            }
+
+            if (qs['circle_bg_color']) {
+                $('.mainBox__circle').css({
+                    backgroundColor: qs['circle_bg_color']
+                })
+            }
+
+            if (qs['circle_text_color']) {
+                $('.mainBox__circleText').css({
+                    color: qs['circle_text_color']
+                })
+            }
+        }
+
+        function textController() {
+            const matchers = {
+                'miratrix': /\[([^\]]+)?\]/g,
+                'lower': /\(([^\)]+)?\)/g,
+                'bold': /\*([^\*]+)?\*/g,
+            }
+
+            let text = qs['text']
+
+            for (let match_key of Object.keys(matchers)) {
+                const re = matchers[match_key]
+
+                let match
+
+                while (match = re.exec(text)) {
+                    const startString = `<span class="${match_key}">`
+
+                    text = text.split('')
+
+                    text[match['index']] = startString
+                    text[match[0].length - 1 + match['index']] = '</span>'
+
+                    text = text.join('')
+                }
+            }
+
+            text = text.split('\\n')
+            $('.mainBox__circleText').html(text.map(t => `<h1>${t}</h1>`))
+        }
+
+        function init() {
+            setRotateText()
+            colorController()
+            textController()
+        }
+
+        init()
+
+    </script>
+</body>
+</html>
