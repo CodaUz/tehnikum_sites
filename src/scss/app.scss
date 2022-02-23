@@ -45,8 +45,6 @@ body {
 }
 
 * {
-  margin: 0;
-  border: 0;
   box-sizing: border-box;
 }
 
@@ -95,7 +93,7 @@ html {
   color: #fff;
   background-color: #EF8138;
   padding: 20px 60px;
-  /* width: 328px; */
+  width: 335px;
   border-radius: 12px;
   text-decoration: none;
   border: none;
@@ -126,6 +124,7 @@ html {
   margin-left: 5%;
   font-weight: 500;
   text-transform: uppercase;
+  font-family: 'TTHovesMedium';
 }
 
 .all-cards {
@@ -200,7 +199,8 @@ html {
   font-size: 58px;
   line-height: 68px;
   letter-spacing: 0.01em;
-  text-transform: uppercase
+  text-transform: uppercase;
+  font-family: 'TTHovesMedium';
 }
 
 .teacher-card {
@@ -347,6 +347,7 @@ html {
   display: flex;
   margin-top: 40px;
   gap: 30px;
+  justify-content: center;
 }
 
 .feed-card {
@@ -418,9 +419,16 @@ html {
 .footer {
   margin-top: 160px;
   padding: 80px 5% 80px 5%;
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr;
   gap: 140px;
   background-color: #222222;
+}
+
+@media screen and (max-width: 1100px) {
+  .footer {
+    display: flex;
+  }
 }
 
 .footer-left {
@@ -445,6 +453,7 @@ html {
 
 .discount {
   position: relative;
+  justify-self: center;
 }
 
 .circle {
@@ -552,6 +561,7 @@ html {
   .main-center h1 {
     font-size: 39px;
     text-align: center;
+    font-weight: 100;
   }
 
   .main-center p {
@@ -704,6 +714,10 @@ html {
 
   .box-text p {
     font-size: 18px;
+  }
+
+  .box-text .get {
+    margin-left: 23px;
   }
 
   .feedback {
