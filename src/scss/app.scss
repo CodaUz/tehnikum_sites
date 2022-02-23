@@ -1,0 +1,840 @@
+@font-face {
+  font-family: 'TT Hoves';
+  src: local('TT Hoves Regular'), local('TT-Hoves-Regular'),
+  url('../fonts/TTHoves-Regular.woff2') format('woff2'),
+  url('../fonts/TTHoves-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('../fonts/TTHoves-Bold.ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('../fonts/TTHoves-DemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: local('TT Hoves Light'), local('TT-Hoves-Light'),
+  url('../fonts/TTHoves-Light.woff2') format('woff2'),
+  url('../fonts/TTHoves-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chava';
+  src: url('../fonts/Chava-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family:  'TT Hoves';
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main {
+  padding: 2% 0 0 5%;
+  background: url('../images/020.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.text {
+  font-weight: normal;
+  font-size: 21px;
+}
+
+.text span {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.center-text {
+  display: flex;
+  margin-top: 85px;
+  gap: 141px;
+}
+
+.main-center {
+  margin: 76px 5% 58px 0;
+  font-size: 27px;
+
+}
+
+.main-center h1 {
+  font-family: 'Chava';
+  margin: 0 0 40px 0;
+  font-size: 80px;
+}
+
+
+.get {
+  color: #fff;
+  background-color: #EF8138;
+  padding: 20px 60px;
+  //width: 335px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.diplom_text .get {
+  max-width: 400px;
+}
+
+.register {
+  color: #EF8138;
+  border: 2px solid #EF8138;
+  padding: 20px 90px;
+  border-radius: 12px;
+  /* width: 328px; */
+  background-color: #fff;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.second-page {
+  margin-top: 160px;
+}
+
+.second-page h2 {
+  font-size: 58px;
+  margin-left: 5%;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'TTHovesMedium';
+}
+
+.all-cards {
+  margin: 0 0 0 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+.card span {
+  font-weight: 600;
+  font-size: 27px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.card p {
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.card img {
+  width: 210px;
+
+}
+
+.timer {
+  color: #fff;
+  background-color: #EF8138;
+  text-align: center;
+  padding: 80px 0 88px 0;
+  margin-top: 160px;
+}
+
+.timer h2 {
+  font-size: 52px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.timer_numbs {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  margin-bottom: 57px;
+}
+
+.numb {
+  font-size: 27px;
+}
+
+.numb span {
+  font-family: Chava;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 174px;
+}
+
+.teachers {
+  padding: 160px 5% 0 5%;
+}
+
+.teachers h2 {
+  font-weight: 500;
+  font-size: 58px;
+  line-height: 68px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-family: 'TTHovesMedium';
+}
+
+.teacher-card {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+}
+
+.teacher-card span {
+  font-weight: bold;
+  font-size: 48px;
+  margin-top: 30px;
+}
+
+.teacher-card p {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.all-teachers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  /* gap: 10%; */
+}
+
+.two-month {
+  padding: 160px 5% 0 5%;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 58px;
+  /* line-height: 68px; */
+  text-transform: uppercase;
+}
+
+.offer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+
+.offer-card {
+  width: 45%;
+}
+
+.offer-card span {
+  font-weight: 600;
+  font-size: 27px;
+  text-transform: uppercase;
+}
+
+.offer-card p {
+  font-size: 27px;
+}
+
+.course-programm {
+  margin: 160px 95px 0 5%;
+  padding: 80px 52px 35px 64px;
+  border: 1px solid #000000;
+
+  /* background: url('../img/frame.png');
+  background-repeat: no-repeat; */
+}
+
+.lessons {
+  margin-top: 40px;
+}
+
+.lessons hr {
+  margin: 24px 0;
+}
+
+.button_get_full {
+  display: flex;
+  justify-content: center;
+}
+
+.diplom {
+  margin: 160px 5% 0 5%;
+  /* text-align: center; */
+  /* flex-wrap: wrap-reverse; */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* .diplom img{
+    width: 45%;
+    height: 30%;
+} */
+
+.diplom_text p{
+  font-size: 27px;
+}
+
+.how-much {
+  margin: 160px 5% 0 5%;
+
+}
+
+.how-much img {
+  width: 100%;
+}
+
+.how-much p {
+  margin-right: 283px;
+  font-weight: normal;
+  font-size: 27px;
+}
+
+.how-much p span {
+  font-weight: 700;
+}
+
+.student-card {
+  margin: 160px 5% 0 5%;
+}
+
+.student-card-center {
+  display: flex;
+  margin-top: 30px;
+  /* flex-wrap: wrap; */
+}
+
+/* .student-card-center img {
+    width: 50%;
+    height: 35%;
+} */
+
+.box-text {
+  font-size: 21px;
+}
+
+.feedback {
+  margin: 160px 5% 160px 5%;
+}
+
+.feed-cards {
+  display: flex;
+  margin-top: 40px;
+  gap: 30px;
+  justify-content: center;
+}
+
+.feed-card {
+  display: flex;
+  flex-direction: column;
+  width: 335px!important;
+  padding: 47px 20px 50px 20px;
+  background-color: #F0F7FD;
+  border-radius: 12px;
+}
+
+.feed-card p {
+  font-size: 21px;
+}
+
+.feed-card-student {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 21px;
+}
+
+.about-us {
+  margin: 160px 5% 0 5%;
+}
+
+.about-us-row {
+  margin-top: 80px;
+  display: flex;
+  gap: 97px;
+}
+
+.about-us-left {
+  width: 426px;
+}
+
+.about-us-left span {
+  font-size: 27px
+}
+
+.about-us-right span {
+  font-weight: bold;
+  font-size: 58px;
+}
+
+.doubt {
+  margin: 160px 0 0 5%;
+  font-size: 27px;
+  overflow: hidden;
+}
+
+.doubt img {
+  margin-right: 20px;
+}
+
+.doubt p {
+  width: 748px;
+}
+
+.slide-item-1 img {
+  width: 95%;
+}
+
+.carousel-inner img{
+  width: 507px;
+}
+
+.footer {
+  margin-top: 160px;
+  padding: 80px 5% 80px 5%;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 140px;
+  background-color: #222222;
+}
+
+@media screen and (max-width: 1100px) {
+  .footer {
+    display: flex;
+  }
+}
+
+.footer-left {
+  width: 450px;
+  color: #fff;
+}
+
+.footer-left-text {
+  margin-top: 79px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-weight: normal;
+  font-size: 27px;
+}
+
+.icon_text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.discount {
+  position: relative;
+  justify-self: center;
+}
+
+.circle {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 159px;
+  height: 159px;
+  background-color: #EF8138;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 63px;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop-up {
+  width: 355px;
+  text-align: center;
+  background-color: #FFFFFF;
+  padding: 60px 60px 50px 60px;
+  border-radius: 12px;
+}
+
+.pop-up-title{
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.pop-up-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 23px;
+  color: rgba(0, 0, 0, 0.17);}
+
+.pop-up-form input {
+  width: 300px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(162, 162, 162, 0.42);
+}
+
+.pop-up-form button {
+  margin-bottom: 40px;
+}
+
+.pop-up p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.contact span {
+  font-weight: 600;
+  font-size: 18px;
+
+}
+
+.contact p {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .head svg {
+    width: 215px;
+    height: 30px;
+  }
+
+  .main {
+    padding: 40px 0 0 24px;
+    background-size: 40vw;
+    background-position: top 80px right 3px;
+  }
+
+  .center-text {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .get,
+  .register {
+    width: 328px;
+    padding: 20px 0;
+  }
+
+  .main-center h1 {
+    font-size: 39px;
+    text-align: center;
+    font-weight: 100;
+  }
+
+  .main-center p {
+    font-size: 18px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+  }
+
+  .second-page {
+    margin-top: 60px;
+  }
+
+  .second-page h2 {
+    font-size: 34px;
+  }
+
+  .all-cards {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .timer {
+    padding: 40px 23px;
+    margin-top: 60px;
+  }
+
+  .numb span {
+    font-size: 60px;
+  }
+
+  .timer_numbs {
+    gap: 32px;
+  }
+
+  .teachers {
+    margin: 60px 15px;
+    padding: 0;
+  }
+
+  .teachers h2 {
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .all-teachers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teacher-card {
+    width: 329px;
+  }
+
+  .teacher-card span {
+    font-size: 38px;
+  }
+
+  .teacher-card p {
+    font-size: 18px;
+  }
+
+  .teacher-photo {
+    width: 329px;
+    height: 464px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .two-month {
+    padding: 0;
+    margin: 60px 23px;
+    margin-bottom: 35px;
+  }
+
+  .offer-cards {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .offer-card {
+    width: unset;
+  }
+
+  .offer-card span{
+    font-size: 18px;
+  }
+
+  .offer-card p {
+    font-size: 18px;
+  }
+
+  .course-programm {
+    margin: 0 23px;
+    padding: 40px 28px 20px 20px ;
+  }
+
+  .diplom {
+    margin: 60px 23px;
+    flex-wrap: wrap-reverse;
+  }
+
+  .diplom img {
+    width: 327px;
+    height: 229px;
+  }
+
+  .diplom p {
+    font-size: 18px;
+  }
+
+  .how-much {
+    margin: 0 23px;
+  }
+
+  .how-much p {
+    margin: 12px 0;
+    font-size: 18px;
+  }
+
+  .how-much img {
+    width: 328px;
+    height: 96px;
+  }
+
+  .student-card {
+    margin-top: 60px;
+    margin-left: 0;
+  }
+
+  .student-card img {
+    width: 370px;
+    height: 248px;
+  }
+
+  .student-card-center {
+    flex-wrap: wrap;
+  }
+
+  .student-title, .student-card p {
+    margin-left: 23px;
+  }
+
+  .box-text p {
+    font-size: 18px;
+  }
+
+  .box-text .get {
+    margin-left: 23px;
+  }
+
+  .feedback {
+    margin: 60px 23px;
+  }
+
+
+  .feed-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feed-card {
+    margin: 0 20px;
+  }
+
+  .about-us {
+    margin: 60px 23px;
+  }
+
+  .about-us-row {
+    flex-wrap: wrap;
+    margin-top: 34px;
+    gap: 40px;
+  }
+
+  .about-us-right span {
+    font-size: 34px;
+  }
+
+  .doubt {
+    margin: 60px 23px;
+  }
+
+  .doubt p {
+    font-size: 18px;
+    width: unset;
+  }
+
+  .slider img {
+    width: 100%;
+  }
+
+  .footer {
+    margin-top: 60px;
+    padding: 40px 23px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .icon_text {
+    font-size: 18px;
+  }
+
+  .circle {
+    width: 105px;
+    height: 105px;
+    font-size: 40px;
+    top: -55px;
+    left: 242px;
+
+  }
+
+  .pop-up {
+    width: 327px;
+    padding: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .pop-up-title {
+    font-size: 26px;
+  }
+
+  .pop-up-form input {
+    width: 267px;
+  }
+
+  .pop-up-form button {
+    width: 267px;
+  }
+
+  .contact {
+    margin: 0 28px;
+  }
+}
+
+@media (max-width: 400px) {
+  .buttons {
+    margin-right: 24px;
+  }
+
+  .get, .register, .teacher-card, .teacher-photo, .diplom img, .how-much img, .student-card img {
+    width: 100%;
+  }
+
+  .teacher-photo {
+    object-fit: cover;
+  }
+
+  .diplom img, .how-much img, .student-card img {
+    height: auto;
+  }
+
+  .pop-up {
+    width: 100%;
+    padding: 60px 20px;
+  }
+
+  .circle {
+    left: auto;
+    right: -10px;
+  }
+}
+
