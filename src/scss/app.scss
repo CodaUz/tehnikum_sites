@@ -93,13 +93,17 @@ html {
   color: #fff;
   background-color: #EF8138;
   padding: 20px 60px;
-  width: 335px;
+  //width: 335px;
   border-radius: 12px;
   text-decoration: none;
   border: none;
   font-size: 17px;
   text-align: center;
   cursor: pointer;
+}
+
+.diplom_text .get {
+  max-width: 340px;
 }
 
 .register {
