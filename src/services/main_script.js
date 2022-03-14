@@ -1,6 +1,8 @@
 const MOBILE_WIDTH = 800
 const ID_COURSE = 9;
 let POPUP_EVENT;
+const DEFAULT_COURSE = 'target-full'
+let COURSE = 'target-full'
 
 
 function listenPopups() {
@@ -17,13 +19,18 @@ function listenPopups() {
         openModalForm('.formBoxIndex')
     })
 
-    $('.openForm').click(() => {
+    $('.openForm').click(function () {
         console.log('open form')
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', '')
         $('p.footer__mainBox__formBox__text').text('')
         $('div.sendForm[data-form-id="Program"]').text('Хочу учиться')
         $('p.titleName').text('РЕШАЙСЯ')
+
+        if ($(this).data('course')) {
+            COURSE = $(this).data('course')
+        }
+
         openModalForm('.formBoxIndex')
     })
 }
@@ -38,6 +45,7 @@ function openModalForm(formName) {
 }
 
 function closeModalForm(formName) {
+    COURSE = DEFAULT_COURSE
     document.querySelector(`${formName}>.grayBack`).classList.remove("activeAnimate");
     setTimeout(() => {
         document.querySelector(formName).classList.remove("activeAnimate");
@@ -92,7 +100,7 @@ async function takeCourse(formId, is_redirect=false) {
         }
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-target-full`
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
         const WEBINAR_ID = 283660
 
         fetch(
@@ -111,7 +119,7 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
             await fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=target-full&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=${COURSE}&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -126,7 +134,7 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
             fetch(
-                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=target-full${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+                `https://api.tehnikum.school/amocrm/?name=${name}&phone=${phone}&action=course&course=${COURSE}${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -448,6 +456,50 @@ function listenPhoneInputs() {
     }
 }
 
+async function initCoursesInForm() {
+    const COURSES_ID = [[9, 'smmSpecDate'], [13, 'targetFullCourseDate'], [16, 'contextDate']]
+    const COURSES_THREADS_ID = [[25, 'digitalDate']]
+
+    for (let course_id of COURSES_ID) {
+        let res = await axios.get('https://api.tehnikum.uz/course.php', {
+            params: {
+                action: 'get',
+                token: '123',
+                id: course_id[0]
+            }
+        })
+        res = res['data']['row']
+        const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
+        const first_date_format = first_date.locale("ru").format('D MMMM')
+        $(`.${course_id[1]}`).text(first_date_format)
+    }
+
+    for (let course_id of COURSES_THREADS_ID) {
+        let date = ''
+
+        let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                course_id: course_id[0]
+            })
+        });
+        res = await res.json();
+        res = res['data']
+
+        if (res['date_start']) {
+            date = res['date_start']
+        }
+
+        const first_date =  moment(`${date}`, 'YYYY-MM-DD')
+        const first_date_format = first_date.locale("ru").format('D MMMM')
+        $(`.${course_id[1]}`).text(first_date_format)
+    }
+}
+
 function initSliders() {
         $('#photoSlider').slick({
             slidesToShow: 2,
@@ -515,6 +567,7 @@ function init() {
     getMaxWidth()
     lazyLoad()
     listenPhoneInputs()
+    initCoursesInForm()
 
     document.querySelector(".loader").classList.add("active");
     setTimeout(() => {
