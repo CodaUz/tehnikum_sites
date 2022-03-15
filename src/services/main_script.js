@@ -113,7 +113,7 @@ async function takeCourse(formId, is_redirect=false) {
 
             let a= document.createElement('a');
 
-            a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
+            a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-longchecklist${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
             setTimeout(() => {
                 a.click();
             }, 500)
@@ -163,7 +163,7 @@ async function initWebinarDates() {
         const COURSE = 'web-design'
         let webinars = await fetch('https://api-webinar.tehnikum.school/api/get_webinars')
         webinars = await webinars.json()
-        webinars = webinars.filter(v => moment(v['data_start']) && moment(v['data_start']) >= moment() && v['course'] === COURSE)
+        webinars = webinars.filter(v => moment(v['data_start']) && moment(v['data_start']) >= moment() && v['course'] === COURSE && v['id'] !== 422)
         webinars = webinars.map(v => {
             return {
                 ...v,
@@ -174,6 +174,7 @@ async function initWebinarDates() {
         })
         webinars.sort((a,b) => (a.time_start < b.time_start) ? -1 : ((b.time_start < a.time_start) ? 1 : 0))
         let index = 0
+
 
         if (webinars.length === 0) {
             $('.footer__mainBox__formBox__datesBox').remove()
