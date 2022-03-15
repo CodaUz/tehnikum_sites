@@ -1,14 +1,16 @@
 const path = require("path");
 const miniCss = require("mini-css-extract-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
 
   entry: "./index.js",
   output: {
+    publicPath: '',
     filename: '[name].js?t=' + new Date().getTime(),
     chunkFilename: '[name]-chunk.js?t=' + new Date().getTime(),
     path: path.resolve(__dirname, "dist"),
@@ -56,15 +58,19 @@ module.exports = {
     port: 8804,
   },
   plugins: [
-    new miniCss({
-      filename: "style.css",
-    }),
     new HTMLWebpackPlugin({
       template: "./index.html",
       filename: "index.html",
     }),
+    new miniCss(),
+    new CopyPlugin({
+      patterns: [
+        { from: "libs", to: "libs" },
+        { from: "services", to: "services" },
+      ],
+    }),
     new HtmlCriticalWebpackPlugin({
-      base: path.resolve(__dirname, "dist"),
+      base: './dist',
       src: "index.html",
       dest: "index.html",
       inline: true,
@@ -76,10 +82,20 @@ module.exports = {
         blockJSRequests: false,
       },
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: "libs", to: "libs" },
-      ],
-    }),
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      },
+    },
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
 };

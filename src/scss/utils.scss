@@ -77,6 +77,89 @@
 
         }
 
+        &__datesBox {
+          margin-bottom: 30px;
+          margin-right: -90px;
+          align-self: self-start;
+
+          @media screen and (max-width: 800px) {
+            margin-right: 0;
+            margin-bottom: 30px;
+          }
+
+          &__title {
+            font-family: 'TTHovesRegular';
+            font-size: 18px;
+            line-height: 27px;
+            margin-bottom: 10px;
+
+            @media screen and (max-width: 800px) {
+              font-size: 18px;
+              line-height: 27px;
+              margin-bottom: 10px;
+            }
+          }
+
+          &__gridBox {
+            display: grid;
+            row-gap: 10px;
+            column-gap: 10px;
+            grid-template-columns: repeat(4, max-content);
+
+            @media screen and (max-width: 800px) {
+              row-gap: 10px;
+              column-gap: 10px;
+              grid-template-columns: repeat(2, 1fr);
+            }
+
+            &__box {
+              padding: 8px 12px;
+              border-radius: 6px;
+              border: 1px solid #000000;
+
+              @media screen and (max-width: 800px) {
+                padding: 8px 12px;
+                border-radius: 6px;
+                border: 1px solid #000000;
+              }
+
+              p {
+                font-family: 'TTHovesRegular';
+                font-size: 15px;
+                line-height: 17.67px;
+                letter-spacing: 0.02em;
+                text-align: center;
+
+                @media screen and (max-width: 800px) {
+                  font-size: 15px;
+                  line-height: 17.67px;
+                }
+              }
+
+              &.active {
+                border: 1px solid #264BE0;
+
+                @media screen and (max-width: 800px) {
+                  border: 1px solid #264BE0;
+                }
+
+                p {
+                  color: #264BE0;
+                }
+              }
+
+              &.notActive {
+                opacity: 0.3;
+                border: 1px solid #000000;
+
+                p {
+                  color: #000000;
+                }
+              }
+            }
+          }
+        }
+
         &__readyBox {
           position: absolute;
           top: 0;
@@ -343,7 +426,7 @@ input {
 }
 
 .btn {
-  padding: 15px 30px; 
+  padding: 15px 30px;
   border-radius: 12px;
   font-family: 'TTHovesMedium';
   user-select: none;
@@ -563,4 +646,4 @@ span.bold {
     padding-right: 18px;
     width: 100%;
   }
-} 
+}
