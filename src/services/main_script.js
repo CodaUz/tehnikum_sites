@@ -404,7 +404,7 @@ function lazyLoad() {
 
 async function getCourseDate() {
     const COURSE_ID = 23
-    let data = '2022-03-01'
+    let data = '2022-03-28'
 
     let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
         method: 'POST',
