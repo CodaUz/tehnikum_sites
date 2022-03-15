@@ -1,5 +1,6 @@
 const MOBILE_WIDTH = 800
 let POPUP_EVENT;
+const COURSE = 'wp'
 
 function listenSliders() {
     $('.sliderBox__sliderDots').each(function () {
@@ -136,7 +137,10 @@ function listenPopups() {
         $('div[data-form-id="Program"]').attr('data-program', 'true')
         $('div.sendForm[data-form-id="Program"]').text('Записаться')
         $('p.footer__mainBox__formBox__text').text('')
-        $('p.titleName').text('Бесплатная Лекция')
+        $('p.titleName').text('Записаться на бесплатную лекцию')
+        $('p.titleName').css('text-align', 'start')
+        $('.footer__mainBox__formBox__datesBox').css('display', 'block')
+        $('.footer__mainBox__formBox').addClass('datesBox')
         openModalForm('.formBoxIndex')
     })
 
@@ -146,6 +150,8 @@ function listenPopups() {
         $('p.footer__mainBox__formBox__text').text('')
         $('div.sendForm[data-form-id="Program"]').text('Записаться на курс')
         $('p.titleName').text('оставь заявку')
+        $('.footer__mainBox__formBox__datesBox').css('display', 'none')
+        $('.footer__mainBox__formBox').removeClass('datesBox')
         openModalForm('.formBoxIndex')
     })
 }
@@ -211,13 +217,14 @@ async function takeCourse(formId, is_redirect=false) {
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-wp`
-        const WEBINAR_ID = 604904
+        const WEBINAR_ID = +$('.footer__mainBox__formBox__datesBox__gridBox__box.active').data('id')
+        const WEBINAR_NAME = $('.footer__mainBox__formBox__datesBox__gridBox__box.active').data('name')
 
 
-        if (is_redirect) {
+        if (is_redirect && WEBINAR_ID) {
             closeModalForm('.formBoxIndex')
 
-             fetch(
+            fetch(
                 `https://node.snimerovsky.xyz/log`,
                 {
                     method: 'POST',
@@ -225,12 +232,12 @@ async function takeCourse(formId, is_redirect=false) {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({site: 'website', name,phone, redisKey, redisValue})
+                    body: JSON.stringify({site: COURSE, name,phone, redisKey, redisValue})
                 }
             );
 
-             fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=wp&action=bl-reg${qs['r'] ? `&ref=${qs['r']}` : ''}`,
+            fetch(
+                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone.replace(/[ -]/g, '')}&webinarpool_webinarname=${WEBINAR_NAME}&course=${COURSE}&action=bl-reg${qs['r'] ? `&ref=${qs['r']}` : ''}`,
                 {
                     method: "GET",
                 }
@@ -238,7 +245,7 @@ async function takeCourse(formId, is_redirect=false) {
 
             let a= document.createElement('a');
 
-            a.href= `https://t.me/TehnikumWebinarBot?start=39-webinarpool-10`;
+            a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-longwebinar${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
             setTimeout(() => {
                 a.click();
             }, 500)
@@ -414,6 +421,47 @@ function initSlickSliders() {
     });
 }
 
+async function initWebinarDates() {
+    try {
+        let webinars = await fetch('https://api-webinar.tehnikum.school/api/get_webinars')
+        webinars = await webinars.json()
+        webinars = webinars.filter(v => moment(v['data_start']) && moment(v['data_start']) >= moment() && v['course'] === COURSE)
+        webinars = webinars.map(v => {
+            return {
+                ...v,
+                time_start: new Date(moment(v['data_start'])).getTime(),
+                date_start_text: moment(v['data_start']).locale("ru").format('D MMMM'),
+                date_start_time: moment(v['data_start']).locale("ru").format('HH:mm')
+            }
+        })
+        webinars.sort((a,b) => (a.time_start < b.time_start) ? -1 : ((b.time_start < a.time_start) ? 1 : 0))
+        let index = 0
+
+        if (webinars.length === 0) {
+            $('.footer__mainBox__formBox__datesBox').remove()
+        }
+
+        for (let webinar of webinars) {
+            $('.footer__mainBox__formBox__datesBox__gridBox').append(`
+                <div class="footer__mainBox__formBox__datesBox__gridBox__box ${index === 0 ? 'active' : ''}" data-id="${webinar['id_webinar']}" data-name="${webinar['date_start_text']} ${webinar['date_start_time']}">
+                    <p>${webinar['date_start_text']}<br> ${webinar['date_start_time']}</p>
+                </div>
+            `)
+            index += 1
+        }
+
+        $('.footer__mainBox__formBox__datesBox__gridBox__box').on('click', function () {
+            $('.footer__mainBox__formBox__datesBox__gridBox__box').addClass('notActive')
+
+            $(this).removeClass('notActive')
+            $(this).addClass('active')
+        })
+
+    } catch (e) {
+        console.log('error initWebinarDates', e.message)
+    }
+}
+
 function init() {
     lazyLoad()
     initSlickSliders()
@@ -423,6 +471,7 @@ function init() {
     closePopupsOnBack()
     sendForm()
     getReviewsVideos()
+    initWebinarDates()
 
     document.querySelector(".loader").classList.add("active");
     setTimeout(() => {
