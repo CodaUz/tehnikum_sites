@@ -130,6 +130,8 @@ async function takeCourse(formId, is_redirect=false) {
                     method: "GET",
                 }
             );
+
+            ym(69008998, 'reachGoal', 'Записаться Графический дизайн');
         }
     }
 }
