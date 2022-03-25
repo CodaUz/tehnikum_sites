@@ -131,7 +131,11 @@ async function takeCourse(formId, is_redirect=false) {
                 }
             );
 
-            ym(69008998, 'reachGoal', 'Записаться Графический дизайн');
+            if (formId === 'Contact') {
+                ym(69008998, 'reachGoal', 'Графический дизайнер оставить заявку внизу')
+            } else {
+                ym(69008998, 'reachGoal', 'Записаться Графический дизайн');
+            }
         }
     }
 }
