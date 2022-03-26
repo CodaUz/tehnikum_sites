@@ -236,6 +236,8 @@ async function takeCourse(formId, is_redirect=false) {
                 }
             );
 
+            ym(69008998, 'reachGoal', 'HTML, CSS, JS скачать программу');
+
             let a= document.createElement('a');
 
             a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ?  `-${qs.r}` : ''}KEY${redisKey}`;
@@ -264,6 +266,13 @@ async function takeCourse(formId, is_redirect=false) {
                     method: "GET",
                 }
             );
+
+            if (formId === 'Contact') {
+                ym(69008998, 'reachGoal', 'HTML, CSS, JS записаться на курс внизу')
+            } else {
+                ym(69008998, 'reachGoal', 'HTML, CSS, JS записаться на курс');
+            }
+
         }
     }
 }
