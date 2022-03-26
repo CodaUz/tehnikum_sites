@@ -133,6 +133,12 @@ async function takeCourse(formId, is_redirect=false) {
                     method: "GET",
                 }
             );
+
+            if (formId === 'Contact') {
+                ym(69008998, 'reachGoal', 'Смм специалист оставить заявку внизу')
+            } else {
+                ym(69008998, 'reachGoal', 'Смм специалист записаться');
+            }
         }
     }
 }
