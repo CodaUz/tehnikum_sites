@@ -122,6 +122,8 @@ async function takeCourse(formId, is_redirect=false) {
                 }
             );
 
+            ym(69008998, 'reachGoal', 'СММ 0 Скачать программу');
+
             let a= document.createElement('a');
             a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`;
             a.click();
@@ -136,6 +138,8 @@ async function takeCourse(formId, is_redirect=false) {
                     method: "GET",
                 }
             );
+
+            ym(69008998, 'reachGoal', 'СММ 0 записаться на курс');
         }
     }
 }
