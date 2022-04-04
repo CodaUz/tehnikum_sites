@@ -87,8 +87,28 @@
             <div class="header__topBox__fixedHeader paddingLeft">
                 <a href="#"><img data-src="images/logo%20(2).svg" alt="logo" class="header__topBox__fixedHeader__logo lazy-load">
                 </a>
-                <div class="header__topBox__fixedHeader__menu">
+                <div class="header__topBox__fixedHeader__menu" onclick="openMenu()">
                     <img data-src="images/menu%20(1).png" alt="menu" class="lazy-load">
+                </div>
+            </div>
+            <div class="grayBack grayBackMenu"></div>
+            <div class="mobileNav">
+                <div class="mobileNavFlex">
+                    <div class="close" onclick="closeMenu()">
+                        <svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L22 22M1.41005 21.3L21.71 1" stroke="white" stroke-width="2"></path>
+                        </svg></div>
+                    <div class="linksBox">
+                        <span><a href="https://tehnikum.school/all_courses.html">Все курсы</a></span>
+                        <span><a href="https://tehnikum.school/all_masterclasses.html">Интенсивы</a></span>
+                        <span><a href="https://tehnikum.school/open_lessons.html">открытые уроки</a></span>
+                        <span><a href="https://tehnikum.school/career.html">Карьера</a></span>
+                        <span><a href="https://tehnikum.school/replies.html">Отзывы</a></span>
+                    </div>
+                    <div class="bottomMobileNav">
+                        <!-- <span class="active"><a href="#">Рус</a></span> /
+                            <span><a href="#">O’zb</a></span> -->
+                    </div>
                 </div>
             </div>
 
@@ -739,6 +759,22 @@
         </div>
     </div>
 </section>
+<section class="section white ">
+    <div class="section__studentCases section__planRatalny section__frightBox">
+        <div class="textBox paddingLeft">
+            <h2 class="section__studentCases__title title">Учись сейчас - плати потом</h2>
+            <p class="section__studentCases__text text">
+                Каждый может стать специалистом, не обязательно платить всю сумму сразу. Купи курс в рассроку на 6 месяцев.<br><br>
+
+                <span class="bigText">Всего 744 000 в месяц</span><br><br>
+
+                Учиться в рассрочку не стыдно, стыдно вообще не учиться
+            </p>
+        </div>
+        <img data-src="images/stickerImg.png" alt="img" class="section__planRatalny__img lazy-load">
+        <div class="btn btn__whiteInside openPlanRatalnyForm">Скачать программу</div>
+    </div>
+</section>
 <section class="section purple">
     <div class="section__discount">
         <h2 class="section__discount__title title">
@@ -872,8 +908,7 @@
                             </div>
                         </div>
                         <p class="footer__course__box__textBox__description">
-                            Научим быстро и эффективно раскручивать профили в соц. сетях<br>
-                            Обучайся новой профессии в дневное время
+                            Научим работать со всеми инструментами диджитал продвижения с нуля до специалиста.
                         </p>
                         <div class="footer__course__box__textBox__btn btn btn__green openForm" data-course="digital">
                             Записаться
@@ -940,7 +975,7 @@
                                     Длительность
                                 </p>
                                 <p class="footer__course__box__topBox__leftBox__box__text">
-                                    5 недель
+                                    2 месяца
                                 </p>
                             </div>
                             <div class="footer__course__box__topBox__leftBox__box">
@@ -962,8 +997,8 @@
 
 
                     <p class="footer__course__box__title">курс</p>
-                    <p class="footer__course__box__name desktop">контекстная реклама</p>
-                    <p class="footer__course__box__name mobile">контекстная реклама</p>
+                    <p class="footer__course__box__name desktop">Графический дизайн</p>
+                    <p class="footer__course__box__name mobile">Графический дизайн</p>
                     <div class="footer__course__box__textBox">
                         <div class="footer__course__box__textBox__infoCourse desktop">
                             <div class="footer__course__box__textBox__infoCourse__box">
@@ -971,7 +1006,7 @@
                                     Длительность
                                 </p>
                                 <p class="footer__course__box__textBox__infoCourse__box__text">
-                                    5 недель
+                                    2 месяца
                                 </p>
                             </div>
                             <div class="footer__course__box__textBox__infoCourse__box">
@@ -984,10 +1019,9 @@
                             </div>
                         </div>
                         <p class="footer__course__box__textBox__description">
-                            Научим быстро и эффективно раскручивать профили в соц. сетях
-                            Обучайся новой профессии в дневное время
+                            раскрой свой творческий потенциал в диджитал на курсе Графический дизайн
                         </p>
-                        <div class="footer__course__box__textBox__btn btn btn__greenYellow openForm" data-course="context">
+                        <div class="footer__course__box__textBox__btn btn btn__greenYellow openForm" data-course="web-design">
                             Записаться
                         </div>
                     </div>
