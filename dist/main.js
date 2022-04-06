@@ -1042,7 +1042,11 @@ function _takeCourse() {
         redisValue,
         WEBINAR_ID,
         WEBINAR_NAME,
+        url,
+        params,
         a,
+        _url,
+        _params,
         _args = arguments;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -1092,9 +1096,22 @@ function _takeCourse() {
                     redisValue: redisValue
                   })
                 });
-                fetch("https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=".concat(name, "&phone=").concat(phone.replace(/[ -]/g, ''), "&webinarpool_webinarname=").concat(WEBINAR_NAME, "&course=").concat(COURSE, "&action=bl-reg").concat(qs['r'] ? "&ref=".concat(qs['r']) : ''), {
-                  method: "GET"
-                });
+                url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead');
+                params = {
+                  name: name,
+                  phone: phone.replace(/[ -]/g, ''),
+                  webinarpool_webinarname: WEBINAR_NAME,
+                  course: COURSE,
+                  action: 'bl-reg'
+                };
+                getUtmParams(params);
+
+                if (qs['r']) {
+                  params['ref'] = qs['r'];
+                }
+
+                url.search = new URLSearchParams(params).toString();
+                fetch(url);
                 a = document.createElement('a');
                 a.href = "https://t.me/TehnikumWebinarBot?start=".concat(WEBINAR_ID, "-longwebinar").concat(qs.r ? "-".concat(qs.r) : '', "KEY").concat(redisKey);
                 setTimeout(function () {
@@ -1115,9 +1132,21 @@ function _takeCourse() {
                     phone: phone
                   })
                 });
-                fetch("https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=".concat(name, "&phone=").concat(phone, "&action=course&course=").concat(COURSE).concat(qs.r ? "-".concat(qs.r) : ''), {
-                  method: "GET"
-                });
+                _url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead');
+                _params = {
+                  name: name,
+                  phone: phone,
+                  course: COURSE,
+                  action: 'course'
+                };
+                getUtmParams(_params);
+
+                if (qs['r']) {
+                  _params['ref'] = qs['r'];
+                }
+
+                _url.search = new URLSearchParams(_params).toString();
+                fetch(_url);
               }
             }
 
@@ -1129,6 +1158,30 @@ function _takeCourse() {
     }, _callee);
   }));
   return _takeCourse.apply(this, arguments);
+}
+
+function getUtmParams(params) {
+  if (Cookies.get('utm_source')) {
+    params['utm_source'] = Cookies.get('utm_source');
+  }
+
+  if (Cookies.get('utm_medium')) {
+    params['utm_medium'] = Cookies.get('utm_medium');
+  }
+
+  if (Cookies.get('utm_campaign')) {
+    params['utm_campaign'] = Cookies.get('utm_campaign');
+  }
+
+  if (Cookies.get('utm_term')) {
+    params['utm_term'] = Cookies.get('utm_term');
+  }
+
+  if (Cookies.get('utm_content')) {
+    params['utm_content'] = Cookies.get('utm_content');
+  }
+
+  return params;
 }
 
 function encryptName(name) {
