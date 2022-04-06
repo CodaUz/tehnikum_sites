@@ -115,7 +115,7 @@ async function takeCourse(formId, is_redirect=false) {
                 name,
                 phone,
                 webinar_id: WEBINAR_ID,
-                course: 'digital',
+                course: 'smm-diz',
                 action: 'program'
             }
 
@@ -140,7 +140,7 @@ async function takeCourse(formId, is_redirect=false) {
             const params = {
                 name,
                 phone,
-                course: 'digital',
+                course: 'smm-diz',
                 action: 'course'
             }
 
