@@ -156,12 +156,24 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
         if (is_redirect) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
-            fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&action=program&course=${COURSE}${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-                {
-                    method: "GET",
-                }
-            );
+            const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
+            const params = {
+                name,
+                phone,
+                course: COURSE,
+                action: 'program',
+                webinar_id: WEBINAR_ID,
+            }
+
+            getUtmParams(params)
+
+            if (qs['r']) {
+                params['ref'] = qs['r']
+            }
+
+            url.search = new URLSearchParams(params).toString()
+
+            fetch(url);
 
             ym(69008998, 'reachGoal', 'Таргет фул скачать программу');
 
@@ -179,16 +191,55 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
                 webinarpool_webinarname = 'рассрочка'
             }
 
-            fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=${COURSE}${webinarpool_webinarname ? `&webinarpool_webinarname=${webinarpool_webinarname}` : ''}${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-                {
-                    method: "GET",
-                }
-            );
+            const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
+            const params = {
+                name,
+                phone,
+                course: COURSE,
+                action: 'course',
+            }
+
+            getUtmParams(params)
+
+            if (qs['r']) {
+                params['ref'] = qs['r']
+            }
+
+            if (webinarpool_webinarname) {
+                params['webinarpool_webinarname'] = webinarpool_webinarname
+            }
+
+            url.search = new URLSearchParams(params).toString()
+
+            fetch(url);
 
             ym(69008998, 'reachGoal', 'Таргет Фул Записаться');
         }
     }
+}
+
+function getUtmParams(params) {
+    if (Cookies.get('utm_source')) {
+        params['utm_source'] = Cookies.get('utm_source')
+    }
+
+    if (Cookies.get('utm_medium')) {
+        params['utm_medium'] = Cookies.get('utm_medium')
+    }
+
+    if (Cookies.get('utm_campaign')) {
+        params['utm_campaign'] = Cookies.get('utm_campaign')
+    }
+
+    if (Cookies.get('utm_term')) {
+        params['utm_term'] = Cookies.get('utm_term')
+    }
+
+    if (Cookies.get('utm_content')) {
+        params['utm_content'] = Cookies.get('utm_content')
+    }
+
+    return params
 }
 
 function encryptName(name) {
