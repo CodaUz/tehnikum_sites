@@ -163,24 +163,70 @@ async function takeCourse(formId, type_course='course') {
 
 
         if (type_course === 'program') {
-            fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone.replace(/\D/g, "")}&webinar_id=${WEBINAR_ID}&course=target-full&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-                {
-                    method: "GET",
-                }
-            );
+            const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
+            const params = {
+                name,
+                phone: phone.replace(/\D/g, ""),
+                webinar_id: WEBINAR_ID,
+                course: 'target-full',
+                action: 'program'
+            }
+
+            getUtmParams(params)
+
+            if (qs['r']) {
+                params['ref'] = qs['r']
+            }
+
+            url.search = new URLSearchParams(params).toString()
+
+            fetch(url);
 
             $('#add_ref_btn').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
         } else {
-            let res = await fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&type=${type_course}&course=target-full${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-                {
-                    method: "GET",
-                }
-            );
-            res = await res.json();
+            const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
+            const params = {
+                name,
+                phone,
+                type: type_course,
+                course: 'target-full',
+            }
+
+            getUtmParams(params)
+
+            if (qs['r']) {
+                params['ref'] = qs['r']
+            }
+
+            url.search = new URLSearchParams(params).toString()
+
+            await fetch(url);
         }
     }
+}
+
+function getUtmParams(params) {
+    if (Cookies.get('utm_source')) {
+        params['utm_source'] = Cookies.get('utm_source')
+    }
+
+    if (Cookies.get('utm_medium')) {
+        params['utm_medium'] = Cookies.get('utm_medium')
+    }
+
+    if (Cookies.get('utm_campaign')) {
+        params['utm_campaign'] = Cookies.get('utm_campaign')
+    }
+
+    if (Cookies.get('utm_term')) {
+        params['utm_term'] = Cookies.get('utm_term')
+    }
+
+    if (Cookies.get('utm_content')) {
+        params['utm_content'] = Cookies.get('utm_content')
+    }
+
+    return params
 }
 
 function encryptName(name) {
