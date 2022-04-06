@@ -114,12 +114,24 @@ async function takeCourse(formId, is_redirect=false) {
         if (is_redirect) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
-            fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&webinar_id=${WEBINAR_ID}&course=smm&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-                {
-                    method: "GET",
-                }
-            );
+            const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
+            const params = {
+                name,
+                phone,
+                webinar_id: WEBINAR_ID,
+                course: 'smm',
+                action: 'program'
+            }
+
+            getUtmParams(params)
+
+            if (qs['r']) {
+                params['ref'] = qs['r']
+            }
+
+            url.search = new URLSearchParams(params).toString()
+
+            fetch(url);
 
             $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
 
@@ -127,12 +139,23 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
-            fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=smm${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-                {
-                    method: "GET",
-                }
-            );
+            const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
+            const params = {
+                name,
+                phone,
+                course: 'smm',
+                action: 'course'
+            }
+
+            getUtmParams(params)
+
+            if (qs['r']) {
+                params['ref'] = qs['r']
+            }
+
+            url.search = new URLSearchParams(params).toString()
+
+            fetch(url);
 
             if (formId === 'Contact') {
                 ym(69008998, 'reachGoal', 'Смм специалист оставить заявку внизу')
@@ -141,6 +164,30 @@ async function takeCourse(formId, is_redirect=false) {
             }
         }
     }
+}
+
+function getUtmParams(params) {
+    if (Cookies.get('utm_source')) {
+        params['utm_source'] = Cookies.get('utm_source')
+    }
+
+    if (Cookies.get('utm_medium')) {
+        params['utm_medium'] = Cookies.get('utm_medium')
+    }
+
+    if (Cookies.get('utm_campaign')) {
+        params['utm_campaign'] = Cookies.get('utm_campaign')
+    }
+
+    if (Cookies.get('utm_term')) {
+        params['utm_term'] = Cookies.get('utm_term')
+    }
+
+    if (Cookies.get('utm_content')) {
+        params['utm_content'] = Cookies.get('utm_content')
+    }
+
+    return params
 }
 
 function encryptName(name) {
