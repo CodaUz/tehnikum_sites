@@ -140,6 +140,8 @@ async function takeCourse(isTelegam=false) {
       item.classList.remove("active");
     }
 
+    getUtmParams(takeCourseParams)
+
     await fetch(
         `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?`+ new URLSearchParams(takeCourseParams)
     );
@@ -172,6 +174,30 @@ async function takeCourse(isTelegam=false) {
       a.click();
     }
   }
+}
+
+function getUtmParams(params) {
+  if (Cookies.get('utm_source')) {
+    params['utm_source'] = Cookies.get('utm_source')
+  }
+
+  if (Cookies.get('utm_medium')) {
+    params['utm_medium'] = Cookies.get('utm_medium')
+  }
+
+  if (Cookies.get('utm_campaign')) {
+    params['utm_campaign'] = Cookies.get('utm_campaign')
+  }
+
+  if (Cookies.get('utm_term')) {
+    params['utm_term'] = Cookies.get('utm_term')
+  }
+
+  if (Cookies.get('utm_content')) {
+    params['utm_content'] = Cookies.get('utm_content')
+  }
+
+  return params
 }
 
 function encryptName(name) {
