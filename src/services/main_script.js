@@ -100,12 +100,23 @@ async function takeCourse(formId, is_redirect=false) {
                 }
             );
 
-            fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone.replace(/[ -]/g, '')}&course=${COURSE}&action=program${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-                {
-                    method: "GET",
-                }
-            );
+            const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
+            const params = {
+                name,
+                phone: phone.replace(/[ -]/g, ''),
+                course: COURSE,
+                action: 'program'
+            }
+
+            getUtmParams(params)
+
+            if (qs['r']) {
+                params['ref'] = qs['r']
+            }
+
+            url.search = new URLSearchParams(params).toString()
+
+            fetch(url);
 
             ym(69008998, 'reachGoal', 'Веб дизайнер Получить программу курса');
 
@@ -131,12 +142,23 @@ async function takeCourse(formId, is_redirect=false) {
                 }
             );
 
-            fetch(
-                `https://tg-api.tehnikum.school/amo_crm/v1/create_lead?name=${name}&phone=${phone}&action=course&course=${COURSE}${qs['r'] ? `&ref=${qs['r']}` : ''}`,
-                {
-                    method: "GET",
-                }
-            );
+            const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
+            const params = {
+                name,
+                phone,
+                course: COURSE,
+                action: 'course'
+            }
+
+            getUtmParams(params)
+
+            if (qs['r']) {
+                params['ref'] = qs['r']
+            }
+
+            url.search = new URLSearchParams(params).toString()
+
+            fetch(url);
 
             if (formId === 'Contact') {
                 ym(69008998, 'reachGoal', 'Веб Дизайнер Записаться внизу')
@@ -145,6 +167,30 @@ async function takeCourse(formId, is_redirect=false) {
             }
         }
     }
+}
+
+function getUtmParams(params) {
+    if (Cookies.get('utm_source')) {
+        params['utm_source'] = Cookies.get('utm_source')
+    }
+
+    if (Cookies.get('utm_medium')) {
+        params['utm_medium'] = Cookies.get('utm_medium')
+    }
+
+    if (Cookies.get('utm_campaign')) {
+        params['utm_campaign'] = Cookies.get('utm_campaign')
+    }
+
+    if (Cookies.get('utm_term')) {
+        params['utm_term'] = Cookies.get('utm_term')
+    }
+
+    if (Cookies.get('utm_content')) {
+        params['utm_content'] = Cookies.get('utm_content')
+    }
+
+    return params
 }
 
 function encryptName(name) {
