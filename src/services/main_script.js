@@ -32,9 +32,9 @@ function listenPopups() {
 
     $('.openProgramForm').click(() => {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
-        $('div[data-form-id="Program"]').attr('data-program', 'true')
-        $('div[data-form-id="Program"]').attr('data-plan-ratalny', '')
-        $('div.sendForm[data-form-id="Program"]').text('Скачать программу')
+        $('button[data-form-id="Program"]').attr('data-program', 'true')
+        $('button[data-form-id="Program"]').attr('data-plan-ratalny', '')
+        $('button.sendForm[data-form-id="Program"]').text('Скачать программу')
         $('p.footer__mainBox__formBox__text').html('программа будет доступна<br> через наш telegram бот')
         $('p.titleName').text('РЕШАЙСЯ')
         openModalForm('.formBoxIndex')
@@ -43,10 +43,10 @@ function listenPopups() {
     $('.openForm').click(function () {
         console.log('open form')
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
-        $('div[data-form-id="Program"]').attr('data-program', '')
-        $('div[data-form-id="Program"]').attr('data-plan-ratalny', '')
+        $('button[data-form-id="Program"]').attr('data-program', '')
+        $('button[data-form-id="Program"]').attr('data-plan-ratalny', '')
         $('p.footer__mainBox__formBox__text').text('')
-        $('div.sendForm[data-form-id="Program"]').text('Хочу учиться')
+        $('button.sendForm[data-form-id="Program"]').text('Хочу учиться')
         $('p.titleName').text('РЕШАЙСЯ')
 
         if ($(this).data('course')) {
@@ -58,10 +58,10 @@ function listenPopups() {
 
     $('.openPlanRatalnyForm').click(function () {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
-        $('div[data-form-id="Program"]').attr('data-program', '')
-        $('div[data-form-id="Program"]').attr('data-plan-ratalny', 'true')
+        $('button[data-form-id="Program"]').attr('data-program', '')
+        $('button[data-form-id="Program"]').attr('data-plan-ratalny', 'true')
         $('p.footer__mainBox__formBox__text').text('')
-        $('div.sendForm[data-form-id="Program"]').text('Хочу учиться')
+        $('button.sendForm[data-form-id="Program"]').text('Хочу учиться')
         $('p.titleName').text('РЕШАЙСЯ')
 
         if ($(this).data('course')) {
