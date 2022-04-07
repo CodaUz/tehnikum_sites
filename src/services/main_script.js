@@ -3,6 +3,27 @@ const ID_COURSE = 9;
 let POPUP_EVENT;
 
 
+function openMenu() {
+    document.querySelector(".grayBackMenu").classList.add("active");
+    setTimeout(() => {
+        document.querySelector(".grayBackMenu").classList.add("activeAnimate");
+    }, 0);
+    document.querySelector(".mobileNav").classList.add("active");
+    setTimeout(() => {
+        document.querySelector(".mobileNav").classList.add("activeAnimate");
+    }, 0);
+}
+function closeMenu() {
+    document.querySelector(".grayBackMenu").classList.remove("activeAnimate");
+    document.querySelector(".mobileNav").classList.remove("activeAnimate");
+    setTimeout(() => {
+        document.querySelector(".grayBackMenu").classList.remove("active");
+    }, 200);
+    setTimeout(() => {
+        document.querySelector(".mobileNav").classList.remove("active");
+    }, 200);
+}
+
 function listenPopups() {
     $('.openPopup').click(() => {
         openModalForm('.formBoxIndex')
@@ -11,6 +32,7 @@ function listenPopups() {
     $('.openProgramForm').click(() => {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
+        $('div[data-form-id="Program"]').attr('data-plan-ratalny', '')
         $('div.sendForm[data-form-id="Program"]').text('Получить программу')
         $('div.sendForm[data-form-id="Program"]').addClass('btn__whiteInside')
         $('p.footer__mainBox__formBox__text').html('программа будет доступна<br> через наш telegram бот')
@@ -22,10 +44,22 @@ function listenPopups() {
         console.log('open form')
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', '')
+        $('div[data-form-id="Program"]').attr('data-plan-ratalny', '')
         $('p.footer__mainBox__formBox__text').text('')
         $('div.sendForm[data-form-id="Program"]').text('Записаться')
         $('div.sendForm[data-form-id="Program"]').removeClass('btn__whiteInside')
         $('p.titleName').text('РЕШАЙСЯ')
+        openModalForm('.formBoxIndex')
+    })
+
+    $('.openPlanRatalnyForm').click(function () {
+        $('.footer__mainBox__formBox__readyBox').removeClass('active')
+        $('div[data-form-id="Program"]').attr('data-program', '')
+        $('div[data-form-id="Program"]').attr('data-plan-ratalny', 'true')
+        $('p.footer__mainBox__formBox__text').text('')
+        $('div.sendForm[data-form-id="Program"]').text('Хочу учиться')
+        $('p.titleName').text('РЕШАЙСЯ')
+
         openModalForm('.formBoxIndex')
     })
 }
@@ -76,14 +110,14 @@ function parse_query_string(query) {
     return query_string;
 }
 
-async function takeCourse(formId, is_redirect=false) {
+async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
     let name = document.querySelector(`input[name="name${formId}"]`).value;
     let phone = document.querySelector(`input[name="phone${formId}"]`).value;
     phone = phone.replace(/[ -]/g, '')
     let query = window.location.search.substring(1);
     let qs = parse_query_string(query);
 
-    if (name && phone) {
+    if (name && phone && phone.length > 10) {
         document.querySelector(`input[name="name${formId}"]`).value = "";
         if (document.querySelector(`input[name="lastName${formId}"]`)) {
             document.querySelector(`input[name="lastName${formId}"]`).value = ''
@@ -140,12 +174,22 @@ async function takeCourse(formId, is_redirect=false) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}"]`).addClass('active')
             $(`.footer__formBox__discount[data-form-id="${formId}"]`).css('display', 'none')
 
+            let webinarpool_webinarname
+
+            if (is_plan_ratalny) {
+                webinarpool_webinarname = 'рассрочка'
+            }
+
             const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
             const params = {
                 name,
                 phone,
                 course: COURSE,
                 action: 'course'
+            }
+
+            if (webinarpool_webinarname) {
+                params['webinarpool_webinarname'] = webinarpool_webinarname
             }
 
             getUtmParams(params)
@@ -194,6 +238,9 @@ function sendForm() {
         btn.addEventListener("click", () => {
             if (btn.getAttribute('data-program') === 'true') {
                 return takeCourse(btn.getAttribute('data-form-id'), true)
+            }
+            if (btn.getAttribute('data-plan-ratalny') === 'true') {
+                return takeCourse(btn.getAttribute('data-form-id'), false, true)
             }
             return takeCourse(btn.getAttribute('data-form-id'))
         });
