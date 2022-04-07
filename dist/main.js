@@ -1054,6 +1054,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 731:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/stickerImg.png");
+
+/***/ }),
+
 /***/ 304:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1345,6 +1357,7 @@ var map = {
 	"./speakerCase2.png": 285,
 	"./speakerCase3.png": 7789,
 	"./speakerCaseMobile1.png": 5916,
+	"./stickerImg.png": 731,
 	"./students.png": 304,
 	"./telegram (1).svg": 598,
 	"./thanks.png": 4266,
