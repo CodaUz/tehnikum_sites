@@ -175,7 +175,7 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             url.search = new URLSearchParams(params).toString()
 
-            await fetch(url);
+            fetch(url);
 
             $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
 
@@ -481,7 +481,8 @@ async function initCourseData() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[9, 'smmSpecDate'], [13, 'targetFullCourseDate'], [16, 'contextDate']]
+    const COURSES_ID = [[9, 'smmSpecDate'], [13, 'targetFullCourseDate'], [10, 'smmForBeginnersDate']]
+    const COURSES_THREADS_ID = []
 
     for (let course_id of COURSES_ID) {
         let res = await axios.get('https://api.tehnikum.uz/course.php', {
@@ -493,6 +494,31 @@ async function initCoursesInForm() {
         })
         res = res['data']['row']
         const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
+        const first_date_format = first_date.locale("ru").format('D MMMM')
+        $(`.${course_id[1]}`).text(first_date_format)
+    }
+
+    for (let course_id of COURSES_THREADS_ID) {
+        let date = ''
+
+        let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                course_id: course_id[0]
+            })
+        });
+        res = await res.json();
+        res = res['data']
+
+        if (res['date_start']) {
+            date = res['date_start']
+        }
+
+        const first_date =  moment(`${date}`, 'YYYY-MM-DD')
         const first_date_format = first_date.locale("ru").format('D MMMM')
         $(`.${course_id[1]}`).text(first_date_format)
     }
