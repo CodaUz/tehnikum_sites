@@ -343,7 +343,7 @@ input {
 }
 
 .btn {
-  padding: 15px 30px; 
+  padding: 15px 30px;
   border-radius: 12px;
   font-family: 'TTHovesMedium';
   user-select: none;
@@ -490,6 +490,11 @@ span.bold {
   display: none;
 }
 
+.padding {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 @media screen and (max-width: 1400px) {
   .padding {
     padding-left: 100px;
@@ -563,4 +568,4 @@ span.bold {
     padding-right: 18px;
     width: 100%;
   }
-} 
+}
