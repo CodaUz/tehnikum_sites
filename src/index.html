@@ -89,8 +89,26 @@
             <div class="header__topBox__fixedHeader paddingLeft">
                 <a href="#"><img data-src="images/logo%20(3).svg" alt="logo" class="header__topBox__fixedHeader__logo lazy-load">
                 </a>
-                <div class="header__topBox__fixedHeader__menu desktop">
+                <div class="header__topBox__fixedHeader__menu desktop" onclick="openMenu()">
                     <img data-src="images/menu%20(1).png" alt="menu" class="lazy-load">
+                </div>
+            </div>
+            <div class="grayBack grayBackMenu"></div>
+            <div class="mobileNav">
+                <div class="mobileNavFlex">
+                    <div class="close" onclick="closeMenu()">
+                        <svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L22 22M1.41005 21.3L21.71 1" stroke="white" stroke-width="2"></path>
+                        </svg></div>
+                    <div class="linksBox">
+                        <span><a href="https://tehnikum.school/all_courses.html">Все курсы</a></span>
+                        <span><a href="https://tehnikum.school/all_masterclasses.html">Интенсивы</a></span>
+                        <span><a href="https://tehnikum.school/open_lessons.html">открытые уроки</a></span>
+                        <span><a href="https://tehnikum.school/career.html">Карьера</a></span>
+                        <span><a href="https://tehnikum.school/replies.html">Отзывы</a></span>
+                    </div>
+                    <div class="bottomMobileNav">
+                    </div>
                 </div>
             </div>
 
@@ -562,6 +580,22 @@
         </div>
     </div>
 </section>
+<section class="section white ">
+    <div class="section__studentCases section__planRatalny section__frightBox">
+        <div class="textBox paddingLeft">
+            <h2 class="section__studentCases__title title">Учись сейчас - плати потом</h2>
+            <p class="section__studentCases__text text">
+                Каждый может стать специалистом, не обязательно платить всю сумму сразу. Купи курс в рассроку на 6 месяцев.<br><br>
+
+                <span class="bigText">Всего 404 000 в месяц</span><br><br>
+
+                Учиться в рассрочку не стыдно, стыдно вообще не учиться
+            </p>
+        </div>
+        <img data-src="images/stickerImg.png" alt="img" class="section__planRatalny__img lazy-load">
+        <div class="btn btn__whiteInside openPlanRatalnyForm">Оформить рассрочку</div>
+    </div>
+</section>
 
 <section class="section yellow">
     <div class="section__discount">
@@ -698,7 +732,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="footer__course__box__textBox__btn btn btn__yellowOrange openForm">
+                        <div class="footer__course__box__textBox__btn btn btn__yellowOrange openForm" data-course="smm-diz">
                             Записаться
                         </div>
                     </div>
@@ -749,7 +783,7 @@
                         <p class="footer__course__box__textBox__description">
                             SMM-специалист – это главное звено в продвижении в социальных сетях, который задаёт вектор движения бренда в digital-пространстве
                         </p>
-                        <div class="footer__course__box__textBox__btn btn btn__yellow openForm">
+                        <div class="footer__course__box__textBox__btn btn btn__yellow openForm" data-course="smm">
                             Записаться
                         </div>
                     </div>
@@ -811,7 +845,7 @@
                             Начни искусно управлять результатами запросов Google и Яндекс<br>
                             Овладей стратегией продвижения в поисковиках
                         </p>
-                        <div class="footer__course__box__textBox__btn btn btn__greenYellow openForm">
+                        <div class="footer__course__box__textBox__btn btn btn__greenYellow openForm" data-course="context">
                             Записаться
                         </div>
                     </div>
