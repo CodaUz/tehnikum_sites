@@ -123,10 +123,28 @@
         </div>
         <img data-src="images/headImg.png" alt="headImg" class="header__headImg desktop lazy-load">
         <img data-src="images/mobileImg.png" alt="headImg" class="header__headImg mobile lazy-load">
-        <a href="https://tehnikum.school/all_courses.html" target="_blank" class="header__menu">
-            <img data-src="images/menu.png" class="lazy-load" alt="menu">
-        </a>
+        <div class="header__menu" onclick="openMenu()">
+            <img data-src="images/menu.png" alt="menu" class="lazy-load">
+        </div>
     </header>
+    <div class="grayBack grayBackMenu"></div>
+    <div class="mobileNav">
+        <div class="mobileNavFlex">
+            <div class="close" onclick="closeMenu()">
+                <svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L22 22M1.41005 21.3L21.71 1" stroke="white" stroke-width="2"></path>
+                </svg></div>
+            <div class="linksBox">
+                <span><a href="https://tehnikum.school/all_courses.html">Все курсы</a></span>
+                <span><a href="https://tehnikum.school/all_masterclasses.html">Интенсивы</a></span>
+                <span><a href="https://tehnikum.school/open_lessons.html">открытые уроки</a></span>
+                <span><a href="https://tehnikum.school/career.html">Карьера</a></span>
+                <span><a href="https://tehnikum.school/replies.html">Отзывы</a></span>
+            </div>
+            <div class="bottomMobileNav">
+            </div>
+        </div>
+    </div>
 
     <section class="section padding">
         <h2 class="title marginBottom14">что делает smm специалист?</h2>
@@ -631,7 +649,6 @@
             </div>
         </div>
     </section>
-
     <section class="section padding">
         <h2 class="title">диплом</h2>
         <p class="section__marginText text">
@@ -652,7 +669,24 @@
             <img data-src="images/screen.png" class="lazy-load" alt="screen">
         </div>
     </section>
+    <section class="section planRatalny padding">
+        <section class="section">
+            <div class="section__planRatalny">
+                <div class="textBox paddingLeft">
+                    <h2 class="section__studentCases__title title">Учись сейчас - плати потом</h2>
+                    <p class="section__studentCases__text text">
+                        Каждый может стать специалистом, не обязательно платить всю сумму сразу. Купи курс в рассроку на 6 месяцев.<br><br>
 
+                        <span class="bigText">Всего 755 000 в месяц</span><br><br>
+
+                        Учиться в рассрочку не стыдно, стыдно вообще не учиться
+                    </p>
+                </div>
+                <img data-src="images/stickerImg.png" alt="img" class="section__planRatalny__img lazy-load">
+                <div class="btn btn__whiteInside openPlanRatalnyForm">Оформить рассрочку</div>
+            </div>
+        </section>
+    </section>
 
 <section class="section fullWidth blueDiscount">
     <div class="padding maxWidth">
@@ -791,7 +825,7 @@
                                     Курс о том, как создавать креативные посты и не только
                                     Углубитесь в мир графического дизайна и научитесь создавать визуальный контент.
                                 </p>
-                                <div class="footer__course__box__textBox__btn btn btn__black openForm">
+                                <div class="footer__course__box__textBox__btn btn btn__black openForm" data-course="smm-diz">
                                     Записаться
                                 </div>
                             </div>
@@ -843,7 +877,7 @@
                                 <p class="footer__course__box__textBox__description">
                                     За 3 недели ты освоишь основы работы в соцсетях для самостоятельного продвижения и для работы в компаниях
                                 </p>
-                                <div class="footer__course__box__textBox__btn btn btn__black openForm">
+                                <div class="footer__course__box__textBox__btn btn btn__black openForm" data-course="smm-new">
                                     Записаться
                                 </div>
                             </div>
@@ -897,7 +931,7 @@
                                     Научим быстро и эффективно раскручивать профили в соц. сетях
                                     Обучайся новой профессии в дневное время
                                 </p>
-                                <div class="footer__course__box__textBox__btn btn btn__black openForm">
+                                <div class="footer__course__box__textBox__btn btn btn__black openForm" data-course="smm-day">
                                     Записаться
                                 </div>
                             </div>
@@ -915,6 +949,28 @@
     <script src="libs/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        function openMenu() {
+            document.querySelector(".grayBackMenu").classList.add("active");
+            setTimeout(() => {
+                document.querySelector(".grayBackMenu").classList.add("activeAnimate");
+            }, 0);
+            document.querySelector(".mobileNav").classList.add("active");
+            setTimeout(() => {
+                document.querySelector(".mobileNav").classList.add("activeAnimate");
+            }, 0);
+        }
+        function closeMenu() {
+            document.querySelector(".grayBackMenu").classList.remove("activeAnimate");
+            document.querySelector(".mobileNav").classList.remove("activeAnimate");
+            setTimeout(() => {
+                document.querySelector(".grayBackMenu").classList.remove("active");
+            }, 200);
+            setTimeout(() => {
+                document.querySelector(".mobileNav").classList.remove("active");
+            }, 200);
+        }
+    </script>
     <script async>
       setTimeout(() => {
           !function(f,b,e,v,n,t,s)
