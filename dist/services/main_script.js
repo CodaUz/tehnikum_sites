@@ -153,6 +153,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
             }
         );
 
+        fbq('track', 'Lead', {
+            content_name: 'course_target-full-2'
+        });
+
         if (is_redirect) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
