@@ -107,6 +107,10 @@ async function takeCourse(formId, is_redirect=false) {
             }
         );
 
+        fbq('track', 'Lead', {
+            content_name: 'course_digital'
+        });
+
         if (is_redirect) {
             $(`.footer__mainBox__formBox__readyBox[data-form-id="${formId}2"]`).addClass('active')
 
