@@ -513,7 +513,7 @@ function initSlickSliders() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[18, 'date']]
+    const COURSES_ID = [[19, 'date']]
     const COURSES_THREADS_ID = []
 
     for (let course_id of COURSES_ID) {
