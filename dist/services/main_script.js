@@ -412,36 +412,39 @@ async function initCourseData() {
 
     console.log('date', date)
 
-    const first_date = moment(date)
-    const first_date_format = first_date.locale("ru").format('D MMMM')
+    if (date) {
+        const first_date = moment(date)
+        const first_date_format = first_date.locale("ru").format('D MMMM')
 
-    $('span.date').text(first_date_format)
+        $('span.date').text(first_date_format)
 
-    let eventTime= parseInt(new Date(first_date).getTime()/1000);
-    let currentTime = parseInt(new Date().getTime()/1000);
-    let diffTime = eventTime - currentTime;
-    let duration = moment.duration(diffTime*1000, 'milliseconds');
-    let days = parseInt(duration.days())
+        let eventTime= parseInt(new Date(first_date).getTime()/1000);
+        let currentTime = parseInt(new Date().getTime()/1000);
+        let diffTime = eventTime - currentTime;
+        let duration = moment.duration(diffTime*1000, 'milliseconds');
+        let days = parseInt(duration.days())
 
-    let placesLeft = 50
+        let placesLeft = 50
 
-    if (days <= 30) {
-        placesLeft = 50
-    }
-    if (days <= 20) {
-        placesLeft = 30
-    }
-    if (days <= 12) {
-        placesLeft = 12
-    }
-    if (days <= 8) {
-        placesLeft = 6
-    }
-    if (days <= 3) {
-        placesLeft = 3
+        if (days <= 30) {
+            placesLeft = 50
+        }
+        if (days <= 20) {
+            placesLeft = 30
+        }
+        if (days <= 12) {
+            placesLeft = 12
+        }
+        if (days <= 8) {
+            placesLeft = 6
+        }
+        if (days <= 3) {
+            placesLeft = 3
+        }
+
+        $('.placesLeft').text(placesLeft)
     }
 
-    $('.placesLeft').text(placesLeft)
     initCoursesInForm()
 }
 
