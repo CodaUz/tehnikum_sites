@@ -280,8 +280,8 @@ function setCountDown() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[20, 'date']]
-    const COURSES_THREADS_ID = []
+    const COURSES_ID = []
+    const COURSES_THREADS_ID = [[40, 'date']]
 
     for (let course_id of COURSES_ID) {
         let res = await axios.get('https://api.tehnikum.uz/course.php', {
