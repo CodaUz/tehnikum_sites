@@ -522,8 +522,8 @@ async function getCourseDate() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[18, 'date']]
-    const COURSES_THREADS_ID = []
+    const COURSES_ID = []
+    const COURSES_THREADS_ID = [[23, 'date']]
 
     for (let course_id of COURSES_ID) {
         let res = await axios.get('https://api.tehnikum.uz/course.php', {
