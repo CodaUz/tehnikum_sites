@@ -457,7 +457,27 @@ function listenCoursesSlider() {
 }
 
 async function initCourseData() {
-    const first_date =  moment(`2021-11-01`, 'YYYY-MM-DD')
+    const COURSE_ID = 9
+    let date
+
+    let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            course_id: COURSE_ID
+        })
+    });
+    res = await res.json();
+    res = res['data']
+
+    if (res['date_start']) {
+        date = res['date_start']
+    }
+
+    const first_date =  moment(date, 'YYYY-MM-DD')
     const first_date_format = first_date.locale("ru").format('D MMMM')
 
     $('span.date').text(first_date_format)
