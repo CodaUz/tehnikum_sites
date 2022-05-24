@@ -429,16 +429,37 @@ function listenCoursesSlider() {
 }
 
 async function initCourseData() {
-    let res = await axios.get('https://api.tehnikum.uz/course.php', {
+    let course_info = await axios.get('https://api.tehnikum.uz/course.php', {
         params: {
             action: 'get',
             token: '123',
             id: ID_COURSE
         }
     })
-    res = res['data']['row']
+    course_info = course_info['data']['row']
+
+    const COURSE_ID = 8
+    let date
+
+    let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            course_id: COURSE_ID
+        })
+    });
+    res = await res.json();
+    res = res['data']
+
+    if (res['date_start']) {
+        date = res['date_start']
+    }
+
     console.log('res', res)
-    const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
+    const first_date =  moment(`${date}`, 'YYYY-MM-DD')
     const first_date_format = first_date.locale("ru").format('D MMMM')
 
     $('span.date').text(first_date_format)
@@ -468,7 +489,7 @@ async function initCourseData() {
     }
 
     $('.placesLeft').text(placesLeft)
-    $('.duration').text(res['duration'])
+    $('.duration').text(course_info['duration'])
     initCoursesInForm()
 }
 
