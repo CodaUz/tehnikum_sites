@@ -513,22 +513,7 @@ function initSlickSliders() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[19, 'date']]
-    const COURSES_THREADS_ID = []
-
-    for (let course_id of COURSES_ID) {
-        let res = await axios.get('https://api.tehnikum.uz/course.php', {
-            params: {
-                action: 'get',
-                token: '123',
-                id: course_id[0]
-            }
-        })
-        res = res['data']['row']
-        const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
-        const first_date_format = first_date.locale("ru").format('D MMMM')
-        $(`.${course_id[1]}`).text(first_date_format)
-    }
+    const COURSES_THREADS_ID = [[12, 'date']]
 
     for (let course_id of COURSES_THREADS_ID) {
         let date = ''
@@ -545,6 +530,8 @@ async function initCoursesInForm() {
         });
         res = await res.json();
         res = res['data']
+
+        console.log('res', res)
 
         if (res['date_start']) {
             date = res['date_start']
