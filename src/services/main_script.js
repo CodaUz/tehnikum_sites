@@ -447,36 +447,58 @@ function listenCoursesSlider() {
 }
 
 async function initCourseData() {
-    const first_date =  moment(`2021-11-01`, 'YYYY-MM-DD')
-    const first_date_format = first_date.locale("ru").format('D MMMM')
+    const COURSE_ID = 17
+    let date
 
-    $('span.date').text(first_date_format)
+    let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            course_id: COURSE_ID
+        })
+    });
+    res = await res.json();
+    res = res['data']
 
-    let eventTime= parseInt(new Date(first_date).getTime()/1000);
-    let currentTime = parseInt(new Date().getTime()/1000);
-    let diffTime = eventTime - currentTime;
-    let duration = moment.duration(diffTime*1000, 'milliseconds');
-    let days = parseInt(duration.days())
-
-    let placesLeft = 50
-
-    if (days <= 30) {
-        placesLeft = 50
-    }
-    if (days <= 20) {
-        placesLeft = 30
-    }
-    if (days <= 12) {
-        placesLeft = 12
-    }
-    if (days <= 8) {
-        placesLeft = 6
-    }
-    if (days <= 3) {
-        placesLeft = 3
+    if (res['date_start']) {
+        date = res['date_start']
     }
 
-    $('.placesLeft').text(placesLeft)
+    if (date) {
+        const first_date =  moment(date, 'YYYY-MM-DD')
+        const first_date_format = first_date.locale("ru").format('D MMMM')
+
+        $('span.date').text(first_date_format)
+
+        let eventTime= parseInt(new Date(first_date).getTime()/1000);
+        let currentTime = parseInt(new Date().getTime()/1000);
+        let diffTime = eventTime - currentTime;
+        let duration = moment.duration(diffTime*1000, 'milliseconds');
+        let days = parseInt(duration.days())
+
+        let placesLeft = 50
+
+        if (days <= 30) {
+            placesLeft = 50
+        }
+        if (days <= 20) {
+            placesLeft = 30
+        }
+        if (days <= 12) {
+            placesLeft = 12
+        }
+        if (days <= 8) {
+            placesLeft = 6
+        }
+        if (days <= 3) {
+            placesLeft = 3
+        }
+
+        $('.placesLeft').text(placesLeft)
+    }
     initCoursesInForm()
 }
 
