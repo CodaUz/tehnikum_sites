@@ -383,8 +383,8 @@ function initSliders() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[17, 'date_start']]
-    const COURSES_THREADS_ID = []
+    const COURSES_ID = []
+    const COURSES_THREADS_ID = [[32, 'date_start']]
 
     for (let course_id of COURSES_ID) {
         let res = await axios.get('https://api.tehnikum.uz/course.php', {
