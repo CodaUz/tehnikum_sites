@@ -563,8 +563,8 @@ function listenPhoneInputs() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[9, 'smmSpecDate'], [13, 'targetFullCourseDate'], [14, 'contextDate']]
-    const COURSES_THREADS_ID = [[25, 'digitalDate']]
+    const COURSES_ID = [[9, 'smmSpecDate'], [14, 'contextDate']]
+    const COURSES_THREADS_ID = [[25, 'digitalDate'], [22, 'targetFullCourseDate']]
 
     for (let course_id of COURSES_ID) {
         let res = await axios.get('https://api.tehnikum.uz/course.php', {
