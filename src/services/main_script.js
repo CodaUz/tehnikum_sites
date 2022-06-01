@@ -494,8 +494,8 @@ async function initCourseData() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[14, 'graphicDesignDate'], [10, 'smmForBeginnersDate']]
-    const COURSES_THREADS_ID = [[21, 'smmDayDate']]
+    const COURSES_ID = []
+    const COURSES_THREADS_ID = [[17, 'graphicDesignDate'], [9, 'smmForBeginnersDate'], [21, 'smmDayDate']]
 
     for (let course_id of COURSES_ID) {
         let res = await axios.get('https://api.tehnikum.uz/course.php', {
