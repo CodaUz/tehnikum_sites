@@ -1,8 +1,8 @@
 const MOBILE_WIDTH = 800
 const ID_COURSE = 9;
 let POPUP_EVENT;
-const DEFAULT_COURSE = 'smm-new'
-let COURSE = 'smm-new'
+const DEFAULT_COURSE = 'smm-diz'
+let COURSE = 'smm-diz'
 
 function openMenu() {
     document.querySelector(".grayBackMenu").classList.add("active");
@@ -86,6 +86,7 @@ function openModalForm(formName) {
 }
 
 function closeModalForm(formName) {
+    COURSE = DEFAULT_COURSE
     document.querySelector(`${formName}>.grayBack`).classList.remove("activeAnimate");
     setTimeout(() => {
         document.querySelector(formName).classList.remove("activeAnimate");
