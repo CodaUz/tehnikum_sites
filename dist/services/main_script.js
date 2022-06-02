@@ -1,6 +1,8 @@
 const MOBILE_WIDTH = 800
 const ID_COURSE = 9;
 let POPUP_EVENT;
+const DEFAULT_COURSE = 'digital'
+let COURSE = 'digital'
 
 
 function listenPopups() {
@@ -8,22 +10,32 @@ function listenPopups() {
         openModalForm('.formBoxIndex')
     })
 
-    $('.openProgramForm').click(() => {
+    $('.openProgramForm').click(function () {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', 'true')
         $('div.sendForm[data-form-id="Program"]').text('Получить программу курса')
         $('p.footer__mainBox__formBox__text').html('программу можете скачать в<br> нашем telegram боте')
         $('p.titleName').text('сделай первый шаг')
+
+        if ($(this).data('course')) {
+            COURSE = $(this).data('course')
+        }
+
         openModalForm('.formBoxIndex')
     })
 
-    $('.openForm').click(() => {
+    $('.openForm').click(function () {
         console.log('open form')
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
         $('div[data-form-id="Program"]').attr('data-program', '')
         $('p.footer__mainBox__formBox__text').text('')
         $('div.sendForm[data-form-id="Program"]').text('Хочу учиться')
         $('p.titleName').text('РЕШАЙСЯ')
+
+        if ($(this).data('course')) {
+            COURSE = $(this).data('course')
+        }
+
         openModalForm('.formBoxIndex')
     })
 }
@@ -38,6 +50,7 @@ function openModalForm(formName) {
 }
 
 function closeModalForm(formName) {
+    COURSE = DEFAULT_COURSE
     document.querySelector(`${formName}>.grayBack`).classList.remove("activeAnimate");
     setTimeout(() => {
         document.querySelector(formName).classList.remove("activeAnimate");
@@ -92,7 +105,7 @@ async function takeCourse(formId, is_redirect=false) {
         }
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
-        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-digital`
+        let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
         const WEBINAR_ID = 158386
 
         fetch(
@@ -103,7 +116,7 @@ async function takeCourse(formId, is_redirect=false) {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({site: 'digital', name,phone, redisKey, redisValue})
+                body: JSON.stringify({site: COURSE, name,phone, redisKey, redisValue})
             }
         );
 
@@ -119,7 +132,7 @@ async function takeCourse(formId, is_redirect=false) {
                 name,
                 phone,
                 webinar_id: WEBINAR_ID,
-                course: 'digital',
+                course: COURSE,
                 action: 'program'
             }
 
@@ -144,7 +157,7 @@ async function takeCourse(formId, is_redirect=false) {
             const params = {
                 name,
                 phone,
-                course: 'digital',
+                course: COURSE,
                 action: 'course'
             }
 
@@ -424,23 +437,23 @@ async function initCourseData() {
         let duration = moment.duration(diffTime*1000, 'milliseconds');
         let days = parseInt(duration.days())
 
-        let placesLeft = 50
+        let placesLeft = 5
 
-        if (days <= 30) {
-            placesLeft = 50
-        }
-        if (days <= 20) {
-            placesLeft = 30
-        }
-        if (days <= 12) {
-            placesLeft = 12
-        }
-        if (days <= 8) {
-            placesLeft = 6
-        }
-        if (days <= 3) {
-            placesLeft = 3
-        }
+        // if (days <= 30) {
+        //     placesLeft = 50
+        // }
+        // if (days <= 20) {
+        //     placesLeft = 30
+        // }
+        // if (days <= 12) {
+        //     placesLeft = 12
+        // }
+        // if (days <= 8) {
+        //     placesLeft = 6
+        // }
+        // if (days <= 3) {
+        //     placesLeft = 3
+        // }
 
         $('.placesLeft').text(placesLeft)
     }
@@ -449,7 +462,8 @@ async function initCourseData() {
 }
 
 async function initCoursesInForm() {
-    const COURSES_ID = [[9, 'smmSpecDate'], [13, 'targetFullCourseDate'], [16, 'contextDate']]
+    const COURSES_ID = []
+    const COURSES_THREADS_ID = [[22, 'targetFullCourseDate'], [8, 'smmSpecDate'], [17, 'graphicDesignDate']]
 
     for (let course_id of COURSES_ID) {
         let res = await axios.get('https://api.tehnikum.uz/course.php', {
@@ -461,6 +475,31 @@ async function initCoursesInForm() {
         })
         res = res['data']['row']
         const first_date =  moment(`${res['date']}`, 'YYYY-MM-DD')
+        const first_date_format = first_date.locale("ru").format('D MMMM')
+        $(`.${course_id[1]}`).text(first_date_format)
+    }
+
+    for (let course_id of COURSES_THREADS_ID) {
+        let date = ''
+
+        let res = await fetch('https://tg-api.tehnikum.school/tehnikum_students/api/get_course_date_start', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                course_id: course_id[0]
+            })
+        });
+        res = await res.json();
+        res = res['data']
+
+        if (res['date_start']) {
+            date = res['date_start']
+        }
+
+        const first_date =  moment(`${date}`, 'YYYY-MM-DD')
         const first_date_format = first_date.locale("ru").format('D MMMM')
         $(`.${course_id[1]}`).text(first_date_format)
     }
