@@ -106,7 +106,7 @@ async function takeCourse(formId, is_redirect=false) {
 
         let redisKey = Math.floor(Math.random()*900000000) + 100000000;
         let redisValue = `${encryptName(name)}-${phone.replace(/\D/g, "")}-${status}-${COURSE}`
-        const WEBINAR_ID = 158386
+        const WEBINAR_ID = 272059
 
         fetch(
             `https://node.snimerovsky.xyz/log`,
@@ -146,7 +146,7 @@ async function takeCourse(formId, is_redirect=false) {
 
             fetch(url);
 
-            $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
+            $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-long_webinar${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
 
 
         } else {
