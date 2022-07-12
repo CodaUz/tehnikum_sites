@@ -307,7 +307,7 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (is_plan_ratalny) {
                 webinarpool_webinarname = 'рассрочка'
-                dataLayer.push({lead: 'rassrochka', course_name: 'Разработчик сайтов'})
+                dataLayer.push({event: 'rassrochka', course_name: 'Разработчик сайтов'})
             }
 
             const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
@@ -336,13 +336,13 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
                 ym(69008998, 'reachGoal', 'Разработчик WordPress записаться внизу');
 
                 if (!is_plan_ratalny) {
-                    dataLayer.push({event: 'course-lead', course_name: 'Разработчик сайтов', position: 'footer'})
+                    dataLayer.push({_event: 'course_lead', course_name: 'Разработчик сайтов', position: 'footer'})
                 }
             } else {
                 ym(69008998, 'reachGoal', 'Разработчик WordPress записаться на курс');
 
                 if (!is_plan_ratalny) {
-                    dataLayer.push({event: 'course-lead', course_name: 'Разработчик сайтов', position: 'top'})
+                    dataLayer.push({_event: 'course_lead', course_name: 'Разработчик сайтов', position: 'top'})
                 }
             }
         }
