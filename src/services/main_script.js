@@ -307,7 +307,7 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (is_plan_ratalny) {
                 webinarpool_webinarname = 'рассрочка'
-                dataLayer.push({event: 'rassrochka', course_name: 'Разработчик сайтов'})
+                dataLayer.push({lead: 'rassrochka', course_name: 'Разработчик сайтов'})
             }
 
             const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
