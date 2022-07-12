@@ -279,7 +279,7 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
             fetch(url);
 
             ym(69008998, 'reachGoal', 'Разработчик WordPress скачать программу');
-            dataLayer.push({event: 'get-program', course_name: 'Разработчик сайтов'})
+            dataLayer.push({lead: 'get-program', course_name: 'Разработчик сайтов'})
 
             let a= document.createElement('a');
 
