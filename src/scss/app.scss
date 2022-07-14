@@ -455,6 +455,15 @@ html {
   width: 450px;
 }
 
+@media screen and (min-width: 1001px) {
+  .teacher-card {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 20px;
+    width: auto;
+  }
+}
+
 .teacher-card span {
   font-weight: bold;
   font-size: 48px;
