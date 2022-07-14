@@ -279,7 +279,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
             fetch(url);
 
             ym(69008998, 'reachGoal', 'Разработчик WordPress скачать программу');
-            dataLayer.push({lead: 'get-program', course_name: 'Разработчик сайтов'})
+            gtag("event", "get-program", {
+                course_name: "Разработчик сайтов",
+                send_to: "G-HBZBML7YEQ"
+            })
 
             let a= document.createElement('a');
 
@@ -307,7 +310,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (is_plan_ratalny) {
                 webinarpool_webinarname = 'рассрочка'
-                dataLayer.push({event: 'rassrochka', course_name: 'Разработчик сайтов'})
+                gtag("event", "rassrochka", {
+                    course_name: "Разработчик сайтов",
+                    send_to: "G-HBZBML7YEQ"
+                })
             }
 
             const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
@@ -336,17 +342,20 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
                 ym(69008998, 'reachGoal', 'Разработчик WordPress записаться внизу');
 
                 if (!is_plan_ratalny) {
-                    dataLayer.push({event: 'course_lead', course_name: 'Разработчик сайтов', position: 'footer'})
+                    gtag("event", "course_lead", {
+                        course_name: "Разработчик сайтов",
+                        position: "footer",
+                        send_to: "G-HBZBML7YEQ"
+                    })
                 }
             } else {
                 ym(69008998, 'reachGoal', 'Разработчик WordPress записаться на курс');
 
                 if (!is_plan_ratalny) {
-                    gtag('event', 'course_lead', {
-                        event_label: 'Разработчик сайтов',
-                        event_category: 'course_lead',
-                        course_name: 'Разработчик сайтов',
-                        position: 'top'
+                    gtag("event", "course_lead", {
+                        course_name: "Разработчик сайтов",
+                        position: "top",
+                        send_to: "G-HBZBML7YEQ"
                     })
                 }
             }
