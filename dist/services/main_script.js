@@ -336,13 +336,18 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
                 ym(69008998, 'reachGoal', 'Разработчик WordPress записаться внизу');
 
                 if (!is_plan_ratalny) {
-                    dataLayer.push({_event: 'course_lead', course_name: 'Разработчик сайтов', position: 'footer'})
+                    dataLayer.push({event: 'course_lead', course_name: 'Разработчик сайтов', position: 'footer'})
                 }
             } else {
                 ym(69008998, 'reachGoal', 'Разработчик WordPress записаться на курс');
 
                 if (!is_plan_ratalny) {
-                    dataLayer.push({_event: 'course_lead', course_name: 'Разработчик сайтов', position: 'top'})
+                    gtag('event', 'course_lead', {
+                        event_label: 'Разработчик сайтов',
+                        event_category: 'course_lead',
+                        course_name: 'Разработчик сайтов',
+                        position: 'top'
+                    })
                 }
             }
         }
