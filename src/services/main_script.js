@@ -342,7 +342,7 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
                 ym(69008998, 'reachGoal', 'Разработчик WordPress записаться внизу');
 
                 if (!is_plan_ratalny) {
-                    gtag("event", "course_lead", {
+                    gtag("event", "course-lead", {
                         course_name: "Разработчик сайтов",
                         position: "footer",
                         send_to: "G-HBZBML7YEQ"
@@ -352,7 +352,7 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
                 ym(69008998, 'reachGoal', 'Разработчик WordPress записаться на курс');
 
                 if (!is_plan_ratalny) {
-                    gtag("event", "course_lead", {
+                    gtag("event", "course-lead", {
                         course_name: "Разработчик сайтов",
                         position: "top",
                         send_to: "G-HBZBML7YEQ"
