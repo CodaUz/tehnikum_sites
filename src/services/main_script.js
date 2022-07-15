@@ -57,6 +57,12 @@ function listenPopups() {
             COURSE = $(this).data('course')
         }
 
+        if ($(this).data('discount')) {
+            $('div[data-form-id="Program"]').attr('data-discount', 'true')
+        } else {
+            $('div[data-form-id="Program"]').attr('data-discount', '')
+        }
+
         openModalForm('.formBoxIndex')
     })
 
@@ -176,6 +182,11 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             url.search = new URLSearchParams(params).toString()
 
+            gtag("event", "get-program", {
+                course_name: "Графический дизайн",
+                send_to: "G-HBZBML7YEQ"
+            })
+
             fetch(url);
 
             $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
@@ -189,6 +200,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (is_plan_ratalny) {
                 webinarpool_webinarname = 'рассрочка'
+                gtag("event", "rassrochka", {
+                    course_name: "Графический дизайн",
+                    send_to: "G-HBZBML7YEQ"
+                })
             }
 
             const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
@@ -215,8 +230,31 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (formId === 'Contact') {
                 ym(69008998, 'reachGoal', 'Графический дизайнер оставить заявку внизу')
+
+                if (!is_plan_ratalny) {
+                    gtag("event", "course-lead", {
+                        course_name: "Графический дизайн",
+                        position: "footer",
+                        send_to: "G-HBZBML7YEQ"
+                    })
+                }
             } else {
                 ym(69008998, 'reachGoal', 'Записаться Графический дизайн');
+
+                if (!is_plan_ratalny) {
+                    if ($('div[data-form-id="Program"]').attr('data-discount') === 'true') {
+                        gtag("event", "skidka", {
+                            course_name: "Графический дизайн",
+                            send_to: "G-HBZBML7YEQ"
+                        })
+                    } else {
+                        gtag("event", "course-lead", {
+                            course_name: "Графический дизайн",
+                            position: "top",
+                            send_to: "G-HBZBML7YEQ"
+                        })
+                    }
+                }
             }
         }
     }
