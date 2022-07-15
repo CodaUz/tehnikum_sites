@@ -25,6 +25,12 @@ function listenPopups() {
             COURSE = $(this).data('course')
         }
 
+        if ($(this).data('discount')) {
+            $('div[data-form-id="Program"]').attr('data-discount', 'true')
+        } else {
+            $('div[data-form-id="Program"]').attr('data-discount', '')
+        }
+
         openModalForm('.formBoxIndex')
     })
 
@@ -165,6 +171,19 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             url.search = new URLSearchParams(params).toString()
 
+            if ($('div[data-form-id="Program"]').attr('data-discount') === 'true') {
+                gtag("event", "skidka", {
+                    course_name: "SMM специалист",
+                    send_to: "G-HBZBML7YEQ"
+                })
+            } else {
+                gtag("event", "get-program", {
+                    course_name: "SMM специалист",
+                    send_to: "G-HBZBML7YEQ"
+                })
+            }
+
+
             fetch(url);
 
             $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
@@ -185,6 +204,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (is_plan_ratalny) {
                 webinarpool_webinarname = 'рассрочка'
+                gtag("event", "rassrochka", {
+                    course_name: "SMM специалист",
+                    send_to: "G-HBZBML7YEQ"
+                })
             }
 
             getUtmParams(params)
@@ -203,8 +226,24 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (formId === 'Contact') {
                 ym(69008998, 'reachGoal', 'Смм специалист оставить заявку внизу')
+
+                if (!is_plan_ratalny) {
+                    gtag("event", "course-lead", {
+                        course_name: "SMM специалист",
+                        position: "footer",
+                        send_to: "G-HBZBML7YEQ"
+                    })
+                }
             } else {
                 ym(69008998, 'reachGoal', 'Смм специалист записаться');
+
+                if (!is_plan_ratalny) {
+                    gtag("event", "course-lead", {
+                        course_name: "SMM специалист",
+                        position: "top",
+                        send_to: "G-HBZBML7YEQ"
+                    })
+                }
             }
         }
     }
