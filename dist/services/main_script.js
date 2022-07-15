@@ -152,6 +152,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
             fetch(url);
 
             ym(69008998, 'reachGoal', 'Веб дизайнер Получить программу курса');
+            gtag("event", "get-program", {
+                course_name: "Веб-дизайнер",
+                send_to: "G-HBZBML7YEQ"
+            })
 
             let a= document.createElement('a');
 
@@ -179,6 +183,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (is_plan_ratalny) {
                 webinarpool_webinarname = 'рассрочка'
+                gtag("event", "rassrochka", {
+                    course_name: "Веб-дизайнер",
+                    send_to: "G-HBZBML7YEQ"
+                })
             }
 
             const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
@@ -205,8 +213,24 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (formId === 'Contact') {
                 ym(69008998, 'reachGoal', 'Веб Дизайнер Записаться внизу')
+
+                if (!is_plan_ratalny) {
+                    gtag("event", "course-lead", {
+                        course_name: "Веб-дизайнер",
+                        position: "footer",
+                        send_to: "G-HBZBML7YEQ"
+                    })
+                }
             } else {
                 ym(69008998, 'reachGoal', 'Веб дизайнер Записаться на курс');
+
+                if (!is_plan_ratalny) {
+                    gtag("event", "course-lead", {
+                        course_name: "Веб-дизайнер",
+                        position: "top",
+                        send_to: "G-HBZBML7YEQ"
+                    })
+                }
             }
         }
     }
