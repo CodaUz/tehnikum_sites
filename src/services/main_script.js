@@ -183,9 +183,14 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             url.search = new URLSearchParams(params).toString()
 
-            await fetch(url);
-
             ym(69008998, 'reachGoal', 'СММ 0 Скачать программу');
+
+            gtag("event", "get-program", {
+                course_name: "SMM начинающий",
+                send_to: "G-HBZBML7YEQ"
+            })
+
+            await fetch(url);
 
             let a= document.createElement('a');
             a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`;
@@ -224,6 +229,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
             fetch(url);
 
             ym(69008998, 'reachGoal', 'СММ 0 записаться на курс');
+            gtag("event", "course-lead", {
+                course_name: "SMM начинающий",
+                send_to: "G-HBZBML7YEQ"
+            })
         }
     }
 }
