@@ -53,6 +53,12 @@ function listenPopups() {
             COURSE = $(this).data('course')
         }
 
+        if ($(this).data('discount')) {
+            $('button[data-form-id="Program"]').attr('data-discount', 'true')
+        } else {
+            $('button[data-form-id="Program"]').attr('data-discount', '')
+        }
+
         openModalForm('.formBoxIndex')
     })
 
@@ -180,6 +186,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
             fetch(url);
 
             ym(69008998, 'reachGoal', 'Таргет фул скачать программу');
+            gtag("event", "get-program", {
+                course_name: "Таргетолог FULL",
+                send_to: "G-HBZBML7YEQ"
+            })
 
             let a= document.createElement('a');
             a.href= `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-send_smallchecklist${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`;
@@ -193,6 +203,10 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
 
             if (is_plan_ratalny) {
                 webinarpool_webinarname = 'рассрочка'
+                gtag("event", "rassrochka", {
+                    course_name: "Таргетолог FULL",
+                    send_to: "G-HBZBML7YEQ"
+                })
             }
 
             const url = new URL('https://tg-api.tehnikum.school/amo_crm/v1/create_lead')
@@ -218,6 +232,30 @@ async function takeCourse(formId, is_redirect=false, is_plan_ratalny = false) {
             fetch(url);
 
             ym(69008998, 'reachGoal', 'Таргет Фул Записаться');
+            if (formId === 'Contact') {
+                if (!is_plan_ratalny) {
+                    gtag("event", "course-lead", {
+                        course_name: "Таргетолог FULL",
+                        position: "footer",
+                        send_to: "G-HBZBML7YEQ"
+                    })
+                }
+            } else {
+                if (!is_plan_ratalny) {
+                    if ($('button[data-form-id="Program"]').attr('data-discount') === 'true') {
+                        gtag("event", "skidka", {
+                            course_name: "Таргетолог FULL",
+                            send_to: "G-HBZBML7YEQ"
+                        })
+                    } else {
+                        gtag("event", "course-lead", {
+                            course_name: "Таргетолог FULL",
+                            position: "top",
+                            send_to: "G-HBZBML7YEQ"
+                        })
+                    }
+                }
+            }
         }
     }
 }
