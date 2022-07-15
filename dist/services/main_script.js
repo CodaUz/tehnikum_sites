@@ -36,6 +36,12 @@ function listenPopups() {
             COURSE = $(this).data('course')
         }
 
+        if ($(this).data('discount')) {
+            $('div[data-form-id="Program"]').attr('data-discount', 'true')
+        } else {
+            $('div[data-form-id="Program"]').attr('data-discount', '')
+        }
+
         openModalForm('.formBoxIndex')
     })
 }
@@ -144,6 +150,11 @@ async function takeCourse(formId, is_redirect=false) {
 
             url.search = new URLSearchParams(params).toString()
 
+            gtag("event", "get-program", {
+                course_name: "Digital маркетолог",
+                send_to: "G-HBZBML7YEQ"
+            })
+
             fetch(url);
 
             $('#downloadProgram').attr('href', `https://t.me/TehnikumWebinarBot?start=${WEBINAR_ID}-long_webinar${qs.r ? `-${qs.r}` : ''}KEY${redisKey}`)
@@ -173,8 +184,27 @@ async function takeCourse(formId, is_redirect=false) {
 
             if (formId === 'Contact') {
                 ym(69008998, 'reachGoal', 'Диджитал маркетолог оставить заявку внизу')
+
+                gtag("event", "course-lead", {
+                    course_name: "Digital маркетолог",
+                    position: "footer",
+                    send_to: "G-HBZBML7YEQ"
+                })
             } else {
                 ym(69008998, 'reachGoal', 'Записаться диджитал маркетолог');
+
+                if ($('div[data-form-id="Program"]').attr('data-discount') === 'true') {
+                    gtag("event", "skidka", {
+                        course_name: "Digital маркетолог",
+                        send_to: "G-HBZBML7YEQ"
+                    })
+                } else {
+                    gtag("event", "course-lead", {
+                        course_name: "Digital маркетолог",
+                        position: "top",
+                        send_to: "G-HBZBML7YEQ"
+                    })
+                }
             }
         }
     }
