@@ -58,9 +58,9 @@ function listenPopups() {
 
     $('.openProgramForm').click(() => {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
-        $('div[data-form-id="Program"]').attr('data-program', 'true')
-        $('div[data-form-id="Program"]').attr('data-plan-ratalny', '')
-        $('div.sendForm[data-form-id="Program"]').text('Скачать программу')
+        $('button[data-form-id="Program"]').attr('data-program', 'true')
+        $('button[data-form-id="Program"]').attr('data-plan-ratalny', '')
+        $('button.sendForm[data-form-id="Program"]').text('Скачать программу')
         $('p.footer__mainBox__formBox__text').text('Сразу после заполнения данных вы перейдете в Telegram, где сможете посмотреть всю программу')
         $('p.titleName').text('Программа курса')
         openModalForm('.formBoxIndex')
@@ -68,20 +68,20 @@ function listenPopups() {
 
     $('.openForm').click(() => {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
-        $('div[data-form-id="Program"]').attr('data-program', '')
-        $('div[data-form-id="Program"]').attr('data-plan-ratalny', '')
+        $('button[data-form-id="Program"]').attr('data-program', '')
+        $('button[data-form-id="Program"]').attr('data-plan-ratalny', '')
         $('p.footer__mainBox__formBox__text').text('')
-        $('div.sendForm[data-form-id="Program"]').text('Оставить заявку')
+        $('button.sendForm[data-form-id="Program"]').text('Оставить заявку')
         $('p.titleName').text('оставь заявку')
         openModalForm('.formBoxIndex')
     })
 
     $('.openPlanRatalnyForm').click(function () {
         $('.footer__mainBox__formBox__readyBox').removeClass('active')
-        $('div[data-form-id="Program"]').attr('data-program', '')
-        $('div[data-form-id="Program"]').attr('data-plan-ratalny', 'true')
+        $('button[data-form-id="Program"]').attr('data-program', '')
+        $('button[data-form-id="Program"]').attr('data-plan-ratalny', 'true')
         $('p.footer__mainBox__formBox__text').text('')
-        $('div.sendForm[data-form-id="Program"]').text('Хочу учиться')
+        $('button.sendForm[data-form-id="Program"]').text('Хочу учиться')
         $('p.titleName').text('РЕШАЙСЯ')
 
         openModalForm('.formBoxIndex')
